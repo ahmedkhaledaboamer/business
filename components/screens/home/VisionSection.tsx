@@ -10,7 +10,7 @@ export function VisionSection() {
     margin: '-100px',
   })
   return (
-    <section className="py-32 bg-navy-dark relative overflow-hidden">
+    <section className="py-32 bg-navy-dark relative overflow-hidden px-[5%]">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gold/5 rounded-full blur-[120px]" />
@@ -19,7 +19,7 @@ export function VisionSection() {
 
       <div
         ref={ref}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        className=" mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
         <div className="grid lg:grid-cols-3 gap-12 items-center">
           {/* Vision - Right Side */}

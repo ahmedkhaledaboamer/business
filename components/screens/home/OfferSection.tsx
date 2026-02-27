@@ -25,7 +25,7 @@ export function OfferSection() {
     margin: '-100px',
   })
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden px-[5%]">
       {/* Background Image - Richer luxury office */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
@@ -65,7 +65,7 @@ export function OfferSection() {
 
       <div
         ref={ref}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        className="mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
         <div className="grid lg:grid-cols-2 gap-10">
           {/* ماذا نقدم */}

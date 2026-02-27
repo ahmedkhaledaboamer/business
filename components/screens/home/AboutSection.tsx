@@ -52,7 +52,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="relative py-32 overflow-hidden"
+      className="relative py-32 overflow-hidden px-[5%]"
       style={{ backgroundColor: "#F9F6EF" }}
     >
       {/* Subtle dot grid */}
@@ -69,7 +69,7 @@ export function AboutSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#C9A84C]/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#0E7C6B]/5 rounded-full blur-[80px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ── Section Label ── */}
         <motion.div
@@ -169,7 +169,7 @@ export function AboutSection() {
                 <svg viewBox="0 0 32 32" fill="currentColor"><path d="M10 8C6.686 8 4 10.686 4 14v10h10V14H7c0-1.657 1.343-3 3-3V8zm14 0c-3.314 0-6 2.686-6 6v10h10V14h-7c0-1.657 1.343-3 3-3V8z"/></svg>
               </div>
               <p className="font-['Tajawal',sans-serif] text-base text-[#0F1923]/70 leading-[1.9] pr-6">
-                نحن لا نقدّم "خدمة"… نحن نقدّم قيمة تنفيذية تُشعر رجل الأعمال أنه
+                نحن لا نقدّم &quot;خدمة&quot;… نحن نقدّم قيمة تنفيذية تُشعر رجل الأعمال أنه
                 أمام جهة تفهم حساسية وقته، وتحترم سرّيته.
               </p>
             </div>

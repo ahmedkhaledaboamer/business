@@ -94,7 +94,7 @@ export function ClientsSection() {
     },
   }
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden px-[5%]">
       {/* Background Image with Light Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed opacity-5"
@@ -107,7 +107,7 @@ export function ClientsSection() {
 
       <div
         ref={ref}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        className=" mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
         {/* Header */}
         <motion.div
@@ -135,7 +135,7 @@ export function ClientsSection() {
             عملاؤنا <span className="gradient-text">المميزون</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto mb-6" />
-          <p className="font-tajawal text-lg text-navy/60 max-w-2xl mx-auto">
+          <p className="font-tajawal text-lg text-navy/60 mx-auto">
             نفخر بخدمة نخبة من رجال الأعمال والمؤسسات الرائدة
           </p>
         </motion.div>

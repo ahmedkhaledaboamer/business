@@ -116,7 +116,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-24 bg-warm-white relative overflow-hidden"
+      className="py-24 bg-warm-white relative overflow-hidden px-[5%]"
     >
       {/* Background Decoration */}
       <div className="absolute inset-0 pattern-dots opacity-40" />
@@ -125,7 +125,7 @@ export function ServicesSection() {
 
       <div
         ref={ref}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        className="mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
         {/* Header */}
         <motion.div
@@ -153,7 +153,7 @@ export function ServicesSection() {
             خدمات <span className="gradient-text">استثنائية</span> لرجال الأعمال
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-burgundy/50 to-transparent mx-auto mb-6" />
-          <p className="font-tajawal text-lg text-navy/60 max-w-2xl mx-auto">
+          <p className="font-tajawal text-lg text-navy/60 mx-auto">
             منظومة متكاملة من الخدمات المصممة خصيصًا لتلبية احتياجاتك
           </p>
         </motion.div>

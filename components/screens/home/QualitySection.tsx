@@ -82,7 +82,7 @@ export function QualitySection() {
     margin: '-100px',
   })
   return (
-    <section className="py-24 bg-navy-dark relative overflow-hidden">
+    <section className="py-24 bg-navy-dark relative overflow-hidden px-[5%]">
       {/* Background */}
       <div className="absolute inset-0 pattern-lines opacity-30" />
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[120px]" />
@@ -90,7 +90,7 @@ export function QualitySection() {
 
       <div
         ref={ref}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        className=" mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
         <div className="grid lg:grid-cols-3 gap-8">
           {columns.map((col, idx) => {

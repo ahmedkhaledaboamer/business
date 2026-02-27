@@ -85,7 +85,7 @@ export function WhyUsSection() {
     },
   }
   return (
-    <section id="why-us" className="py-24 relative overflow-hidden">
+    <section id="why-us" className="py-24 relative overflow-hidden px-[5%]">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
@@ -103,7 +103,7 @@ export function WhyUsSection() {
 
       <div
         ref={ref}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        className=" mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
         {/* Header */}
         <motion.div
@@ -133,7 +133,7 @@ export function WhyUsSection() {
               الآخرين
             </span>
           </h2>
-          <p className="font-tajawal text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="font-tajawal text-lg text-white/70 mx-auto">
             نقدم لك مزايا استثنائية تجعلنا الخيار الأمثل لرجال الأعمال الطموحين
           </p>
         </motion.div>
