@@ -10,20 +10,20 @@
         "href": "/"
       },
       {
-        "label": "القسم",
-        "href": "/department"
-      },
-      {
-        "label": "اتصل بنا",
-        "href": "/contact"
-      },
-      {
         "label": "الخدمات",
         "href": "/services"
       },
       {
-        "label": "المقالات",
-        "href": "/articles"
+        "label": "الجهاز الإداري",
+        "href": "/department"
+      },
+      {
+        "label": "الهوية التجارية",
+        "href": "/brand-identity"
+      },
+      {
+        "label": "التنفيذ",
+        "href": "/execution"
       }
     ]
   },
@@ -32,12 +32,16 @@
     "description": "وصف المكون"
   },
   "header": {
-    "title": "مستشار قانوني متميز",
-    "subtitle": "خبرة قانونية موثوقة بمعايير ذهبية",
-    "cta": {
-      "bookConsultation": "إحجز استشارتك",
-      "exploreServices": "استكشف خدماتنا"
-    }
+    "badge": "القوة التنفيذية التي تحتاجها",
+    "titleLine1": "شريكك التنفيذي في",
+    "titleHighlight": "بناء النفوذ",
+    "titleLine2": "وصناعة القرار",
+    "description": "في بيئة أعمال تتغير فيها المعادلات بسرعة، وتزداد فيها الضغوط على رجل الأعمال لاتخاذ قرارات دقيقة في وقت ضيق، يحتاج القائد الحقيقي إلى جهة لا تكتفي بتقديم خدمة… بل تمنحه قوة تنفيذية، وتبني له مسارًا واضحًا.",
+    "ctaPrimary": "ابدأ رحلتك الآن",
+    "ctaSecondary": "اكتشف خدماتنا",
+    "statsClients": "عميل راضٍ",
+    "statsExperience": "سنة خبرة",
+    "statsConfidentiality": "سرية تامة"
   },
   "footer": {
     "contact": {

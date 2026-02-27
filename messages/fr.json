@@ -9,20 +9,20 @@
         "href": "/"
       },
       {
-        "label": "Département",
-        "href": "/department"
-      },
-      {
-        "label": "Contact",
-        "href": "/contact"
-      },
-      {
         "label": "Services",
         "href": "/services"
       },
       {
-        "label": "Articles",
-        "href": "/articles"
+        "label": "Corps administratif",
+        "href": "/department"
+      },
+      {
+        "label": "Identité de marque",
+        "href": "/brand-identity"
+      },
+      {
+        "label": "Exécution",
+        "href": "/execution"
       }
     ]
   },
@@ -31,12 +31,16 @@
     "description": "Description du Component"
   },
   "header": {
-    "title": "Conseil Juridique Premium",
-    "subtitle": "Expertise Juridique de Confiance avec des Normes d'Or",
-    "cta": {
-      "bookConsultation": "Réservez Votre Consultation",
-      "exploreServices": "Découvrez Nos Services"
-    }
+    "badge": "La puissance exécutive dont vous avez besoin",
+    "titleLine1": "Votre partenaire exécutif dans",
+    "titleHighlight": "la construction de l'influence",
+    "titleLine2": "et la prise de décision",
+    "description": "Dans un environnement économique où les équilibres changent rapidement et où la pression s'intensifie sur les décideurs pour prendre des décisions précises dans un temps limité, le véritable leader a besoin de plus qu'un simple prestataire de services — il a besoin d'un partenaire d'exécution qui lui offre une force sur le terrain et une trajectoire claire.",
+    "ctaPrimary": "Commencez votre parcours maintenant",
+    "ctaSecondary": "Découvrez nos services",
+    "statsClients": "Clients satisfaits",
+    "statsExperience": "Années d'expérience",
+    "statsConfidentiality": "Confidentialité totale"
   },
   "footer": {
     "contact": {

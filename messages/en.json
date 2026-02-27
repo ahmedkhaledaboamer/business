@@ -6,24 +6,24 @@
         "cta": "Book Your Consultation",
         "routes": [
             {
-                "label": "Home",
-                "href": "/"
+              "label": "Home",
+              "href": "/"
             },
             {
-                "label": "Department",
-                "href": "/department"
+              "label": "Services",
+              "href": "/services"
             },
             {
-                "label": "Contact",
-                "href": "/contact"
+              "label": "Administrative Body",
+              "href": "/department"
             },
             {
-                "label": "Services",
-                "href": "/services"
+              "label": "Brand Identity",
+              "href": "/brand-identity"
             },
             {
-                "label": "Articles",
-                "href": "/articles"
+              "label": "Execution",
+              "href": "/execution"
             }
         ]
     },
@@ -32,12 +32,16 @@
         "description": "My Component Description"
     },
     "header": {
-        "title": "Premium Legal Counsel",
-        "subtitle": "Trusted Legal Expertise with a Gold‑Standard",
-        "cta": {
-            "bookConsultation": "Book Your Consultation",
-            "exploreServices": "Explore Our Services"
-        }
+        "badge": "The executive power you need",
+        "titleLine1": "Your executive partner in",
+        "titleHighlight": "building influence",
+        "titleLine2": "and shaping decisions",
+        "description": "In a business environment where dynamics change rapidly and pressure mounts on business leaders to make precise decisions in little time, real leaders need more than a service provider — they need an execution partner that gives them power on the ground and a clear path forward.",
+        "ctaPrimary": "Start your journey now",
+        "ctaSecondary": "Discover our services",
+        "statsClients": "Satisfied clients",
+        "statsExperience": "Years of experience",
+        "statsConfidentiality": "Total confidentiality"
     },
     "footer": {
         "contact": {
