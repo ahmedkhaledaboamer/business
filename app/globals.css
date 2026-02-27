@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+.container {
+  width: min(98%, 98vw);
+  margin-inline: auto;
+}
+
+@theme {
+  --color-primary: #fd9908;
+  --color-secondary: #181f29;
+  --color-tertiary: #00d3ff;
+  --color-theme-black: #181f29;
+  
+  /* Responsive font sizes using viewport units */
+  --font-xs: clamp(0.75rem, 0.5vw + 0.5rem, 1rem);
+  --font-sm: clamp(0.875rem, 0.75vw + 0.625rem, 1.25rem);
+  --font-base: clamp(1rem, 1vw + 0.75rem, 1.5rem);
+  --font-lg: clamp(1.125rem, 1.25vw + 0.875rem, 1.75rem);
+  --font-xl: clamp(1.25rem, 1.5vw + 1rem, 2rem);
+  --font-2xl: clamp(1.5rem, 2vw + 1.25rem, 2.5rem);
+  --font-3xl: clamp(1.875rem, 2.5vw + 1.5rem, 3rem);
+  
+  /* Responsive spacing using viewport units */
+  --spacing-xs: clamp(0.25rem, 0.25vw, 0.5rem);
+  --spacing-sm: clamp(0.5rem, 0.5vw, 1rem);
+  --spacing-md: clamp(0.75rem, 1vw, 1.5rem);
+  --spacing-lg: clamp(1rem, 1.5vw, 2rem);
+  --spacing-xl: clamp(1.5rem, 2vw, 3rem);
+  --spacing-2xl: clamp(2rem, 3vw, 4rem);
+  --spacing-3xl: clamp(3rem, 4vw, 6rem);
+}
+
+.navbar-text {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+/* Custom Scrollbar for Footer Group Entities */
+.custom-scrollbar::-webkit-scrollbar {
+  width: clamp(4px, 0.5vw, 8px);
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: clamp(8px, 1vw, 12px);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #fd9908;
+  border-radius: clamp(8px, 1vw, 12px);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #fd9908cc;
+}
+
+/* Firefox scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #fd9908 rgba(255, 255, 255, 0.1);
+}
+
+/* Flag Swiper Styles */
+.flag-swiper {
+  padding: clamp(0.5rem, 1vw, 1rem) 0;
+}
+
+.flag-swiper .swiper-slide {
+  transition: transform 0.3s linear;
+}
+
+.flag-swiper .swiper-slide:hover {
+  transform: translateY(-5px);
+}
+
+.flag-swiper .swiper-slide-active {
+  transform: scale(1.05);
+}
