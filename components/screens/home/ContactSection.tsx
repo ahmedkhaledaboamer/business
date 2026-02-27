@@ -10,7 +10,7 @@ export function ContactSection() {
     margin: '-100px',
   })
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="py-24 relative overflow-hidden px-[5%]">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy-dark via-burgundy-dark to-navy-dark" />
 
@@ -42,7 +42,7 @@ export function ContactSection() {
 
       <div
         ref={ref}
-        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center"
+        className=" mx-auto px-4 sm:px-6 lg:px-8 relative text-center"
       >
         <motion.div
           initial={{
@@ -71,7 +71,7 @@ export function ContactSection() {
             <span className="text-gold">يعزّز قوة كيانك</span>
           </h2>
 
-          <p className="font-tajawal text-lg sm:text-xl text-white/70 mb-10 max-w-2xl mx-auto">
+          <p className="font-tajawal text-lg sm:text-xl text-white/70 mb-10 mx-auto">
             نحن هنا لنضعك أمام الفرص الصحيحة ونحميك من المخاطر غير المرئية.
           </p>
 
