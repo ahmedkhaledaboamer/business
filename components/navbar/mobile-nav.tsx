@@ -5,7 +5,6 @@ import { Link, usePathname } from "@/i18n/routing";
 import { Menu, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useCallback, useMemo, useState } from "react";
-import Button from "../button";
 import LocaleSwitcher from "../locale-switcher";
 
 interface Route {
@@ -85,13 +84,14 @@ const MobileNavbar = () => {
             </Link>
           ))}
 
-          <Button
-            asChild
+          <Link
+            href="#contact"
+            onClick={handleLinkClick}
             className="block bg-gold text-navy-dark font-cairo font-bold px-6 py-3 rounded-full text-center w-full mt-4 hover:bg-gold-light transition-colors"
             aria-label={t("cta")}
           >
-            <Link href="#contact">{t("cta")}</Link>
-          </Button>
+            {t("cta")}
+          </Link>
 
           <div className="pt-4 border-t border-white/10 flex justify-center">
             <LocaleSwitcher />
