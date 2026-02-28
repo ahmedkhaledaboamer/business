@@ -112,14 +112,14 @@ export function ServicesSection({ locale }: { locale: string }) {
           }}
           className="text-center mb-16"
         >
-          <span className="inline-block rounded-full px-5 py-2 bg-burgundy/10 border border-burgundy/20 text-burgundy font-tajawal text-sm mb-6 shadow-sm">
+          <span className="inline-block rounded-full px-5 py-2 bg-burgundy/10 border border-burgundy/20 text-burgundy font-tajawal text-[clamp(0.75rem,2vw,2rem)] mb-6 shadow-sm">
             {t('badge')}
           </span>
-          <h2 className="font-cairo font-bold text-3xl sm:text-4xl lg:text-5xl text-navy-dark mb-6">
+          <h2 className="font-cairo font-bold text-[clamp(0.75rem,2vw,6rem)] text-navy-dark mb-6">
             {t('title')} <span className="gradient-text">{t('titleHighlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-burgundy/50 to-transparent mx-auto mb-6" />
-          <p className="font-tajawal text-lg text-navy/60 mx-auto">
+          <p className="font-tajawal text-[clamp(0.75rem,2vw,2rem)] text-navy/60 mx-auto">
             {t('subtitle')}
           </p>
         </motion.div>
@@ -143,7 +143,7 @@ export function ServicesSection({ locale }: { locale: string }) {
                 className={`group bg-white rounded-3xl border border-gray-100 shadow-lg shadow-black/5 overflow-hidden ${colors.hover} transition-all duration-500 hover:-translate-y-2 flex flex-col`}
               >
                 {/* Image Header */}
-                <div className="relative md:h-130 h-48 overflow-hidden">
+                <div className="relative md:h-[clamp(10rem,20vw,30rem)] h-[clamp(10rem,10vw,20rem)] overflow-hidden">
                   <Image
                     src={serviceImages[index]}
                     width={600}
@@ -163,10 +163,10 @@ export function ServicesSection({ locale }: { locale: string }) {
 
                 {/* Content */}
                 <div className="p-8 flex-1 flex flex-col">
-                  <h3 className="font-cairo font-bold text-xl text-navy-dark mb-4 group-hover:text-navy transition-colors">
+                  <h3 className="font-cairo font-bold text-[clamp(0.75rem,1.5vw,3rem)] text-navy-dark mb-4 group-hover:text-navy transition-colors">
                     {title}
                   </h3>
-                  <p className="font-tajawal text-navy/60 leading-relaxed flex-1">
+                  <p className="font-tajawal text-[clamp(1rem,1vw,2rem)] text-navy/60 leading-relaxed flex-1">
                     {description}
                   </p>
 

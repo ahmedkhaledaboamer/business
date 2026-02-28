@@ -12,7 +12,7 @@ const columnImages = [
   'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
 ]
 const columnColors = ['gold', 'teal', 'burgundy'] as const
-const columnItemCounts = [7, 5, 5]
+const columnItemCounts = [5, 5, 5]
 const colorClasses = {
   gold: {
     badge: 'bg-gold/20 border-gold/30 text-gold',
@@ -87,7 +87,7 @@ export function QualitySection({ locale }: { locale: string }) {
                 className={`glass-dark rounded-3xl overflow-hidden border border-white/10 ${colors.border} transition-all duration-500 hover:-translate-y-2 group flex flex-col`}
               >
                 {/* Header Image */}
-                <div className="relative md:h-130 h-40 overflow-hidden">
+                <div className="relative h-[clamp(10rem,20vw,30rem)] overflow-hidden">
                   <Image
                     src={columnImages[idx]}
                     width={600}
@@ -144,7 +144,7 @@ export function QualitySection({ locale }: { locale: string }) {
                         >
                           <CheckIcon className={`w-4 h-4 ${colors.iconText}`} />
                         </div>
-                        <span className="font-tajawal text-white/80 text-base group-hover/item:text-white transition-colors">
+                        <span className="font-tajawal text-white/80 text-[clamp(1rem,1vw,3rem)] group-hover/item:text-white transition-colors">
                           {t(`columns.${idx}.items.${index}`)}
                         </span>
                       </motion.li>

@@ -82,7 +82,7 @@ export function OfferSection({ locale }: { locale: string }) {
                 {t('whatWeOfferLabel')}
               </span>
 
-              <h3 className="font-cairo font-bold text-3xl sm:text-4xl text-white mb-10">
+              <h3 className="font-cairo font-bold text-[clamp(0.75rem,2vw,6rem)] text-white mb-10">
                 {t('whatWeOfferTitle')}{' '}
                 <span className="text-gold drop-shadow-md">{t('whatWeOfferHighlight')}</span>
               </h3>
@@ -112,7 +112,7 @@ export function OfferSection({ locale }: { locale: string }) {
                     <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gold/30 group-hover/item:scale-110 transition-all duration-300 shadow-inner">
                       <CheckCircleIcon className="w-5 h-5 text-gold" />
                     </div>
-                    <span className="font-tajawal text-lg text-white/90 group-hover/item:text-white transition-colors">
+                    <span className="font-tajawal text-[clamp(1rem,1vw,3rem)] text-white/90 group-hover/item:text-white transition-colors">
                       {t(`offers.${index}`)}
                     </span>
                   </motion.li>
@@ -147,7 +147,7 @@ export function OfferSection({ locale }: { locale: string }) {
                 {t('whatYouGetLabel')}
               </span>
 
-              <h3 className="font-cairo font-bold text-3xl sm:text-4xl text-white mb-10">
+              <h3 className="font-cairo font-bold text-[clamp(0.75rem,2vw,6rem)] text-white mb-10">
                 {t('whatYouGetTitle')}{' '}
                 <span className="text-teal-light drop-shadow-md">{t('whatYouGetHighlight')}</span>
               </h3>
@@ -177,7 +177,7 @@ export function OfferSection({ locale }: { locale: string }) {
                     <div className="w-10 h-10 rounded-full bg-teal/10 border border-teal/20 flex items-center justify-center flex-shrink-0 group-hover/item:bg-teal/30 group-hover/item:scale-110 transition-all duration-300 shadow-inner">
                       <StarIcon className="w-5 h-5 text-teal-light" />
                     </div>
-                    <span className="font-tajawal text-lg text-white/90 group-hover/item:text-white transition-colors">
+                    <span className="font-tajawal text-[clamp(1rem,1vw,3rem)] text-white/90 group-hover/item:text-white transition-colors">
                       {t(`benefits.${index}`)}
                     </span>
                   </motion.li>
