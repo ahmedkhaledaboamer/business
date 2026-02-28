@@ -1,7 +1,9 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { CheckCircle2, X, ShieldCheck, Globe, Award } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 export function CTA() {
+  const t = useTranslations('administrativeApparatus.cta');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   useEffect(() => {
@@ -56,21 +58,21 @@ export function CTA() {
 
       <div className="relative z-20 max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-[clamp(0.75rem,2vw,5rem)] font-bold text-white mb-6 leading-tight">
-          جهاز إداري كامل يعمل <span className="gradient-text">لصالحك…</span>
+          {t('title')} <span className="gradient-text">{t('titleHighlight')}</span>
         </h2>
         <p className="text-[clamp(1rem,1vw,3rem)] text-gold-light italic mb-12 font-medium">
-          لأن وقتك أثمن من أن يضيع في التفاصيل.
+          {t('subtitle')}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
           <button className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-xl px-12 py-5 rounded-full transition-all hover:scale-105 shadow-glow w-full sm:w-auto font-bold">
-            ابدأ الآن
+            {t('cta')}
           </button>
           <button
             className="glass text-gold  bg-white hover:bg-white/20 text-[clamp(1rem,1vw,3rem)] px-12 py-5 rounded-full transition-all hover:scale-105 w-full sm:w-auto font-bold"
             onClick={() => setIsModalOpen(true)}>
 
-            تحدث معنا
+            {t('contact')}
           </button>
         </div>
 
@@ -78,15 +80,15 @@ export function CTA() {
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 pt-8 border-t border-white/10">
           <div className="flex flex-col items-center gap-3">
             <ShieldCheck className="w-8 h-8 text-gold" />
-            <span className="text-gray-300 font-medium">سرية تامة</span>
+            <span className="text-gray-300 font-medium">{t('confidentiality')}</span>
           </div>
           <div className="flex flex-col items-center gap-3">
             <Globe className="w-8 h-8 text-gold" />
-            <span className="text-gray-300 font-medium">خبرة عالمية</span>
+            <span className="text-gray-300 font-medium">{t('experience')}</span>
           </div>
           <div className="flex flex-col items-center gap-3">
             <Award className="w-8 h-8 text-gold" />
-            <span className="text-gray-300 font-medium">نتائج مضمونة</span>
+            <span className="text-gray-300 font-medium">{t('guaranteed')}</span>
           </div>
         </div>
       </div>
@@ -95,7 +97,7 @@ export function CTA() {
       {isModalOpen &&
       <div
         className="fixed inset-0 z-50 flex items-center justify-center p-4"
-        dir="rtl">
+        >
 
           <div
           className="absolute inset-0 bg-navy/80 backdrop-blur-md"
@@ -116,11 +118,10 @@ export function CTA() {
               {!isSubmitted ?
             <>
                   <h3 className="text-3xl font-bold text-charcoal mb-3">
-                    تواصل مع الإدارة
+                    {t('formTitle')}
                   </h3>
                   <p className="text-gray-500 mb-8 text-lg">
-                    اترك بياناتك وسيقوم أحد مدرائنا التنفيذيين بالتواصل معك
-                    فوراً.
+                    {t('formSubtitle')} {t('formSubtitle2')}
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -129,13 +130,13 @@ export function CTA() {
                     htmlFor="name"
                     className="block text-charcoal font-bold text-sm">
 
-                        الاسم الكريم
+                        {t('name')}
                       </label>
                       <input
                     id="name"
                     required
                     className="w-full bg-warm-gray border border-transparent rounded-xl px-5 py-4 text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all"
-                    placeholder="أدخل اسمك" />
+                    placeholder={t('namePlaceholder')} />
 
                     </div>
                     <div className="space-y-2">
@@ -143,7 +144,7 @@ export function CTA() {
                     htmlFor="phone"
                     className="block text-charcoal font-bold text-sm">
 
-                        رقم الهاتف
+                        {t('phone')}
                       </label>
                       <input
                     id="phone"
@@ -151,7 +152,7 @@ export function CTA() {
                     required
                     dir="ltr"
                     className="w-full bg-warm-gray border border-transparent rounded-xl px-5 py-4 text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all"
-                    placeholder="أدخل رقم هاتفك" />
+                    placeholder={t('phonePlaceholder')} />
 
                     </div>
                     <div className="space-y-2">
@@ -159,19 +160,19 @@ export function CTA() {
                     htmlFor="message"
                     className="block text-charcoal font-bold text-sm">
 
-                        رسالتك (اختياري)
+                        {t('message')}
                       </label>
                       <textarea
                     id="message"
                     className="w-full bg-warm-gray border border-transparent rounded-xl px-5 py-4 text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all min-h-[120px] resize-none"
-                    placeholder="كيف يمكننا خدمتك؟" />
+                    placeholder={t('messagePlaceholder')} />
 
                     </div>
                     <button
                   type="submit"
                   className="w-full bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-xl py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-glow mt-4">
 
-                      إرسال الطلب
+                      {t('submit')}
                     </button>
                   </form>
                 </> :
@@ -181,10 +182,10 @@ export function CTA() {
                     <CheckCircle2 className="w-12 h-12 text-green-500" />
                   </div>
                   <h3 className="text-3xl font-bold text-charcoal mb-3">
-                    تم استلام طلبك بنجاح
+                    {t('success')}
                   </h3>
                   <p className="text-gray-500 text-lg">
-                    سنتواصل معك في أقرب وقت ممكن.
+                    {t('successMsg')}
                   </p>
                 </div>
             }

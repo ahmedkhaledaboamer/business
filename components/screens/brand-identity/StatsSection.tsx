@@ -1,37 +1,14 @@
 'use client';
-import React, { Fragment } from 'react';
+import React, { Fragment, useMemo } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useCountUp } from '@/hooks/useCountUp';
 import { Users, ThumbsUp, Clock, Briefcase } from 'lucide-react';
-const stats = [
-{
-  end: 150,
-  suffix: '+',
-  label: 'عميل',
-  icon: Users,
-  color: '#C9A84C'
-},
-{
-  end: 95,
-  suffix: '%',
-  label: 'نسبة الرضا',
-  icon: ThumbsUp,
-  color: '#1A6B5C'
-},
-{
-  end: 12,
-  suffix: '+',
-  label: 'سنة خبرة',
-  icon: Clock,
-  color: '#B87333'
-},
-{
-  end: 50,
-  suffix: '+',
-  label: 'مشروع',
-  icon: Briefcase,
-  color: '#7A2D4A'
-}];
+import { useTranslations } from 'next-intl';
+
+const statIcons = [Users, ThumbsUp, Clock, Briefcase];
+const statValues = [150, 95, 12, 50];
+const statSuffixes = ['+', '%', '+', '+'];
+const statColors = ['#C9A84C', '#1A6B5C', '#B87333', '#7A2D4A'];
 
 function StatItem({
   end,
@@ -112,6 +89,15 @@ function StatItem({
 
 }
 export function StatsSection() {
+  const t = useTranslations('brandIdentity.stats');
+  const rawItems = (t.raw('items') as { label: string }[]) || [];
+  const stats = useMemo(() => rawItems.map((item, i) => ({
+    end: statValues[i] ?? 0,
+    suffix: statSuffixes[i] ?? '+',
+    label: item.label ?? '',
+    icon: statIcons[i],
+    color: statColors[i],
+  })), [rawItems]);
   return (
     <section
       className="relative py-28 overflow-hidden px-[5%]"

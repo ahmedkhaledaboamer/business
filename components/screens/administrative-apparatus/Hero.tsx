@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useMemo, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 /** Deterministic "random" in [0,1) from index + seed. Pure, stable across renders. */
 function pseudoRandom(i: number, seed: number): number {
@@ -9,6 +10,7 @@ function pseudoRandom(i: number, seed: number): number {
 }
 
 export function Hero() {
+  const t = useTranslations('administrativeApparatus.hero');
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     const id = requestAnimationFrame(() => setMounted(true));
@@ -99,7 +101,7 @@ export function Hero() {
 
           <span className="mb-8 inline-flex items-center rounded-full bg-gradient-to-r from-gold to-gold-dark text-white px-6 py-2 text-sm font-bold shadow-lg animate-pulse-gold relative overflow-hidden group">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-shimmer" />
-            منظومة التشغيل التنفيذي
+            {t('badge')}
           </span>
         </div>
 
@@ -109,8 +111,8 @@ export function Hero() {
             transitionDelay: '400ms'
           }}>
 
-          جهاز إداري <span className="gradient-text">مُحكم</span>{' '}
-          <br className="hidden md:block" /> يعمل لصالحك فقط
+          {t('title')} <span className="gradient-text">{t('titleHighlight')}</span>{' '}
+          <br className="hidden md:block" /> {t('suffix')}
         </h1>
 
         <p
@@ -119,7 +121,7 @@ export function Hero() {
             transitionDelay: '600ms'
           }}>
 
-          منظومة تنفيذ متكاملة صُممت لتخدم رجل الأعمال، تدير مصالحه، وتحمي نفوذه
+          {t('intro')}
         </p>
 
         <div
@@ -129,10 +131,10 @@ export function Hero() {
           }}>
 
           <button className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-[clamp(1rem,1vw,3rem)] px-10 py-4 rounded-full transition-all hover:scale-105 font-bold shadow-gold animate-glow">
-            ابدأ الآن
+            {t('cta')}
           </button>
           <button className="glass text-gold  bg-white hover:bg-white/20 text-[clamp(1rem,1vw,3rem)] px-10 py-4 rounded-full transition-all hover:scale-105 font-bold">
-          الخدمات
+          {t('services')}
           </button>
         </div>
 

@@ -9,7 +9,7 @@ export default function ServicesPage() {
     color: c.color,
   }))
   return (
-    <div className="min-h-screen bg-gray-50 font-sans" dir="rtl">
+    <div className="min-h-screen bg-gray-50 font-sans">
       <HeroSection />
 
       {/* Main layout: Sidebar + Content */}

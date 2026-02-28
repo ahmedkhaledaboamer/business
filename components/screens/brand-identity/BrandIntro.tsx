@@ -4,10 +4,12 @@ import React, { useEffect, useState } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useParallax } from '@/hooks/useParallax';
 import { Quote } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 export function BrandIntro() {
+  const t = useTranslations('brandIdentity.intro');
   const { ref, isVisible } = useScrollAnimation(0.4);
   const offsetY = useParallax(0.15);
-  const fullText = 'نحن كيان صُمّم ليكون القوة التي تقف خلف رجل الأعمال';
+  const fullText = t('text');
   const [displayedText, setDisplayedText] = useState('');
   const [isTypingDone, setIsTypingDone] = useState(false);
   useEffect(() => {
@@ -23,7 +25,7 @@ export function BrandIntro() {
       }, 55);
       return () => clearInterval(timer);
     }
-  }, [isVisible]);
+  }, [isVisible, fullText]);
   return (
     <section className="relative w-full py-40 bg-gradient-to-b from-[#FDF8F0] via-white to-[#FDF8F0] overflow-hidden flex items-center justify-center">
       {/* Parallax Background */}

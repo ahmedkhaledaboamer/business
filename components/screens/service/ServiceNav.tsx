@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronLeft } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 interface Category {
   id: string
   title: string
@@ -11,6 +12,7 @@ interface ServiceNavProps {
   categories: Category[]
 }
 export function ServiceNav({ categories }: ServiceNavProps) {
+  const t = useTranslations('servicesPage.nav')
   const [activeId, setActiveId] = useState<string>(categories[0]?.id || '')
   const [isMobileOpen, setIsMobileOpen] = useState(false)
   useEffect(() => {
@@ -113,9 +115,9 @@ export function ServiceNav({ categories }: ServiceNavProps) {
         >
           {/* Sidebar Header */}
           <div className="px-5 pt-5 pb-3 border-b border-gray-100">
-            <h3 className="text-base font-bold text-gray-800">أقسام الخدمات</h3>
+            <h3 className="text-base font-bold text-gray-800">{t('title')}</h3>
             <p className="text-xs text-gray-400 mt-1">
-              اختر القسم للتصفح السريع
+              {t('subtitle')}
             </p>
           </div>
 
@@ -127,12 +129,12 @@ export function ServiceNav({ categories }: ServiceNavProps) {
           {/* Sidebar Footer */}
           <div className="px-5 py-3 border-t border-gray-100 bg-gray-50/50">
             <p className="text-xs text-gray-400 text-center">
-              {categories.length} قسم •{' '}
+              {categories.length} {t('count')} •{' '}
               {categories.reduce(
                 (acc, c) => acc + (c as any).serviceCount || 0,
                 0,
               ) || '40+'}{' '}
-              خدمة
+              {t('service')}
             </p>
           </div>
         </div>
@@ -192,7 +194,7 @@ export function ServiceNav({ categories }: ServiceNavProps) {
               {/* Mobile Header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
                 <h3 className="text-lg font-bold text-gray-800">
-                  أقسام الخدمات
+                  {t('title')}
                 </h3>
                 <button
                   onClick={() => setIsMobileOpen(false)}
@@ -210,7 +212,7 @@ export function ServiceNav({ categories }: ServiceNavProps) {
               {/* Mobile Footer */}
               <div className="px-5 py-3 border-t border-gray-100 bg-gray-50">
                 <p className="text-xs text-gray-400 text-center">
-                  {categories.length} قسم • 40+ خدمة
+                  {categories.length} {t('count')} • 40+ {t('service')}
                 </p>
               </div>
             </motion.div>

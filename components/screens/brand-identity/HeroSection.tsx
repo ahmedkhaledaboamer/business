@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { ArrowLeft, Diamond, Sparkles } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 const particleColors = [
 '#C9A84C',
 '#D4A574',
@@ -14,6 +15,7 @@ const particleColors = [
 '#1A6B5C'];
 
 export function HeroSection() {
+  const t = useTranslations('brandIdentity.hero');
   const [mounted, setMounted] = useState(false);
   const [particles] = useState(() =>
     particleColors.map((color) => ({
@@ -99,7 +101,7 @@ export function HeroSection() {
               fill="#C9A84C" />
 
             <div className="px-5 py-2 border border-[#C9A84C]/40 bg-[#C9A84C]/10 backdrop-blur-md text-[#C9A84C] rounded-full text-sm font-bold tracking-wider">
-              هويتنا
+              {t('title')}
             </div>
             <Sparkles className="w-4 h-4 text-[#D4A574] animate-pulse" />
           </div>
@@ -112,7 +114,7 @@ export function HeroSection() {
               '0 4px 20px rgba(0,0,0,0.7), 0 0 60px rgba(201,168,76,0.3)'
             }}>
 
-            نحن لا نكتب تعريفًا لنملأ مساحة…
+            {t('intro')}
           </h1>
 
           {/* Subtext - Red for readability */}
@@ -121,8 +123,7 @@ export function HeroSection() {
             style={{
               textShadow: '0 2px 12px rgba(0,0,0,0.5)'
             }}>
-
-            نحن نكتب هويتنا بالطريقة التي نعمل بها: بثقة تُشعَر قبل أن تُقرأ
+            {t('tagline')}
           </p>
 
           {/* CTA Button - Centered */}
@@ -131,7 +132,7 @@ export function HeroSection() {
 
             <button className="group relative overflow-hidden bg-gradient-to-r from-[#C9A84C] via-[#D4A574] to-[#B87333] bg-[length:200%_auto] text-white px-10 py-5 rounded-full font-bold text-lg flex items-center gap-3 transition-all duration-500 hover:-translate-y-2 hover:bg-[position:right_center] shadow-[0_8px_30px_rgba(201,168,76,0.35)] hover:shadow-[0_16px_40px_rgba(201,168,76,0.6)]">
               <span className="relative z-10 flex items-center gap-3">
-                اكتشف هويتنا
+                {t('cta')}
                 <ArrowLeft className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-2" />
               </span>
               <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-[shimmer_1.5s_infinite]" />

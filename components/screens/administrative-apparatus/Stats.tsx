@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Users, Target, Layers, AlertCircle } from "lucide-react";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
 function CountUp({
   end,
@@ -48,14 +49,15 @@ function CountUp({
   );
 }
 
-const stats = [
-  { value: 20, label: "منصب تنفيذي", icon: Users },
-  { value: 100, label: "دقة تشغيلية", suffix: "٪", icon: Target },
-  { value: 5, label: "مستويات خدمة", icon: Layers },
-  { value: 0, label: "هامش للخطأ", icon: AlertCircle },
-];
+const statIcons = [Users, Target, Layers, AlertCircle];
 
 export function Stats() {
+  const t = useTranslations("administrativeApparatus.stats");
+  const raw = t.raw("items") as Array<{ value: number; label: string; suffix?: string; icon: string }>;
+  const stats = useMemo(
+    () => (Array.isArray(raw) ? raw : []).map((s, i) => ({ ...s, icon: statIcons[i] })),
+    [raw]
+  );
   return (
     <section className="py-20 relative z-40 px-[5%] overflow-hidden" style={{ backgroundColor: "#0F1923" }}>
       {/* Ambient glows */}
@@ -90,7 +92,7 @@ export function Stats() {
         <div className="relative z-10 p-2 md:p-14">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0">
             {stats.map((stat, index) => {
-              const Icon = stat.icon;
+              const Icon = stat.icon as React.ComponentType<{ className?: string }>;
               return (
                 <motion.div
                   key={index}
@@ -116,7 +118,7 @@ export function Stats() {
                     </div>
                   </div>
 
-                  <CountUp end={stat.value} suffix={stat.suffix} />
+                  <CountUp end={stat.value} suffix={stat.suffix || ''} />
 
                   <p className="font-['Tajawal',sans-serif] text-white/50 text-[clamp(1rem,1vw,3rem)] mt-1 group-hover:text-white/70 transition-colors duration-300">
                     {stat.label}

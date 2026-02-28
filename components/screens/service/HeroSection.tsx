@@ -1,6 +1,9 @@
 "use client"
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 export function HeroSection() {
+  const t = useTranslations('servicesPage.hero')
+  const paragraphs = t.raw('paragraphs') as string[]
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -53,41 +56,34 @@ export function HeroSection() {
             className="text-[clamp(0.75rem,2vw,5rem)] font-bold text-[#D4A853] mb-4 leading-tight"
             variants={itemVariants}
           >
-            في كي إي بي لخدمات رجال الأعمال، نحن لا نعمل داخل حدود السوق… نحن
-            نرسم حدوده.
+            {t('title')}
           </motion.h1>
 
           <motion.div
             className="space-y-6 text-lg md:text-xl text-gray-200 leading-relaxed font-light"
             variants={itemVariants}
           >
-             
-            <p className="text-[clamp(1rem,1vw,3rem)] text-white font-medium mt-4">
-              نحن لا نُدار بعقلية مكتب…
-            </p>
-            <p className="text-[clamp(1rem,1vw,3rem)]">
-              بل بعقلية مؤسسة تُبنى حولها القرارات، وتُقاس عليها المعايير،
-              ويُحتكم إليها في التفاصيل التي تصنع الفرق بين شركة تعمل… وشركة
-              تُحترم.
-            </p>
-             
-
-            <div className="py-8 my-4 border-y border-[#D4A853]/30">
-               
-              <p className="text-[clamp(1rem,1vw,3rem)] font-bold text-white">
-                شريك قرار… شريك توسّع… وشريك نفوذ.
-              </p>
-            </div>
-
-             
- 
-
-            <p className="text-[clamp(1rem,1vw,3rem)] text-white font-medium mt-12">
-              هنا… تبدأ مرحلة جديدة من التعامل.
-            </p>
-            <p className="text-xl text-[#D4A853]">
-              مرحلة لا تعتمد على ما نفعله لك… بل على ما نصنعه معك.
-            </p>
+            {Array.isArray(paragraphs) && paragraphs.length >= 7 && (
+              <>
+                <p className="text-[clamp(1rem,1vw,3rem)] text-white font-medium mt-4">
+                  {paragraphs[2]}
+                </p>
+                <p className="text-[clamp(1rem,1vw,3rem)]">
+                  {paragraphs[3]}
+                </p>
+                <div className="py-8 my-4 border-y border-[#D4A853]/30">
+                  <p className="text-[clamp(1rem,1vw,3rem)] font-bold text-white">
+                    {paragraphs[4]}
+                  </p>
+                </div>
+                <p className="text-[clamp(1rem,1vw,3rem)] text-white font-medium mt-12">
+                  {paragraphs[5]}
+                </p>
+                <p className="text-xl text-[#D4A853]">
+                  {paragraphs[6]}
+                </p>
+              </>
+            )}
           </motion.div>
         </motion.div>
       </div>

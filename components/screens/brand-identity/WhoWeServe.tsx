@@ -2,39 +2,22 @@
 import { Check } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+
 const tagColors = ['#C9A84C', '#1A6B5C', '#B87333', '#7A2D4A'];
-const photos = [
-{
-  url: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
-  label: 'رجل الأعمال',
-  color: '#C9A84C'
-},
-{
-  url: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80',
-  label: 'الشركة العائلية',
-  color: '#1A6B5C'
-},
-{
-  url: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80',
-  label: 'المستثمر',
-  color: '#B87333'
-},
-{
-  url: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80',
-  label: 'إعادة الهيكلة',
-  color: '#7A2D4A'
-}];
+const photoUrls = [
+  'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
+  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80',
+  'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80',
+  'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80',
+];
 
-const bullets = [
-'رؤساء مجالس الإدارة',
-'الشركات العائلية الكبرى',
-'المستثمرون الأجانب',
-'الكيانات في مرحلة إعادة الهيكلة',
-'الشخصيات العامة والمؤثرة',
-'المؤسسات الباحثة عن التوسع'];
-
-const tags = ['الوضوح', 'الالتزام', 'الجودة', 'الاحترام'];
 export function WhoWeServe() {
+  const t = useTranslations('brandIdentity.whoWeServe');
+  const labels = (t.raw('labels') as string[]) || [];
+  const photos = photoUrls.map((url, i) => ({ url, label: labels[i] || '', color: tagColors[i] }));
+  const bullets = labels.slice(4, 10);
+  const tags = (t.raw('tags') as string[]) || [];
   const { ref, isVisible } = useScrollAnimation(0.2);
   return (
     <section className="py-28 bg-white overflow-hidden px-[5%]">
@@ -45,11 +28,10 @@ export function WhoWeServe() {
 
           <div className="flex-1 relative">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-8">
-              لمن نكتب هذه الهوية؟
+              {t('title')}
             </h2>
             <p className="text-xl text-gray-600 mb-12 leading-relaxed font-medium">
-              نحن لا نعمل مع الجميع، بل نختار شركاءنا بعناية. خدماتنا مصممة
-              للنخبة التي تدرك قيمة الوقت، الجودة، والتأثير الاستراتيجي.
+              {t('subtitle')}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4 mb-16">

@@ -3,9 +3,13 @@ import { Check } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useCountUp } from '@/hooks/useCountUp';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 export function BrandStatement() {
+  const t = useTranslations('brandIdentity.statement');
+  const points = (t.raw('points') as string[]) || [];
+  const statsT = useTranslations('brandIdentity.stats');
+  const statItems = (statsT.raw('items') as { label: string }[]) || [];
   const { ref, isVisible } = useScrollAnimation(0.3);
-  // Stats for the counter
   const clients = useCountUp(isVisible ? 150 : 0, 2000);
   const satisfaction = useCountUp(isVisible ? 95 : 0, 2000);
   const years = useCountUp(isVisible ? 12 : 0, 2000);
@@ -37,20 +41,14 @@ export function BrandStatement() {
               className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
 
               <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-8">
-                بيان الكيان
+                {t('title')}
               </h2>
               <p className="text-xl text-gray-600 mb-10 leading-relaxed font-medium">
-                نحن نؤمن بأن النجاح ليس صدفة، بل هو نتيجة لتخطيط دقيق، تنفيذ
-                احترافي، ورؤية واضحة. هذا الكيان وُجد ليكون الشريك الاستراتيجي
-                الذي يحمي مصالحك ويدفع بأعمالك نحو القمة.
+                {t('intro')}
               </p>
 
               <ul className="space-y-6 mb-12">
-                {[
-                'نلتزم بأعلى معايير الجودة والاحترافية',
-                'نقدم حلولاً مبتكرة تتناسب مع تحديات السوق',
-                'نبني علاقات طويلة الأمد مبنية على الثقة المتبادلة'].
-                map((point, idx) =>
+                {(points.length ? points : []).map((point, idx) =>
                 <li key={idx} className="flex items-start gap-4 group">
                     <div
                     className={`mt-1 bg-white border border-[#C9A84C]/30 p-1.5 rounded-full shadow-sm transition-all duration-500 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}
@@ -84,7 +82,7 @@ export function BrandStatement() {
                     +{clients}
                   </div>
                   <div className="text-sm font-bold text-gray-500">
-                    عميل استراتيجي
+                    {statItems[0]?.label ?? 'Client'}
                   </div>
                 </div>
                 <div>
@@ -95,7 +93,7 @@ export function BrandStatement() {
                     %{satisfaction}
                   </div>
                   <div className="text-sm font-bold text-gray-500">
-                    نسبة الرضا
+                    {statItems[1]?.label ?? 'Satisfaction rate'}
                   </div>
                 </div>
                 <div>
@@ -106,7 +104,7 @@ export function BrandStatement() {
                     +{years}
                   </div>
                   <div className="text-sm font-bold text-gray-500">
-                    سنة خبرة
+                    {statItems[2]?.label ?? 'Years of experience'}
                   </div>
                 </div>
               </div>
@@ -123,7 +121,7 @@ export function BrandStatement() {
 
               <Image
                 src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=80"
-                alt="دبي"
+                alt="Dubai"
                 className="relative w-full h-80 md:h-200 rounded-[24px] object-cover shadow-[0_24px_72px_rgba(201,168,76,0.2)] z-10"
                 width={800}
                 height={600}
