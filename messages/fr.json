@@ -3,6 +3,7 @@
     "title": "Page d'accueil"
   },
   "navbar": {
+    "cta": "Réservez votre service",
     "routes": [
       {
         "label": "Accueil",
@@ -13,8 +14,8 @@
         "href": "/services"
       },
       {
-        "label": "Corps administratif",
-        "href": "/department"
+        "label": "Apparat administratif",
+        "href": "/administrative-apparatus"
       },
       {
         "label": "Identité de marque",
@@ -57,70 +58,25 @@
           "href": "/"
         },
         {
-          "label": "Nos services",
+          "label": "Services",
           "href": "/services"
         },
         {
-          "label": "Départements",
-          "href": "/department"
+          "label": "Apparat administratif",
+          "href": "/administrative-apparatus"
         },
         {
-          "label": "FAQ",
-          "href": "/faq"
+          "label": "Identité de marque",
+          "href": "/brand-identity"
         },
         {
-          "label": "Politique de confidentialité",
-          "href": "/privacy"
-        },
-        {
-          "label": "Contactez-nous",
-          "href": "/contact"
+          "label": "Exécution",
+          "href": "/execution"
         }
       ]
     },
-    "ourGroup": {
-      "title": "Notre groupe",
-      "entities": [
-        {
-          "name": "Sheikh Abdul Aziz Bin Abdullah Al Mualla pour consultations juridiques",
-          "href": "#"
-        },
-        {
-          "name": "Sheikh Abdul Aziz Bin Abdullah Al Mualla pour consultations générales",
-          "href": "#"
-        },
-        {
-          "name": "Sheikh Abdul Aziz Bin Abdullah Al Mualla pour l'intelligence artificielle et la recherche",
-          "href": "#"
-        },
-        {
-          "name": "Al Sarh Al Shamekh pour agence de lignes maritimes",
-          "href": "#"
-        },
-        {
-          "name": "84 Star Capital pour investissement immobilier",
-          "href": "#"
-        },
-        {
-          "name": "KIB pour services de règlement de réclamations",
-          "href": "#"
-        },
-        {
-          "name": "KIB pour services aux hommes d'affaires",
-          "href": "#"
-        },
-        {
-          "name": "KIB pour financement",
-          "href": "#"
-        },
-        {
-          "name": "KIB pour commerce",
-          "href": "#"
-        }
-      ]
-    },
-    "description": "Offrir l'excellence juridique avec des normes d'or dans tous les Émirats arabes unis avec un engagement inébranlable envers le succès de nos clients.",
-    "copyright": "© 2024 Sheikh Abdul Aziz Bin Abdullah Al Mualla Legal Consultancy. Tous droits réservés.",
+    "description": "Votre partenaire exécutif pour renforcer votre influence et orienter vos décisions stratégiques grâce à un système opérationnel intégré offrant clarté, exécution précise et croissance sécurisée au niveau local et international.",
+    "copyright": "© 2026 KIB pour les services exécutifs pour les dirigeants. Tous droits réservés.",
     "socialMedia": {
       "linkedin": "LinkedIn",
       "twitter": "Twitter",
