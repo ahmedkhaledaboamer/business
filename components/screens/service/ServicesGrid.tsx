@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import { Boxes } from 'lucide-react'
 import { ServiceCard } from './ServiceCard'
-import { categories, defaultPlaceholder } from '@/services'
+import { categories, defaultPlaceholders } from '@/services'
 
 const CARDS_PER_ROW = 3
 
@@ -16,24 +16,27 @@ export function ServicesGrid({ id, title, color }: ServicesGridProps) {
   const rawServices = category?.services ?? []
   const padCount =
     (CARDS_PER_ROW - (rawServices.length % CARDS_PER_ROW)) % CARDS_PER_ROW
-  const content =
-    (category as { placeholder?: typeof defaultPlaceholder } | undefined)
-      ?.placeholder ?? defaultPlaceholder
+  const placeholderList =
+    (category as { placeholder?: typeof defaultPlaceholders } | undefined)
+      ?.placeholder ?? defaultPlaceholders
   const firstService = rawServices[0]
   const IconComponent = firstService?.icon ?? Boxes
   const placeholderImage =
     firstService?.image ??
     'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop'
 
-  const placeholders = Array.from({ length: padCount }, (_, i) => ({
-    id: `placeholder-${id}-${i}`,
-    title: content.title,
-    tagline: content.tagline,
-    icon: IconComponent,
-    color,
-    image: placeholderImage,
-    items: content.items,
-  }))
+  const placeholders = Array.from({ length: padCount }, (_, i) => {
+    const content = placeholderList[i] ?? placeholderList[placeholderList.length - 1]
+    return {
+      id: content.id ?? `placeholder-${id}-${i}`,
+      title: content.title,
+      tagline: content.tagline,
+      icon: IconComponent,
+      color,
+      image: content.image ?? placeholderImage,
+      items: content.items,
+    }
+  })
 
   const services = [...rawServices, ...placeholders]
   return (
@@ -72,7 +75,7 @@ export function ServicesGrid({ id, title, color }: ServicesGridProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {services.map((service, index) => (
           <motion.div
-            key={service.id}
+            key={`${id}-${service.id}`}
             initial={{
               opacity: 0,
               y: 30,
