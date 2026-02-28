@@ -1,16 +1,20 @@
 "use client"
  import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { ArrowLeftIcon, MailIcon, PhoneIcon } from 'lucide-react'
+import { ArrowLeftIcon, ArrowRightIcon, MailIcon, PhoneIcon } from 'lucide-react'
 import { useRef } from 'react'
-export function ContactSection() {
+import { useTranslations } from 'next-intl'
+
+export function ContactSection({ locale }: { locale: string }) {
+  const isRTL = locale === "ar";
+  const t = useTranslations('contact')
   const ref = useRef(null)
   const isInView = useInView(ref, {
     once: true,
     margin: '-100px',
   })
   return (
-    <section id="contact" className="py-24 relative overflow-hidden px-[5%]">
+    <section id="contact" className="py-24 relative overflow-hidden px-[5%]" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy-dark via-burgundy-dark to-navy-dark" />
 
@@ -62,22 +66,22 @@ export function ContactSection() {
           }}
         >
           <span className="inline-block rounded-full px-5 py-2 bg-gold/20 border border-gold/30 text-gold font-tajawal text-sm mb-8">
-            تواصل معنا
+            {t('badge')}
           </span>
 
           <h2 className="font-cairo font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
-            ابدأ الآن ببناء مسار قرار
+            {t('title')}
             <br />
-            <span className="text-gold">يعزّز قوة كيانك</span>
+            <span className="text-gold">{t('titleHighlight')}</span>
           </h2>
 
           <p className="font-tajawal text-lg sm:text-xl text-white/70 mb-10 mx-auto">
-            نحن هنا لنضعك أمام الفرص الصحيحة ونحميك من المخاطر غير المرئية.
+            {t('subtitle')}
           </p>
 
           {/* CTA Button */}
           <motion.a
-            href="mailto:contact@example.com"
+            href="/execution"
             whileHover={{
               scale: 1.05,
             }}
@@ -86,14 +90,14 @@ export function ContactSection() {
             }}
             className="group inline-flex items-center gap-3 bg-gold hover:bg-gold-light text-navy-dark font-cairo font-bold text-lg px-10 py-5 rounded-full transition-all duration-300 shadow-2xl shadow-gold/30 mb-12"
           >
-            <span>تواصل معنا الآن</span>
-            <ArrowLeftIcon className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+            <span>{t('cta')}</span>
+            {isRTL ? <ArrowLeftIcon className="w-5 h-5 group-hover:-translate-x-1 transition-transform" /> : <ArrowRightIcon className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />}
           </motion.a>
 
           {/* Contact Info */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             <motion.a
-              href="mailto:contact@example.com"
+              href={`mailto:${t('email')}`}
               initial={{
                 opacity: 0,
                 y: 20,
@@ -115,11 +119,11 @@ export function ContactSection() {
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
                 <MailIcon className="w-5 h-5" />
               </div>
-              <span className="font-tajawal">contact@example.com</span>
+              <span className="font-tajawal">{t('email')}</span>
             </motion.a>
 
             <motion.a
-              href="tel:+966500000000"
+              href={`tel:${t('phone').replace(/\s/g, '')}`}
               initial={{
                 opacity: 0,
                 y: 20,
@@ -142,7 +146,7 @@ export function ContactSection() {
                 <PhoneIcon className="w-5 h-5" />
               </div>
               <span className="font-tajawal" dir="ltr">
-                +966 50 000 0000
+                {t('phone')}
               </span>
             </motion.a>
           </div>

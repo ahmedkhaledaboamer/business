@@ -10,56 +10,19 @@ import {
   NetworkIcon,
 } from 'lucide-react'
 import { useRef } from 'react'
-const services = [
-  {
-    icon: BarChart3Icon,
-    title: 'تحليل واتخاذ القرار',
-    description: 'رؤية تتجاوز البيانات… وتصل إلى ما وراءها.',
-    color: 'gold',
-    image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
-  },
-  {
-    icon: ShieldIcon,
-    title: 'حماية المصالح عالية الحساسية',
-    description: 'تحصين أعمالك قبل أن تقترب منها المخاطر.',
-    color: 'burgundy',
-    image:
-      'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=600&q=80',
-  },
-  {
-    icon: GlobeIcon,
-    title: 'توسع استراتيجي داخلي وخارجي',
-    description: 'فتح مسارات توسع محسوبة… بلا مخاطرة.',
-    color: 'teal',
-    image:
-      'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&q=80',
-  },
-  {
-    icon: SettingsIcon,
-    title: 'تطوير البنية التشغيلية',
-    description: 'رفع كفاءة أعمالك من الداخل… قبل الخارج.',
-    color: 'gold',
-    image:
-      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
-  },
-  {
-    icon: FileCheckIcon,
-    title: 'تسهيل التعاملات الرسمية',
-    description: 'تسريع ما يتأخر عند غيرك.',
-    color: 'burgundy',
-    image:
-      'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80',
-  },
-  {
-    icon: NetworkIcon,
-    title: 'شبكة تأثير موازية',
-    description: 'علاقات تُخدمك قبل أن تحتاج إليها.',
-    color: 'teal',
-    image:
-      'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80',
-  },
+import { useTranslations } from 'next-intl'
+import Image from 'next/image'
+
+const serviceIcons = [BarChart3Icon, ShieldIcon, GlobeIcon, SettingsIcon, FileCheckIcon, NetworkIcon]
+const serviceImages = [
+  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+  'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=600&q=80',
+  'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&q=80',
+  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
+  'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80',
+  'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80',
 ]
+const serviceColors = ['gold', 'burgundy', 'teal', 'gold', 'burgundy', 'teal'] as const
 const colorClasses = {
   gold: {
     overlay: 'from-navy-dark/90 to-gold/40',
@@ -83,7 +46,9 @@ const colorClasses = {
     hover: 'hover:border-teal/50 hover:shadow-teal/20',
   },
 }
-export function ServicesSection() {
+export function ServicesSection({ locale }: { locale: string }) {
+  const isRTL = locale === "ar";
+  const t = useTranslations('services')
   const ref = useRef(null)
   const isInView = useInView(ref, {
     once: true,
@@ -117,6 +82,7 @@ export function ServicesSection() {
     <section
       id="services"
       className="py-24 bg-warm-white relative overflow-hidden px-[5%]"
+      dir={isRTL ? "rtl" : "ltr"}
     >
       {/* Background Decoration */}
       <div className="absolute inset-0 pattern-dots opacity-40" />
@@ -147,14 +113,14 @@ export function ServicesSection() {
           className="text-center mb-16"
         >
           <span className="inline-block rounded-full px-5 py-2 bg-burgundy/10 border border-burgundy/20 text-burgundy font-tajawal text-sm mb-6 shadow-sm">
-            نبذة عن خدماتنا
+            {t('badge')}
           </span>
           <h2 className="font-cairo font-bold text-3xl sm:text-4xl lg:text-5xl text-navy-dark mb-6">
-            خدمات <span className="gradient-text">استثنائية</span> لرجال الأعمال
+            {t('title')} <span className="gradient-text">{t('titleHighlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-burgundy/50 to-transparent mx-auto mb-6" />
           <p className="font-tajawal text-lg text-navy/60 mx-auto">
-            منظومة متكاملة من الخدمات المصممة خصيصًا لتلبية احتياجاتك
+            {t('subtitle')}
           </p>
         </motion.div>
 
@@ -165,10 +131,11 @@ export function ServicesSection() {
           animate={isInView ? 'visible' : 'hidden'}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {services.map((service, index) => {
-            const Icon = service.icon
-            const colors =
-              colorClasses[service.color as keyof typeof colorClasses]
+          {[0, 1, 2, 3, 4, 5].map((index) => {
+            const Icon = serviceIcons[index]
+            const title = t(`items.${index}.title`)
+            const description = t(`items.${index}.description`)
+            const colors = colorClasses[serviceColors[index]]
             return (
               <motion.div
                 key={index}
@@ -176,10 +143,12 @@ export function ServicesSection() {
                 className={`group bg-white rounded-3xl border border-gray-100 shadow-lg shadow-black/5 overflow-hidden ${colors.hover} transition-all duration-500 hover:-translate-y-2 flex flex-col`}
               >
                 {/* Image Header */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
+                <div className="relative md:h-130 h-48 overflow-hidden">
+                  <Image
+                    src={serviceImages[index]}
+                    width={600}
+                    height={600}
+                    alt={title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div
@@ -195,10 +164,10 @@ export function ServicesSection() {
                 {/* Content */}
                 <div className="p-8 flex-1 flex flex-col">
                   <h3 className="font-cairo font-bold text-xl text-navy-dark mb-4 group-hover:text-navy transition-colors">
-                    {service.title}
+                    {title}
                   </h3>
                   <p className="font-tajawal text-navy/60 leading-relaxed flex-1">
-                    {service.description}
+                    {description}
                   </p>
 
                   {/* Decorative bottom line */}

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowLeft as ArrowLeftIcon, Sparkles as SparklesIcon } from "lucide-react";
+import { ArrowLeft as ArrowLeftIcon, ArrowRightIcon, Sparkles as SparklesIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
@@ -16,6 +16,7 @@ export default function Header() {
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      dir={isRTL ? "rtl" : "ltr"}
     >
       {/* Background Image */}
       <div
@@ -72,7 +73,7 @@ export default function Header() {
         >
           <SparklesIcon className="w-5 h-5 text-[#C9A84C]" />
           <span className="font-['Tajawal',sans-serif] text-[#C9A84C] text-base">
-            القوة التنفيذية التي تحتاجها
+            {t("badge")}
           </span>
         </motion.div>
 
@@ -83,11 +84,11 @@ export default function Header() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-['Cairo',sans-serif] font-bold text-[clamp(2.25rem,5vw,4.5rem)] text-white leading-[1.2] mb-6"
         >
-          شريكك التنفيذي في
+          {t("titleLine1")}
           <br />
-          <span className="text-[#C9A84C]">بناء النفوذ</span>
+          <span className="text-[#C9A84C]">{t("titleHighlight")}</span>
           <br />
-          وصناعة القرار
+          {t("titleLine2")}
         </motion.h1>
 
         {/* Description */}
@@ -97,9 +98,7 @@ export default function Header() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="font-['Tajawal',sans-serif] text-[clamp(1.125rem,2vw,1.25rem)] text-white/70 max-w-7xl mx-auto mb-10 leading-relaxed"
         >
-          في بيئة أعمال تتغير فيها المعادلات بسرعة، وتزداد فيها الضغوط على رجل
-          الأعمال لاتخاذ قرارات دقيقة في وقت ضيق، يحتاج القائد الحقيقي إلى جهة
-          لا تكتفي بتقديم خدمة… بل تمنحه قوة تنفيذية، وتبني له مسارًا واضحًا.
+          {t("description")}
         </motion.p>
 
         {/* CTA Buttons */}
@@ -117,16 +116,30 @@ export default function Header() {
             onMouseLeave={() => setIsCta1Hovered(false)}
             className="flex items-center gap-3 bg-[#C9A84C] hover:bg-[#D4B85A] text-[#0F1923] font-['Cairo',sans-serif] font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-[0_20px_25px_-5px_rgba(201,168,76,0.3)] no-underline"
           >
-            <span>ابدأ رحلتك الآن</span>
-            <ArrowLeftIcon
+            {isRTL ? (
+              <>
+              <span>{t("ctaPrimary")}</span>
+
+              <ArrowLeftIcon
               className={`w-5 h-5 transition-transform duration-300 ${
                 isCta1Hovered ? "-translate-x-1" : "translate-x-0"
               }`}
             />
+            </>
+            ) : (
+              <>
+                <span>{t("ctaPrimary")}</span>
+                <ArrowRightIcon
+                  className={`w-5 h-5 transition-transform duration-300 ${
+                    isCta1Hovered ? "-translate-x-1" : "translate-x-0"
+                  }`}
+                />
+              </>
+            )}
           </motion.a>
 
           <motion.a
-            href="#services"
+            href="/services"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onMouseEnter={() => setIsCta2Hovered(true)}
@@ -137,7 +150,7 @@ export default function Header() {
                 : "border-white/30 text-white"
             }`}
           >
-            <span>اكتشف خدماتنا</span>
+            <span>{t("ctaSecondary")}</span>
           </motion.a>
         </motion.div>
 
@@ -153,7 +166,7 @@ export default function Header() {
               +500
             </div>
             <div className="font-['Tajawal',sans-serif] text-white/60 text-sm mt-1">
-              عميل راضٍ
+              {t("statsClients")}
             </div>
           </div>
 
@@ -162,7 +175,7 @@ export default function Header() {
               15+
             </div>
             <div className="font-['Tajawal',sans-serif] text-white/60 text-sm mt-1">
-              سنة خبرة
+              {t("statsExperience")}
             </div>
           </div>
 
@@ -171,7 +184,7 @@ export default function Header() {
               100%
             </div>
             <div className="font-['Tajawal',sans-serif] text-white/60 text-sm mt-1">
-              سرية تامة
+              {t("statsConfidentiality")}
             </div>
           </div>
         </motion.div>

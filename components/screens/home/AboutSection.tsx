@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ShieldCheck, TrendingUp, Users } from "lucide-react";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -30,30 +32,22 @@ const fadeRight = {
   },
 };
 
-const pillars = [
-  {
-    icon: TrendingUp,
-    title: "التحليل العميق",
-    desc: "قراءة دقيقة للسوق والفرص",
-  },
-  {
-    icon: ShieldCheck,
-    title: "السرية التامة",
-    desc: "حماية كاملة لملفاتك الحساسة",
-  },
-  {
-    icon: Users,
-    title: "التنفيذ المحكم",
-    desc: "شراكة فعلية لا مجرد استشارة",
-  },
-];
+const pillarIcons = [TrendingUp, ShieldCheck, Users];
 
-export function AboutSection() {
+export function AboutSection({ locale }: { locale: string }) {
+  const isRTL = locale === "ar";
+  const t = useTranslations("about");
+  const pillars = [
+    { icon: pillarIcons[0], titleKey: "pillars.0.title", descKey: "pillars.0.desc" },
+    { icon: pillarIcons[1], titleKey: "pillars.1.title", descKey: "pillars.1.desc" },
+    { icon: pillarIcons[2], titleKey: "pillars.2.title", descKey: "pillars.2.desc" },
+  ];
   return (
     <section
       id="about"
-      className="relative py-32 overflow-hidden px-[5%]"
+      className="relative pt-32 pb-16 overflow-hidden px-[5%]"
       style={{ backgroundColor: "#F9F6EF" }}
+      dir={isRTL ? "rtl" : "ltr"}
     >
       {/* Subtle dot grid */}
       <div
@@ -81,12 +75,12 @@ export function AboutSection() {
           className="flex flex-col items-center mb-20"
         >
           <span className="inline-flex items-center gap-2 rounded-full px-5 py-2 bg-[rgba(14,124,107,0.1)] border border-[rgba(14,124,107,0.2)] text-[#0E7C6B] font-['Tajawal',sans-serif] text-sm mb-5">
-            من نحن؟
+            {t("label")}
           </span>
           <h2 className="font-['Cairo',sans-serif] font-bold text-4xl sm:text-5xl text-[#0F1923] text-center leading-tight">
-            كيان متخصص في دعم
+            {t("title")}{" "}
             <span className="relative mx-3">
-              <span className="relative z-10 text-[#C9A84C]">رجال الأعمال</span>
+              <span className="relative z-10 text-[#C9A84C]">{t("titleHighlight")}</span>
               <span className="absolute bottom-1 left-0 right-0 h-2 bg-[#C9A84C]/15 rounded -z-0" />
             </span>
           </h2>
@@ -109,20 +103,24 @@ export function AboutSection() {
 
             {/* Main image */}
             <div className="absolute top-0 right-0 w-[80%] h-[78%] rounded-3xl overflow-hidden shadow-[0_32px_64px_rgba(15,25,35,0.18)] z-10 border-4 border-white">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
-                alt="مكتب احترافي"
+                alt={t("imageAlt1")}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                width={800}
+                height={800}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F1923]/50 via-transparent to-transparent" />
             </div>
 
             {/* Secondary image */}
             <div className="absolute bottom-0 left-0 w-[58%] h-[56%] rounded-3xl overflow-hidden shadow-[0_24px_48px_rgba(15,25,35,0.22)] z-20 border-4 border-white">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80"
-                alt="فريق عمل استراتيجي"
+                alt={t("imageAlt2")}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                width={600}
+                height={600}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0E7C6B]/50 via-transparent to-transparent" />
             </div>
@@ -139,8 +137,8 @@ export function AboutSection() {
                 <span className="text-[#C9A84C] font-['Cairo',sans-serif] font-bold text-sm">+500</span>
               </div>
               <div>
-                <p className="font-['Cairo',sans-serif] font-bold text-[#0F1923] text-sm leading-tight">عميل راضٍ</p>
-                <p className="font-['Tajawal',sans-serif] text-[#0F1923]/50 text-xs">15+ سنة خبرة</p>
+                <p className="font-['Cairo',sans-serif] font-bold text-[#0F1923] text-sm leading-tight">{t("badgeStat")}</p>
+                <p className="font-['Tajawal',sans-serif] text-[#0F1923]/50 text-xs">{t("badgeStatSub")}</p>
               </div>
             </motion.div>
 
@@ -158,27 +156,24 @@ export function AboutSection() {
             className="order-1 lg:order-2"
           >
             <p className="font-['Tajawal',sans-serif] text-lg text-[#0F1923]/65 leading-[2] mb-6">
-              نحن كيان متخصص في دعم رجال الأعمال عبر منظومة تشغيل متكاملة، تجمع
-              بين التحليل العميق، والرؤية الواضحة، والتنفيذ المحكم، لنمنحك قدرة
-              أعلى على اتخاذ القرار، وجاهزية أقوى للتوسع.
+              {t("intro")}
             </p>
 
             {/* Highlighted quote */}
-            <div className="relative p-6 rounded-2xl bg-white shadow-sm border-r-4 border-[#C9A84C] mb-10">
-              <div className="absolute top-4 left-4 w-8 h-8 text-[#C9A84C]/20">
+            <div className={`relative p-6 rounded-2xl bg-white shadow-sm border-[#C9A84C] mb-10 ${!isRTL ? "border-l-4" : "border-r-4"}`}>
+              <div className={`absolute top-4 ${isRTL ? "left-4" : "right-4"} w-8 h-8 text-[#C9A84C]/20`}>
                 <svg viewBox="0 0 32 32" fill="currentColor"><path d="M10 8C6.686 8 4 10.686 4 14v10h10V14H7c0-1.657 1.343-3 3-3V8zm14 0c-3.314 0-6 2.686-6 6v10h10V14h-7c0-1.657 1.343-3 3-3V8z"/></svg>
               </div>
               <p className="font-['Tajawal',sans-serif] text-base text-[#0F1923]/70 leading-[1.9] pr-6">
-                نحن لا نقدّم &quot;خدمة&quot;… نحن نقدّم قيمة تنفيذية تُشعر رجل الأعمال أنه
-                أمام جهة تفهم حساسية وقته، وتحترم سرّيته.
+                {t("quote")}
               </p>
             </div>
 
             {/* Pillars */}
             <div className="grid grid-cols-3 gap-4">
-              {pillars.map(({ icon: Icon, title, desc }, i) => (
+              {pillars.map(({ icon: Icon, titleKey, descKey }, i) => (
                 <motion.div
-                  key={title}
+                  key={titleKey}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -188,42 +183,13 @@ export function AboutSection() {
                   <div className="w-10 h-10 rounded-xl bg-[#C9A84C]/10 group-hover:bg-[#C9A84C]/20 transition-colors flex items-center justify-center mb-3">
                     <Icon className="w-5 h-5 text-[#C9A84C]" />
                   </div>
-                  <p className="font-['Cairo',sans-serif] font-bold text-[#0F1923] text-xs mb-1">{title}</p>
-                  <p className="font-['Tajawal',sans-serif] text-[#0F1923]/50 text-[11px] leading-snug">{desc}</p>
+                  <p className="font-['Cairo',sans-serif] font-bold text-[#0F1923] text-xs mb-1">{t(titleKey)}</p>
+                  <p className="font-['Tajawal',sans-serif] text-[#0F1923]/50 text-[11px] leading-snug">{t(descKey)}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
-
-        {/* ── Parallax Banner ── */}
-        <motion.div
-          initial={{ opacity: 0, scaleY: 0.6 }}
-          whileInView={{ opacity: 1, scaleY: 1 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] as const }}
-          className="w-full h-28 rounded-3xl overflow-hidden relative shadow-2xl"
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80')`,
-            }}
-          />
-          <div className="absolute inset-0 bg-[#0F1923]/75" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#C9A84C]/15 via-transparent to-[#0E7C6B]/15" />
-          {/* Centered line */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-2/3 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/60 to-transparent" />
-          </div>
-          {/* Text overlay */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="font-['Cairo',sans-serif] font-bold text-white/30 text-sm tracking-[0.3em] uppercase">
-              Executive Power · النفوذ التنفيذي
-            </p>
-          </div>
-        </motion.div>
-
       </div>
     </section>
   );

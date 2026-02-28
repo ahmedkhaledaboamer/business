@@ -120,21 +120,20 @@ const MobileNavbar = () => {
                     {route.label}
                   </Link>
                 ))}
+                <div className="pt-4 flex justify-center">
+                  <LocaleSwitcher />
+                </div>
               </div>
 
-              <div className="px-6 pb-6 space-y-4 border-t border-white/10">
+              <div className="px-6 pb-6 border-t border-white/10">
                 <Link
-                  href="#contact"
+                  href="/execution"
                   onClick={handleLinkClick}
                   className="block bg-gold text-navy-dark font-cairo font-bold px-6 py-3 rounded-full text-center w-full hover:bg-gold-light transition-colors"
                   aria-label={t("cta")}
                 >
                   {t("cta")}
                 </Link>
-
-                <div className="pt-3 flex justify-center">
-                  <LocaleSwitcher />
-                </div>
               </div>
             </motion.div>
           </motion.div>

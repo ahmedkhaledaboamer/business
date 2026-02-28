@@ -7,40 +7,13 @@ import {
   GlobeIcon,
   BuildingIcon,
   TrendingUpIcon,
+  UserCogIcon,
 } from 'lucide-react'
 import { useRef } from 'react'
-const clients = [
-  {
-    icon: BriefcaseIcon,
-    title: 'رجال الأعمال ورواد الاستثمار',
-    description: 'دعم شامل لاتخاذ القرارات الاستراتيجية',
-    color: 'gold',
-  },
-  {
-    icon: UsersIcon,
-    title: 'الشركات العائلية',
-    description: 'حماية الإرث وضمان الاستمرارية',
-    color: 'burgundy',
-  },
-  {
-    icon: GlobeIcon,
-    title: 'المستثمرون الأجانب',
-    description: 'تسهيل الدخول للسوق المحلي',
-    color: 'teal',
-  },
-  {
-    icon: BuildingIcon,
-    title: 'الكيانات الراغبة في توسع أو إعادة هيكلة',
-    description: 'مسارات نمو آمنة ومدروسة',
-    color: 'gold',
-  },
-  {
-    icon: TrendingUpIcon,
-    title: 'المؤسسات الباحثة عن تطوير',
-    description: 'تحسين العمليات وبناء الهوية',
-    color: 'burgundy',
-  },
-]
+import { useTranslations } from 'next-intl'
+
+const clientIcons = [BriefcaseIcon, UsersIcon, GlobeIcon, BuildingIcon, TrendingUpIcon, UserCogIcon]
+const clientColors = ['gold', 'burgundy', 'teal', 'gold', 'burgundy', 'teal'] as const
 const colorMap = {
   gold: {
     border: 'border-r-gold',
@@ -61,7 +34,9 @@ const colorMap = {
     iconText: 'text-teal',
   },
 }
-export function ClientsSection() {
+export function ClientsSection({ locale }: { locale: string }) {
+  const isRTL = locale === "ar";
+  const t = useTranslations('clients')
   const ref = useRef(null)
   const isInView = useInView(ref, {
     once: true,
@@ -94,7 +69,7 @@ export function ClientsSection() {
     },
   }
   return (
-    <section className="py-24 relative overflow-hidden px-[5%]">
+    <section className="py-24 relative overflow-hidden px-[5%]" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background Image with Light Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed opacity-5"
@@ -129,14 +104,14 @@ export function ClientsSection() {
           className="text-center mb-16"
         >
           <span className="inline-block rounded-full px-5 py-2 bg-burgundy/10 border border-burgundy/20 text-burgundy font-tajawal text-sm mb-6 shadow-sm">
-            من نخدم؟
+            {t('badge')}
           </span>
           <h2 className="font-cairo font-bold text-3xl sm:text-4xl lg:text-5xl text-navy-dark mb-6">
-            عملاؤنا <span className="gradient-text">المميزون</span>
+            {t('title')} <span className="gradient-text">{t('titleHighlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto mb-6" />
           <p className="font-tajawal text-lg text-navy/60 mx-auto">
-            نفخر بخدمة نخبة من رجال الأعمال والمؤسسات الرائدة
+            {t('subtitle')}
           </p>
         </motion.div>
 
@@ -147,9 +122,9 @@ export function ClientsSection() {
           animate={isInView ? 'visible' : 'hidden'}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {clients.map((client, index) => {
-            const Icon = client.icon
-            const colors = colorMap[client.color as keyof typeof colorMap]
+          {[0, 1, 2, 3, 4, 5].map((index) => {
+            const Icon = clientIcons[index]
+            const colors = colorMap[clientColors[index]]
             return (
               <motion.div
                 key={index}
@@ -166,10 +141,10 @@ export function ClientsSection() {
                     <h3
                       className={`font-cairo font-bold text-xl text-navy-dark mb-2 group-hover:${colors.iconText} transition-colors`}
                     >
-                      {client.title}
+                      {t(`items.${index}.title`)}
                     </h3>
                     <p className="font-tajawal text-base text-navy/60 leading-relaxed">
-                      {client.description}
+                      {t(`items.${index}.description`)}
                     </p>
                   </div>
                 </div>

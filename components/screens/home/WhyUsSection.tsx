@@ -10,51 +10,21 @@ import {
   RocketIcon,
 } from 'lucide-react'
 import { useRef } from 'react'
-const features = [
-  {
-    icon: LockIcon,
-    title: 'منهجية مغلقة تضمن أعلى درجات السرية',
-    color: 'from-gold/20 to-gold/5',
-    border: 'group-hover:border-gold/50',
-    iconColor: 'text-gold',
-  },
-  {
-    icon: ZapIcon,
-    title: 'سرعة استجابة لا تتأخر',
-    color: 'from-teal/20 to-teal/5',
-    border: 'group-hover:border-teal/50',
-    iconColor: 'text-teal-light',
-  },
-  {
-    icon: NetworkIcon,
-    title: 'شبكة علاقات تُفتح بها الأبواب المغلقة',
-    color: 'from-burgundy/30 to-burgundy/10',
-    border: 'group-hover:border-burgundy-light/50',
-    iconColor: 'text-burgundy-light',
-  },
-  {
-    icon: BrainIcon,
-    title: 'خبرات متعددة التخصصات',
-    color: 'from-gold/20 to-gold/5',
-    border: 'group-hover:border-gold/50',
-    iconColor: 'text-gold',
-  },
-  {
-    icon: TargetIcon,
-    title: 'التزام كامل بالنتيجة',
-    color: 'from-teal/20 to-teal/5',
-    border: 'group-hover:border-teal/50',
-    iconColor: 'text-teal-light',
-  },
-  {
-    icon: RocketIcon,
-    title: 'تشغيل لا يعتمد على الكلام… بل على الفعل',
-    color: 'from-burgundy/30 to-burgundy/10',
-    border: 'group-hover:border-burgundy-light/50',
-    iconColor: 'text-burgundy-light',
-  },
+import { useTranslations } from 'next-intl'
+
+const featureIcons = [LockIcon, ZapIcon, NetworkIcon, BrainIcon, TargetIcon, RocketIcon]
+const featureStyles = [
+  { color: 'from-gold/20 to-gold/5', border: 'group-hover:border-gold/50', iconColor: 'text-gold' },
+  { color: 'from-teal/20 to-teal/5', border: 'group-hover:border-teal/50', iconColor: 'text-teal-light' },
+  { color: 'from-burgundy/30 to-burgundy/10', border: 'group-hover:border-burgundy-light/50', iconColor: 'text-burgundy-light' },
+  { color: 'from-gold/20 to-gold/5', border: 'group-hover:border-gold/50', iconColor: 'text-gold' },
+  { color: 'from-teal/20 to-teal/5', border: 'group-hover:border-teal/50', iconColor: 'text-teal-light' },
+  { color: 'from-burgundy/30 to-burgundy/10', border: 'group-hover:border-burgundy-light/50', iconColor: 'text-burgundy-light' },
 ]
-export function WhyUsSection() {
+
+export function WhyUsSection({ locale }: { locale: string }) {
+  const isRTL = locale === "ar";
+  const t = useTranslations('whyUs')
   const ref = useRef(null)
   const isInView = useInView(ref, {
     once: true,
@@ -85,7 +55,7 @@ export function WhyUsSection() {
     },
   }
   return (
-    <section id="why-us" className="py-24 relative overflow-hidden px-[5%]">
+    <section id="why-us" className="py-24 relative overflow-hidden px-[5%]" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
@@ -125,16 +95,16 @@ export function WhyUsSection() {
           className="text-center mb-16"
         >
           <span className="inline-block rounded-full px-5 py-2 bg-teal/20 border border-teal/40 text-teal-light font-tajawal text-sm mb-6 shadow-[0_0_15px_rgba(14,124,107,0.3)]">
-            لماذا نحن؟
+            {t('badge')}
           </span>
           <h2 className="font-cairo font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6 drop-shadow-lg">
-            ما يميزنا عن{' '}
+            {t('title')}{' '}
             <span className="bg-gradient-to-br from-gold to-gold-light bg-clip-text text-transparent">
-              الآخرين
+              {t('titleHighlight')}
             </span>
           </h2>
           <p className="font-tajawal text-lg text-white/70 mx-auto">
-            نقدم لك مزايا استثنائية تجعلنا الخيار الأمثل لرجال الأعمال الطموحين
+            {t('subtitle')}
           </p>
         </motion.div>
 
@@ -145,28 +115,29 @@ export function WhyUsSection() {
           animate={isInView ? 'visible' : 'hidden'}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {features.map((feature, index) => {
-            const Icon = feature.icon
+          {[0, 1, 2, 3, 4, 5].map((index) => {
+            const Icon = featureIcons[index]
+            const style = featureStyles[index]
             return (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className={`group relative bg-navy/80 backdrop-blur-md border border-gold/20 rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] ${feature.border} overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.12)] will-change-transform`}
+                className={`group relative bg-navy/80 backdrop-blur-md border border-gold/20 rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] ${style.border} overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.12)] will-change-transform`}
               >
                 {/* Background Gradient Hover Effect */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-gradient-to-br ${style.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                 />
 
                 <div className="relative z-10">
                   {/* Icon */}
                   <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-inner">
-                    <Icon className={`w-8 h-8 ${feature.iconColor}`} />
+                    <Icon className={`w-8 h-8 ${style.iconColor}`} />
                   </div>
 
                   {/* Title */}
                   <h3 className="font-cairo font-bold text-xl text-white group-hover:text-white transition-colors leading-snug">
-                    {feature.title}
+                    {t(`features.${index}`)}
                   </h3>
                 </div>
 

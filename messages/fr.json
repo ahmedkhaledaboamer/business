@@ -1,6 +1,7 @@
 {
   "page": {
-    "title": "Page d'accueil"
+    "title": "Page d'accueil",
+    "description": "Votre partenaire exécutif pour renforcer votre influence et orienter vos décisions stratégiques grâce à un système opérationnel intégré offrant clarté, exécution précise et croissance sécurisée au niveau local et international."
   },
   "navbar": {
     "cta": "Réservez votre service",
@@ -42,6 +43,97 @@
     "statsClients": "Clients satisfaits",
     "statsExperience": "Années d'expérience",
     "statsConfidentiality": "Confidentialité totale"
+  },
+  "about": {
+    "label": "Qui sommes-nous ?",
+    "title": "Un partenaire spécialisé au service des",
+    "titleHighlight": "dirigeants",
+    "intro": "Nous sommes un partenaire spécialisé au service des dirigeants à travers un système opérationnel intégré qui allie analyse approfondie, vision claire et exécution précise.",
+    "quote": "Nous ne proposons pas qu'un « service »… nous offrons une valeur exécutive qui place le dirigeant face à un partenaire qui comprend la sensibilité de son temps et respecte sa confidentialité.",
+    "pillars": [
+      { "title": "Analyse approfondie", "desc": "Lecture précise du marché et des opportunités" },
+      { "title": "Confidentialité totale", "desc": "Protection complète de vos dossiers sensibles" },
+      { "title": "Exécution rigoureuse", "desc": "Partenariat réel, pas seulement du conseil" }
+    ],
+    "bannerText": "Puissance exécutive",
+    "badgeStat": "Clients satisfaits",
+    "badgeStatSub": "15+ ans d'expérience",
+    "imageAlt1": "Bureau professionnel",
+    "imageAlt2": "Équipe stratégique"
+  },
+  "services": {
+    "badge": "Nos services",
+    "title": "Des services",
+    "titleHighlight": "d'exception pour les dirigeants",
+    "subtitle": "Une offre intégrée conçue pour répondre à vos besoins",
+    "items": [
+      { "title": "Analyse et prise de décision", "description": "Une vision au-delà des données." },
+      { "title": "Protection des intérêts sensibles", "description": "Sécuriser vos enjeux avant que les risques n'approchent." },
+      { "title": "Expansion stratégique locale et internationale", "description": "Ouvrir des voies de développement maîtrisées." },
+      { "title": "Développement de la structure opérationnelle", "description": "Renforcer l'efficacité de l'intérieur." },
+      { "title": "Facilitation des démarches officielles", "description": "Accélérer ce que d'autres font traîner." },
+      { "title": "Réseau d'influence", "description": "Des relations qui vous servent avant que vous en ayez besoin." }
+    ]
+  },
+  "offer": {
+    "whatWeOfferLabel": "Que proposons-nous ?",
+    "whatWeOfferTitle": "Un système de soutien",
+    "whatWeOfferHighlight": "intégré",
+    "offers": ["Construire un environnement de décision clair", "Protéger l'entité des risques", "Ouvrir des voies d'expansion et d'influence", "Développer structures et processus", "Faciliter les démarches administratives", "Mettre en place un réseau au service de vos objectifs"],
+    "whatYouGetLabel": "Qu'obtenez-vous avec nous ?",
+    "whatYouGetTitle": "Une",
+    "whatYouGetHighlight": "valeur tangible",
+    "benefits": ["Un partenaire qui réfléchit et exécute pour vous", "Protection complète de vos intérêts", "Accès plus rapide aux opportunités", "Gestion professionnelle des dossiers sensibles", "Résultats concrets sans votre intervention directe", "Réduire les risques avant qu'ils ne se transforment en crises"]
+  },
+  "clients": {
+    "badge": "Qui servons-nous ?",
+    "title": "Nos",
+    "titleHighlight": "clients d'exception",
+    "subtitle": "Nous sommes fiers de servir une élite de dirigeants et d'institutions de premier plan",
+    "items": [
+      { "title": "Dirigeants et investisseurs pionniers", "description": "Soutien complet à la prise de décisions stratégiques" },
+      { "title": "Entreprises familiales", "description": "Protection du patrimoine et pérennité" },
+      { "title": "Investisseurs étrangers", "description": "Facilitation de l'entrée sur le marché local" },
+      { "title": "Entités en expansion ou en restructuration", "description": "Parcours de croissance sûrs et réfléchis" },
+      { "title": "Institutions en quête de développement", "description": "Amélioration des processus et construction d'identité" },
+      { "title": "Start-ups et projets prometteurs", "description": "Établir des bases juridiques et administratives solides dès le premier jour" }
+    ]
+  },
+  "quality": {
+    "columns": [
+      { "title": "Normes de qualité internes", "subtitle": "Des normes que peu connaissent", "items": ["Précision opérationnelle à 100 %", "Documentation complète à chaque étape", "Suivi en temps réel", "Analyse continue", "Contrôles qualité internes", "Revue d'exécution avant et après", "Système de veille des risques invisible"] },
+      { "title": "Le langage de l'entité", "subtitle": "Nous parlons un langage différent", "items": ["Un langage clair", "Sans bruit", "Qui respecte votre temps", "Basé sur l'information, pas l'impression", "Qui révèle la vérité, ne la masque pas"] },
+      { "title": "Principes d'engagement", "subtitle": "Nos principes ne changent pas", "items": ["Nous nous engageons avant de promettre", "Nous montrons avant de parler", "Nous exécutons avant de promouvoir", "Nous respectons avant de demander", "Nous clarifions avant de questionner"] }
+    ]
+  },
+  "vision": {
+    "visionBadge": "Notre vision",
+    "visionTitle": "Devenir le",
+    "visionHighlight": "premier partenaire",
+    "visionTitle2": "des dirigeants dans la région",
+    "visionDesc": "Et le partenaire de référence des grands investisseurs pour construire l'influence et une croissance durable.",
+    "promiseBadge": "Notre engagement envers vous",
+    "promiseTitle": "Nous nous engageons à être le",
+    "promiseHighlight": "partenaire",
+    "promiseTitle2": "qui protège vos intérêts",
+    "promiseDesc": "Renforce votre influence et vous trace un chemin sûr vers la croissance et l'expansion.",
+    "imageAlt": "Vision stratégique"
+  },
+  "whyUs": {
+    "badge": "Pourquoi nous ?",
+    "title": "Ce qui nous distingue des",
+    "titleHighlight": "autres",
+    "subtitle": "Nous vous offrons des atouts exceptionnels qui font de nous le choix idéal pour les dirigeants ambitieux",
+    "features": ["Une méthodologie fermée garantissant la plus stricte confidentialité", "Réactivité sans délai", "Un réseau de relations qui ouvre les portes", "Expertise pluridisciplinaire", "Engagement total sur les résultats", "Une exécution qui repose sur l'action, pas les mots"]
+  },
+  "contact": {
+    "badge": "Contactez-nous",
+    "title": "Construisez dès maintenant un parcours de décision",
+    "titleHighlight": "qui renforce votre entité",
+    "subtitle": "Nous sommes là pour vous placer face aux bonnes opportunités et vous protéger des risques invisibles.",
+    "cta": "Contactez-nous",
+    "email": "contact@example.com",
+    "phone": "+966 50 000 0000"
   },
   "footer": {
     "contact": {

@@ -3,52 +3,16 @@
 import { useInView } from 'framer-motion'
 import { CheckIcon } from 'lucide-react'
 import { useRef } from 'react'
-const columns = [
-  {
-    title: 'معايير الجودة الداخلية',
-    subtitle: 'معايير لا يعرفها إلا القليل',
-    image:
-      'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80',
-    color: 'gold',
-    items: [
-      'دقة تشغيلية بنسبة 100٪',
-      'توثيق كامل لكل خطوة',
-      'متابعة لحظية',
-      'تحليل مستمر',
-      'اختبارات جودة داخلية',
-      'مراجعة تنفيذ قبل وبعد',
-      'نظام مراقبة مخاطر غير مرئي',
-    ],
-  },
-  {
-    title: 'لغة الكيان',
-    subtitle: 'نتحدث لغة مختلفة',
-    image:
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80',
-    color: 'teal',
-    items: [
-      'لغة واضحة',
-      'لغة بلا ضوضاء',
-      'لغة تحترم وقتك',
-      'لغة تعتمد على المعلومة… لا الانطباع',
-      'لغة تُظهر الحقيقة… لا تغطيها',
-    ],
-  },
-  {
-    title: 'مبادئ التعامل',
-    subtitle: 'مبادئنا لا تتغير',
-    image:
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
-    color: 'burgundy',
-    items: [
-      'نلتزم قبل أن نعد',
-      'نُظهر قبل أن نتكلم',
-      'ننفّذ قبل أن نروّج',
-      'نحترم قبل أن نطلب',
-      'نوضح قبل أن نسأل',
-    ],
-  },
+import { useTranslations } from 'next-intl'
+import Image from 'next/image'
+
+const columnImages = [
+  'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80',
+  'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80',
+  'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
 ]
+const columnColors = ['gold', 'teal', 'burgundy'] as const
+const columnItemCounts = [7, 5, 5]
 const colorClasses = {
   gold: {
     badge: 'bg-gold/20 border-gold/30 text-gold',
@@ -75,14 +39,16 @@ const colorClasses = {
     overlay: 'from-navy-dark to-burgundy/60',
   },
 }
-export function QualitySection() {
+export function QualitySection({ locale }: { locale: string }) {
+  const isRTL = locale === "ar";
+  const t = useTranslations('quality')
   const ref = useRef(null)
   const isInView = useInView(ref, {
     once: true,
     margin: '-100px',
   })
   return (
-    <section className="py-24 bg-navy-dark relative overflow-hidden px-[5%]">
+    <section className="py-24 bg-navy-dark relative overflow-hidden px-[5%]" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background */}
       <div className="absolute inset-0 pattern-lines opacity-30" />
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[120px]" />
@@ -93,10 +59,12 @@ export function QualitySection() {
         className=" mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
         <div className="grid lg:grid-cols-3 gap-8">
-          {columns.map((col, idx) => {
-            const colors = colorClasses[col.color as keyof typeof colorClasses]
-            const highlightWord = col.subtitle.split(' ').pop()
-            const restOfSubtitle = col.subtitle.replace(highlightWord || '', '')
+          {[0, 1, 2].map((idx) => {
+            const colors = colorClasses[columnColors[idx]]
+            const title = t(`columns.${idx}.title`)
+            const subtitle = t(`columns.${idx}.subtitle`)
+            const highlightWord = subtitle.split(' ').pop()
+            const restOfSubtitle = subtitle.replace(highlightWord || '', '').trim()
             return (
               <motion.div
                 key={idx}
@@ -119,10 +87,12 @@ export function QualitySection() {
                 className={`glass-dark rounded-3xl overflow-hidden border border-white/10 ${colors.border} transition-all duration-500 hover:-translate-y-2 group flex flex-col`}
               >
                 {/* Header Image */}
-                <div className="relative h-40 overflow-hidden">
-                  <img
-                    src={col.image}
-                    alt={col.title}
+                <div className="relative md:h-130 h-40 overflow-hidden">
+                  <Image
+                    src={columnImages[idx]}
+                    width={600}
+                    height={600}
+                    alt={title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div
@@ -134,7 +104,7 @@ export function QualitySection() {
                     <span
                       className={`inline-block rounded-full px-4 py-1.5 border backdrop-blur-md ${colors.badge} font-tajawal text-sm shadow-lg`}
                     >
-                      {col.title}
+                      {title}
                     </span>
                   </div>
                 </div>
@@ -148,7 +118,7 @@ export function QualitySection() {
                   </h3>
 
                   <ul className="space-y-4">
-                    {col.items.map((item, index) => (
+                    {Array.from({ length: columnItemCounts[idx] }, (_, index) => (
                       <motion.li
                         key={index}
                         initial={{
@@ -175,7 +145,7 @@ export function QualitySection() {
                           <CheckIcon className={`w-4 h-4 ${colors.iconText}`} />
                         </div>
                         <span className="font-tajawal text-white/80 text-base group-hover/item:text-white transition-colors">
-                          {item}
+                          {t(`columns.${idx}.items.${index}`)}
                         </span>
                       </motion.li>
                     ))}

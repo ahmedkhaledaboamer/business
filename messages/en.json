@@ -1,6 +1,7 @@
 {
     "page": {
-        "title": "Home Page"
+        "title": "Home Page",
+        "description": "Your executive partner in building influence and shaping strategic decisions through an integrated operational system that delivers clarity, precision execution, and secure growth pathways locally and internationally."
     },
     "navbar": {
         "cta": "Book Your Service",
@@ -42,6 +43,97 @@
         "statsClients": "Satisfied clients",
         "statsExperience": "Years of experience",
         "statsConfidentiality": "Total confidentiality"
+    },
+    "about": {
+        "label": "Who are we?",
+        "title": "A specialized entity supporting",
+        "titleHighlight": "business leaders",
+        "intro": "We are a specialized entity supporting business leaders through an integrated operational system that combines deep analysis, clear vision, and precise execution.",
+        "quote": "We deliver executive value that makes business leaders feel they are dealing with a partner who understands the sensitivity of their time.",
+        "pillars": [
+            { "title": "Deep analysis", "desc": "Accurate reading of the market and opportunities" },
+            { "title": "Total confidentiality", "desc": "Full protection of your sensitive files" },
+            { "title": "Precise execution", "desc": "Real partnership, not just consulting" }
+        ],
+        "bannerText": "Executive Power",
+        "badgeStat": "Satisfied clients",
+        "badgeStatSub": "15+ years of experience",
+        "imageAlt1": "Professional office",
+        "imageAlt2": "Strategic team"
+    },
+    "services": {
+        "badge": "About our services",
+        "title": "Exceptional",
+        "titleHighlight": "services for business leaders",
+        "subtitle": "An integrated suite of services designed to meet your needs",
+        "items": [
+            { "title": "Analysis and decision-making", "description": "Insight that goes beyond data." },
+            { "title": "Protection of highly sensitive interests", "description": "Fortifying your business before risks get close." },
+            { "title": "Strategic expansion at home and abroad", "description": "Opening calculated expansion paths." },
+            { "title": "Operational structure development", "description": "Raising your operational efficiency from within." },
+            { "title": "Facilitating official transactions", "description": "Speeding up what others delay." },
+            { "title": "Parallel influence network", "description": "Relationships that serve you before you need them." }
+        ]
+    },
+    "offer": {
+        "whatWeOfferLabel": "What do we offer?",
+        "whatWeOfferTitle": "An integrated",
+        "whatWeOfferHighlight": "support system",
+        "offers": ["Building a clear decision environment", "Protecting the entity from risks", "Opening expansion and influence pathways", "Developing structures and processes", "Facilitating government transactions", "Providing a network that serves your goals"],
+        "whatYouGetLabel": "What do you get with us?",
+        "whatYouGetTitle": "Real",
+        "whatYouGetHighlight": "tangible value",
+        "benefits": ["A partner who thinks for you and executes for you", "Full protection of your interests", "Faster access to opportunities", "Professional management of sensitive matters", "Tangible results without your direct involvement", "Reducing risks before they turn into crises"]
+    },
+    "clients": {
+        "badge": "Who do we serve?",
+        "title": "Our",
+        "titleHighlight": "distinguished clients",
+        "subtitle": "We are proud to serve an elite of business leaders and leading institutions",
+        "items": [
+            { "title": "Business leaders and investment pioneers", "description": "Comprehensive support for strategic decision-making" },
+            { "title": "Family businesses", "description": "Protecting legacy and ensuring continuity" },
+            { "title": "Foreign investors", "description": "Facilitating entry into the local market" },
+            { "title": "Entities seeking expansion or restructuring", "description": "Safe and studied growth paths" },
+            { "title": "Institutions seeking development", "description": "Process improvement and identity building" },
+            { "title": "Startups and promising projects", "description": "Building solid legal and administrative foundations from day one" }
+        ]
+    },
+    "quality": {
+        "columns": [
+            { "title": "Internal quality standards", "subtitle": "Standards few know", "items": ["100% operational accuracy", "Full documentation of every step", "Real-time follow-up", "Continuous analysis", "Internal quality checks", "Execution review before and after", "Invisible risk monitoring system"] },
+            { "title": "Entity language", "subtitle": "We speak a different language", "items": ["Clear language", "Language without noise", "Language that respects your time", "Language based on information not impression", "Language that reveals the truth not hides it"] },
+            { "title": "Principles of engagement", "subtitle": "Our principles do not change", "items": ["We commit before we promise", "We show before we speak", "We execute before we promote", "We respect before we ask", "We clarify before we question"] }
+        ]
+    },
+    "vision": {
+        "visionBadge": "Our future vision",
+        "visionTitle": "To become the",
+        "visionHighlight": "first partner",
+        "visionTitle2": "for business leaders in the region",
+        "visionDesc": "And the go-to partner for major investors in building influence and sustainable growth.",
+        "promiseBadge": "Our promise to you",
+        "promiseTitle": "We commit to being the",
+        "promiseHighlight": "partner",
+        "promiseTitle2": "that protects your interests",
+        "promiseDesc": "And strengthens your influence, creating a safe path for growth and expansion.",
+        "imageAlt": "Strategic vision"
+    },
+    "whyUs": {
+        "badge": "Why us?",
+        "title": "What sets us apart from",
+        "titleHighlight": "others",
+        "subtitle": "We offer you exceptional advantages that make us the ideal choice for ambitious business leaders",
+        "features": ["A closed methodology ensuring the highest level of confidentiality", "Rapid response with no delay", "A network of relationships that opens closed doors", "Multi-disciplinary expertise", "Full commitment to results", "Execution that relies on action not words"]
+    },
+    "contact": {
+        "badge": "Contact us",
+        "title": "Start building a decision path",
+        "titleHighlight": "that strengthens your entity",
+        "subtitle": "We are here to put you in front of the right opportunities and protect you from invisible risks.",
+        "cta": "Contact us now",
+        "email": "contact@example.com",
+        "phone": "+966 50 000 0000"
     },
     "footer": {
         "contact": {

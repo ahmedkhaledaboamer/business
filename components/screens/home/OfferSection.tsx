@@ -3,29 +3,18 @@
 import { useInView } from 'framer-motion'
 import { CheckCircleIcon, StarIcon } from 'lucide-react'
 import { useRef } from 'react'
-const offers = [
-  'بناء بيئة قرار واضحة',
-  'حماية الكيان من المخاطر',
-  'فتح مسارات توسع ونفوذ',
-  'تطوير الهياكل والعمليات',
-  'تسهيل التعاملات الحكومية',
-  'توفير شبكة علاقات تخدم أهدافك',
-]
-const benefits = [
-  'شريك يفكر عنك… وينفّذ لك',
-  'حماية كاملة لمصالحك',
-  'وصول أسرع للفرص',
-  'إدارة احترافية للملفات الحساسة',
-  'نتائج ملموسة بدون تدخل مباشر منك',
-]
-export function OfferSection() {
+import { useTranslations } from 'next-intl'
+
+export function OfferSection({ locale }: { locale: string }) {
+  const isRTL = locale === "ar";
+  const t = useTranslations('offer')
   const ref = useRef(null)
   const isInView = useInView(ref, {
     once: true,
     margin: '-100px',
   })
   return (
-    <section className="py-24 relative overflow-hidden px-[5%]">
+    <section className="py-24 relative overflow-hidden px-[5%]" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background Image - Richer luxury office */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
@@ -41,7 +30,7 @@ export function OfferSection() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{
-            x: ['-100%', '100%'],
+            x: isRTL ? ['100%', '-100%'] : ['-100%', '100%'],
           }}
           transition={{
             duration: 15,
@@ -52,7 +41,7 @@ export function OfferSection() {
         />
         <motion.div
           animate={{
-            x: ['100%', '-100%'],
+            x: isRTL ? ['-100%', '100%'] : ['100%', '-100%'],
           }}
           transition={{
             duration: 20,
@@ -72,7 +61,7 @@ export function OfferSection() {
           <motion.div
             initial={{
               opacity: 0,
-              x: 50,
+              x: isRTL ? -50 : 50,
             }}
             animate={
               isInView
@@ -90,21 +79,21 @@ export function OfferSection() {
             <div className="absolute -inset-1 bg-gradient-to-r from-gold/50 to-gold-light/20 rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-500" />
             <div className="relative glass-dark rounded-3xl p-8 sm:p-12 border-t-4 border-t-gold h-full">
               <span className="inline-block rounded-full px-5 py-2 bg-gold/10 border border-gold/30 text-gold font-tajawal text-sm mb-8 shadow-[0_0_10px_rgba(201,168,76,0.2)]">
-                ماذا نقدّم؟
+                {t('whatWeOfferLabel')}
               </span>
 
               <h3 className="font-cairo font-bold text-3xl sm:text-4xl text-white mb-10">
-                منظومة دعم{' '}
-                <span className="text-gold drop-shadow-md">متكاملة</span>
+                {t('whatWeOfferTitle')}{' '}
+                <span className="text-gold drop-shadow-md">{t('whatWeOfferHighlight')}</span>
               </h3>
 
               <ul className="space-y-6">
-                {offers.map((item, index) => (
+                {[0, 1, 2, 3, 4, 5].map((index) => (
                   <motion.li
                     key={index}
                     initial={{
                       opacity: 0,
-                      x: 20,
+                      x: isRTL ? -20 : 20,
                     }}
                     animate={
                       isInView
@@ -124,7 +113,7 @@ export function OfferSection() {
                       <CheckCircleIcon className="w-5 h-5 text-gold" />
                     </div>
                     <span className="font-tajawal text-lg text-white/90 group-hover/item:text-white transition-colors">
-                      {item}
+                      {t(`offers.${index}`)}
                     </span>
                   </motion.li>
                 ))}
@@ -132,11 +121,11 @@ export function OfferSection() {
             </div>
           </motion.div>
 
-          {/* ما تحصل عليه */}
+          {/* What you get */}
           <motion.div
             initial={{
               opacity: 0,
-              x: -50,
+              x: isRTL ? 50 : -50,
             }}
             animate={
               isInView
@@ -155,22 +144,21 @@ export function OfferSection() {
             <div className="absolute -inset-1 bg-gradient-to-r from-teal/50 to-teal-light/20 rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-500" />
             <div className="relative glass-dark rounded-3xl p-8 sm:p-12 border-t-4 border-t-teal h-full">
               <span className="inline-block rounded-full px-5 py-2 bg-teal/10 border border-teal/30 text-teal-light font-tajawal text-sm mb-8 shadow-[0_0_10px_rgba(14,124,107,0.2)]">
-                ما الذي تحصل عليه معنا؟
+                {t('whatYouGetLabel')}
               </span>
 
               <h3 className="font-cairo font-bold text-3xl sm:text-4xl text-white mb-10">
-                قيمة{' '}
-                <span className="text-teal-light drop-shadow-md">حقيقية</span>{' '}
-                ملموسة
+                {t('whatYouGetTitle')}{' '}
+                <span className="text-teal-light drop-shadow-md">{t('whatYouGetHighlight')}</span>
               </h3>
 
               <ul className="space-y-6">
-                {benefits.map((item, index) => (
+                {[0, 1, 2, 3, 4,5].map((index) => (
                   <motion.li
                     key={index}
                     initial={{
                       opacity: 0,
-                      x: -20,
+                      x: isRTL ? 20 : -20,
                     }}
                     animate={
                       isInView
@@ -190,7 +178,7 @@ export function OfferSection() {
                       <StarIcon className="w-5 h-5 text-teal-light" />
                     </div>
                     <span className="font-tajawal text-lg text-white/90 group-hover/item:text-white transition-colors">
-                      {item}
+                      {t(`benefits.${index}`)}
                     </span>
                   </motion.li>
                 ))}

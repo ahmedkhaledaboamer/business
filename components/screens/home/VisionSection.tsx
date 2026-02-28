@@ -3,14 +3,19 @@
 import { useInView } from 'framer-motion'
 import { EyeIcon, HeartHandshakeIcon } from 'lucide-react'
 import { useRef } from 'react'
-export function VisionSection() {
+import { useTranslations } from 'next-intl'
+import Image from 'next/image'
+
+export function VisionSection({ locale }: { locale: string }) {
+  const isRTL = locale === "ar";
+  const t = useTranslations('vision')
   const ref = useRef(null)
   const isInView = useInView(ref, {
     once: true,
     margin: '-100px',
   })
   return (
-    <section className="py-32 bg-navy-dark relative overflow-hidden px-[5%]">
+    <section className="py-32 bg-navy-dark relative overflow-hidden px-[5%]" dir={isRTL ? "rtl" : "ltr"}>
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gold/5 rounded-full blur-[120px]" />
@@ -39,10 +44,10 @@ export function VisionSection() {
             transition={{
               duration: 0.8,
             }}
-            className="text-center lg:text-right glass-dark p-10 rounded-3xl border-r-4 border-r-gold hover:-translate-y-2 transition-transform duration-500"
+            className={`text-center ${isRTL ? "lg:text-right" : "lg:text-left"} glass-dark p-10 rounded-3xl border-r-4 border-r-gold hover:-translate-y-2 transition-transform duration-500`}
           >
             <span className="inline-block rounded-full px-5 py-2 bg-gold/20 border border-gold/30 text-gold font-tajawal text-sm mb-8 shadow-[0_0_10px_rgba(201,168,76,0.2)]">
-              رؤيتنا المستقبلية
+              {t('visionBadge')}
             </span>
 
             <div className="flex items-center justify-center lg:justify-start gap-4 mb-8">
@@ -52,14 +57,13 @@ export function VisionSection() {
             </div>
 
             <h3 className="font-cairo font-bold text-3xl text-white mb-6 leading-tight">
-              أن نصبح{' '}
-              <span className="text-gold drop-shadow-md">الشريك الأول</span>{' '}
-              لرجال الأعمال في المنطقة
+              {t('visionTitle')}{' '}
+              <span className="text-gold drop-shadow-md">{t('visionHighlight')}</span>{' '}
+              {t('visionTitle2')}
             </h3>
 
             <p className="font-tajawal text-lg text-white/70 leading-relaxed">
-              والجهة التي يعتمد عليها كبار المستثمرين في بناء النفوذ وصناعة
-              النمو المستدام.
+              {t('visionDesc')}
             </p>
           </motion.div>
 
@@ -83,9 +87,11 @@ export function VisionSection() {
             }}
             className="hidden lg:block relative h-[600px] rounded-[2.5rem] overflow-hidden shadow-[0_0_40px_rgba(201,168,76,0.15)] border border-white/10 group"
           >
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
-              alt="رؤية استراتيجية"
+              width={600}
+              height={600}
+              alt={t('imageAlt')}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-dark via-navy-dark/40 to-transparent mix-blend-multiply" />
@@ -113,10 +119,10 @@ export function VisionSection() {
               duration: 0.8,
               delay: 0.4,
             }}
-            className="text-center lg:text-right glass-dark p-10 rounded-3xl border-l-4 border-l-teal hover:-translate-y-2 transition-transform duration-500"
+            className={`text-center ${isRTL ? "lg:text-right" : "lg:text-left"}  glass-dark p-10 rounded-3xl border-l-4 border-l-teal hover:-translate-y-2 transition-transform duration-500`}
           >
             <span className="inline-block rounded-full px-5 py-2 bg-teal/20 border border-teal/30 text-teal-light font-tajawal text-sm mb-8 shadow-[0_0_10px_rgba(14,124,107,0.2)]">
-              وعدنا لك
+              {t('promiseBadge')}
             </span>
 
             <div className="flex items-center justify-center lg:justify-start gap-4 mb-8">
@@ -126,13 +132,13 @@ export function VisionSection() {
             </div>
 
             <h3 className="font-cairo font-bold text-3xl text-white mb-6 leading-tight">
-              نلتزم بأن نكون{' '}
-              <span className="text-teal-light drop-shadow-md">الشريك</span>{' '}
-              الذي يحمي مصالحك
+              {t('promiseTitle')}{' '}
+              <span className="text-teal-light drop-shadow-md">{t('promiseHighlight')}</span>{' '}
+              {t('promiseTitle2')}
             </h3>
 
             <p className="font-tajawal text-lg text-white/70 leading-relaxed">
-              ويعزّز نفوذك، ويصنع لك مسارًا آمنًا للنمو والتوسع.
+              {t('promiseDesc')}
             </p>
           </motion.div>
         </div>
