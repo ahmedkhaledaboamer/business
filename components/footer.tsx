@@ -9,11 +9,6 @@ interface FooterLink {
   href: string;
 }
 
-interface GroupEntity {
-  name: string;
-  href: string;
-}
-
 export default async function Footer() {
   const t = await getTranslations("footer");
   const locale = await getLocale();
@@ -39,20 +34,6 @@ export default async function Footer() {
           };
         })
         .filter((link) => link.href && link.href !== "[object Object]")
-    : [];
-
-  // Get group entities
-  const groupEntitiesRaw = t.raw("ourGroup.entities");
-  const groupEntities: GroupEntity[] = Array.isArray(groupEntitiesRaw)
-    ? groupEntitiesRaw
-        .map((entity: unknown) => {
-          const e = entity as { name?: unknown; href?: unknown };
-          return {
-            name: String(e.name || ""),
-            href: String(e.href || ""),
-          };
-        })
-        .filter((entity) => entity.name)
     : [];
 
   // Social media links
@@ -85,7 +66,7 @@ export default async function Footer() {
 
   return (
     <footer
-      className="bg-secondary text-white"
+      className="bg-linear-to-b from-secondary to-secondary/90 text-white relative overflow-hidden"
       style={{
         paddingTop: "clamp(3rem, 4vw, 6rem)",
         paddingBottom: "clamp(3rem, 4vw, 6rem)",
@@ -95,7 +76,7 @@ export default async function Footer() {
       <div className="container">
         {/* Main Footer Content */}
         <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           style={{
             gap: "clamp(2rem, 3vw, 4rem)",
             marginBottom: "clamp(2rem, 3vw, 4rem)",
@@ -116,41 +97,7 @@ export default async function Footer() {
             )}
           </div>
 
-          {/* Column 2: Our Group */}
-          <div className="flex flex-col" style={{ gap: "clamp(1rem, 1.5vw, 2rem)" }}>
-            <h3
-              className="text-primary font-bold"
-              style={{
-                fontSize: "clamp(1.25rem, 1.75vw, 2rem)",
-              }}
-            >
-              {t("ourGroup.title")}
-            </h3>
-            <div
-              className="flex flex-col overflow-y-auto custom-scrollbar"
-              style={{
-                gap: "clamp(0.5rem, 0.75vw, 1rem)",
-                maxHeight: "clamp(20rem, 25vw, 30rem)",
-              }}
-            >
-              {groupEntities.map((entity, index) => (
-                <a
-                  key={index}
-                  href={entity.href}
-                  className="bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-lg text-white/90 hover:text-primary transition-all duration-200 font-medium"
-                  style={{
-                    padding: "clamp(0.75rem, 1vw, 1.25rem) clamp(1rem, 1.5vw, 2rem)",
-                    fontSize: "clamp(0.875rem, 1vw, 1.125rem)",
-                  }}
-                  aria-label={entity.name}
-                >
-                  {entity.name}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 3: Quick Links */}
+          {/* Column 2: Quick Links */}
           <div className="flex flex-col" style={{ gap: "clamp(1rem, 1.5vw, 2rem)" }}>
             <h3
               className="text-primary font-bold"
@@ -180,7 +127,7 @@ export default async function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact Information */}
+          {/* Column 3: Contact Information */}
           <div className="flex flex-col" style={{ gap: "clamp(1rem, 1.5vw, 2rem)" }}>
             <h3
               className="text-primary font-bold"

@@ -1,11 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Link, usePathname } from "@/i18n/routing";
 import { Menu, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useCallback, useMemo, useState } from "react";
+import { cn } from "@/utils/cn";
 import LocaleSwitcher from "../locale-switcher";
+import Logo from "../logo";
 
 interface Route {
   href: string;
@@ -52,52 +54,92 @@ const MobileNavbar = () => {
     setIsOpen(false);
   };
 
+  const handleOverlayClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="md:hidden relative" dir={isRTL ? "rtl" : "ltr"}>
       {/* Mobile Menu Button */}
       <button
         onClick={toggleMenu}
-        className="text-white p-2"
+        className="inline-flex items-center justify-center rounded-full bg-white/5 text-white p-2 border border-white/10 backdrop-blur-sm transition-colors hover:bg-white/10"
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
 
-      {/* Mobile Menu Dropdown */}
-      <motion.div
-        initial={false}
-        animate={{
-          height: isOpen ? "auto" : 0,
-          opacity: isOpen ? 1 : 0,
-        }}
-        className="absolute right-0 left-0 mt-2 overflow-hidden bg-navy-dark/95 backdrop-blur-lg rounded-b-2xl shadow-lg"
-      >
-        <div className="px-4 py-6 space-y-4">
-          {routes.map((route) => (
-            <Link
-              key={route.href}
-              href={route.href}
-              onClick={handleLinkClick}
-              className="block font-tajawal text-white/80 hover:text-gold transition-colors py-2"
-            >
-              {route.label}
-            </Link>
-          ))}
-
-          <Link
-            href="#contact"
-            onClick={handleLinkClick}
-            className="block bg-gold text-navy-dark font-cairo font-bold px-6 py-3 rounded-full text-center w-full mt-4 hover:bg-gold-light transition-colors"
-            aria-label={t("cta")}
+      {/* Mobile Off-canvas Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="mobile-menu-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-md"
+            onClick={handleOverlayClick}
           >
-            {t("cta")}
-          </Link>
+            <motion.div
+              key="mobile-menu-panel"
+              initial={{ x: isRTL ? "-100%" : "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: isRTL ? "-100%" : "100%" }}
+              transition={{ type: "spring", stiffness: 260, damping: 30 }}
+              className={cn(
+                "absolute top-0 bottom-0 w-80 max-w-full bg-navy-dark shadow-2xl flex flex-col",
+                isRTL ? "left-0" : "right-0"
+              )}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between px-4 py-4 border-b border-white/10">
+                <Logo className="w-24 h-auto" size={80} />
+                <button
+                  onClick={toggleMenu}
+                  className="inline-flex items-center justify-center rounded-full p-2 text-white hover:bg-white/10 transition-colors"
+                  aria-label="Close menu"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
 
-          <div className="pt-4 border-t border-white/10 flex justify-center">
-            <LocaleSwitcher />
-          </div>
-        </div>
-      </motion.div>
+              <div className="flex-1 overflow-y-auto px-6 py-6 space-y-4">
+                {routes.map((route) => (
+                  <Link
+                    key={route.href}
+                    href={route.href}
+                    onClick={handleLinkClick}
+                    className={cn(
+                      "block font-tajawal text-lg py-2 transition-colors",
+                      isActive(route.href)
+                        ? "text-gold font-semibold"
+                        : "text-white/80 hover:text-gold"
+                    )}
+                  >
+                    {route.label}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="px-6 pb-6 space-y-4 border-t border-white/10">
+                <Link
+                  href="#contact"
+                  onClick={handleLinkClick}
+                  className="block bg-gold text-navy-dark font-cairo font-bold px-6 py-3 rounded-full text-center w-full hover:bg-gold-light transition-colors"
+                  aria-label={t("cta")}
+                >
+                  {t("cta")}
+                </Link>
+
+                <div className="pt-3 flex justify-center">
+                  <LocaleSwitcher />
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

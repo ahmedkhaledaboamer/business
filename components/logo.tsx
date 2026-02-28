@@ -11,14 +11,14 @@ export default function Logo({ className, href = "/", size = 100 }: LogoProps) {
   return (
     <Link href={href} className={className}>
       <Image
-        src="/logo.webp"
+        src="/logo.png"
         alt="Logo"
         sizes={`(max-width: 768px) ${size / 2}px, ${size}px`}
         width={size}
         height={size}
         className={cn(
           className,
-          "rounded-3xl shadow-lg object-contain w-full h-full drop-shadow-2xl drop-shadow-white/10"
+          "rounded-3xl object-contain w-full h-full"
         )}
         loading="eager"
         priority

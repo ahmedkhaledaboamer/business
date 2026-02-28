@@ -1,189 +1,263 @@
 'use client'
-import { motion } from 'framer-motion'
-import { Shield, Target, TrendingUp, ChevronDown } from 'lucide-react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
+
 export function HeroSection() {
+  const containerRef = useRef(null)
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] })
+  const yBg = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
+
+  const words = ['مسارك', 'التنفيذي']
+
   return (
     <section
+      ref={containerRef}
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-[#FAFAF8] overflow-hidden px-[5%] py-24"
+      dir="rtl"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0A0905]  px-[5%] items-center "
     >
-      {/* Decorative Background */}
-      <div className="absolute inset-0 bg-pattern opacity-[0.03] pointer-events-none"></div>
+      <style>{`
+        .grain-overlay::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+          opacity: 0.35;
+          pointer-events: none;
+          z-index: 2;
+        }
 
-      {/* Decorative Gradients */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-100/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-teal-50/60 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3"></div>
+        .gold-line {
+          background: linear-gradient(90deg, transparent, #C9A84C, #F0D080, #C9A84C, transparent);
+        }
 
-      {/* Floating Icons */}
-      <motion.div
-        animate={{
-          y: [0, -15, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-        className="absolute top-1/4 right-[15%] hidden lg:block text-amber-200"
+        .text-gold {
+          color: #C9A84C;
+        }
+
+        .text-gold-light {
+          color: #F0D080;
+        }
+
+        .border-gold {
+          border-color: #C9A84C;
+        }
+
+        .vertical-text {
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+        }
+
+        @keyframes shimmer {
+          0% { background-position: -200% center; }
+          100% { background-position: 200% center; }
+        }
+
+        .shimmer-text {
+          background: linear-gradient(90deg, #C9A84C 0%, #F0D080 40%, #C9A84C 60%, #8B6914 100%);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          animation: shimmer 4s linear infinite;
+        }
+
+        .split-line {
+          overflow: hidden;
+        }
+      `}</style>
+
+      {/* Grain texture */}
+      <div className="grain-overlay absolute inset-0 pointer-events-none z-10" />
+
+      {/* Parallax background image */}
+      <motion.div 
+        style={{ y: yBg }}
+        className="absolute inset-0 z-0"
       >
-        <Shield className="w-16 h-16" />
-      </motion.div>
-      <motion.div
-        animate={{
-          y: [0, 20, 0],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: 'easeInOut',
-          delay: 1,
-        }}
-        className="absolute bottom-1/3 left-[10%] hidden lg:block text-teal-200"
-      >
-        <Target className="w-20 h-20" />
-      </motion.div>
-      <motion.div
-        animate={{
-          y: [0, -10, 0],
-        }}
-        transition={{
-          duration: 3.5,
-          repeat: Infinity,
-          ease: 'easeInOut',
-          delay: 2,
-        }}
-        className="absolute top-1/3 left-[20%] hidden lg:block text-amber-100"
-      >
-        <TrendingUp className="w-12 h-12" />
+        <img
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=90"
+          alt=""
+          className="w-full h-full object-cover"
+          style={{ filter: 'brightness(0.18) contrast(1.1) saturate(0.5)' }}
+        />
+        {/* Vignette */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0905]/60 via-transparent to-[#0A0905]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0905]/80 via-transparent to-[#0A0905]/60" />
       </motion.div>
 
-      <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          {/* Text Content (Right side in RTL) */}
-          <div className="flex-1 text-center lg:text-right">
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.8,
-              }}
-            >
-              <span className="inline-block py-1 px-3 rounded-full bg-amber-100 text-amber-700 text-sm font-semibold tracking-wider mb-6 border border-amber-200">
-                مقدمة
-              </span>
-              <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 leading-tight">
-                مسارك <span className="text-amber-600">التنفيذي</span>
-              </h1>
-            </motion.div>
+      {/* Decorative vertical lines */}
+      <div className="absolute top-0 bottom-0 right-[8%] w-px bg-gradient-to-b from-transparent via-[#C9A84C]/30 to-transparent z-10" />
+      <div className="absolute top-0 bottom-0 left-[8%] w-px bg-gradient-to-b from-transparent via-[#C9A84C]/15 to-transparent z-10" />
 
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.8,
-                delay: 0.2,
-              }}
-              className="space-y-6 text-lg md:text-2xl text-slate-600 font-medium leading-relaxed"
-            >
-              <p>
-                في عالم تتغير فيه قواعد اللعبة كل يوم، ويزداد فيه الضجيج بينما
-                يقلّ فيه الفعل، اخترنا أن نكون الجهة التي لا ترفع صوتها… بل ترفع
-                مستوى عملها.
-              </p>
-              <p>
-                الكيان الذي لا يركض خلف الفرص… بل يصنعها. والشريك الذي لا يقدّم
-                خدمة… بل يبني مسارًا تنفيذيًا يليق برجل أعمال يعرف قيمته.
-              </p>
-              <p className="text-slate-800 font-bold text-xl md:text-3xl pt-4">
-                نحن لا نكتب تعريفًا لنبدو مختلفين… نحن مختلفون بالفعل.
-              </p>
-              <p className="text-base md:text-xl text-slate-500 pt-4">
-                نكتب هويتنا كما نعمل: بثقة، وهدوء، وعمق، ومنهجية لا تعتمد على
-                الحظ، ولا تتأثر بالضوضاء. هذه ليست مقدمة شركة… هذه هوية كيان
-                يعمل ليكون القوة التي تقف خلفك، وتحمي مصالحك، وتُمهّد لك الطريق،
-                وتُظهر قيمتك في كل خطوة.
-              </p>
-            </motion.div>
-          </div>
+      {/* Decorative corner ornaments */}
+      <div className="absolute top-8 right-8 z-20 hidden lg:block">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+          <path d="M60 0 L60 60" stroke="#C9A84C" strokeWidth="0.5" strokeOpacity="0.5"/>
+          <path d="M0 0 L60 0" stroke="#C9A84C" strokeWidth="0.5" strokeOpacity="0.5"/>
+          <circle cx="60" cy="0" r="3" fill="#C9A84C" fillOpacity="0.6"/>
+        </svg>
+      </div>
+      <div className="absolute bottom-8 left-8 z-20 hidden lg:block">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+          <path d="M0 60 L0 0" stroke="#C9A84C" strokeWidth="0.5" strokeOpacity="0.5"/>
+          <path d="M60 60 L0 60" stroke="#C9A84C" strokeWidth="0.5" strokeOpacity="0.5"/>
+          <circle cx="0" cy="60" r="3" fill="#C9A84C" fillOpacity="0.6"/>
+        </svg>
+      </div>
 
-          {/* Image Content (Left side in RTL) */}
+      {/* Ambient glows (center) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full z-0"
+        style={{ background: 'radial-gradient(ellipse, rgba(201,168,76,0.04) 0%, transparent 70%)' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full z-0"
+        style={{ background: 'radial-gradient(circle, rgba(240,208,128,0.08) 0%, rgba(201,168,76,0.03) 40%, transparent 70%)' }} />
+
+      {/* Main Content */}
+      <motion.div style={{ opacity }} className="relative z-20 px-8 md:px-16 lg:px-24 mx-auto w-full">
+
+        {/* Top label */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex items-center justify-center gap-4 mb-16"
+        >
+          <div className="h-px w-12 gold-line" />
+          <span className="text-[#C9A84C]/80 text-xs tracking-[0.4em] uppercase font-light" style={{ fontFamily: 'Playfair Display, serif', letterSpacing: '0.35em' }}>
+            مقدمة · Introduction
+          </span>
+          <div className="h-px w-12 gold-line" />
+        </motion.div>
+
+        {/* Hero headline */}
+        <div className="mb-12 flex flex-row items-center justify-center md:gap-20">
+          {words.map((word, i) => (
+            <div key={i} className="split-line">
+              <motion.div
+                initial={{ y: '100%', opacity: 0 }}
+                animate={{ y: '0%', opacity: 1 }}
+                transition={{ duration: 0.9, delay: 0.4 + i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <span
+                  className={`block leading-none font-black ${i === 1 ? 'shimmer-text' : 'text-white'}`}
+                  style={{
+                    fontSize: 'clamp(2rem, 10vw, 13rem)',
+                    fontFamily: 'Noto Naskh Arabic, serif',
+                    lineHeight: 1.05,
+                    letterSpacing: '-0.01em',
+                    margin: '0 10px',
+                  }}
+                >
+                  {word}
+                </span>
+              </motion.div>
+            </div>
+          ))}
+        </div>
+
+        {/* Gold divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.2, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="h-px w-full max-w-2xl gold-line mb-12 mx-auto"
+        />
+
+        {/* Body text columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
           <motion.div
-            initial={{
-              opacity: 0,
-              x: -50,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 1,
-              delay: 0.4,
-            }}
-            className="flex-1 relative w-full max-w-lg mx-auto lg:max-w-none mt-12 lg:mt-0"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 1.0 }}
           >
-            {/* Decorative back image */}
-            <div className="absolute -top-10 -left-10 w-64 h-64 rounded-2xl overflow-hidden opacity-60 blur-[2px] shadow-lg hidden md:block">
-              <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80"
-                alt="مكتب تنفيذي حديث"
-                loading="lazy"
-                className="w-full h-52 object-cover"
-              />
-            </div>
+            <p className="text-[#D4C5A0]/75 text-lg leading-[1.9] font-light">
+              في عالم تتغير فيه قواعد اللعبة كل يوم، ويزداد فيه الضجيج بينما يقلّ فيه الفعل، اخترنا أن نكون الجهة التي لا ترفع صوتها… بل ترفع مستوى عملها.
+            </p>
+          </motion.div>
 
-            {/* Main image */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white  z-10 h-80">
-              <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
-                alt="مبنى زجاجي حديث يعكس القوة التنفيذية"
-                loading="lazy"
-                className="w-full h-80 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-            </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 1.15 }}
+            className="space-y-6"
+          >
+            <p className="text-[#D4C5A0]/75 text-lg leading-[1.9] font-light">
+              الكيان الذي لا يركض خلف الفرص… بل يصنعها. والشريك الذي لا يقدّم خدمة… بل يبني مسارًا تنفيذيًا يليق برجل أعمال يعرف قيمته.
+            </p>
+            <p className="text-[#E8D9AA] text-lg leading-[1.9] font-semibold border-r-2 border-gold pr-4">
+              نحن لا نكتب تعريفًا لنبدو مختلفين… نحن مختلفون بالفعل.
+            </p>
           </motion.div>
         </div>
 
+        {/* Bottom row */}
         <motion.div
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 1,
-            delay: 1.5,
-          }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-slate-400"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.4 }}
+          className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8"
         >
-          <span className="text-sm mb-2">اكتشف المزيد</span>
-          <motion.div
-            animate={{
-              y: [0, 10, 0],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-            }}
+          {/* CTA */}
+          <button
+            className="group relative px-10 py-4 text-sm tracking-[0.25em] uppercase overflow-hidden"
+            style={{ fontFamily: 'Noto Naskh Arabic, serif' }}
           >
-            <ChevronDown className="w-6 h-6" />
-          </motion.div>
+            <span className="absolute inset-0 border border-[#C9A84C]/50 group-hover:border-[#C9A84C] transition-colors duration-500" />
+            <span className="absolute inset-0 bg-[#C9A84C]/0 group-hover:bg-[#C9A84C]/8 transition-colors duration-500" />
+            {/* Corner accents */}
+            <span className="absolute top-0 right-0 w-3 h-3 border-t border-r border-[#C9A84C] -translate-y-px translate-x-px" />
+            <span className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-[#C9A84C] translate-y-px -translate-x-px" />
+            <span className="relative text-gold-light group-hover:text-white transition-colors duration-300">
+              اكتشف المزيد
+            </span>
+          </button>
+
+          {/* Stats */}
+          <div className="flex gap-10">
+            {[
+              { num: '٨+', label: 'سنوات خبرة' },
+              { num: '٢٠٠+', label: 'عميل تنفيذي' },
+              { num: '١٠٠٪', label: 'التزام' },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.5 + i * 0.1, duration: 0.6 }}
+                className="text-center"
+              >
+                <div className="text-2xl font-bold text-gold" style={{ fontFamily: 'Playfair Display, serif' }}>
+                  {stat.num}
+                </div>
+                <div className="text-xs text-[#8A7A5A] mt-1 tracking-wide">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
-      </div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 cursor-pointer"
+        onClick={() => {
+          window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+          })
+        }}
+      >
+        <div className="w-px h-12 overflow-hidden">
+          <motion.div
+            animate={{ y: ['-100%', '200%'] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
+            className="w-full h-1/2 bg-gradient-to-b from-transparent to-[#C9A84C]"
+          />
+        </div>
+      </motion.div>
     </section>
   )
 }

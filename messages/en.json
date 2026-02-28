@@ -3,7 +3,7 @@
         "title": "Home Page"
     },
     "navbar": {
-        "cta": "Book Your Consultation",
+        "cta": "Book Your Service",
         "routes": [
             {
               "label": "Home",
@@ -14,8 +14,8 @@
               "href": "/services"
             },
             {
-              "label": "Administrative Body",
-              "href": "/department"
+              "label": "Administrative Apparatus",
+              "href": "/administrative-apparatus"
             },
             {
               "label": "Brand Identity",
@@ -58,70 +58,25 @@
                     "href": "/"
                 },
                 {
-                    "label": "Our Services",
+                    "label": "Services",
                     "href": "/services"
                 },
                 {
-                    "label": "Departments",
-                    "href": "/department"
+                    "label": "Administrative Apparatus",
+                    "href": "/administrative-apparatus"
                 },
                 {
-                    "label": "FAQ",
-                    "href": "/faq"
+                    "label": "Brand Identity",
+                    "href": "/brand-identity"
                 },
                 {
-                    "label": "Privacy Policy",
-                    "href": "/privacy"
-                },
-                {
-                    "label": "Contact Us",
-                    "href": "/contact"
+                    "label": "Execution",
+                    "href": "/execution"
                 }
             ]
         },
-        "ourGroup": {
-            "title": "Our Group",
-            "entities": [
-                {
-                    "name": "Sheikh Abdul Aziz Bin Abdullah Al Mualla for Legal Consultations",
-                    "href": "#"
-                },
-                {
-                    "name": "Sheikh Abdul Aziz Bin Abdullah Al Mualla for General Consultations",
-                    "href": "#"
-                },
-                {
-                    "name": "Sheikh Abdul Aziz Bin Abdullah Al Mualla for Artificial Intelligence and Research",
-                    "href": "#"
-                },
-                {
-                    "name": "Al Sarh Al Shamekh for Maritime Shipping Lines Agency",
-                    "href": "#"
-                },
-                {
-                    "name": "84 Star Capital for Real Estate Investment",
-                    "href": "#"
-                },
-                {
-                    "name": "KIB for Claims Settlement Services",
-                    "href": "#"
-                },
-                {
-                    "name": "KIB for Businessmen Services",
-                    "href": "#"
-                },
-                {
-                    "name": "KIB for Finance",
-                    "href": "#"
-                },
-                {
-                    "name": "KIB for Trade",
-                    "href": "#"
-                }
-            ]
-        },
-        "description": "Delivering legal excellence with gold standards throughout the United Arab Emirates with an unwavering commitment to the success of our clients.",
-        "copyright": "© 2024 Sheikh Abdul Aziz Bin Abdullah Al Mualla Legal Consultancy. All rights reserved.",
+        "description": "Your executive partner in building influence and shaping strategic decisions through an integrated operational system that delivers clarity, precision execution, and secure growth pathways locally and internationally.",
+        "copyright": "© 2026 KIB for Executive Services for Business Leaders. All Rights Reserved.",
         "socialMedia": {
             "linkedin": "LinkedIn",
             "twitter": "Twitter",
