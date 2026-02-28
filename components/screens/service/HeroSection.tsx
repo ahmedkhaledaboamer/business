@@ -50,7 +50,7 @@ export function HeroSection() {
           animate="visible"
         >
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#D4A853] mb-8 leading-tight"
+            className="text-[clamp(0.75rem,2vw,5rem)] font-bold text-[#D4A853] mb-4 leading-tight"
             variants={itemVariants}
           >
             في كي إي بي لخدمات رجال الأعمال، نحن لا نعمل داخل حدود السوق… نحن
@@ -61,63 +61,28 @@ export function HeroSection() {
             className="space-y-6 text-lg md:text-xl text-gray-200 leading-relaxed font-light"
             variants={itemVariants}
           >
-            <p>
-              لا نتحرك مع حركة الأعمال… بل نضع الإيقاع الذي تتحرك عليه الشركات.
-            </p>
-            <p>
-              نحن الكيان الذي لا يقدّم خدمة، بل يصنع منظومة، ويبني نفوذًا، ويخلق
-              حضورًا يسبق اسم العميل قبل أن يصل.
-            </p>
-            <p className="text-2xl text-white font-medium mt-8">
+             
+            <p className="text-[clamp(1rem,1vw,3rem)] text-white font-medium mt-4">
               نحن لا نُدار بعقلية مكتب…
             </p>
-            <p>
+            <p className="text-[clamp(1rem,1vw,3rem)]">
               بل بعقلية مؤسسة تُبنى حولها القرارات، وتُقاس عليها المعايير،
               ويُحتكم إليها في التفاصيل التي تصنع الفرق بين شركة تعمل… وشركة
               تُحترم.
             </p>
-            <p>
-              نحن نؤمن أن رجل الأعمال لا يحتاج إلى من يُنهي له معاملة… بل يحتاج
-              إلى قوة تشغيلية تفهم طموحه، وتقرأ خطواته، وتفتح له الأبواب التي لا
-              تُفتح بالصدفة، ولا تُفتح بالكلام، بل تُفتح بالخبرة، والعلاقات،
-              والقدرة على التنفيذ.
-            </p>
+             
 
-            <div className="py-8 my-8 border-y border-[#D4A853]/30">
-              <p className="text-2xl text-[#D4A853] font-bold mb-4">
-                نحن كيان صُمّم ليكون:
-              </p>
-              <p className="text-3xl font-bold text-white">
+            <div className="py-8 my-4 border-y border-[#D4A853]/30">
+               
+              <p className="text-[clamp(1rem,1vw,3rem)] font-bold text-white">
                 شريك قرار… شريك توسّع… وشريك نفوذ.
               </p>
             </div>
 
-            <p>
-              كيان يعرف كيف تُدار الشركات، وكيف تُحمى الأصول، وكيف تُبنى
-              الهياكل، وكيف تُصنع الفرص، وكيف يتحول الطموح إلى حضور، والحضور إلى
-              قوة، والقوة إلى تأثير.
-            </p>
-            <p>في سوق تتشابه فيه الخدمات… نحن نختار أن نكون العلامة الفارقة.</p>
-            <p>
-              وفي بيئة تمتلئ بالوعود… نحن نختار أن نُظهر النتيجة قبل أن نتحدث
-              عنها.
-            </p>
+             
+ 
 
-            <div className="bg-[#D4A853]/10 p-8 rounded-2xl border border-[#D4A853]/20 mt-12 backdrop-blur-sm">
-              <p className="text-2xl text-white font-bold mb-2">
-                هذه ليست شركة خدمات…
-              </p>
-              <p className="text-3xl text-[#D4A853] font-bold mb-6">
-                هذه منظومة تشغيل لرجال الأعمال.
-              </p>
-              <p className="text-lg">
-                منظومة تُدار بثقة، وتُقدَّم باحتراف، وتُبنى على فهم عميق لما
-                يحتاجه رجل الأعمال ليكون في المكان الذي يستحقه…
-              </p>
-              <p className="text-xl font-bold mt-4">لا أقل. ولا غير.</p>
-            </div>
-
-            <p className="text-2xl text-white font-medium mt-12">
+            <p className="text-[clamp(1rem,1vw,3rem)] text-white font-medium mt-12">
               هنا… تبدأ مرحلة جديدة من التعامل.
             </p>
             <p className="text-xl text-[#D4A853]">

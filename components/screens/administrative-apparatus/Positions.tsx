@@ -269,7 +269,7 @@ export function Positions() {
             المناصب التنفيذية
             <div className="absolute -bottom-4 left-0 right-0 h-1 bg-gold rounded-full w-1/2 mx-auto" />
           </h2>
-          <p className="text-xl text-gray-600 mt-8 mx-auto">
+          <p className="text-[clamp(1rem,1vw,3rem)] text-gray-600 mt-8 mx-auto">
             كل منصب يؤدي دورًا محددًا… بينما تبقى أنت في موقع القرار فقط
           </p>
         </div>
@@ -282,7 +282,7 @@ export function Positions() {
               <button
                 key={cat}
                 onClick={() => setActiveTab(cat)}
-                className={`px-6 py-2 rounded-full font-semibold text-sm transition-colors ${activeTab === cat ? `${color ? color.bg : 'bg-gold'} text-white` : 'bg-warm-gray text-charcoal hover:bg-gray-200'}`}>
+                className={`px-6 py-2 rounded-full font-semibold text-[clamp(1rem,1vw,3rem)] transition-colors ${activeTab === cat ? `${color ? color.bg : 'bg-gold'} text-white` : 'bg-warm-gray text-charcoal hover:bg-gray-200'}`}>
 
                 {cat}
               </button>);
@@ -304,7 +304,7 @@ export function Positions() {
                   className={`absolute top-0 left-0 right-0 h-1.5 ${color.bg} transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left z-10`} />
 
 
-                <div className="relative h-[180px] overflow-hidden rounded-t-2xl">
+                <div className="relative h-[clamp(10rem,20vw,30rem)] overflow-hidden rounded-t-2xl">
                   <Image
                     src={pos.img}
                     alt={pos.title}

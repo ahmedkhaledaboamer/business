@@ -1,115 +1,135 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import { Users, Target, Layers, AlertCircle, Lock } from 'lucide-react';
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { Users, Target, Layers, AlertCircle } from "lucide-react";
+import { useRef } from "react";
+
 function CountUp({
   end,
   duration = 2000,
-  suffix = ''
-
-
-
-
-}: {end: number | string;duration?: number;suffix?: string;}) {
+  suffix = "",
+}: {
+  end: number | string;
+  duration?: number;
+  suffix?: string;
+}) {
   const [count, setCount] = useState(0);
-  const [ref, isIntersecting] = useIntersectionObserver();
-  const isStringEnd = typeof end === 'string';
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const isStringEnd = typeof end === "string";
+
   useEffect(() => {
-    if (!isIntersecting || isStringEnd) return;
+    if (!isInView || isStringEnd) return;
     let startTime: number;
     const animateCount = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
       const percentage = Math.min(progress / duration, 1);
       setCount(Math.floor((end as number) * percentage));
-      if (progress < duration) {
-        requestAnimationFrame(animateCount);
-      }
+      if (progress < duration) requestAnimationFrame(animateCount);
     };
     requestAnimationFrame(animateCount);
-  }, [end, duration, isIntersecting, isStringEnd]);
+  }, [end, duration, isInView, isStringEnd]);
+
   return (
     <span
       ref={ref}
-      className="text-4xl md:text-5xl font-bold gradient-text mb-3 block">
+      className="text-5xl md:text-6xl font-bold block mb-2"
+      style={{
+        background: "linear-gradient(135deg, #C9A84C, #E8C96A)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+      }}
+    >
       {isStringEnd ? end : count}
       {suffix}
-    </span>);
-
+    </span>
+  );
 }
+
+const stats = [
+  { value: 20, label: "منصب تنفيذي", icon: Users },
+  { value: 100, label: "دقة تشغيلية", suffix: "٪", icon: Target },
+  { value: 5, label: "مستويات خدمة", icon: Layers },
+  { value: 0, label: "هامش للخطأ", icon: AlertCircle },
+];
+
 export function Stats() {
-  const [ref, isIntersecting] = useIntersectionObserver();
-  const stats = [
-  {
-    value: 20,
-    label: 'منصب تنفيذي',
-    icon: Users
-  },
-  {
-    value: 100,
-    label: 'دقة تشغيلية',
-    suffix: '٪',
-    icon: Target
-  },
-  {
-    value: 5,
-    label: 'مستويات خدمة',
-    icon: Layers
-  },
-  {
-    value: 0,
-    label: 'هامش للخطأ',
-    icon: AlertCircle
-  },
-  {
-    value: '∞',
-    label: 'سرية مضمونة',
-    icon: Lock
-  }];
-
   return (
-    <section className="py-16 relative z-40 -mt-20 px-[5%]">
-      <div
-        ref={ref}
-        className={` mx-auto glass bg-white/90 rounded-3xl shadow-heavy p-10 transition-all duration-1000 transform border border-gold/20 relative overflow-hidden ${isIntersecting ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+    <section className="py-20 relative z-40 px-[5%] overflow-hidden" style={{ backgroundColor: "#0F1923" }}>
+      {/* Ambient glows */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[300px] bg-[#C9A84C]/6 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[300px] bg-[#0E7C6B]/5 rounded-full blur-[100px] pointer-events-none" />
 
-        {/* Background Pattern */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="mx-auto relative rounded-3xl overflow-hidden border border-white/8"
+        style={{
+          background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%)",
+          boxShadow: "0 32px 80px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)",
+          backdropFilter: "blur(20px)",
+        }}
+      >
+        {/* Dot grid */}
         <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
           style={{
-            backgroundImage: 'radial-gradient(#C9A84C 2px, transparent 2px)',
-            backgroundSize: '30px 30px'
-          }} />
+            backgroundImage: "radial-gradient(#C9A84C 1.5px, transparent 1.5px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
 
+        {/* Top gold line */}
+        <div className="absolute top-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C]/50 to-transparent" />
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 relative z-10">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <div
-                key={index}
-                className={`text-center px-4 relative transition-all duration-700 transform ${isIntersecting ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-                style={{
-                  transitionDelay: `${index * 100}ms`
-                }}>
+        {/* Content */}
+        <div className="relative z-10 p-2 md:p-14">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0">
+            {stats.map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="text-center px-6 relative group"
+                >
+                  {/* Vertical divider */}
+                  {index < stats.length - 1 && (
+                    <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-20 bg-gradient-to-b from-transparent via-white/8 to-transparent" />
+                  )}
 
-                {/* Divider (except last) */}
-                {index < stats.length - 1 &&
-                <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-px h-16 bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
-                }
-
-                <div className="flex justify-center mb-4">
-                  <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center group hover:bg-gold/20 transition-colors">
-                    <Icon className="w-7 h-7 text-gold group-hover:scale-110 transition-transform" />
+                  {/* Icon */}
+                  <div className="flex justify-center mb-5">
+                    <div className="w-14 h-14 rounded-2xl bg-[#C9A84C]/8 border border-[#C9A84C]/15 flex items-center justify-center group-hover:bg-[#C9A84C]/15 group-hover:border-[#C9A84C]/30 transition-all duration-300">
+                      <Icon className="w-6 h-6 text-[#C9A84C] group-hover:scale-110 transition-transform duration-300" />
+                    </div>
                   </div>
-                </div>
-                <CountUp end={stat.value} suffix={stat.suffix} />
-                <p className="text-charcoal font-bold text-lg">{stat.label}</p>
-              </div>);
 
-          })}
+                  <CountUp end={stat.value} suffix={stat.suffix} />
+
+                  <p className="font-['Tajawal',sans-serif] text-white/50 text-[clamp(1rem,1vw,3rem)] mt-1 group-hover:text-white/70 transition-colors duration-300">
+                    {stat.label}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>);
 
+        {/* Bottom teal line */}
+        <div className="absolute bottom-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-[#0E7C6B]/30 to-transparent" />
+      </motion.div>
+    </section>
+  );
 }

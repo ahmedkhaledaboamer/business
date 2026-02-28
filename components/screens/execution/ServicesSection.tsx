@@ -9,62 +9,27 @@ import {
   Sparkles,
   Building2,
   Map,
-  Shield,
-  Crosshair,
 } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+
+const serviceIcons = [
+  Crown,
+  FileKey,
+  LineChart,
+  Network,
+  Radar,
+  Sparkles,
+  Building2,
+  Map,
+]
+
 export function ServicesSection() {
-  const services = [
-    {
-      title: 'هندسة النفوذ الشخصي',
-      desc: 'نصنع لك حضورًا مؤثرًا في الدوائر التي تصنع القرار.',
-      icon: Crown,
-    },
-    {
-      title: 'إدارة الملفات فائقة الحساسية',
-      desc: 'نُدير ملفاتك التي لا يجب أن يراها أحد… بدقة لا تقبل الخطأ.',
-      icon: FileKey,
-    },
-    {
-      title: 'تحليل السيناريوهات العميقة',
-      desc: 'نقرأ لك المستقبل التجاري قبل أن يتحرك.',
-      icon: LineChart,
-    },
-    {
-      title: 'بناء شبكة تأثير موازية',
-      desc: 'نرتّب لك علاقات تخدمك قبل أن تحتاج إليها.',
-      icon: Network,
-    },
-    {
-      title: 'مراقبة المخاطر الخفية',
-      desc: 'نكتشف التهديد قبل أن يظهر.',
-      icon: Radar,
-    },
-    {
-      title: 'تطوير الصورة المهنية لرجل الأعمال',
-      desc: 'نصنع لك حضورًا راقيًا يعكس قيمتك الحقيقية.',
-      icon: Sparkles,
-    },
-    {
-      title: 'إدارة العلاقات الحكومية الرفيعة',
-      desc: 'نُسهّل لك الوصول للجهات الرسمية وتجاوز التعقيدات.',
-      icon: Building2,
-    },
-    {
-      title: 'تصميم مسارات توسع آمنة',
-      desc: 'نفتح لك أبوابًا جديدة… بدون مخاطرة غير محسوبة.',
-      icon: Map,
-    },
-    {
-      title: 'إدارة السمعة الاستراتيجية',
-      desc: 'نحمي صورتك في السوق وفي الإعلام وفي الفضاء الرقمي.',
-      icon: Shield,
-    },
-    {
-      title: 'دعم اتخاذ القرار عالي المخاطر',
-      desc: 'نقدّم لك رؤية دقيقة في اللحظات التي لا تحتمل الخطأ.',
-      icon: Crosshair,
-    },
-  ]
+  const t = useTranslations('execution.services')
+  const items = Array.from({ length: 8 }, (_, i) => ({
+    title: t(`items.${i}.title`),
+    desc: t(`items.${i}.desc`),
+    icon: serviceIcons[i],
+  }))
   return (
     <section id="services" className="py-24 bg-white px-[5%]">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,7 +48,7 @@ export function ServicesSection() {
             }}
             className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
           >
-            خدماتنا
+            {t('title')}
           </motion.h2>
           <div className="w-24 h-1 bg-amber-500 mx-auto rounded-full"></div>
         </div>
@@ -107,19 +72,19 @@ export function ServicesSection() {
         >
           <img
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
-            alt="مساحة مكتبية حديثة"
+            alt={t('imageAlt')}
             loading="lazy"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent flex items-end justify-center pb-8">
-            <h3 className="text-white text-2xl md:text-3xl font-bold">
-              نقدّم لك خدمات تنفيذية متكاملة
+            <h3 className="text-white text-[clamp(1rem,1vw,3rem)] font-bold">
+              {t('intro')}
             </h3>
           </div>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {services.map((service, index) => {
+          {items.map((service, index) => {
             const Icon = service.icon
             return (
               <motion.div

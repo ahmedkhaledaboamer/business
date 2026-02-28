@@ -55,10 +55,10 @@ export function CTA() {
       </div>
 
       <div className="relative z-20 max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        <h2 className="text-[clamp(0.75rem,2vw,5rem)] font-bold text-white mb-6 leading-tight">
           جهاز إداري كامل يعمل <span className="gradient-text">لصالحك…</span>
         </h2>
-        <p className="text-2xl text-gold-light italic mb-12 font-medium">
+        <p className="text-[clamp(1rem,1vw,3rem)] text-gold-light italic mb-12 font-medium">
           لأن وقتك أثمن من أن يضيع في التفاصيل.
         </p>
 
@@ -67,7 +67,7 @@ export function CTA() {
             ابدأ الآن
           </button>
           <button
-            className="glass text-white hover:bg-white/20 text-xl px-12 py-5 rounded-full transition-all hover:scale-105 w-full sm:w-auto font-bold"
+            className="glass text-gold  bg-white hover:bg-white/20 text-[clamp(1rem,1vw,3rem)] px-12 py-5 rounded-full transition-all hover:scale-105 w-full sm:w-auto font-bold"
             onClick={() => setIsModalOpen(true)}>
 
             تحدث معنا

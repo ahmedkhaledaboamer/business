@@ -137,15 +137,7 @@ export default function Navbar() {
         <div className="hidden md:flex">
           <LocaleSwitcher />
         </div>
-        <Link href="/execution">  
-          <Button
-            className="hidden lg:flex whitespace-nowrap"
-            variant="primary"
-            aria-label={t("cta")}
-          >
-            {t("cta")}
-          </Button>
-        </Link>
+         
         <MobileNavbar />
       </div>
     </nav>

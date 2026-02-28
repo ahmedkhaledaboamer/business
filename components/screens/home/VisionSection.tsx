@@ -58,7 +58,7 @@ export function VisionSection({ locale }: { locale: string }) {
         >
           <div className="w-10 h-[3px] rounded-full bg-[#C9A84C] mb-4" />
           <p className="font-['Tajawal',sans-serif] text-[#0F1923]/40 text-[clamp(1rem,1vw,3rem)] tracking-widest uppercase">
-            رؤيتنا وتعهدنا
+            {t("visionBadge")}
           </p>
         </motion.div>
 
@@ -124,7 +124,7 @@ export function VisionSection({ locale }: { locale: string }) {
             {/* Bottom info chip */}
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 bg-white/90 backdrop-blur-sm rounded-2xl px-6 py-3 shadow-lg border border-[#C9A84C]/15 whitespace-nowrap">
               <p className="font-['Cairo',sans-serif] font-bold text-[#0F1923] text-sm text-center">
-                رؤية · نفوذ · تنفيذ
+                {t("visionChip")}
               </p>
               <div className="mt-1 w-full h-[2px] rounded-full bg-gradient-to-r from-[#C9A84C]/40 via-[#C9A84C] to-[#0E7C6B]/40" />
             </div>

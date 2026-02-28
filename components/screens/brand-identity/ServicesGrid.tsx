@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import {
   X,
   ArrowLeft,
@@ -9,90 +9,48 @@ import {
   Monitor,
   TrendingUp,
   Lock,
-  Building2,
-  Scale } from
-'lucide-react';
+} from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-const serviceColors = [
-'#C9A84C',
-'#C9A84C',
-'#1A6B5C',
-'#1A6B5C',
-'#B87333',
-'#B87333',
-'#7A2D4A',
-'#7A2D4A'];
+import { useTranslations } from 'next-intl';
 
-const services = [
-{
-  title: 'إدارة النفوذ التنفيذي',
-  desc: 'تعزيز قوة التأثير في مجالس الإدارة',
-  img: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80',
-  icon: Crown,
-  fullDesc:
-  'نعمل على تمكين القيادات التنفيذية من تعزيز حضورهم وتأثيرهم داخل مجالس الإدارة، من خلال استراتيجيات تواصل متقدمة وبناء تحالفات قوية.'
-},
-{
-  title: 'بناء المسارات الاستراتيجية',
-  desc: 'تخطيط طويل الأمد للنمو المستدام',
-  img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
-  icon: Map,
-  fullDesc:
-  'نصمم خرائط طريق استراتيجية مخصصة تأخذ في الاعتبار المتغيرات الاقتصادية والجيوسياسية، لضمان نمو مستدام وتوسع آمن.'
-},
-{
-  title: 'إدارة العلاقات عالية الحساسية',
-  desc: 'التعامل مع الشركاء وكبار العملاء',
-  img: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&q=80',
-  icon: Users,
-  fullDesc:
-  'ندير شبكات العلاقات المعقدة والحساسة ببراعة دبلوماسية، ونعمل كوسطاء موثوقين لحل النزاعات وبناء جسور الثقة.'
-},
-{
-  title: 'مراقبة السمعة الرقمية',
-  desc: 'حماية الصورة الذهنية في الفضاء الرقمي',
-  img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
-  icon: Monitor,
-  fullDesc:
-  'نستخدم أحدث أدوات الرصد والتحليل لحماية صورتك الذهنية على مدار الساعة، مع خطط استجابة سريعة للأزمات.'
-},
-{
-  title: 'تحليل المخاطر المستقبلية',
-  desc: 'استشراف التحديات ووضع خطط استباقية',
-  img: 'https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=600&q=80',
-  icon: TrendingUp,
-  fullDesc:
-  'نقدم قراءات استشرافية دقيقة للمخاطر المحتملة ونضع خطط طوارئ استباقية تضمن استمرارية الأعمال.'
-},
-{
-  title: 'إدارة الملفات فائقة السرية',
-  desc: 'حماية المعلومات الحساسة بأعلى المعايير',
-  img: 'https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&q=80',
-  icon: Lock,
-  fullDesc:
-  'نوفر بيئة آمنة تماماً وبروتوكولات صارمة لإدارة المستندات والمعلومات شديدة الحساسية.'
-},
-{
-  title: 'تطوير النفوذ المؤسسي',
-  desc: 'بناء شبكات علاقات قوية وفعالة',
-  img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80',
-  icon: Building2,
-  fullDesc:
-  'نساعد مؤسستك على التموضع الصحيح في السوق وبناء شبكة علاقات قوية مع صناع القرار.'
-},
-{
-  title: 'دعم اتخاذ القرار عالي المخاطر',
-  desc: 'استشارات دقيقة في اللحظات الحاسمة',
-  img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
-  icon: Scale,
-  fullDesc:
-  'نقف بجانبك في اللحظات المفصلية ونقدم تحليلات شاملة للسيناريوهات المحتملة لتتخذ قرارك بثقة.'
-}];
+const serviceColors = [
+  '#C9A84C',
+  '#C9A84C',
+  '#1A6B5C',
+  '#1A6B5C',
+  '#B87333',
+  '#B87333',
+  '#7A2D4A',
+  '#7A2D4A',
+];
+
+const serviceImages = [
+  'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80',
+  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
+  'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&q=80',
+  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+  'https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=600&q=80',
+  'https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&q=80',
+];
+
+const serviceIcons = [Crown, Map, Users, Monitor, TrendingUp, Lock];
 
 export function ServicesGrid() {
+  const t = useTranslations('brandIdentity.services');
+  const services = useMemo(
+    () =>
+      Array.from({ length: 6 }, (_, i) => ({
+        title: t(`items.${i}.title`),
+        desc: t(`items.${i}.desc`),
+        fullDesc: t(`items.${i}.detail`),
+        img: serviceImages[i],
+        icon: serviceIcons[i],
+      })),
+    [t]
+  );
   const [activeService, setActiveService] = useState<
-    (typeof services)[0] | null>(
-    null);
+    (typeof services)[0] | null
+  >(null);
   const { ref, isVisible } = useScrollAnimation(0.1);
   return (
     <section className="py-28 bg-[#F8F7F4] relative px-[5%]">
@@ -108,11 +66,11 @@ export function ServicesGrid() {
 
       <div className=" mx-auto px-6 relative z-10" ref={ref}>
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4">
-            خدمات تعكس هويتنا
+          <h2 className="text-[clamp(0.75rem,2vw,5rem)] font-bold text-[#1A1A1A] mb-4">
+            {t('sectionTitle')}
           </h2>
-          <p className="text-xl text-gray-500 font-medium">
-            حلول استراتيجية مصممة للنخبة
+          <p className="text-[clamp(1rem,1vw,3rem)] text-gray-500 font-medium">
+            {t('sectionSubtitle')}
           </p>
         </div>
 
@@ -142,7 +100,7 @@ export function ServicesGrid() {
                   0{idx + 1}
                 </div>
 
-                <div className="relative h-[220px] overflow-hidden">
+                <div className="relative h-[clamp(10rem,20vw,30rem)] overflow-hidden">
                   <img
                     src={srv.img}
                     alt={srv.title}
@@ -176,7 +134,7 @@ export function ServicesGrid() {
 
                     {srv.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed font-medium">
+                  <p className="text-gray-600 text-[clamp(1rem,1vw,3rem)] leading-relaxed font-medium">
                     {srv.desc}
                   </p>
                 </div>
@@ -222,11 +180,17 @@ export function ServicesGrid() {
                 serviceColors[services.indexOf(activeService)] + '15'
               }}>
 
-                <activeService.icon
-                className="w-8 h-8"
-                style={{
-                  color: serviceColors[services.indexOf(activeService)]
-                }} />
+                {(() => {
+                  const Icon = activeService.icon;
+                  return (
+                    <Icon
+                      className="w-8 h-8"
+                      style={{
+                        color: serviceColors[services.indexOf(activeService)]
+                      }}
+                    />
+                  );
+                })()}
 
               </div>
               <h3 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-6">
@@ -248,7 +212,7 @@ export function ServicesGrid() {
                 background: `linear-gradient(to right, ${serviceColors[services.indexOf(activeService)]}, #D4A574)`
               }}>
 
-                طلب استشارة
+                {t('cta')}
                 <ArrowLeft className="w-5 h-5" />
               </button>
             </div>

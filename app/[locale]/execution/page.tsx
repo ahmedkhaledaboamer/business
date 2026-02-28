@@ -1,7 +1,6 @@
 import { HeroSection } from "@/components/screens/execution/HeroSection";
 import { VisionMissionSection } from "@/components/screens/execution/VisionMissionSection";
-import { BusinessmanLetterSection } from "@/components/screens/execution/BusinessmanLetterSection";
-import { GlossarySection } from "@/components/screens/execution/GlossarySection";
+ import { GlossarySection } from "@/components/screens/execution/GlossarySection";
 import { ValuesSection } from "@/components/screens/execution/ValuesSection";
 import { JourneySection } from "@/components/screens/execution/JourneySection";
 import { OperatingSystemSection } from "@/components/screens/execution/OperatingSystemSection";
@@ -14,8 +13,7 @@ export default function ExecutionPage() {
   <main>
     <HeroSection />
     <VisionMissionSection />
-    <BusinessmanLetterSection />
-    <GlossarySection />
+     <GlossarySection />
     <ValuesSection />
     <JourneySection />
     <OperatingSystemSection />

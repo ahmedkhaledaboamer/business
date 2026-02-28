@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useParallax } from '@/hooks/useParallax';
 import { X, CheckCircle2, Loader2, Mail } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 const particleColors = [
 '#C9A84C',
 '#D4A574',
@@ -39,12 +40,13 @@ const confettiStyles = confettiColors.flatMap(() =>
 );
 
 export function ClosingManifesto() {
+  const t = useTranslations('brandIdentity.closing');
   const { ref, isVisible } = useScrollAnimation(0.4);
   const offsetY = useParallax(0.2);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const words = 'هذا الكيان ليس مجرد شركة…'.split(' ');
+  const words = t('words').split(' ');
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -155,7 +157,7 @@ export function ClosingManifesto() {
                 textShadow: '0 2px 10px rgba(0,0,0,0.5)'
               }}>
 
-              نحن هنا لنصنع الفارق..
+              {t('line1')}
             </p>
             <p
               className={`text-2xl text-[#B87333] italic font-medium transition-all duration-1000 delay-[1300ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
@@ -163,7 +165,7 @@ export function ClosingManifesto() {
                 textShadow: '0 2px 10px rgba(0,0,0,0.5)'
               }}>
 
-              لنبني إرثاً لا يُمحى..
+              {t('line2')}
             </p>
             <p
               className={`text-4xl md:text-5xl font-black text-[#C9A84C] transition-all duration-1000 delay-[1600ms] ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95'}`}
@@ -171,7 +173,7 @@ export function ClosingManifesto() {
                 textShadow: '0 4px 20px rgba(0,0,0,0.7)'
               }}>
 
-              أنت هنا… في المكان الصحيح.
+              {t('line3')}
             </p>
           </div>
 
@@ -188,7 +190,7 @@ export function ClosingManifesto() {
               onClick={() => setIsModalOpen(true)}
               className="relative z-10 bg-gradient-to-r from-[#C9A84C] via-[#D4A574] to-[#B87333] text-white px-10 py-4 rounded-full font-bold text-xl hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] hover:-translate-y-1 transition-all duration-300">
 
-              تواصل معنا الآن
+              {t('cta')}
             </button>
             <button
               className="relative z-10 bg-transparent text-white px-10 py-4 rounded-full font-bold text-xl transition-all duration-300 hover:bg-white/10 overflow-hidden group"
@@ -201,7 +203,7 @@ export function ClosingManifesto() {
 
               <div className="absolute inset-0 rounded-full border-2 border-white/30" />
               <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-[#C9A84C] border-r-[#D4A574] group-hover:animate-[spin-slow_3s_linear_infinite]" />
-              عودة للرئيسية
+              {t('backHome')}
             </button>
           </div>
         </div>
@@ -278,50 +280,50 @@ export function ClosingManifesto() {
 
                   </div>
                   <h4 className="text-3xl font-bold text-[#1A1A1A] mb-2">
-                    تم الإرسال بنجاح
+                    {t('success')}
                   </h4>
                   <p className="text-xl text-gray-600">
-                    سنتواصل معك في أقرب وقت لبدء رحلة النجاح.
+                    {t('successMsg')}
                   </p>
                 </div> :
 
             <>
                   <div className="text-center mb-8">
                     <h3 className="text-3xl font-bold text-[#1A1A1A] mb-2">
-                      ابدأ رحلتك معنا
+                      {t('formTitle')}
                     </h3>
                     <p className="text-gray-600 font-medium">
-                      دعنا نبدأ في بناء استراتيجيتك القادمة.
+                      {t('formSubtitle')}
                     </p>
                   </div>
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">
-                          الاسم الكامل
+                          {t('fullName')}
                         </label>
                         <input
                       required
                       type="text"
                       className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
-                      placeholder="أدخل اسمك" />
+                      placeholder={t('namePlaceholder')} />
 
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">
-                          الشركة / المؤسسة
+                          {t('company')}
                         </label>
                         <input
                       required
                       type="text"
                       className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
-                      placeholder="اسم شركتك" />
+                      placeholder={t('companyPlaceholder')} />
 
                       </div>
                     </div>
                     <div>
                       <label className="block text-sm font-bold text-gray-700 mb-2">
-                        رقم الهاتف
+                        {t('phone')}
                       </label>
                       <input
                     required
@@ -333,13 +335,13 @@ export function ClosingManifesto() {
                     </div>
                     <div>
                       <label className="block text-sm font-bold text-gray-700 mb-2">
-                        الرسالة
+                        {t('message')}
                       </label>
                       <textarea
                     required
                     rows={4}
                     className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white resize-none"
-                    placeholder="كيف يمكننا مساعدتك؟">
+                    placeholder={t('messagePlaceholder')}>
                   </textarea>
                     </div>
                     <button
@@ -350,10 +352,10 @@ export function ClosingManifesto() {
                       {isSubmitting ?
                   <>
                           <Loader2 className="w-6 h-6 animate-spin" />
-                          جاري الإرسال...
+                          {t('sending')}
                         </> :
 
-                  'إرسال الطلب'
+                  t('submit')
                   }
                     </button>
                   </form>

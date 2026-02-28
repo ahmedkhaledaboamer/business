@@ -1,20 +1,24 @@
 'use client'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
 
 export function HeroSection() {
   const containerRef = useRef(null)
+  const locale = useLocale()
+  const t = useTranslations('execution.hero')
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] })
   const yBg = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
 
-  const words = ['مسارك', 'التنفيذي']
+  const words = t.raw('words') as string[]
+  const stats = t.raw('stats') as { num: string; label: string }[]
 
   return (
     <section
       ref={containerRef}
       id="hero"
-      dir="rtl"
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0A0905]  px-[5%] items-center "
     >
       <style>{`
@@ -116,19 +120,7 @@ export function HeroSection() {
       {/* Main Content */}
       <motion.div style={{ opacity }} className="relative z-20 px-8 md:px-16 lg:px-24 mx-auto w-full">
 
-        {/* Top label */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex items-center justify-center gap-4 mb-16"
-        >
-          <div className="h-px w-12 gold-line" />
-          <span className="text-[#C9A84C]/80 text-xs tracking-[0.4em] uppercase font-light" style={{ fontFamily: 'Playfair Display, serif', letterSpacing: '0.35em' }}>
-            مقدمة · Introduction
-          </span>
-          <div className="h-px w-12 gold-line" />
-        </motion.div>
+         
 
         {/* Hero headline */}
         <div className="mb-12 flex flex-row items-center justify-center md:gap-20">
@@ -142,7 +134,7 @@ export function HeroSection() {
                 <span
                   className={`block leading-none font-black ${i === 1 ? 'shimmer-text' : 'text-white'}`}
                   style={{
-                    fontSize: 'clamp(2rem, 10vw, 13rem)',
+                    fontSize: 'clamp(1rem, 5vw, 13rem)',
                     fontFamily: 'Noto Naskh Arabic, serif',
                     lineHeight: 1.05,
                     letterSpacing: '-0.01em',
@@ -171,8 +163,8 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.0 }}
           >
-            <p className="text-[#D4C5A0]/75 text-lg leading-[1.9] font-light">
-              في عالم تتغير فيه قواعد اللعبة كل يوم، ويزداد فيه الضجيج بينما يقلّ فيه الفعل، اخترنا أن نكون الجهة التي لا ترفع صوتها… بل ترفع مستوى عملها.
+            <p className="text-[#D4C5A0]/75 text-[clamp(1rem,1vw,3rem)] leading-[1.9] font-light">
+              {t('intro')}
             </p>
           </motion.div>
 
@@ -182,12 +174,10 @@ export function HeroSection() {
             transition={{ duration: 0.9, delay: 1.15 }}
             className="space-y-6"
           >
-            <p className="text-[#D4C5A0]/75 text-lg leading-[1.9] font-light">
-              الكيان الذي لا يركض خلف الفرص… بل يصنعها. والشريك الذي لا يقدّم خدمة… بل يبني مسارًا تنفيذيًا يليق برجل أعمال يعرف قيمته.
+            <p className="text-[#D4C5A0]/75 text-[clamp(1rem,1vw,3rem)] leading-[1.9] font-light">
+              {t('tagline')}
             </p>
-            <p className="text-[#E8D9AA] text-lg leading-[1.9] font-semibold border-r-2 border-gold pr-4">
-              نحن لا نكتب تعريفًا لنبدو مختلفين… نحن مختلفون بالفعل.
-            </p>
+            
           </motion.div>
         </div>
 
@@ -209,17 +199,13 @@ export function HeroSection() {
             <span className="absolute top-0 right-0 w-3 h-3 border-t border-r border-[#C9A84C] -translate-y-px translate-x-px" />
             <span className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-[#C9A84C] translate-y-px -translate-x-px" />
             <span className="relative text-gold-light group-hover:text-white transition-colors duration-300">
-              اكتشف المزيد
+              {t('cta')}
             </span>
           </button>
 
           {/* Stats */}
           <div className="flex gap-10">
-            {[
-              { num: '٨+', label: 'سنوات خبرة' },
-              { num: '٢٠٠+', label: 'عميل تنفيذي' },
-              { num: '١٠٠٪', label: 'التزام' },
-            ].map((stat, i) => (
+            {stats.map((stat, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 15 }}

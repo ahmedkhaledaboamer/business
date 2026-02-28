@@ -30,7 +30,7 @@ export function ServiceCard({
     >
       {/* Card Image */}
       {image && (
-        <div className="relative h-140 overflow-hidden">
+        <div className="relative h-[clamp(10rem,20vw,40rem)] overflow-hidden">
           <img src={image} alt={title} className="w-full h-full object-cover" />
           <div
             className="absolute inset-0"

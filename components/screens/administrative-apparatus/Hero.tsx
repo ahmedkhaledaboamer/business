@@ -104,7 +104,7 @@ export function Hero() {
         </div>
 
         <h1
-          className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+          className={`text-[clamp(0.75rem,2vw,5rem)] font-bold text-white mb-6 leading-tight transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
           style={{
             transitionDelay: '400ms'
           }}>
@@ -114,7 +114,7 @@ export function Hero() {
         </h1>
 
         <p
-          className={`text-lg md:text-2xl text-gray-300 mb-12 mx-auto font-medium transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+          className={`text-[clamp(1rem,1vw,3rem)] text-gray-300 mb-12 mx-auto font-medium transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
           style={{
             transitionDelay: '600ms'
           }}>
@@ -123,16 +123,16 @@ export function Hero() {
         </p>
 
         <div
-          className={`flex flex-col sm:flex-row gap-6 justify-center items-center transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+          className={`flex  gap-6 justify-center items-center transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
           style={{
             transitionDelay: '800ms'
           }}>
 
-          <button className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-lg px-10 py-4 rounded-full transition-all hover:scale-105 font-bold shadow-gold animate-glow">
+          <button className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-[clamp(1rem,1vw,3rem)] px-10 py-4 rounded-full transition-all hover:scale-105 font-bold shadow-gold animate-glow">
             ابدأ الآن
           </button>
-          <button className="glass text-white hover:bg-white/20 text-lg px-10 py-4 rounded-full transition-all hover:scale-105 font-bold">
-            تعرف على الجهاز
+          <button className="glass text-gold  bg-white hover:bg-white/20 text-[clamp(1rem,1vw,3rem)] px-10 py-4 rounded-full transition-all hover:scale-105 font-bold">
+          الخدمات
           </button>
         </div>
 

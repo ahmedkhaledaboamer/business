@@ -5,6 +5,9 @@
   },
   "navbar": {
     "cta": "Réservez votre service",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "navMenu": "Menu principal",
     "routes": [
       {
         "label": "Accueil",
