@@ -13,6 +13,7 @@ import {
 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const accentColors = [
 '#C9A84C',
@@ -23,12 +24,12 @@ const accentColors = [
 '#D4A574'];
 
 const termImages = [
-  'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80',
-  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
-  'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80',
-  'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
-  'https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&q=80',
-  'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&q=80',
+  '/imges/brand-identity/33.webp',
+  '/imges/brand-identity/34.webp',
+  '/imges/brand-identity/35.webp',
+  '/imges/brand-identity/36.webp',
+  '/imges/brand-identity/37.webp',
+  '/imges/brand-identity/38.webp',
 ];
 
 const termIcons = [Crown, Scale, ShieldCheck, Rocket, Lock, Handshake];
@@ -143,11 +144,13 @@ export function BrandDictionary() {
 
               <X className="w-5 h-5" />
             </button>
-            <div className="relative h-72 overflow-hidden">
-              <img
+            <div className="relative w-full h-72 overflow-hidden">
+              <Image
               src={activeTerm.img}
               alt={activeTerm.term}
-              className="w-full h-full object-cover" />
+              fill
+              className="object-cover"
+              sizes="(max-width: 896px) 100vw, 896px" />
 
               {/* Dot Pattern Overlay */}
               <div

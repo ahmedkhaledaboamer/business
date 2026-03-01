@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { ShieldCheck, Globe, Award } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type CTAProps = { locale: string };
 
@@ -23,12 +24,16 @@ export function CTA({ locale }: CTAProps) {
   return (
     <section className="relative py-32 overflow-hidden">
       {/* Parallax Background */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
-        style={{
-          backgroundImage:
-          'url("https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1920&q=80")'
-        }} />
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/imges/administrative-apparatus/24.webp"
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          priority
+        />
+      </div>
 
 
       {/* Rich Gradient Overlay */}

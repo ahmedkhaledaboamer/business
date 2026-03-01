@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowLeft, Diamond, Sparkles } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 const particleColors = [
 '#C9A84C',
 '#D4A574',
@@ -34,13 +35,17 @@ export function HeroSection() {
   }, []);
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#1A1A1A]">
-      {/* Background Image - Dubai Skyline */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat animate-[ken-burns_25s_ease-in-out_infinite_alternate]"
-        style={{
-          backgroundImage:
-          'url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=80")'
-        }} />
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/imges/brand-identity/25.webp"
+          alt=""
+          fill
+          className="object-cover object-center animate-[ken-burns_25s_ease-in-out_infinite_alternate]"
+          sizes="100vw"
+          priority
+        />
+      </div>
 
 
       {/* Strong Dark Overlay for Text Readability */}

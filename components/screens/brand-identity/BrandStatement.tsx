@@ -120,8 +120,8 @@ export function BrandStatement() {
               <div className="absolute inset-0 border-2 border-[#C9A84C] rounded-[24px] translate-x-4 translate-y-4 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6" />
 
               <Image
-                src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=80"
-                alt="Dubai"
+                src="/imges/brand-identity/32.webp"
+                alt="Brand statement"
                 className="relative w-full h-80 md:h-200 rounded-[24px] object-cover shadow-[0_24px_72px_rgba(201,168,76,0.2)] z-10"
                 width={800}
                 height={600}

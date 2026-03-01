@@ -5,6 +5,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useParallax } from '@/hooks/useParallax';
 import { Quote } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 export function BrandIntro() {
   const t = useTranslations('brandIdentity.intro');
   const { ref, isVisible } = useScrollAnimation(0.4);
@@ -29,13 +30,15 @@ export function BrandIntro() {
   return (
     <section className="relative w-full py-40 bg-gradient-to-b from-[#FDF8F0] via-white to-[#FDF8F0] overflow-hidden flex items-center justify-center">
       {/* Parallax Background */}
-      <div
-        className="absolute inset-0 z-0 opacity-[0.08] bg-cover bg-center mix-blend-multiply"
-        style={{
-          backgroundImage:
-          'url("https://images.unsplash.com/photo-1550684376-efcbd6e3f031?w=1600&q=80")',
-          transform: `translateY(${offsetY}px) scale(1.1)`
-        }} />
+      <div className="absolute inset-0 z-0 opacity-[0.08] mix-blend-multiply" style={{ transform: `translateY(${offsetY}px) scale(1.1)` }}>
+        <Image
+          src="/imges/brand-identity/26.webp"
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </div>
 
 
       {/* Animated Gradient Mesh */}

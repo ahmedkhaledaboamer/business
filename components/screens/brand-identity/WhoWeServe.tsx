@@ -6,10 +6,10 @@ import { useTranslations } from 'next-intl';
 
 const tagColors = ['#C9A84C', '#1A6B5C', '#B87333', '#7A2D4A'];
 const photoUrls = [
-  'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80',
-  'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80',
-  'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80',
+  '/imges/brand-identity/49.webp',
+  '/imges/brand-identity/50.webp',
+  '/imges/brand-identity/51.webp',
+  '/imges/brand-identity/52.webp',
 ];
 
 export function WhoWeServe() {

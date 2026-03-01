@@ -243,7 +243,7 @@ export function Pyramid({ locale }: { locale: string }) {
 
             <div className="relative rounded-3xl overflow-hidden shadow-heavy border-2 border-gold/30 group">
               <Image
-                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80"
+                src="/imges/administrative-apparatus/2.webp"
                 alt={t('imageAlt')}
                 className="w-full h-[450px] md:h-[800px] object-cover transition-transform duration-700 group-hover:scale-105"
                 width={800}
