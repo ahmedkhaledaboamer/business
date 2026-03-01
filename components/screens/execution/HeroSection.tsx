@@ -19,7 +19,7 @@ export function HeroSection() {
       ref={containerRef}
       id="hero"
       dir={locale === 'ar' ? 'rtl' : 'ltr'}
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0A0905]  px-[5%] items-center "
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0A0905]  px-[5%] items-center pt-[5%]"
     >
       <style>{`
         .grain-overlay::before {

@@ -1,17 +1,21 @@
 'use client'
-import { Phone, Mail, MapPin, Send } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { Phone, Mail, Send } from 'lucide-react'
+import { useLocale, useTranslations } from 'next-intl'
+
 export function ClosingSection() {
+  const locale = useLocale()
   const t = useTranslations('execution.closing')
+  const isRtl = locale === 'ar'
   return (
     <section
       id="contact"
+      dir={isRtl ? 'rtl' : 'ltr'}
       className="py-24 bg-[#F5F0E8] relative overflow-hidden px-[clamp(1rem,5vw,10rem)] "
     >
       {/* Decorative background */}
     <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNEMEEyNzQiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-40"></div>
 
-    <div className="flex flex-row-reverse gap-10 items-center justify-evenly mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className={`flex gap-10 items-center justify-evenly mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ${isRtl ? 'flex-row' : 'flex-row-reverse'}`}>
      
 
         {/* Contact Area */}
@@ -58,19 +62,6 @@ export function ClosingSection() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-teal-800 rounded-full flex items-center justify-center text-amber-400 shrink-0">
-                      <MapPin className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-teal-200 mb-1">
-                        {t('headquarters')}
-                      </p>
-                      <p className="text-[clamp(0.75rem,1vw,3rem)] font-medium">
-                        {t('location')}
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -147,7 +138,7 @@ export function ClosingSection() {
                   className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-8 rounded-xl transition-colors flex items-center justify-center gap-2 group"
                 >
                   <span>{t('submit')}</span>
-                  <Send className="w-5 h-5 rotate-180 group-hover:-translate-x-1 transition-transform" />
+                  <Send className={`w-5 h-5 transition-transform ${isRtl ? 'rotate-0 group-hover:translate-x-1' : 'rotate-180 group-hover:-translate-x-1'}`} />
                 </button>
               </form>
             </div>

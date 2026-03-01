@@ -1,46 +1,22 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Layers, Compass, Lock, UserCog, Crown } from 'lucide-react'
+import { Layers, Compass, Lock, UserCog, Crown, Scale } from 'lucide-react'
+import { useLocale, useTranslations } from 'next-intl'
+
+const levelIcons = [Layers, Compass, Lock, UserCog, Crown, Scale]
+
 export function ServiceLevelsSection() {
-  const levels = [
-    {
-      num: '1',
-      name: 'المستوى التنفيذي الأساسي',
-      desc: 'إدارة ملفاتك اليومية باحترافية وثبات.',
-      icon: Layers,
-      highlight: false,
-    },
-    {
-      num: '2',
-      name: 'المستوى الاستراتيجي',
-      desc: 'تحليل، رؤية، وتخطيط لمسارات طويلة المدى.',
-      icon: Compass,
-      highlight: false,
-    },
-    {
-      num: '3',
-      name: 'المستوى عالي الحساسية',
-      desc: 'إدارة الملفات التي لا يجب أن يراها أحد.',
-      icon: Lock,
-      highlight: false,
-    },
-    {
-      num: '4',
-      name: 'المستوى الخاص برجال الأعمال',
-      desc: 'خدمات مصممة حسب شخصيتك، أهدافك، وطريقة عملك.',
-      icon: UserCog,
-      highlight: false,
-    },
-    {
-      num: '5',
-      name: 'المستوى السيادي',
-      desc: 'أعلى مستوى تشغيل… لرجال الأعمال الذين يحتاجون قوة تنفيذية كاملة تعمل خلفهم.',
-      icon: Crown,
-      highlight: true,
-    },
-  ]
+  const locale = useLocale()
+  const t = useTranslations('execution.serviceLevels')
+  const levelsRaw = t.raw('levels') as Array<{ num: string; name: string; desc: string }>
+  const levels = levelsRaw.map((level, i) => ({
+    ...level,
+    icon: levelIcons[i],
+    highlight: i === levelsRaw.length - 1,
+  }))
+
   return (
-    <section className="py-24 bg-white relative px-[5%]">
+    <section dir={locale === 'ar' ? 'rtl' : 'ltr'} className="py-24 bg-white relative px-[5%]">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2
@@ -57,7 +33,7 @@ export function ServiceLevelsSection() {
             }}
             className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-slate-900 mb-6"
           >
-            مستويات الخدمة
+            {t('title')}
           </motion.h2>
           <motion.p
             initial={{
@@ -76,7 +52,7 @@ export function ServiceLevelsSection() {
             }}
             className="text-[clamp(0.75rem,2vw,1.5rem)] text-slate-600 mx-auto"
           >
-            نحن لا نقدّم خدمة واحدة… نحن نقدّم مستويات تشغيل
+            {t('subtitle')}
           </motion.p>
         </div>
 
@@ -118,7 +94,7 @@ export function ServiceLevelsSection() {
                   <div
                     className={`text-[clamp(0.75rem,2vw,1.5rem)] font-bold mb-2 tracking-wider ${level.highlight ? 'text-amber-200' : 'text-amber-600'}`}
                   >
-                    المستوى {level.num}
+                    {t('levelLabel')} {level.num}
                   </div>
 
                   <h3

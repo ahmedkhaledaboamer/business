@@ -10,7 +10,8 @@ import {
   Building2,
   Map,
 } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import Image from 'next/image'
 
 const serviceIcons = [
   Crown,
@@ -24,6 +25,7 @@ const serviceIcons = [
 ]
 
 export function ServicesSection() {
+  const locale = useLocale()
   const t = useTranslations('execution.services')
   const items = Array.from({ length: 8 }, (_, i) => ({
     title: t(`items.${i}.title`),
@@ -31,7 +33,7 @@ export function ServicesSection() {
     icon: serviceIcons[i],
   }))
   return (
-    <section id="services" className="py-24 bg-white px-[5%]">
+    <section id="services" dir={locale === 'ar' ? 'rtl' : 'ltr'} className="py-24 bg-white px-[5%]">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <motion.h2
@@ -68,13 +70,15 @@ export function ServicesSection() {
           transition={{
             duration: 0.8,
           }}
-          className="w-full mb-16 relative rounded-2xl overflow-hidden shadow-md h-48 md:h-64"
+          className="w-full mb-16 relative rounded-2xl overflow-hidden shadow-md"
         >
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
             alt={t('imageAlt')}
             loading="lazy"
-            className="w-full h-full object-cover"
+            className="w-full md:h-[300px] lg:h-[600px] object-cover"
+            width={1000}
+            height={1000}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent flex items-end justify-center pb-8">
             <h3 className="text-white text-[clamp(0.75rem,2vw,3rem)] font-bold">

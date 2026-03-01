@@ -19,9 +19,13 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function ExecutionPage() {
+type Props = { params: Promise<{ locale: string }> };
+
+export default async function ExecutionPage({ params }: Props) {
+  const { locale } = await params;
+  const dir = locale === "ar" ? "rtl" : "ltr";
   return (
-  <main>
+  <main dir={dir}>
     <HeroSection />
     <VisionMissionSection />
     <GlossarySection />

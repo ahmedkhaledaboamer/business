@@ -8,39 +8,15 @@ import {
   Network,
   Navigation,
 } from 'lucide-react'
+import { useLocale, useTranslations } from 'next-intl'
+
+const termIcons = [Anchor, TrendingUp, ShieldCheck, Brain, Network, Navigation]
+
 export function GlossarySection() {
-  const terms = [
-    {
-      title: 'نقطة الثبات التنفيذي',
-      desc: 'المرحلة التي يصبح فيها قرارك محميًا من التردد، ومسنودًا بتحليل لا يترك ثغرة.',
-      icon: Anchor,
-    },
-    {
-      title: 'خط النفوذ المتدرّج',
-      desc: 'منهجية نستخدمها لبناء حضورك في السوق خطوة بخطوة… بدون ضوضاء.',
-      icon: TrendingUp,
-    },
-    {
-      title: 'دائرة الحماية الصامتة',
-      desc: 'نظام مراقبة وتحليل يحمي مصالحك دون أن تشعر بوجوده.',
-      icon: ShieldCheck,
-    },
-    {
-      title: 'مسار القرار العميق',
-      desc: 'أسلوب تحليل لا يعتمد على البيانات فقط… بل على قراءة ما وراء البيانات.',
-      icon: Brain,
-    },
-    {
-      title: 'هندسة العلاقات المؤثرة',
-      desc: 'طريقة نرتّب بها علاقاتك بحيث تخدم أهدافك قبل أن تحتاج إليها.',
-      icon: Network,
-    },
-    {
-      title: 'نقطة الانعطاف الآمن',
-      desc: 'لحظة اتخاذ القرار عندما يكون كل شيء واضحًا… ولا توجد مخاطرة غير محسوبة.',
-      icon: Navigation,
-    },
-  ]
+  const locale = useLocale()
+  const t = useTranslations('execution.glossary')
+  const termsRaw = t.raw('terms') as Array<{ title: string; desc: string }>
+  const terms = termsRaw.map((term, i) => ({ ...term, icon: termIcons[i] }))
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -68,7 +44,7 @@ export function GlossarySection() {
     },
   }
   return (
-    <section className="py-24 bg-[#F0FDFA] relative px-[5%]">
+    <section dir={locale === 'ar' ? 'rtl' : 'ltr'} className="py-24 bg-[#F0FDFA] relative px-[5%]">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2
@@ -85,7 +61,7 @@ export function GlossarySection() {
             }}
             className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-slate-900 mb-6"
           >
-            قاموس الكيان
+            {t('title')}
           </motion.h2>
           <motion.p
             initial={{
@@ -104,8 +80,7 @@ export function GlossarySection() {
             }}
             className="text-[clamp(0.75rem,2vw,1.5rem)] text-teal-800 mx-auto"
           >
-            مصطلحات خاصة لا تُستخدم إلا هنا. هذه مفاهيم تشغيلية ابتكرناها…
-            ومستحيل تلاقيها في أي مكان.
+            {t('subtitle')}
           </motion.p>
         </div>
 

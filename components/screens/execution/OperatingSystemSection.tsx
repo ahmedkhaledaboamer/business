@@ -7,36 +7,18 @@ import {
   Shield,
   RefreshCw,
 } from 'lucide-react'
+import { useLocale, useTranslations } from 'next-intl'
+
+const layerIcons = [BarChart3, Telescope, Settings2, Shield, RefreshCw]
+
 export function OperatingSystemSection() {
-  const layers = [
-    {
-      name: 'طبقة التحليل العميق',
-      desc: 'تحليل لا يعتمد على البيانات فقط… بل على قراءة ما وراءها.',
-      icon: BarChart3,
-    },
-    {
-      name: 'طبقة التوقع الاستراتيجي',
-      desc: 'نقرأ لك المستقبل قبل أن يتحرك.',
-      icon: Telescope,
-    },
-    {
-      name: 'طبقة التنفيذ المحكم',
-      desc: 'تنفيذ لا يترك مساحة للخطأ.',
-      icon: Settings2,
-    },
-    {
-      name: 'طبقة الحماية الصامتة',
-      desc: 'نظام مراقبة يحمي مصالحك دون أن تشعر بوجوده.',
-      icon: Shield,
-    },
-    {
-      name: 'طبقة التعديل اللحظي',
-      desc: 'نعدّل المسار فورًا… قبل أن تتأثر النتيجة.',
-      icon: RefreshCw,
-    },
-  ]
+  const locale = useLocale()
+  const t = useTranslations('execution.operatingSystem')
+  const layersRaw = t.raw('layers') as Array<{ name: string; desc: string }>
+  const layers = layersRaw.map((layer, i) => ({ ...layer, icon: layerIcons[i] }))
+
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-[#F5F0E8] px-[5%]">
+    <section dir={locale === 'ar' ? 'rtl' : 'ltr'} className="py-24 bg-gradient-to-b from-white to-[#F5F0E8] px-[5%]">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2
@@ -53,7 +35,7 @@ export function OperatingSystemSection() {
             }}
             className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-slate-900 mb-6"
           >
-            نظام التشغيل التنفيذي
+            {t('title')}
           </motion.h2>
           <motion.p
             initial={{
@@ -72,7 +54,7 @@ export function OperatingSystemSection() {
             }}
             className="text-[clamp(0.75rem,2vw,1.5rem)] text-slate-600 mx-auto"
           >
-            هذا هو النظام الذي يميّزنا عن أي جهة أخرى
+            {t('subtitle')}
           </motion.p>
         </div>
 
@@ -81,11 +63,11 @@ export function OperatingSystemSection() {
             const Icon = layer.icon
             // Calculate width for a pyramid/stacked effect
             const widthClass = [
-              'w-full',
-              'w-[95%]',
-              'w-[90%]',
-              'w-[85%]',
-              'w-[80%]',
+              'w-full md:w-full',
+              'w-full md:w-[95%]',
+              'w-full md:w-[90%]',
+              'w-full md:w-[85%]',
+              'w-full md:w-[80%]',
             ][index]
             return (
               <motion.div

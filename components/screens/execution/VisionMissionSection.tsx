@@ -2,7 +2,12 @@
 import { motion } from 'framer-motion'
 import { Eye, Send, Target, CheckCircle } from 'lucide-react'
 import Image from 'next/image'
+import { useLocale, useTranslations } from 'next-intl'
+
 export function VisionMissionSection() {
+  const locale = useLocale()
+  const t = useTranslations('execution.visionMission')
+  const goalsList = t.raw('goalsList') as string[]
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -28,7 +33,7 @@ export function VisionMissionSection() {
     },
   }
   return (
-    <section id="vision" className="py-24 bg-white relative px-[5%]">
+    <section id="vision" dir={locale === 'ar' ? 'rtl' : 'ltr'} className="py-24 bg-white relative px-[5%]">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         {/* Banner Image */}
         <motion.div
@@ -50,7 +55,7 @@ export function VisionMissionSection() {
         >
           <Image
             src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80"
-            alt="فريق عمل تنفيذي يخطط للمستقبل"
+            alt={t('imageAlt')}
             loading="lazy"
             className="w-full max-h-[600px] object-cover"
             width={1000}
@@ -78,14 +83,12 @@ export function VisionMissionSection() {
             <div className="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-amber-600">
               <Eye className="w-7 h-7" />
             </div>
-            <h3 className="text-[clamp(0.75rem,2vw,2rem)] font-bold text-slate-900 mb-4">رؤيتنا</h3>
+            <h3 className="text-[clamp(0.75rem,2vw,2rem)] font-bold text-slate-900 mb-4">{t('visionTitle')}</h3>
             <p className="text-slate-600 text-[clamp(0.75rem,1vw,2rem)] leading-relaxed">
-              أن نصبح الجهة التي يلجأ إليها رجل الأعمال عندما يريد: قرارًا لا
-              يهتز، تنفيذًا لا يتعطل، ومسارًا لا يترك مجالًا للصدفة.
+              {t('visionText')}
             </p>
             <p className="mt-4 font-bold text-slate-800 text-[clamp(0.75rem,1vw,2rem)]">
-              نحن لا نطمح أن نكون خيارًا… نحن نطمح أن نكون المرجع التنفيذي
-              الأول.
+              {t('visionHighlight')}
             </p>
           </motion.div>
 
@@ -98,14 +101,12 @@ export function VisionMissionSection() {
             <div className="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-teal-600">
               <Send className="w-7 h-7" />
             </div>
-            <h3 className="text-[clamp(0.75rem,2vw,2rem)] font-bold text-slate-900 mb-4">رسالتنا</h3>
+            <h3 className="text-[clamp(0.75rem,2vw,2rem)] font-bold text-slate-900 mb-4">{t('missionTitle')}</h3>
             <p className="text-slate-600 text-[clamp(0.75rem,1vw,2rem)] leading-relaxed">
-              أن نقدّم لرجل الأعمال منظومة تشغيل متكاملة، تجمع بين السرية،
-              والدقة، والوعي، وتمنحه تجربة تعامل تُشعره أن هناك كيانًا يعمل
-              لصالحه كما لو كان جزءًا من فريقه الخاص…
+              {t('missionText')}
             </p>
             <p className="mt-4 font-bold text-slate-800 text-[clamp(0.75rem,1vw,2rem)]">
-              لكن بمعايير أعلى، ورؤية أوسع، ومسؤولية أكبر.
+              {t('missionHighlight')}
             </p>
           </motion.div>
 
@@ -118,24 +119,18 @@ export function VisionMissionSection() {
             <div className="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-amber-600">
               <Target className="w-7 h-7" />
             </div>
-            <h3 className="text-[clamp(0.75rem,2vw,2rem)] font-bold text-slate-900 mb-4">هدفنا</h3>
-            <p className="text-slate-600 text-[clamp(0.75rem,1vw,2rem)] mb-4">تمكين رجل الأعمال من:</p>
+            <h3 className="text-[clamp(0.75rem,2vw,2rem)] font-bold text-slate-900 mb-4">{t('goalsTitle')}</h3>
+            <p className="text-slate-600 text-[clamp(0.75rem,1vw,2rem)] mb-4">{t('goalsIntro')}</p>
             <ul className="space-y-3 mb-6">
-              {[
-                'اتخاذ قرارات محسوبة',
-                'بناء نفوذ مستدام',
-                'إدارة ملفات حساسة بثقة',
-                'التحرك في السوق بثبات',
-                'الوصول إلى نتائج لا تحتاج تفسير',
-              ].map((item, i) => (
-                <li key={i} className="flex items-start text-slate-700 text-[clamp(0.75rem,1vw,2rem)]">
-                  <CheckCircle className="w-5 h-5 text-teal-500 ml-2 shrink-0 mt-0.5" />
+              {goalsList.map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-slate-700 text-[clamp(0.75rem,1vw,2rem)]">
+                  <CheckCircle className="w-5 h-5 text-teal-500 shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
             <p className="font-bold text-slate-800 text-[clamp(0.75rem,1vw,2rem)] pt-4 border-t border-slate-200">
-              هدفنا ليس أن نخدمه… هدفنا أن نرفع مستوى حضوره وتأثيره.
+              {t('goalsHighlight')}
             </p>
           </motion.div>
         </motion.div>
