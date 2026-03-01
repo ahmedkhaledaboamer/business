@@ -129,9 +129,9 @@ export function WhyUsSection({ locale }: { locale: string }) {
                   className={`absolute inset-0 bg-gradient-to-br ${style.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                 />
 
-                <div className="relative z-10">
+                <div className="relative z-10 text-center">
                   {/* Icon */}
-                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-inner">
+                  <div className="mx-auto w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-inner">
                     <Icon className={`w-8 h-8 ${style.iconColor}`} />
                   </div>
 

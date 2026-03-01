@@ -26,10 +26,10 @@ export function ClosingSection() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-teal-800 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50"></div>
 
               <div className="relative z-10">
-                <h3 className="text-[clamp(0.75rem,2vw,6rem)] font-bold mb-8 text-amber-400">
+                <h3 className="text-center md:text-right text-[clamp(0.75rem,2vw,6rem)] font-bold mb-8 text-amber-400">
                   {t('title')}
                 </h3>
-                <p className="text-teal-100 mb-10 text-[clamp(0.75rem,2vw,1.5rem)]">
+                <p className="text-teal-100 text-center md:text-right mb-10 text-[clamp(0.75rem,2vw,1.5rem)]">
                   {t('subtitle')}
                 </p>
 

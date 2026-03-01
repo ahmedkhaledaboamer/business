@@ -27,10 +27,10 @@ export function WhoWeServe() {
           ref={ref}>
 
           <div className="flex-1 relative">
-            <h2 className="font-bold text-[#1A1A1A] mb-8 text-[clamp(0.75rem,2vw,6rem)]">
+            <h2 className="text-center lg:text-left font-bold text-[#1A1A1A] mb-8 text-[clamp(0.75rem,2vw,6rem)]">
               {t('title')}
             </h2>
-            <p className="text-gray-600 mb-12 leading-relaxed font-medium text-[clamp(0.75rem,2vw,1.5rem)]">
+            <p className="text-gray-600 text-center lg:text-left mb-12 leading-relaxed font-medium text-[clamp(0.75rem,2vw,1.5rem)]">
               {t('subtitle')}
             </p>
 
@@ -64,13 +64,13 @@ export function WhoWeServe() {
               )}
             </div>
 
-            <div className="flex items-center gap-4 mb-8 opacity-40">
+            <div className="flex items-center justify-center  gap-4 mb-8 opacity-40">
               <div className="w-12 h-[1px] bg-[#C9A84C]" />
               <div className="w-2 h-2 rounded-full bg-[#C9A84C]" />
               <div className="w-12 h-[1px] bg-[#C9A84C]" />
             </div>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-nowrap gap-4">
               {tags.map((tag, idx) =>
               <span
                 key={idx}

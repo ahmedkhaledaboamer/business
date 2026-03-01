@@ -10,11 +10,10 @@ const stepIcons = [Search, Map, Eye, FileText];
 
 export function HowWeWork() {
   const t = useTranslations('brandIdentity.howWeWork');
-  const rawSteps = (t.raw('steps') as { title: string; desc: string; progress: string }[] | undefined) ?? [];
-  const steps = useMemo(
-    () => (Array.isArray(rawSteps) ? rawSteps : []).map((s, i) => ({ ...s, icon: stepIcons[i] })),
-    [rawSteps]
-  );
+  const steps = useMemo(() => {
+    const rawSteps = (t.raw('steps') as { title: string; desc: string; progress: string }[] | undefined) ?? [];
+    return (Array.isArray(rawSteps) ? rawSteps : []).map((s, i) => ({ ...s, icon: stepIcons[i] }));
+  }, [t]);
   const { ref, isVisible } = useScrollAnimation(0.2);
   return (
     <section className="py-28 bg-white overflow-hidden px-[5%]">
@@ -137,7 +136,7 @@ export function HowWeWork() {
                 alt="Team planning"
                 width={800}
                 height={600}
-                className="relative w-full h-[600px] object-cover rounded-[24px] shadow-[0_24px_72px_rgba(0,0,0,0.15)] z-10" />
+                className="relative w-full h-[300px] md:h-[600px] object-cover rounded-[24px] shadow-[0_24px_72px_rgba(0,0,0,0.15)] z-10" />
 
             </div>
           </div>

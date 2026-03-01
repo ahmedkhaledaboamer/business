@@ -101,15 +101,15 @@ export function ServicesSection() {
                   duration: 0.5,
                   delay: (index % 4) * 0.1,
                 }}
-                className="bg-[#FAFAF8] rounded-2xl p-6 border border-slate-100 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-900/5 hover:-translate-y-1 transition-all duration-300 group"
+                className="flex flex-col items-center justify-center md:items-start lg:justify-start bg-[#FAFAF8] rounded-2xl p-6 border border-slate-100 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-900/5 hover:-translate-y-1 transition-all duration-300 group"
               >
                 <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-amber-500 group-hover:text-white text-amber-600 transition-colors">
                   <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-[clamp(0.75rem,1vw,3rem)] font-bold text-slate-900 mb-3 leading-tight">
+                <h3 className="text-center md:text-right text-[clamp(0.75rem,1vw,3rem)] font-bold text-slate-900 mb-3 leading-tight">
                   {service.title}
                 </h3>
-                <p className="text-slate-600 text-[clamp(0.75rem,1vw,2rem)] leading-relaxed">
+                <p className="text-slate-600 text-center md:text-right text-[clamp(0.75rem,1vw,2rem)] leading-relaxed">
                   {service.desc}
                 </p>
               </motion.div>

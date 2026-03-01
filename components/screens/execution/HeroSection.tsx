@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
-
+import Image from 'next/image'
 export function HeroSection() {
   const containerRef = useRef(null)
   const locale = useLocale()
@@ -80,9 +80,11 @@ export function HeroSection() {
         style={{ y: yBg }}
         className="absolute inset-0 z-0"
       >
-        <img
+        <Image
           src="/imges/execution/01.webp"
           alt=""
+          width={1000}
+          height={1000}
           className="w-full h-full object-cover"
           style={{ filter: 'brightness(0.18) contrast(1.1) saturate(0.5)' }}
         />
@@ -163,7 +165,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.0 }}
           >
-            <p className="text-[#D4C5A0]/75 text-[clamp(0.75rem,2vw,3rem)] leading-[1.9] font-light">
+            <p className="text-[#D4C5A0]/75 text-center lg:text-left text-[clamp(0.75rem,2vw,3rem)] leading-[1.9] font-light">
               {t('intro')}
             </p>
           </motion.div>
@@ -174,7 +176,7 @@ export function HeroSection() {
             transition={{ duration: 0.9, delay: 1.15 }}
             className="space-y-6"
           >
-            <p className="text-[#D4C5A0]/75 text-[clamp(0.75rem,2vw,3rem)] leading-[1.9] font-light">
+            <p className="text-[#D4C5A0]/75 text-center lg:text-left text-[clamp(0.75rem,2vw,3rem)] leading-[1.9] font-light">
               {t('tagline')}
             </p>
             
@@ -186,7 +188,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.4 }}
-          className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-center gap-8"
+          className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8"
         >
           {/* Stats */}
           <div className="flex gap-10">

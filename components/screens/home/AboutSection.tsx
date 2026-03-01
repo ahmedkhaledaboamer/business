@@ -173,7 +173,7 @@ export function AboutSection({ locale }: { locale: string }) {
             </div>
 
             {/* Pillars */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+            <div className="flex flex-wrap justify-center md:grid md:grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
               {pillars.map(({ icon: Icon, titleKey, descKey }, i) => (
                 <motion.div
                   key={titleKey}
