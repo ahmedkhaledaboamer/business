@@ -82,7 +82,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
             onMouseEnter={() => setIsCta1Hovered(true)}
             onMouseLeave={() => setIsCta1Hovered(false)}
-            className="flex items-center justify-center gap-3 w-full sm:w-auto bg-[#C9A84C] text-[clamp(0.75rem,2vw,2rem)] hover:bg-[#D4B85A] text-[#0F1923] font-bold px-7 py-3.5 rounded-full transition"
+            className="flex items-center justify-center gap-3 w-full sm:w-auto bg-[#C9A84C] text-[clamp(0.75rem,1vw,2rem)] hover:bg-[#D4B85A] text-[#0F1923] font-bold px-7 py-3.5 rounded-full transition"
           >
             <span>{t("ctaPrimary")}</span>
             {isRTL ? (
@@ -106,7 +106,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
             onMouseEnter={() => setIsCta2Hovered(true)}
             onMouseLeave={() => setIsCta2Hovered(false)}
-            className={`flex items-center justify-center gap-3 text-[clamp(0.75rem,2vw,2rem)] w-full sm:w-auto border-2 font-bold px-7 py-3.5 rounded-full transition ${
+            className={`flex items-center justify-center gap-3 text-[clamp(0.75rem,1vw,2rem)] w-full sm:w-auto border-2 font-bold px-7 py-3.5 rounded-full transition ${
               isCta2Hovered
                 ? "border-[#C9A84C] text-[#C9A84C]"
                 : "border-white/30 text-white"
