@@ -26,7 +26,7 @@ export default function Header() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80')`,
+          backgroundImage: `url('/imges/home/001.webp')`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(15,25,35,0.9)] via-[rgba(11,29,58,0.85)] to-[rgba(15,25,35,0.95)]" />

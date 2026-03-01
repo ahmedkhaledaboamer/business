@@ -15,12 +15,12 @@ import Image from 'next/image'
 
 const serviceIcons = [BarChart3Icon, ShieldIcon, GlobeIcon, SettingsIcon, FileCheckIcon, NetworkIcon]
 const serviceImages = [
-  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
-  'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=600&q=80',
-  'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&q=80',
-  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
-  'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80',
-  'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80',
+  '/imges/home/2.webp',
+  '/imges/home/3.webp',
+  '/imges/home/4.webp',
+  '/imges/home/5.webp',
+  '/imges/home/6.webp',
+  '/imges/home/7.webp',
 ]
 const serviceColors = ['gold', 'burgundy', 'teal', 'gold', 'burgundy', 'teal'] as const
 const colorClasses = {
@@ -143,7 +143,7 @@ export function ServicesSection({ locale }: { locale: string }) {
                 className={`group bg-white rounded-3xl border border-gray-100 shadow-lg shadow-black/5 overflow-hidden ${colors.hover} transition-all duration-500 hover:-translate-y-2 flex flex-col`}
               >
                 {/* Image Header */}
-                <div className="relative md:h-[clamp(10rem,20vw,30rem)] h-[clamp(10rem,10vw,20rem)] overflow-hidden">
+                <div className="relative h-60 md:h-80 lg:h-70 xl:h-80 2xl:h-150 overflow-hidden">
                   <Image
                     src={serviceImages[index]}
                     width={600}

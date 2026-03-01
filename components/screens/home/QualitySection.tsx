@@ -7,9 +7,9 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
 const columnImages = [
-  'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80',
-  'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80',
-  'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
+  '/imges/home/01.webp',
+  '/imges/home/02.webp',
+  '/imges/home/033.webp',
 ]
 const columnColors = ['gold', 'teal', 'burgundy'] as const
 const columnItemCounts = [5, 5, 5]

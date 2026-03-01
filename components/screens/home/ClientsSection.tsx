@@ -74,7 +74,7 @@ export function ClientsSection({ locale }: { locale: string }) {
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed opacity-5"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80')`,
+          backgroundImage: `url('url('/imges/home/002.webp')`,
         }}
       />
       <div className="absolute inset-0 bg-warm-white/95" />

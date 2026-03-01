@@ -108,7 +108,7 @@ export function VisionSection({ locale }: { locale: string }) {
             className="hidden lg:block relative h-[clamp(10rem,20vw,40rem)] rounded-[2.5rem] overflow-hidden shadow-[0_24px_60px_rgba(15,25,35,0.14)] border border-[#C9A84C]/20 group"
           >
             <Image
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
+              src="/imges/home/58.webp"
               width={600}
               height={600}
               alt={t("imageAlt")}
