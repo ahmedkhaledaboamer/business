@@ -1,6 +1,5 @@
 "use client";
 
-import Button from "@/components/button";
 import { Link, usePathname } from "@/i18n/routing";
 import { cn } from "@/utils/cn";
 import { useLocale, useTranslations } from "next-intl";
@@ -80,7 +79,7 @@ export default function Navbar() {
       dir={isRTL ? "rtl" : "ltr"}
     >
       {/* Logo */}
-      <Logo className=" transition-transform duration-300 hover:scale-105 w-fit" size={100} />
+      <Logo className=" transition-transform duration-300 hover:scale-105 w-fit" size={80} />
 
       {/* Desktop Navigation Links */}
       <ul

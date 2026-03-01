@@ -163,7 +163,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.0 }}
           >
-            <p className="text-[#D4C5A0]/75 text-[clamp(1rem,1vw,3rem)] leading-[1.9] font-light">
+            <p className="text-[#D4C5A0]/75 text-[clamp(0.75rem,2vw,3rem)] leading-[1.9] font-light">
               {t('intro')}
             </p>
           </motion.div>
@@ -174,7 +174,7 @@ export function HeroSection() {
             transition={{ duration: 0.9, delay: 1.15 }}
             className="space-y-6"
           >
-            <p className="text-[#D4C5A0]/75 text-[clamp(1rem,1vw,3rem)] leading-[1.9] font-light">
+            <p className="text-[#D4C5A0]/75 text-[clamp(0.75rem,2vw,3rem)] leading-[1.9] font-light">
               {t('tagline')}
             </p>
             
@@ -186,23 +186,8 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.4 }}
-          className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8"
+          className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-center gap-8"
         >
-          {/* CTA */}
-          <button
-            className="group relative px-10 py-4 text-sm tracking-[0.25em] uppercase overflow-hidden"
-            style={{ fontFamily: 'Noto Naskh Arabic, serif' }}
-          >
-            <span className="absolute inset-0 border border-[#C9A84C]/50 group-hover:border-[#C9A84C] transition-colors duration-500" />
-            <span className="absolute inset-0 bg-[#C9A84C]/0 group-hover:bg-[#C9A84C]/8 transition-colors duration-500" />
-            {/* Corner accents */}
-            <span className="absolute top-0 right-0 w-3 h-3 border-t border-r border-[#C9A84C] -translate-y-px translate-x-px" />
-            <span className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-[#C9A84C] translate-y-px -translate-x-px" />
-            <span className="relative text-gold-light group-hover:text-white transition-colors duration-300">
-              {t('cta')}
-            </span>
-          </button>
-
           {/* Stats */}
           <div className="flex gap-10">
             {stats.map((stat, i) => (
@@ -213,10 +198,10 @@ export function HeroSection() {
                 transition={{ delay: 1.5 + i * 0.1, duration: 0.6 }}
                 className="text-center"
               >
-                <div className="text-2xl font-bold text-gold" style={{ fontFamily: 'Playfair Display, serif' }}>
+                <div className="text-[clamp(0.75rem,2vw,2rem)] font-bold text-gold" style={{ fontFamily: 'Playfair Display, serif' }}>
                   {stat.num}
                 </div>
-                <div className="text-xs text-[#8A7A5A] mt-1 tracking-wide">{stat.label}</div>
+                <div className="text-[clamp(0.75rem,2vw,1.5rem)] text-[#8A7A5A] mt-1 tracking-wide">{stat.label}</div>
               </motion.div>
             ))}
           </div>

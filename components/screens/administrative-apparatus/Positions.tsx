@@ -27,6 +27,7 @@ const POSITION_IMAGES = [
   'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
   'https://images.unsplash.com/photo-1614064641913-6b059828cdd4?auto=format&fit=crop&q=80',
   'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
 ];
 
 const categoryColors: Record<string, { bg: string; text: string; border: string; badge: string; hoverBg: string }> = {
@@ -40,8 +41,9 @@ const categoryColors: Record<string, { bg: string; text: string; border: string;
 
 type PositionItem = { title: string; category: string; desc: string; details: string[] };
 
-export function Positions() {
+export function Positions({ locale }: { locale: string }) {
   const t = useTranslations('administrativeApparatus.positions');
+  const isRTL = locale === "ar";
   const rawItems = t.raw('items') as PositionItem[] | undefined;
   const positions = useMemo(() => {
     if (!Array.isArray(rawItems)) return [];
@@ -82,11 +84,11 @@ export function Positions() {
           ref={ref}
           className={`text-center mb-16 transition-all duration-1000 ${isIntersecting ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4 inline-block relative">
+          <h2 className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-charcoal mb-4 inline-block relative">
             {t('title')}
             <div className="absolute -bottom-4 left-0 right-0 h-1 bg-gold rounded-full w-1/2 mx-auto" />
           </h2>
-          <p className="text-[clamp(1rem,1vw,3rem)] text-gray-600 mt-8 mx-auto">
+          <p className="text-[clamp(0.75rem,2vw,1.5rem)] text-gray-600 mt-8 mx-auto">
             {t('subtitle')}
           </p>
         </div>
@@ -100,7 +102,7 @@ export function Positions() {
               <button
                 key={catKey}
                 onClick={() => setActiveTab(catKey)}
-                className={`px-6 py-2 rounded-full font-semibold text-[clamp(1rem,1vw,3rem)] transition-colors ${activeTab === catKey ? `${color ? color.bg : 'bg-gold'} text-white` : 'bg-warm-gray text-charcoal hover:bg-gray-200'}`}>
+                className={`cursor-pointer px-6 py-2 rounded-full font-semibold text-[clamp(0.75rem,1vw,2rem)] transition-colors ${activeTab === catKey ? `${color ? color.bg : 'bg-gold'} text-white` : 'bg-warm-gray text-charcoal hover:bg-gray-200'}`}>
                 {label}
               </button>
             );
@@ -108,7 +110,7 @@ export function Positions() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPositions.map((pos) => {
             const color = categoryColors[pos.category] || categoryColors['management'];
             return (
@@ -117,7 +119,7 @@ export function Positions() {
                 className="bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 group relative overflow-hidden border-0">
 
                 <div
-                  className={`absolute top-0 left-0 right-0 h-1.5 ${color.bg} transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left z-10`} />
+                  className={`absolute top-0 left-0 right-0 h-1.5 ${color.bg} transform scale-x-0 group-hover:scale-x-100 transition-transform origin-start z-10`} />
 
 
                 <div className="relative h-[clamp(10rem,20vw,30rem)] overflow-hidden rounded-t-2xl">
@@ -142,14 +144,14 @@ export function Positions() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-charcoal mb-2">
+                  <h3 className="text-[clamp(0.75rem,1.5vw,3rem)] font-bold text-charcoal mb-2">
                     {pos.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-6 h-10 line-clamp-2">
+                  <p className="text-gray-600 text-[clamp(0.75rem,1vw,1.5rem)] mb-6 h-10 line-clamp-2">
                     {pos.desc}
                   </p>
                   <button
-                    className={`w-full py-2.5 rounded-lg border-2 ${color.border} ${color.text} ${color.hoverBg} hover:text-white transition-colors font-semibold text-sm`}
+                    className={`w-full cursor-pointer py-2.5 rounded-lg border-2 ${color.border} ${color.text} ${color.hoverBg} hover:text-white transition-colors font-semibold text-[clamp(0.75rem,1vw,1.5rem)]`}
                     onClick={() => setSelectedPosition(pos)}>
                     {t('viewDetails')}
                   </button>
@@ -170,7 +172,7 @@ export function Positions() {
           <div className="relative bg-white rounded-2xl shadow-heavy w-full max-w-[600px] overflow-hidden animate-slide-up max-h-[90vh] overflow-y-auto">
             <button
             onClick={() => setSelectedPosition(null)}
-            className="absolute top-4 left-4 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors">
+            className={`cursor-pointer absolute top-4 z-10 bg-black/40 hover:bg-black/60 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors ${isRTL ? 'right-4' : 'left-4'}`}>
 
               <X className="w-4 h-4" />
             </button>
@@ -190,7 +192,7 @@ export function Positions() {
                   className={`inline-block ${categoryColors[selectedPosition.category]?.bg || 'bg-gold'} text-white text-xs font-bold px-3 py-1 rounded-full mb-3`}>
                     {t(`categories.${selectedPosition.category}`)}
                   </span>
-                  <h3 className="text-3xl font-bold text-white">
+                  <h3 className="text-[clamp(0.75rem,2vw,3rem)] font-bold text-white">
                     {selectedPosition.title}
                   </h3>
                 </div>
@@ -198,11 +200,11 @@ export function Positions() {
             </div>
 
             <div className="p-8">
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              <p className="text-[clamp(0.75rem,2vw,1.5rem)] text-gray-700 mb-6 leading-relaxed">
                 {selectedPosition.desc}
               </p>
 
-              <h4 className="font-bold text-charcoal text-xl mb-4">
+              <h4 className="font-bold text-charcoal text-[clamp(0.75rem,1.5vw,3rem)] mb-4">
                 {t('tasks')}
               </h4>
               <ul className="space-y-3">

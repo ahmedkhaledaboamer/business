@@ -1,7 +1,7 @@
 {
   "page": {
-    "title": "Page d'accueil",
-    "description": "Votre partenaire exécutif pour renforcer votre influence et orienter vos décisions stratégiques grâce à un système opérationnel intégré offrant clarté, exécution précise et croissance sécurisée au niveau local et international."
+    "title": "KIB Services aux Dirigeants | Accueil",
+    "description": "KIB Services aux Dirigeants est votre partenaire exécutif pour renforcer votre influence et orienter vos décisions stratégiques. Découvrez un système opérationnel intégré qui offre clarté, exécution précise, soutien confidentiel et des voies de croissance sécurisées au niveau local et international—pour que vous restiez aux commandes pendant que nous gérons le reste."
   },
   "navbar": {
     "cta": "Réservez votre service",
@@ -120,7 +120,8 @@
     "promiseHighlight": "partenaire",
     "promiseTitle2": "qui protège vos intérêts",
     "promiseDesc": "Renforce votre influence et vous trace un chemin sûr vers la croissance et l'expansion.",
-    "imageAlt": "Vision stratégique"
+    "imageAlt": "Vision stratégique",
+    "visionChip": "Vision · Influence · Exécution"
   },
   "whyUs": {
     "badge": "Pourquoi nous ?",
@@ -178,6 +179,187 @@
       "instagram": "Instagram",
       "facebook": "Facebook"
     }
+  },
+  "administrativeApparatus": {
+      "hero": {
+        "badge": "Système opérationnel exécutif",
+        "title": "Apparat administratif",
+        "titleHighlight": "affiné",
+        "suffix": "qui travaille pour vous uniquement",
+        "intro": "Un système d'exécution intégré conçu pour servir le dirigeant, gérer ses intérêts et protéger son influence",
+        "cta": "Commencer maintenant",
+        "services": "Services"
+      },
+      "stats": {
+        "items": [
+          {"value": 20, "label": "Postes exécutifs", "icon": "Users"},
+          {"value": 100, "label": "Précision opérationnelle", "suffix": "%", "icon": "Target"},
+          {"value": 5, "label": "Niveaux de service", "icon": "Layers"},
+          {"value": 0, "label": "Marge d'erreur", "icon": "AlertCircle"}
+        ]
+      },
+      "pyramid": {
+        "title": "Votre place dans le système",
+        "level1": "Vous",
+        "tooltip1": "Siège de décision et de vision",
+        "level2": "Apparat administratif",
+        "tooltip2": "Exécution et protection",
+        "level3": "Dossiers et processus",
+        "tooltip3": "Résultats au quotidien",
+        "quote": "Vous ne voyez que le résultat…",
+        "quoteHighlight": "nous gérons le chemin pour y parvenir.",
+        "imageAlt": "Dirigeant"
+      },
+      "process": {
+        "title": "Comment fonctionne l'apparat administratif ?",
+        "subtitle": "Une méthodologie rigoureuse qui garantit l'atteinte de vos objectifs avec la plus grande efficacité",
+        "steps": [
+          {"title": "Analyse des besoins", "desc": "Une étude précise de votre situation actuelle et l'identification des écarts et des risques potentiels."},
+          {"title": "Construction de l'appareil", "desc": "Constitution d'une équipe d'élite et allocation des ressources pour protéger vos intérêts."},
+          {"title": "Exploitation et suivi", "desc": "Exécution silencieuse et efficace avec un suivi continu pour garantir le bon déroulement des opérations."},
+          {"title": "Livraison des résultats", "desc": "Atteindre les objectifs visés avec précision sans occuper votre temps."}
+        ]
+      },
+      "positions": {
+        "all": "Tous",
+        "categories": {
+          "management": "Management",
+          "protection": "Protection",
+          "relations": "Relations",
+          "analysis": "Analyse",
+          "financial": "Financier",
+          "international": "International"
+        },
+        "title": "Postes exécutifs",
+        "subtitle": "Chaque poste joue un rôle précis… tandis que vous restez au poste de décision uniquement",
+        "viewDetails": "Voir les détails",
+        "tasks": "Missions et responsabilités :",
+        "close": "Fermer",
+        "items": [
+          {"title": "Directeur de gestion de crise", "category": "protection", "desc": "Intervention immédiate pour résoudre toute crise avant qu'elle n'atteigne votre bureau.", "details": ["Veille des risques en amont", "Intervention rapide et efficace", "Protection de la réputation institutionnelle"]},
+          {"title": "Directeur de l'audit interne", "category": "analysis", "desc": "Suivi précis de toutes les opérations pour garantir l'intégrité.", "details": ["Revue des états financiers", "Évaluation de la performance opérationnelle", "Assurance de conformité"]},
+          {"title": "Directeur des relations extérieures", "category": "relations", "desc": "Construire des passerelles de communication avec les entités publiques et privées.", "details": ["Gestion des relations gouvernementales", "Représentation institutionnelle", "Extension du réseau de partenaires"]},
+          {"title": "Directeur de la protection stratégique", "category": "protection", "desc": "Sécuriser les intérêts juridiques et opérationnels.", "details": ["Protection juridique", "Sécurité des actifs", "Stratégies de défense"]},
+          {"title": "Directeur des études et de l'analyse", "category": "analysis", "desc": "Fournir des données précises pour étayer vos décisions.", "details": ["Analyse de marché", "Études de faisabilité", "Prospective"]},
+          {"title": "Directeur des opérations exécutives", "category": "management", "desc": "Superviser l'exécution des projets avec précision.", "details": ["Gestion de projet", "Suivi d'exécution", "Assurance qualité"]},
+          {"title": "Directeur du développement commercial", "category": "management", "desc": "Saisir les opportunités et élargir le périmètre d'activité.", "details": ["Identification de nouvelles opportunités", "Construction de partenariats", "Stratégies de croissance"]},
+          {"title": "Directeur de l'identité et des communications", "category": "relations", "desc": "Créer une image mentale digne de votre stature.", "details": ["Gestion de marque", "Relations publiques", "Communications stratégiques"]},
+          {"title": "Directeur de la gestion des risques", "category": "protection", "desc": "Anticiper les risques et planifier de manière proactive.", "details": ["Évaluation des risques", "Plans d'urgence", "Continuité d'activité"]},
+          {"title": "Directeur financier", "category": "financial", "desc": "Gestion de patrimoine et conseil en investissement.", "details": ["Planification financière", "Gestion des investissements", "Analyse financière"]},
+          {"title": "Directeur des grands projets", "category": "management", "desc": "Piloter des initiatives massives et complexes.", "details": ["Planification de projet", "Gestion des ressources", "Livraison de projet"]},
+          {"title": "Directeur des opérations internationales", "category": "international", "desc": "Gérer les intérêts au-delà des frontières.", "details": ["Expansion internationale", "Gestion des filiales à l'étranger", "Conformité internationale"]},
+          {"title": "Directeur de la conformité", "category": "protection", "desc": "Garantir le respect des lois et réglementations.", "details": ["Revue juridique", "Mise en œuvre de la réglementation", "Formation à la conformité"]},
+          {"title": "Directeur de la sécurité de l'information", "category": "protection", "desc": "Protéger les données et les dossiers confidentiels.", "details": ["Cybersécurité", "Protection des données", "Gestion des accès"]},
+          {"title": "Directeur de la qualité", "category": "analysis", "desc": "Garantir les plus hauts standards de performance.", "details": ["Suivi qualité", "Amélioration des processus", "Application des normes"]},
+          {"title": "Directeur des relations VIP", "category": "relations", "desc": "Gérer les réseaux de relations privés et d'élite.", "details": ["Gestion des relations privées", "Organisation de réunions", "Protocole"]},
+          {"title": "Directeur de la négociation stratégique", "category": "management", "desc": "Gérer les grands deals pour garantir les meilleures conditions.", "details": ["Gestion des négociations", "Clôture de deals", "Résolution des conflits"]},
+          {"title": "Directeur des privilèges spéciaux", "category": "relations", "desc": "Offrir des services exclusifs exceptionnels.", "details": ["Services exclusifs", "Gestion des déplacements", "Demandes spéciales"]},
+          {"title": "Directeur des dossiers confidentiels", "category": "protection", "desc": "Gérer les questions sensibles avec une discrétion totale.", "details": ["Secret professionnel", "Gestion des crises sensibles", "Enquêtes privées"]},
+          {"title": "Directeur du suivi exécutif", "category": "management", "desc": "Suivre l'exécution de vos directives avec précision.", "details": ["Suivi des décisions", "Rapports de performance", "Assurance d'exécution"]},
+          {"title": "Directeur de la planification stratégique", "category": "management", "desc": "Aligner la vision avec des feuilles de route exécutables et des objectifs à long terme.", "details": ["Conception de feuilles de route stratégiques", "Planification de scénarios", "Alignement des objectifs"]}
+        ]
+      },
+      "cta": {
+        "title": "Un apparat administratif complet qui travaille",
+        "titleHighlight": "pour vous…",
+        "subtitle": "Parce que votre temps est trop précieux pour le perdre dans les détails.",
+        "cta": "Commencer maintenant",
+        "contact": "Parlez-nous",
+        "confidentiality": "Confidentialité totale",
+        "experience": "Expérience mondiale",
+        "guaranteed": "Résultats garantis",
+        "formTitle": "Contact avec la direction",
+        "formSubtitle": "Laissez vos coordonnées et l'un de nos directeurs exécutifs vous contactera",
+        "formSubtitle2": "sous peu.",
+        "name": "Votre nom",
+        "namePlaceholder": "Entrez votre nom",
+        "phone": "Numéro de téléphone",
+        "phonePlaceholder": "Entrez votre numéro",
+        "message": "Votre message (optionnel)",
+        "messagePlaceholder": "Comment pouvons-nous vous servir ?",
+        "submit": "Envoyer la demande",
+        "success": "Votre demande a bien été reçue",
+        "successMsg": "Nous vous contacterons dès que possible."
+      },
+      "meta": {
+        "title": "KIB Services aux Dirigeants | Apparat administratif",
+        "description": "Construisez un apparat administratif dédié qui travaille exclusivement pour vous. Des postes exécutifs et processus rigoureux à une précision opérationnelle totale et une marge d'erreur nulle—découvrez comment KIB conçoit un système d'exécution intégré pour gérer vos intérêts, protéger votre influence et livrer des résultats, pour que vous restiez au poste de décision."
+      }
+  },
+  "execution": {
+    "hero": {
+      "words": ["Votre", "Exécutif"],
+      "intro": "Dans un monde où les règles du jeu changent chaque jour, où le bruit augmente et l'action diminue, nous avons choisi d'être l'entité qui n'élève pas la voix… mais le niveau de travail.",
+      "tagline": "L'entité qui ne court pas après les opportunités… mais les crée. Le partenaire qui n'offre pas un service… mais construit un parcours exécutif digne d'un dirigeant qui connaît sa valeur.",
+      "cta": "Découvrir plus",
+      "stats": [
+        {"num": "8+", "label": "Années d'expérience"},
+        {"num": "200+", "label": "Clients exécutifs"},
+        {"num": "100%", "label": "Engagement"}
+      ]
+    },
+    "closing": {
+      "title": "Contactez-nous",
+      "subtitle": "Nous sommes prêts à construire votre parcours exécutif. Contactez-nous pour démarrer le partenariat.",
+      "phone": "Téléphone direct",
+      "email": "E-mail",
+      "headquarters": "Siège",
+      "location": "Riyad, Royaume d'Arabie saoudite",
+      "sendMessage": "Envoyer un message direct",
+      "name": "Votre nom",
+      "namePlaceholder": "Entrez votre nom",
+      "phoneLabel": "Numéro de téléphone",
+      "phonePlaceholder": "Entrez votre numéro",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "Entrez votre e-mail",
+      "message": "Votre message",
+      "messagePlaceholder": "Comment pouvons-nous vous servir ?",
+      "submit": "Envoyer la demande"
+    },
+    "services": {
+      "title": "Nos services",
+      "intro": "Nous vous offrons des services exécutifs intégrés",
+      "imageAlt": "Espace de bureau moderne",
+      "items": [
+        {"title": "Ingénierie de l'influence personnelle", "desc": "Nous créons une présence impactante pour vous dans les cercles qui prennent les décisions."},
+        {"title": "Gestion des dossiers hautement sensibles", "desc": "Nous gérons vos dossiers que personne ne doit voir… avec une précision qui ne laisse aucune place à l'erreur."},
+        {"title": "Analyse approfondie des scénarios", "desc": "Nous lisons l'avenir de votre entreprise avant qu'il ne bouge."},
+        {"title": "Construction d'un réseau d'influence parallèle", "desc": "Nous tissons des relations qui vous servent avant que vous en ayez besoin."},
+        {"title": "Surveillance des risques cachés", "desc": "Nous détectons la menace avant qu'elle n'apparaisse."},
+        {"title": "Développement de l'image professionnelle des dirigeants", "desc": "Nous créons une présence élégante qui reflète votre vraie valeur."},
+        {"title": "Gestion des relations gouvernementales de haut niveau", "desc": "Nous facilitons votre accès aux entités officielles et surmontons les complexités."},
+        {"title": "Conception de parcours d'expansion sécurisés", "desc": "Nous vous ouvrons de nouvelles portes… sans risque non calculé."}
+      ]
+    },
+    "quality": {
+      "columns": [
+        {"title": "Normes de qualité internes", "subtitle": "Nous opérons selon des normes que peu connaissent :", "items": ["Précision opérationnelle à 100 %", "Documentation complète à chaque étape", "Suivi en temps réel", "Analyse continue", "Contrôles qualité internes"]},
+        {"title": "Le langage de l'entité", "subtitle": "Nous parlons un langage différent :", "items": ["Un langage clair", "Sans bruit", "Qui respecte votre temps", "Basé sur l'information, pas l'impression", "Qui révèle la vérité, ne la masque pas"]},
+        {"title": "Principes d'engagement", "subtitle": "Nos principes ne changent pas :", "items": ["Nous nous engageons avant de promettre", "Nous montrons avant de parler", "Nous exécutons avant de promouvoir", "Nous respectons avant de demander", "Nous clarifions avant de questionner"]}
+      ]
+    },
+    "meta": {
+      "title": "KIB Services aux Dirigeants | Exécution",
+      "description": "L'entité qui ne court pas après les opportunités—mais les crée. Découvrez notre approche d'exécution : services intégrés, normes précises et un parcours exécutif conçu pour les dirigeants qui connaissent leur valeur."
+    }
+  },
+  "brandIdentity": {
+    "hero": {"title": "Notre identité", "intro": "Nous n'écrivons pas une définition pour remplir l'espace…", "tagline": "Nous écrivons notre identité par notre façon de travailler : avec une confiance ressentie avant d'être lue", "cta": "Découvrir notre identité"},
+    "intro": {"text": "Nous sommes une entité conçue pour être la force derrière le dirigeant"},
+    "closing": {"words": "Cette entité n'est pas qu'une entreprise…", "line1": "Nous sommes là pour faire la différence.", "line2": "Pour construire un héritage qui ne peut être effacé.", "line3": "Vous êtes au bon endroit.", "cta": "Contactez-nous", "backHome": "Retour à l'accueil", "success": "Envoyé avec succès", "successMsg": "Nous vous contacterons bientôt pour commencer votre parcours de réussite.", "formTitle": "Commencez votre parcours avec nous", "formSubtitle": "Construisons ensemble votre prochaine stratégie.", "fullName": "Nom complet", "namePlaceholder": "Entrez votre nom", "company": "Entreprise / Institution", "companyPlaceholder": "Nom de votre entreprise", "phone": "Numéro de téléphone", "message": "Message", "messagePlaceholder": "Comment pouvons-nous vous aider ?", "sending": "Envoi en cours…", "submit": "Envoyer la demande"},
+    "services": {"sectionTitle": "Des services qui reflètent notre identité", "sectionSubtitle": "Solutions stratégiques conçues pour l'élite", "cta": "Demander une consultation", "items": [{"title": "Gestion de l'influence exécutive", "desc": "Renforcer l'influence dans les salles de conseil", "detail": "Nous permettons aux dirigeants de renforcer leur présence et leur impact au sein des conseils grâce à des stratégies de communication avancées et à la construction d'alliances solides."}, {"title": "Construction de voies stratégiques", "desc": "Planification à long terme pour une croissance durable", "detail": "Nous concevons des feuilles de route stratégiques sur mesure qui prennent en compte les variables économiques et géopolitiques pour une croissance durable et une expansion sécurisée."}, {"title": "Gestion des relations à haute sensibilité", "desc": "Relations avec les partenaires et clients clés", "detail": "Nous gérons des réseaux de relations complexes et sensibles avec une compétence diplomatique, en tant que médiateurs de confiance pour résoudre les conflits et construire des ponts."}, {"title": "Surveillance de la réputation numérique", "desc": "Protection de l'image dans l'espace numérique", "detail": "Nous utilisons les derniers outils de surveillance et d'analyse pour protéger votre image en continu, avec des plans de réponse rapide en cas de crise."}, {"title": "Analyse des risques futurs", "desc": "Anticiper les défis et planifier de manière proactive", "detail": "Nous fournissons des lectures précises des risques potentiels et des plans de contingence proactifs pour assurer la continuité d'activité."}, {"title": "Gestion des dossiers hautement confidentiels", "desc": "Protection des informations sensibles aux plus hauts standards", "detail": "Nous offrons un environnement totalement sécurisé et des protocoles stricts pour la gestion de documents et d'informations hautement sensibles."}]},
+    "whoWeServe": {"title": "Pour qui écrivons-nous cette identité ?", "subtitle": "Nous ne travaillons pas avec tout le monde ; nous choisissons nos partenaires avec soin. Nos services sont conçus pour l'élite qui comprend la valeur du temps, de la qualité et de l'impact stratégique.", "labels": ["Dirigeant", "Entreprise familiale", "Investisseur", "Restructuration", "Présidents de conseil", "Grandes entreprises familiales", "Investisseurs étrangers", "Entités en restructuration", "Personnalités publiques et influentes", "Institutions en quête d'expansion"], "tags": ["Clarté", "Engagement", "Qualité", "Respect"]},
+    "statement": {"title": "Énoncé de l'entité", "intro": "Nous croyons que le succès n'est pas une coïncidence, mais le résultat d'une planification précise, d'une exécution professionnelle et d'une vision claire. Cette entité existe pour être le partenaire stratégique qui protège vos intérêts et propulse votre entreprise vers le sommet.", "points": ["Nous nous engageons pour les plus hauts standards de qualité et de professionnalisme", "Nous offrons des solutions innovantes adaptées aux défis du marché", "Nous construisons des relations durables fondées sur la confiance mutuelle"]},
+    "stats": {"items": [{"label": "Client"}, {"label": "Taux de satisfaction"}, {"label": "Années d'expérience"}, {"label": "Projet"}]},
+    "dictionary": {"title": "Dictionnaire de l'entité", "subtitle": "Des termes qui forgent notre langage", "terms": [{"term": "Influence", "desc": "La capacité à orienter le cours des grandes décisions", "quote": "La vraie influence ne se voit pas—ce sont ses résultats."}, {"term": "Décision", "desc": "Le moment qui sépare l'hésitation de la réalisation", "quote": "La bonne décision au mauvais moment est une mauvaise décision."}, {"term": "Protection", "desc": "Le bouclier qui préserve les intérêts avant qu'ils ne soient menacés", "quote": "La meilleure protection est celle qui empêche le danger avant qu'il n'advienne."}, {"term": "Exécution", "desc": "Transformer les plans en résultats tangibles avec précision", "quote": "Une idée sans exécution n'est qu'un rêve."}, {"term": "Confidentialité", "desc": "Une confiance absolue dans la sauvegarde de l'information", "quote": "La confidentialité n'est pas dissimulation—c'est le respect de la confiance."}, {"term": "Partenariat", "desc": "Une relation fondée sur le respect et l'intérêt commun", "quote": "Un partenariat réussi est celui où 1+1 égale 3."}]},
+    "howWeWork": {"title": "Comment travaillons-nous ?", "subtitle": "Une méthodologie rigoureuse qui garantit l'atteinte des objectifs", "steps": [{"title": "Nous analysons", "desc": "Nous étudions la situation actuelle en profondeur et identifions les opportunités et les risques", "progress": "25%"}, {"title": "Nous planifions", "desc": "Nous établissons une feuille de route claire avec des étapes définies", "progress": "50%"}, {"title": "Nous suivons", "desc": "Nous surveillons l'exécution et assurons le respect des normes", "progress": "75%"}, {"title": "Nous documentons", "desc": "Nous enregistrons chaque étape pour assurer transparence et traçabilité", "progress": "100%"}]},
+    "promise": {"title": "Promesse de marque", "subtitle": "Des engagements qui ne souffrent aucun compromis", "quote": "Cette promesse est notre référence… et tout ce que nous livrons est mesuré à cette aune.", "promises": [{"title": "Pleine clarté", "desc": "Nous croyons que la transparence est le fondement de toute relation réussie"}, {"title": "Exécution précise", "desc": "Chaque étape est calculée, chaque décision réfléchie"}, {"title": "Des résultats qui imposent le respect", "desc": "Nous livrons des résultats qui parlent d'eux-mêmes"}]},
+    "personality": {"title": "Personnalité de marque", "subtitle": "Des traits qui forment le cœur de nos échanges et de nos décisions", "traits": [{"name": "Stable", "desc": "Nous avançons avec constance et décidons avec précision"}, {"name": "Conscient", "desc": "Nous lisons le marché avant qu'il ne bouge"}, {"name": "Professionnel", "desc": "Nous opérons selon des normes qui ne vacillent pas"}, {"name": "Capable", "desc": "Nous savons où placer chaque pas et pourquoi"}, {"name": "Fidèle", "desc": "Nous considérons le succès de notre client comme partie de notre identité"}]},
+    "meta": {"title": "KIB Services aux Dirigeants | Identité de marque", "description": "Découvrez notre identité : une entité conçue pour être la force derrière le dirigeant. De notre énoncé et personnalité aux services qui reflètent qui nous sommes—solutions stratégiques pour l'élite, fondées sur la clarté, l'engagement, la qualité et le respect."}
+  },
+  "servicesPage": {
+    "hero": {"title": "Chez KIB pour les services aux dirigeants, nous ne travaillons pas dans les limites du marché… nous les dessinons.", "paragraphs": ["Nous ne suivons pas le flux des affaires… nous donnons le rythme auquel les entreprises se déplacent.", "Nous sommes l'entité qui n'offre pas un service, mais construit un système, crée de l'influence et établit une présence qui précède le nom du client avant son arrivée.", "Nous ne fonctionnons pas avec une mentalité de bureau…", "Mais avec une mentalité d'institution autour de laquelle les décisions se construisent, par laquelle les normes se mesurent, et à laquelle on se réfère dans les détails qui font la différence entre une entreprise qui fonctionne… et une entreprise respectée.", "Partenaire de décision… partenaire d'expansion… et partenaire d'influence.", "Ici… une nouvelle phase d'engagement commence.", "Une phase qui ne dépend pas de ce que nous faisons pour vous… mais de ce que nous construisons avec vous."]},
+    "nav": {"title": "Sections des services", "subtitle": "Choisissez une section pour parcourir rapidement", "count": "section", "service": "service"}
   }
 }
 

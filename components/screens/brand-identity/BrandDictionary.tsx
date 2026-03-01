@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import {
   X,
   Crown,
@@ -12,6 +12,8 @@ import {
   Quote } from
 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useTranslations } from 'next-intl';
+
 const accentColors = [
 '#C9A84C',
 '#B87333',
@@ -20,61 +22,39 @@ const accentColors = [
 '#1B2A4A',
 '#D4A574'];
 
-const terms = [
-{
-  term: 'النفوذ',
-  desc: 'القدرة على التأثير في مسار القرارات الكبرى',
-  img: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80',
-  quote: 'النفوذ الحقيقي هو الذي لا يُرى، بل تُرى نتائجه.',
-  icon: Crown
-},
-{
-  term: 'القرار',
-  desc: 'اللحظة التي تفصل بين التردد والإنجاز',
-  img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
-  quote: 'القرار الصائب في الوقت الخاطئ هو قرار خاطئ.',
-  icon: Scale
-},
-{
-  term: 'الحماية',
-  desc: 'الدرع الذي يحمي المصالح قبل أن تُهدد',
-  img: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80',
-  quote: 'أفضل حماية هي تلك التي تمنع الخطر قبل وقوعه.',
-  icon: ShieldCheck
-},
-{
-  term: 'التنفيذ',
-  desc: 'تحويل الخطط إلى نتائج ملموسة بدقة',
-  img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
-  quote: 'الفكرة بلا تنفيذ هي مجرد حلم.',
-  icon: Rocket
-},
-{
-  term: 'السرية',
-  desc: 'الثقة المطلقة في حفظ المعلومات',
-  img: 'https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&q=80',
-  quote: 'السرية ليست إخفاءً، بل هي احترام للثقة.',
-  icon: Lock
-},
-{
-  term: 'الشراكة',
-  desc: 'علاقة مبنية على الاحترام والمصلحة المشتركة',
-  img: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&q=80',
-  quote: 'الشراكة الناجحة هي التي تجعل 1+1 يساوي 3.',
-  icon: Handshake
-}];
+const termImages = [
+  'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80',
+  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
+  'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80',
+  'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
+  'https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&q=80',
+  'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&q=80',
+];
+
+const termIcons = [Crown, Scale, ShieldCheck, Rocket, Lock, Handshake];
 
 export function BrandDictionary() {
-  const [activeTerm, setActiveTerm] = useState<(typeof terms)[0] | null>(null);
+  const t = useTranslations('brandIdentity.dictionary');
+  const rawTerms = (t.raw('terms') as { term: string; desc: string; quote: string }[] | undefined) ?? [];
+  const terms = useMemo(
+    () =>
+      (Array.isArray(rawTerms) ? rawTerms : []).map((item, i) => ({
+        ...item,
+        img: termImages[i] ?? '',
+        icon: termIcons[i],
+      })),
+    [rawTerms]
+  );
+  const [activeTerm, setActiveTerm] = useState<typeof terms[0] | null>(null);
   const { ref, isVisible } = useScrollAnimation(0.1);
   return (
     <section className="py-28 bg-[#F8F7F4] px-[5%]">
       <div className="mx-auto px-6" ref={ref}>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4">
-            قاموس الكيان
+          <h2 className="font-bold text-[#1A1A1A] mb-4 text-[clamp(0.75rem,2vw,6rem)]">
+            {t('title')}
           </h2>
-          <p className="text-xl text-gray-500">مصطلحات تشكل لغتنا الخاصة</p>
+          <p className="text-gray-500 text-[clamp(0.75rem,2vw,1.5rem)]">{t('subtitle')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -124,7 +104,7 @@ export function BrandDictionary() {
 
                   </div>
                   <h3
-                    className="text-2xl font-bold text-[#1A1A1A] hover-color-target transition-colors duration-300"
+                    className="font-bold text-[#1A1A1A] hover-color-target transition-colors duration-300 text-[clamp(0.75rem,1vw,2rem)]"
                     style={
                     {
                       '--hover-color': accent
@@ -159,7 +139,7 @@ export function BrandDictionary() {
 
             <button
             onClick={() => setActiveTerm(null)}
-            className="absolute top-6 left-6 z-10 bg-white/90 hover:bg-white p-2 rounded-full text-gray-800 transition-all hover:scale-110 shadow-md">
+            className="cursor-pointer absolute top-6 left-6 z-10 bg-white/90 hover:bg-white p-2 rounded-full text-gray-800 transition-all hover:scale-110 shadow-md">
 
               <X className="w-5 h-5" />
             </button>
@@ -181,18 +161,18 @@ export function BrandDictionary() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-6 right-8 flex items-center gap-4">
                 <activeTerm.icon className="w-10 h-10 text-[#C9A84C]" />
-                <h3 className="text-4xl font-bold text-white drop-shadow-md">
+                <h3 className="text-[clamp(0.75rem,2vw,3rem)] font-bold text-white drop-shadow-md">
                   {activeTerm.term}
                 </h3>
               </div>
             </div>
             <div className="p-8 bg-white">
-              <p className="text-2xl text-[#1A1A1A] font-bold mb-8 leading-relaxed">
+              <p className="text-[#1A1A1A] font-bold mb-8 leading-relaxed text-[clamp(0.75rem,2vw,1.5rem)]">
                 {activeTerm.desc}
               </p>
               <div className="relative p-6 bg-[#FDF8F0] rounded-xl border border-[#C9A84C]/20">
                 <Quote className="absolute top-4 right-4 w-8 h-8 text-[#C9A84C]/20" />
-                <p className="text-xl text-gray-700 italic font-medium relative z-10">
+                <p className="text-gray-700 italic font-medium relative z-10 text-[clamp(0.75rem,2vw,1.5rem)]">
                   &quot;{activeTerm.quote}&quot;
                 </p>
               </div>

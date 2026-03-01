@@ -55,7 +55,7 @@ export function ServiceLevelsSection() {
             viewport={{
               once: true,
             }}
-            className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+            className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-slate-900 mb-6"
           >
             مستويات الخدمة
           </motion.h2>
@@ -74,7 +74,7 @@ export function ServiceLevelsSection() {
             transition={{
               delay: 0.1,
             }}
-            className="text-xl text-slate-600 mx-auto"
+            className="text-[clamp(0.75rem,2vw,1.5rem)] text-slate-600 mx-auto"
           >
             نحن لا نقدّم خدمة واحدة… نحن نقدّم مستويات تشغيل
           </motion.p>
@@ -116,19 +116,19 @@ export function ServiceLevelsSection() {
                   </div>
 
                   <div
-                    className={`text-sm font-bold mb-2 tracking-wider ${level.highlight ? 'text-amber-200' : 'text-amber-600'}`}
+                    className={`text-[clamp(0.75rem,2vw,1.5rem)] font-bold mb-2 tracking-wider ${level.highlight ? 'text-amber-200' : 'text-amber-600'}`}
                   >
                     المستوى {level.num}
                   </div>
 
                   <h3
-                    className={`text-2xl font-bold mb-4 ${level.highlight ? 'text-white' : 'text-slate-900'}`}
+                    className={`text-[clamp(0.75rem,2vw,2rem)] font-bold mb-4 ${level.highlight ? 'text-white' : 'text-slate-900'}`}
                   >
                     {level.name}
                   </h3>
 
                   <p
-                    className={`leading-relaxed ${level.highlight ? 'text-amber-50' : 'text-slate-600'}`}
+                    className={`text-[clamp(0.75rem,1vw,2rem)] leading-relaxed ${level.highlight ? 'text-amber-50' : 'text-slate-600'}`}
                   >
                     {level.desc}
                   </p>

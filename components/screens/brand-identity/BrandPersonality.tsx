@@ -1,56 +1,41 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useTranslations } from 'next-intl';
+
 const accentColors = ['#C9A84C', '#1A6B5C', '#B87333', '#7A2D4A', '#D4A574'];
-const traits = [
-{
-  icon: '🎯',
-  name: 'رصينة',
-  desc: 'نتحرك بثبات، ونقرر بدقة',
-  img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=60'
-},
-{
-  icon: '👁',
-  name: 'واعية',
-  desc: 'نقرأ السوق قبل أن يتحرك',
-  img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&q=60'
-},
-{
-  icon: '⚡',
-  name: 'محترفة',
-  desc: 'نعمل بمعايير لا تهتز',
-  img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&q=60'
-},
-{
-  icon: '🧠',
-  name: 'متمكنة',
-  desc: 'نعرف أين نضع الخطوة ولماذا',
-  img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&q=60'
-},
-{
-  icon: '🤝',
-  name: 'مخلصة',
-  desc: 'نعتبر نجاح العميل جزءًا من هويتنا',
-  img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=300&q=60'
-}];
+const traitIcons = ['🎯', '👁', '⚡', '🧠', '🤝'];
+const traitImages = [
+  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=60',
+  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&q=60',
+  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&q=60',
+  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&q=60',
+  'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=300&q=60',
+];
 
 export function BrandPersonality() {
+  const t = useTranslations('brandIdentity.personality');
+  const rawTraits = (t.raw('traits') as { name: string; desc: string }[] | undefined) ?? [];
+  const traits = useMemo(
+    () => Array.isArray(rawTraits) ? rawTraits.map((tr, i) => ({ ...tr, icon: traitIcons[i], img: traitImages[i] })) : [],
+    [rawTraits]
+  );
   const { ref, isVisible } = useScrollAnimation(0.15);
   return (
     <section className="py-28 bg-gradient-to-b from-white via-[#FDF8F0]/50 to-white px-[5%]">
       <div className=" mx-auto px-6">
         <div className="text-center mb-20" ref={ref}>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] inline-block relative mb-4">
-            شخصية العلامة التجارية
+          <h2 className="font-bold text-[#1A1A1A] inline-block relative mb-4 text-[clamp(0.75rem,2vw,6rem)]">
+            {t('title')}
             <div
               className={`absolute -bottom-4 right-0 h-1.5 bg-gradient-to-l from-[#C9A84C] via-[#B87333] to-transparent rounded-full transition-all duration-1000 ease-out ${isVisible ? 'w-full' : 'w-0'}`} />
 
           </h2>
           <p
-            className={`text-xl text-gray-500 mt-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            className={`text-gray-500 mt-8 transition-all duration-1000 delay-300 text-[clamp(0.75rem,2vw,1.5rem)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
 
-            صفات تشكل جوهر تعاملاتنا وقراراتنا
+            {t('subtitle')}
           </p>
         </div>
 
@@ -122,7 +107,7 @@ export function BrandPersonality() {
                     {trait.icon}
                   </span>
                   <h3
-                  className="text-2xl font-bold text-[#1A1A1A] relative z-10 hover-color-target transition-colors duration-300"
+                  className="font-bold text-[#1A1A1A] relative z-10 hover-color-target transition-colors duration-300 text-[clamp(0.75rem,1vw,2rem)]"
                   style={
                   {
                     '--hover-color': accentColors[index]
@@ -150,7 +135,7 @@ export function BrandPersonality() {
                     background: `radial-gradient(circle at center, ${accentColors[index]}, transparent 70%)`
                   }} />
 
-                  <p className="text-xl text-center font-bold text-[#1A1A1A] leading-relaxed relative z-10">
+                  <p className="text-center font-bold text-[#1A1A1A] leading-relaxed relative z-10 text-[clamp(0.75rem,2vw,1.5rem)]">
                     {trait.desc}
                   </p>
                 </div>

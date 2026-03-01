@@ -51,7 +51,7 @@ export function OperatingSystemSection() {
             viewport={{
               once: true,
             }}
-            className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+            className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-slate-900 mb-6"
           >
             نظام التشغيل التنفيذي
           </motion.h2>
@@ -70,7 +70,7 @@ export function OperatingSystemSection() {
             transition={{
               delay: 0.1,
             }}
-            className="text-xl text-slate-600 mx-auto"
+            className="text-[clamp(0.75rem,2vw,1.5rem)] text-slate-600 mx-auto"
           >
             هذا هو النظام الذي يميّزنا عن أي جهة أخرى
           </motion.p>
@@ -111,10 +111,10 @@ export function OperatingSystemSection() {
                   <Icon className="w-7 h-7" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-1">
+                  <h3 className="text-[clamp(0.75rem,1vw,3rem)] font-bold text-slate-900 mb-1">
                     {layer.name}
                   </h3>
-                  <p className="text-slate-600">{layer.desc}</p>
+                  <p className="text-slate-600 text-[clamp(0.75rem,1vw,2rem)]">{layer.desc}</p>
                 </div>
               </motion.div>
             )

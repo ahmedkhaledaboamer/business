@@ -51,7 +51,7 @@ export function ValuesSection() {
             viewport={{
               once: true,
             }}
-            className="text-3xl md:text-5xl font-bold text-slate-900 mb-4"
+            className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-slate-900 mb-4"
           >
             قيمنا
           </motion.h2>
@@ -70,7 +70,7 @@ export function ValuesSection() {
             transition={{
               delay: 0.1,
             }}
-            className="text-xl text-amber-600 font-medium"
+            className="text-[clamp(0.75rem,2vw,1.5rem)] text-amber-600 font-medium"
           >
             قيمنا ليست شعارات… هي قواعد تشغيل
           </motion.p>
@@ -102,10 +102,10 @@ export function ValuesSection() {
                 <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform">
                   <Icon className="w-8 h-8 text-amber-500" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                <h3 className="text-[clamp(0.75rem,1vw,3rem)] font-bold text-slate-900 mb-2">
                   {value.name}
                 </h3>
-                <p className="text-slate-600 text-sm">{value.desc}</p>
+                <p className="text-slate-600 text-[clamp(0.75rem,1vw,2rem)]">{value.desc}</p>
               </motion.div>
             )
           })}

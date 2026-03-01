@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const serviceColors = [
   '#C9A84C',
@@ -66,15 +67,15 @@ export function ServicesGrid() {
 
       <div className=" mx-auto px-6 relative z-10" ref={ref}>
         <div className="text-center mb-20">
-          <h2 className="text-[clamp(0.75rem,2vw,5rem)] font-bold text-[#1A1A1A] mb-4">
+          <h2 className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-[#1A1A1A] mb-4">
             {t('sectionTitle')}
           </h2>
-          <p className="text-[clamp(1rem,1vw,3rem)] text-gray-500 font-medium">
+          <p className="text-[clamp(0.75rem,2vw,1.5rem)] text-gray-500 font-medium">
             {t('sectionSubtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((srv, idx) => {
             const Icon = srv.icon;
             const color = serviceColors[idx];
@@ -101,10 +102,13 @@ export function ServicesGrid() {
                 </div>
 
                 <div className="relative h-[clamp(10rem,20vw,30rem)] overflow-hidden">
-                  <img
+                  <Image
                     src={srv.img}
                     alt={srv.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    width={1000}
+                    height={1000}
+                  />
 
                   {/* Gradient Sweep */}
                   <div
@@ -125,7 +129,7 @@ export function ServicesGrid() {
 
                   </div>
                   <h3
-                    className="text-xl font-bold text-[#1A1A1A] mb-3 mt-4 hover-color-target transition-colors duration-300"
+                    className="font-bold text-[#1A1A1A] mb-3 mt-4 hover-color-target transition-colors duration-300 text-[clamp(0.75rem,1vw,2rem)]"
                     style={
                     {
                       '--hover-color': color
@@ -134,7 +138,7 @@ export function ServicesGrid() {
 
                     {srv.title}
                   </h3>
-                  <p className="text-gray-600 text-[clamp(1rem,1vw,3rem)] leading-relaxed font-medium">
+                  <p className="text-gray-600 text-[clamp(0.75rem,1vw,1.5rem)] leading-relaxed font-medium">
                     {srv.desc}
                   </p>
                 </div>
@@ -154,15 +158,18 @@ export function ServicesGrid() {
           <div className="relative bg-white rounded-[32px] w-full max-w-4xl overflow-hidden shadow-2xl animate-in slide-in-from-bottom-10 fade-in duration-500 flex flex-col md:flex-row">
             <button
             onClick={() => setActiveService(null)}
-            className="absolute top-6 left-6 z-20 bg-white/90 hover:bg-white p-3 rounded-full text-gray-800 transition-all hover:scale-110 shadow-lg">
+            className="cursor-pointer absolute top-6 left-6 z-20 bg-white/90 hover:bg-white p-3 rounded-full text-gray-800 transition-all hover:scale-110 shadow-lg">
 
               <X className="w-5 h-5" />
             </button>
             <div className="w-full md:w-5/12 h-64 md:h-auto relative">
-              <img
+              <Image  
               src={activeService.img}
               alt={activeService.title}
-              className="absolute inset-0 w-full h-full object-cover" />
+              className="absolute inset-0 w-full h-full object-cover"
+              width={1000}
+              height={1000}
+              />
 
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/80 to-transparent md:bg-gradient-to-l" />
             </div>
@@ -193,7 +200,7 @@ export function ServicesGrid() {
                 })()}
 
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-6">
+              <h3 className="text-[clamp(0.75rem,2vw,3rem)] font-bold text-[#1A1A1A] mb-6">
                 {activeService.title}
               </h3>
               <div
@@ -203,7 +210,7 @@ export function ServicesGrid() {
                 serviceColors[services.indexOf(activeService)]
               }} />
 
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed font-medium">
+              <p className="text-gray-600 mb-10 leading-relaxed font-medium text-[clamp(0.75rem,2vw,1.5rem)]">
                 {activeService.fullDesc}
               </p>
               <button

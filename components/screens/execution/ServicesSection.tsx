@@ -46,7 +46,7 @@ export function ServicesSection() {
             viewport={{
               once: true,
             }}
-            className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+            className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-slate-900 mb-6"
           >
             {t('title')}
           </motion.h2>
@@ -77,7 +77,7 @@ export function ServicesSection() {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent flex items-end justify-center pb-8">
-            <h3 className="text-white text-[clamp(1rem,1vw,3rem)] font-bold">
+            <h3 className="text-white text-[clamp(0.75rem,2vw,3rem)] font-bold">
               {t('intro')}
             </h3>
           </div>
@@ -109,10 +109,10 @@ export function ServicesSection() {
                 <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-amber-500 group-hover:text-white text-amber-600 transition-colors">
                   <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3 leading-tight">
+                <h3 className="text-[clamp(0.75rem,1vw,3rem)] font-bold text-slate-900 mb-3 leading-tight">
                   {service.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-slate-600 text-[clamp(0.75rem,1vw,2rem)] leading-relaxed">
                   {service.desc}
                 </p>
               </motion.div>

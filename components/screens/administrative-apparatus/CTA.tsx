@@ -1,11 +1,14 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import { CheckCircle2, X, ShieldCheck, Globe, Award } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ShieldCheck, Globe, Award } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-export function CTA() {
+import Link from 'next/link';
+
+type CTAProps = { locale: string };
+
+export function CTA({ locale }: CTAProps) {
   const t = useTranslations('administrativeApparatus.cta');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
@@ -16,14 +19,7 @@ export function CTA() {
       document.body.style.overflow = '';
     };
   }, [isModalOpen]);
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsModalOpen(false);
-      setTimeout(() => setIsSubmitted(false), 500);
-    }, 2000);
-  };
+
   return (
     <section className="relative py-32 overflow-hidden">
       {/* Parallax Background */}
@@ -57,142 +53,36 @@ export function CTA() {
       </div>
 
       <div className="relative z-20 max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-[clamp(0.75rem,2vw,5rem)] font-bold text-white mb-6 leading-tight">
+        <h2 className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-white mb-6 leading-tight">
           {t('title')} <span className="gradient-text">{t('titleHighlight')}</span>
         </h2>
-        <p className="text-[clamp(1rem,1vw,3rem)] text-gold-light italic mb-12 font-medium">
+        <p className="text-[clamp(0.75rem,2vw,1.5rem)] text-gold-light italic mb-12 font-medium">
           {t('subtitle')}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <button className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-xl px-12 py-5 rounded-full transition-all hover:scale-105 shadow-glow w-full sm:w-auto font-bold">
+          <Link href="/execution" className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-[clamp(0.75rem,1vw,2rem)] px-12 py-5 rounded-full transition-all hover:scale-105 shadow-glow w-full sm:w-auto font-bold">
             {t('cta')}
-          </button>
-          <button
-            className="glass text-gold  bg-white hover:bg-white/20 text-[clamp(1rem,1vw,3rem)] px-12 py-5 rounded-full transition-all hover:scale-105 w-full sm:w-auto font-bold"
-            onClick={() => setIsModalOpen(true)}>
-
-            {t('contact')}
-          </button>
+          </Link>
         </div>
 
         {/* Trust Badges */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 pt-8 border-t border-white/10">
           <div className="flex flex-col items-center gap-3">
             <ShieldCheck className="w-8 h-8 text-gold" />
-            <span className="text-gray-300 font-medium">{t('confidentiality')}</span>
+            <span className="text-gray-300 font-medium text-[clamp(0.75rem,2vw,1.5rem)]">{t('confidentiality')}</span>
           </div>
           <div className="flex flex-col items-center gap-3">
             <Globe className="w-8 h-8 text-gold" />
-            <span className="text-gray-300 font-medium">{t('experience')}</span>
+            <span className="text-gray-300 font-medium text-[clamp(0.75rem,2vw,1.5rem)]">{t('experience')}</span>
           </div>
           <div className="flex flex-col items-center gap-3">
             <Award className="w-8 h-8 text-gold" />
-            <span className="text-gray-300 font-medium">{t('guaranteed')}</span>
+            <span className="text-gray-300 font-medium text-[clamp(0.75rem,2vw,1.5rem)]">{t('guaranteed')}</span>
           </div>
         </div>
       </div>
 
-      {/* Contact Modal */}
-      {isModalOpen &&
-      <div
-        className="fixed inset-0 z-50 flex items-center justify-center p-4"
-        >
-
-          <div
-          className="absolute inset-0 bg-navy/80 backdrop-blur-md"
-          onClick={() => setIsModalOpen(false)} />
-
-          <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-[500px] overflow-hidden animate-scale-in">
-            {/* Modal Top Gradient Bar */}
-            <div className="h-2 w-full bg-gradient-to-r from-gold via-gold-light to-gold" />
-
-            <div className="p-8">
-              <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute top-6 left-6 text-gray-400 hover:text-charcoal transition-colors bg-warm-gray rounded-full p-2">
-
-                <X className="w-5 h-5" />
-              </button>
-
-              {!isSubmitted ?
-            <>
-                  <h3 className="text-3xl font-bold text-charcoal mb-3">
-                    {t('formTitle')}
-                  </h3>
-                  <p className="text-gray-500 mb-8 text-lg">
-                    {t('formSubtitle')} {t('formSubtitle2')}
-                  </p>
-
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="space-y-2">
-                      <label
-                    htmlFor="name"
-                    className="block text-charcoal font-bold text-sm">
-
-                        {t('name')}
-                      </label>
-                      <input
-                    id="name"
-                    required
-                    className="w-full bg-warm-gray border border-transparent rounded-xl px-5 py-4 text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all"
-                    placeholder={t('namePlaceholder')} />
-
-                    </div>
-                    <div className="space-y-2">
-                      <label
-                    htmlFor="phone"
-                    className="block text-charcoal font-bold text-sm">
-
-                        {t('phone')}
-                      </label>
-                      <input
-                    id="phone"
-                    type="tel"
-                    required
-                    dir="ltr"
-                    className="w-full bg-warm-gray border border-transparent rounded-xl px-5 py-4 text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all"
-                    placeholder={t('phonePlaceholder')} />
-
-                    </div>
-                    <div className="space-y-2">
-                      <label
-                    htmlFor="message"
-                    className="block text-charcoal font-bold text-sm">
-
-                        {t('message')}
-                      </label>
-                      <textarea
-                    id="message"
-                    className="w-full bg-warm-gray border border-transparent rounded-xl px-5 py-4 text-charcoal placeholder:text-gray-400 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all min-h-[120px] resize-none"
-                    placeholder={t('messagePlaceholder')} />
-
-                    </div>
-                    <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-xl py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-glow mt-4">
-
-                      {t('submit')}
-                    </button>
-                  </form>
-                </> :
-
-            <div className="py-16 flex flex-col items-center justify-center text-center animate-scale-in">
-                  <div className="w-24 h-24 bg-green-50 rounded-full flex items-center justify-center mb-6">
-                    <CheckCircle2 className="w-12 h-12 text-green-500" />
-                  </div>
-                  <h3 className="text-3xl font-bold text-charcoal mb-3">
-                    {t('success')}
-                  </h3>
-                  <p className="text-gray-500 text-lg">
-                    {t('successMsg')}
-                  </p>
-                </div>
-            }
-            </div>
-          </div>
-        </div>
-      }
     </section>);
 
 }

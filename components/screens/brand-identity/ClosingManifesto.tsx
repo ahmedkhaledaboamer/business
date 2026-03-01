@@ -1,9 +1,8 @@
 'use client';
-import React, { useEffect, useState } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useParallax } from '@/hooks/useParallax';
-import { X, CheckCircle2, Loader2, Mail } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 const particleColors = [
 '#C9A84C',
 '#D4A574',
@@ -21,8 +20,6 @@ const particleColors = [
 '#C9A84C',
 '#7A2D4A'];
 
-const confettiColors = ['#C9A84C', '#D4A574', '#B87333', '#7A2D4A', '#1A6B5C'];
-
 const emberStyles = particleColors.map(() => ({
   w: Math.random() * 5 + 1,
   h: Math.random() * 5 + 1,
@@ -31,49 +28,11 @@ const emberStyles = particleColors.map(() => ({
   delay: Math.random() * 5
 }));
 
-const confettiStyles = confettiColors.flatMap(() =>
-  [...Array(4)].map(() => ({
-    duration: Math.random() * 0.8 + 0.4,
-    tx: (Math.random() - 0.5) * 200,
-    ty: (Math.random() - 0.5) * 200
-  }))
-);
-
 export function ClosingManifesto() {
   const t = useTranslations('brandIdentity.closing');
   const { ref, isVisible } = useScrollAnimation(0.4);
   const offsetY = useParallax(0.2);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
   const words = t('words').split(' ');
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setTimeout(() => {
-        setIsModalOpen(false);
-        setIsSuccess(false);
-      }, 3000);
-    }, 1500);
-  };
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && !isSubmitting) setIsModalOpen(false);
-    };
-    if (isModalOpen) {
-      document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', handleEsc);
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-      window.removeEventListener('keydown', handleEsc);
-    };
-  }, [isModalOpen, isSubmitting]);
   return (
     <>
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
@@ -134,7 +93,7 @@ export function ClosingManifesto() {
 
           </div>
 
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-12 flex flex-wrap justify-center gap-4">
+          <h2 className="font-black text-white mb-12 flex flex-wrap justify-center gap-4 text-[clamp(0.75rem,2vw,6rem)]">
             {words.map((word, idx) =>
             <span
               key={idx}
@@ -152,7 +111,7 @@ export function ClosingManifesto() {
 
           <div className="space-y-6 mb-20">
             <p
-              className={`text-2xl text-[#D4A574] italic font-medium transition-all duration-1000 delay-[1000ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+              className={`text-[#D4A574] italic font-medium transition-all duration-1000 delay-[1000ms] text-[clamp(0.75rem,2vw,1.5rem)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
               style={{
                 textShadow: '0 2px 10px rgba(0,0,0,0.5)'
               }}>
@@ -160,7 +119,7 @@ export function ClosingManifesto() {
               {t('line1')}
             </p>
             <p
-              className={`text-2xl text-[#B87333] italic font-medium transition-all duration-1000 delay-[1300ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+              className={`text-[#B87333] italic font-medium transition-all duration-1000 delay-[1300ms] text-[clamp(0.75rem,2vw,1.5rem)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
               style={{
                 textShadow: '0 2px 10px rgba(0,0,0,0.5)'
               }}>
@@ -168,7 +127,7 @@ export function ClosingManifesto() {
               {t('line2')}
             </p>
             <p
-              className={`text-4xl md:text-5xl font-black text-[#C9A84C] transition-all duration-1000 delay-[1600ms] ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95'}`}
+              className={`font-black text-[#C9A84C] transition-all duration-1000 delay-[1600ms] text-[clamp(0.75rem,2vw,3rem)] ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95'}`}
               style={{
                 textShadow: '0 4px 20px rgba(0,0,0,0.7)'
               }}>
@@ -186,185 +145,23 @@ export function ClosingManifesto() {
                 borderColor: '#C9A84C'
               }} />
 
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="relative z-10 bg-gradient-to-r from-[#C9A84C] via-[#D4A574] to-[#B87333] text-white px-10 py-4 rounded-full font-bold text-xl hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] hover:-translate-y-1 transition-all duration-300">
-
+            <Link
+              href="/execution"
+              className="relative z-10 bg-gradient-to-r from-[#C9A84C] via-[#D4A574] to-[#B87333] text-white px-10 py-4 rounded-full font-bold hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] hover:-translate-y-1 transition-all duration-300 text-[clamp(0.75rem,1vw,2rem)]">
               {t('cta')}
-            </button>
-            <button
-              className="relative z-10 bg-transparent text-white px-10 py-4 rounded-full font-bold text-xl transition-all duration-300 hover:bg-white/10 overflow-hidden group"
-              onClick={() =>
-              window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-              })
-              }>
+            </Link>
+            <Link
+              className="relative z-10 bg-transparent text-white px-10 py-4 rounded-full font-bold transition-all duration-300 hover:bg-white/10 overflow-hidden group text-[clamp(0.75rem,1vw,2rem)]"
+              href="/">
 
               <div className="absolute inset-0 rounded-full border-2 border-white/30" />
               <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-[#C9A84C] border-r-[#D4A574] group-hover:animate-[spin-slow_3s_linear_infinite]" />
               {t('backHome')}
-            </button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Contact Modal */}
-      {isModalOpen &&
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <div
-          className="absolute inset-0 bg-[#0F0A05]/90 backdrop-blur-md animate-in fade-in duration-300"
-          onClick={() => !isSubmitting && setIsModalOpen(false)} />
-
-          <div className="relative bg-white w-full max-w-xl rounded-[32px] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-500">
-            {/* Animated Gradient Header */}
-            <div
-            className="relative h-32 overflow-hidden flex items-center justify-center animate-[gradient-shift_6s_ease-in-out_infinite]"
-            style={{
-              background:
-              'linear-gradient(135deg, #1B2A4A, #7A2D4A, #1A6B5C, #1B2A4A)',
-              backgroundSize: '300% 300%'
-            }}>
-
-              <div
-              className="absolute inset-0 opacity-20"
-              style={{
-                backgroundImage:
-                'radial-gradient(circle, #C9A84C 1px, transparent 1px)',
-                backgroundSize: '20px 20px'
-              }} />
-
-              <Mail className="w-12 h-12 text-[#C9A84C] relative z-10" />
-              <button
-              onClick={() => !isSubmitting && setIsModalOpen(false)}
-              className="absolute top-4 left-4 z-20 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-all"
-              disabled={isSubmitting}>
-
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="p-10">
-              {isSuccess ?
-            <div className="flex flex-col items-center justify-center py-8 animate-in zoom-in duration-500 relative">
-                  {confettiColors.map((color, i) =>
-              [...Array(4)].map((_, j) => {
-                const cfg = confettiStyles[i * 4 + j];
-                return (
-              <div
-                key={`c-${i}-${j}`}
-                className="absolute w-2 h-2 rounded-sm"
-                style={
-                {
-                  backgroundColor: color,
-                  left: '50%',
-                  top: '50%',
-                  animation: `explode ${cfg.duration}s ease-out forwards`,
-                  '--tx': `${cfg.tx}px`,
-                  '--ty': `${cfg.ty}px`
-                } as React.CSSProperties
-                } />
-                );
-              })
-                  )}
-                  <div
-                className="w-24 h-24 rounded-full flex items-center justify-center mb-6"
-                style={{
-                  backgroundColor: '#1A6B5C15'
-                }}>
-
-                    <CheckCircle2
-                  className="w-12 h-12"
-                  style={{
-                    color: '#1A6B5C'
-                  }} />
-
-                  </div>
-                  <h4 className="text-3xl font-bold text-[#1A1A1A] mb-2">
-                    {t('success')}
-                  </h4>
-                  <p className="text-xl text-gray-600">
-                    {t('successMsg')}
-                  </p>
-                </div> :
-
-            <>
-                  <div className="text-center mb-8">
-                    <h3 className="text-3xl font-bold text-[#1A1A1A] mb-2">
-                      {t('formTitle')}
-                    </h3>
-                    <p className="text-gray-600 font-medium">
-                      {t('formSubtitle')}
-                    </p>
-                  </div>
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-2">
-                          {t('fullName')}
-                        </label>
-                        <input
-                      required
-                      type="text"
-                      className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
-                      placeholder={t('namePlaceholder')} />
-
-                      </div>
-                      <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-2">
-                          {t('company')}
-                        </label>
-                        <input
-                      required
-                      type="text"
-                      className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
-                      placeholder={t('companyPlaceholder')} />
-
-                      </div>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">
-                        {t('phone')}
-                      </label>
-                      <input
-                    required
-                    type="tel"
-                    className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white text-right"
-                    placeholder="05X XXX XXXX"
-                    dir="ltr" />
-
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold text-gray-700 mb-2">
-                        {t('message')}
-                      </label>
-                      <textarea
-                    required
-                    rows={4}
-                    className="w-full px-5 py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#C9A84C] focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white resize-none"
-                    placeholder={t('messagePlaceholder')}>
-                  </textarea>
-                    </div>
-                    <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-[#C9A84C] via-[#D4A574] to-[#B87333] text-white py-4 rounded-xl font-bold text-xl hover:shadow-lg hover:-translate-y-1 transition-all flex items-center justify-center gap-3 disabled:opacity-70 disabled:hover:translate-y-0">
-
-                      {isSubmitting ?
-                  <>
-                          <Loader2 className="w-6 h-6 animate-spin" />
-                          {t('sending')}
-                        </> :
-
-                  t('submit')
-                  }
-                    </button>
-                  </form>
-                </>
-            }
-            </div>
-          </div>
-        </div>
-      }
     </>);
 
 }

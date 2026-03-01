@@ -27,10 +27,10 @@ export function WhoWeServe() {
           ref={ref}>
 
           <div className="flex-1 relative">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-8">
+            <h2 className="font-bold text-[#1A1A1A] mb-8 text-[clamp(0.75rem,2vw,6rem)]">
               {t('title')}
             </h2>
-            <p className="text-xl text-gray-600 mb-12 leading-relaxed font-medium">
+            <p className="text-gray-600 mb-12 leading-relaxed font-medium text-[clamp(0.75rem,2vw,1.5rem)]">
               {t('subtitle')}
             </p>
 
@@ -57,7 +57,7 @@ export function WhoWeServe() {
                     }} />
 
                   </div>
-                  <span className="text-[#1A1A1A] font-bold text-lg">
+                  <span className="text-[#1A1A1A] font-bold text-[clamp(0.75rem,1vw,2rem)]">
                     {bullet}
                   </span>
                 </div>

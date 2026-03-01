@@ -66,7 +66,7 @@ function StatItem({
       </div>
 
       <div
-        className="text-5xl md:text-6xl font-black mb-2 flex items-center"
+        className="font-black mb-2 flex items-center text-[clamp(1.5rem,4vw,4rem)]"
         style={{
           color
         }}>
@@ -82,7 +82,7 @@ function StatItem({
           {suffix}
         </span>
       </div>
-      <div className="text-white/80 text-lg md:text-xl font-medium tracking-wide">
+      <div className="text-white/80 font-medium tracking-wide text-[clamp(0.75rem,2vw,1.25rem)]">
         {label}
       </div>
     </div>);

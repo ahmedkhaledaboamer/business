@@ -2,6 +2,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 /** Deterministic "random" in [0,1) from index + seed. Pure, stable across renders. */
 function pseudoRandom(i: number, seed: number): number {
@@ -9,7 +10,7 @@ function pseudoRandom(i: number, seed: number): number {
   return x - Math.floor(x);
 }
 
-export function Hero() {
+export function Hero({ locale }: { locale: string }) {
   const t = useTranslations('administrativeApparatus.hero');
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
@@ -99,14 +100,14 @@ export function Hero() {
             transitionDelay: '200ms'
           }}>
 
-          <span className="mb-8 inline-flex items-center rounded-full bg-gradient-to-r from-gold to-gold-dark text-white px-6 py-2 text-sm font-bold shadow-lg animate-pulse-gold relative overflow-hidden group">
+          <span className="mb-8 inline-flex items-center rounded-full bg-gradient-to-r from-gold to-gold-dark text-white px-6 py-2 text-[clamp(0.75rem,2vw,2rem)] font-bold shadow-lg animate-pulse-gold relative overflow-hidden group">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-shimmer" />
             {t('badge')}
           </span>
         </div>
 
         <h1
-          className={`text-[clamp(0.75rem,2vw,5rem)] font-bold text-white mb-6 leading-tight transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+          className={`text-[clamp(0.75rem,2vw,6rem)] font-bold text-white mb-6 leading-tight transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
           style={{
             transitionDelay: '400ms'
           }}>
@@ -116,7 +117,7 @@ export function Hero() {
         </h1>
 
         <p
-          className={`text-[clamp(1rem,1vw,3rem)] text-gray-300 mb-12 mx-auto font-medium transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+          className={`text-[clamp(0.75rem,2vw,1.5rem)] text-gray-300 mb-12 mx-auto font-medium transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
           style={{
             transitionDelay: '600ms'
           }}>
@@ -130,12 +131,12 @@ export function Hero() {
             transitionDelay: '800ms'
           }}>
 
-          <button className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-[clamp(1rem,1vw,3rem)] px-10 py-4 rounded-full transition-all hover:scale-105 font-bold shadow-gold animate-glow">
+          <Link href="/execution" className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-[clamp(0.75rem,1vw,2rem)] px-10 py-4 rounded-full transition-all hover:scale-105 font-bold shadow-gold animate-glow">
             {t('cta')}
-          </button>
-          <button className="glass text-gold  bg-white hover:bg-white/20 text-[clamp(1rem,1vw,3rem)] px-10 py-4 rounded-full transition-all hover:scale-105 font-bold">
+          </Link>
+          <Link href="/services" className="glass text-gold  bg-white hover:bg-white/20 text-[clamp(0.75rem,1vw,2rem)] px-10 py-4 rounded-full transition-all hover:scale-105 font-bold">
           {t('services')}
-          </button>
+          </Link>
         </div>
 
         {/* Animated Gradient Line */}
@@ -148,7 +149,12 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center cursor-pointer" onClick={() => {
+        scrollTo({
+          top: window.innerHeight,
+          behavior: 'smooth'
+        });
+      }}>
         <ChevronDown
           className="text-gold w-8 h-8 opacity-80 animate-bounce"
           style={{

@@ -2,7 +2,11 @@
 import React, { useState } from 'react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import Image from 'next/image';
-export function Pyramid() {
+import { useTranslations } from 'next-intl';
+
+export function Pyramid({ locale }: { locale: string }) {
+  const t = useTranslations('administrativeApparatus.pyramid');
+  const isRTL = locale === "ar";
   const [ref, isIntersecting] = useIntersectionObserver();
   const [hoveredLevel, setHoveredLevel] = useState<number | null>(null);
   return (
@@ -26,9 +30,8 @@ export function Pyramid() {
       <div className=" mx-auto px-4 relative z-10">
         <h2
           ref={ref}
-          className={`text-4xl md:text-5xl font-bold text-charcoal mb-20 text-center md:text-right transition-all duration-1000 ${isIntersecting ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
-
-          مكانك في المنظومة
+          className={`text-[clamp(0.75rem,2vw,6rem)] font-bold text-charcoal mb-20 text-center md:text-end transition-all duration-1000 ${isIntersecting ? 'translate-x-0 opacity-100' : (isRTL ? '-translate-x-20' : 'translate-x-20') + ' opacity-0'}`}>
+          {t('title')}
         </h2>
 
         <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -98,7 +101,7 @@ export function Pyramid() {
                     fontFamily: 'Cairo'
                   }}>
 
-                  أنت
+                  {t('level1')}
                 </text>
 
                 {/* Tooltip */}
@@ -123,7 +126,7 @@ export function Pyramid() {
                       fontFamily: 'Cairo'
                     }}>
 
-                    موقع القرار والرؤية
+                    {t('tooltip1')}
                   </text>
                 </g>
               </g>
@@ -145,12 +148,12 @@ export function Pyramid() {
                   y="190"
                   textAnchor="middle"
                   fill="#1A1A1A"
-                  className="font-bold text-2xl"
+                  className="font-bold text-1xl"
                   style={{
                     fontFamily: 'Cairo'
                   }}>
 
-                  الجهاز الإداري
+                  {t('level2')}
                 </text>
 
                 {/* Tooltip */}
@@ -175,7 +178,7 @@ export function Pyramid() {
                       fontFamily: 'Cairo'
                     }}>
 
-                    التنفيذ والحماية
+                    {t('tooltip2')}
                   </text>
                 </g>
               </g>
@@ -202,7 +205,7 @@ export function Pyramid() {
                     fontFamily: 'Cairo'
                   }}>
 
-                  الملفات والعمليات
+                  {t('level3')}
                 </text>
 
                 {/* Tooltip */}
@@ -227,7 +230,7 @@ export function Pyramid() {
                       fontFamily: 'Cairo'
                     }}>
 
-                    النتائج اليومية
+                    {t('tooltip3')}
                   </text>
                 </g>
               </g>
@@ -241,7 +244,7 @@ export function Pyramid() {
             <div className="relative rounded-3xl overflow-hidden shadow-heavy border-2 border-gold/30 group">
               <Image
                 src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80"
-                alt="Powerful businessman"
+                alt={t('imageAlt')}
                 className="w-full h-[450px] md:h-[800px] object-cover transition-transform duration-700 group-hover:scale-105"
                 width={800}
                 height={600}
@@ -257,9 +260,9 @@ export function Pyramid() {
 
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
-                  <p className="text-white text-2xl font-bold italic leading-relaxed relative z-10">
-                    &quot;أنت ترى النتيجة فقط… <br />
-                    <span className="text-gold">ونحن نتولى الطريق إليها.</span>&quot;
+                  <p className="text-white text-[clamp(0.75rem,1vw,2rem)] font-bold italic leading-relaxed relative z-10">
+                    &quot;{t('quote')} <br />
+                    <span className="text-gold">{t('quoteHighlight')}</span>&quot;
                   </p>
                 </div>
               </div>

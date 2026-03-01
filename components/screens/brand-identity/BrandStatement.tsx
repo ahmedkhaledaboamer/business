@@ -40,10 +40,10 @@ export function BrandStatement() {
             <div
               className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
 
-              <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-8">
+              <h2 className="font-bold text-[#1A1A1A] mb-8 text-[clamp(0.75rem,2vw,6rem)]">
                 {t('title')}
               </h2>
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed font-medium">
+              <p className="text-gray-600 mb-10 leading-relaxed font-medium text-[clamp(0.75rem,2vw,1.5rem)]">
                 {t('intro')}
               </p>
 
@@ -59,7 +59,7 @@ export function BrandStatement() {
                       <Check className="w-5 h-5 text-[#C9A84C] group-hover:text-white transition-colors" />
                     </div>
                     <span
-                    className={`text-lg text-[#1A1A1A] font-bold transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
+                    className={`text-[#1A1A1A] font-bold transition-all duration-500 text-[clamp(0.75rem,1vw,2rem)] ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}
                     style={{
                       transitionDelay: `${idx * 200 + 600}ms`
                     }}>
@@ -76,7 +76,7 @@ export function BrandStatement() {
 
                 <div>
                   <div
-                    className="text-3xl font-extrabold text-[#C9A84C] mb-1"
+                    className="text-2xl sm:text-3xl font-extrabold text-[#C9A84C] mb-1"
                     dir="ltr">
 
                     +{clients}
@@ -87,7 +87,7 @@ export function BrandStatement() {
                 </div>
                 <div>
                   <div
-                    className="text-3xl font-extrabold text-[#C9A84C] mb-1"
+                    className="text-2xl sm:text-3xl font-extrabold text-[#C9A84C] mb-1"
                     dir="ltr">
 
                     %{satisfaction}
@@ -98,7 +98,7 @@ export function BrandStatement() {
                 </div>
                 <div>
                   <div
-                    className="text-3xl font-extrabold text-[#C9A84C] mb-1"
+                    className="text-2xl sm:text-3xl font-extrabold text-[#C9A84C] mb-1"
                     dir="ltr">
 
                     +{years}

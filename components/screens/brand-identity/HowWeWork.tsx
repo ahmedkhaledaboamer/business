@@ -1,44 +1,29 @@
 'use client';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Search, Map, Eye, FileText, CheckCircle2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { useMemo } from 'react';
+
 const stepColors = ['#1A6B5C', '#C9A84C', '#B87333', '#7A2D4A'];
-const steps = [
-{
-  title: 'نحلل',
-  desc: 'ندرس الوضع الحالي بعمق ونحدد الفرص والمخاطر',
-  icon: Search,
-  progress: '25%'
-},
-{
-  title: 'نخطط',
-  desc: 'نضع خارطة طريق واضحة بمراحل محددة',
-  icon: Map,
-  progress: '50%'
-},
-{
-  title: 'نتابع',
-  desc: 'نراقب التنفيذ ونضمن الالتزام بالمعايير',
-  icon: Eye,
-  progress: '75%'
-},
-{
-  title: 'نوثّق',
-  desc: 'نسجل كل خطوة لضمان الشفافية والمرجعية',
-  icon: FileText,
-  progress: '100%'
-}];
+const stepIcons = [Search, Map, Eye, FileText];
 
 export function HowWeWork() {
+  const t = useTranslations('brandIdentity.howWeWork');
+  const rawSteps = (t.raw('steps') as { title: string; desc: string; progress: string }[] | undefined) ?? [];
+  const steps = useMemo(
+    () => (Array.isArray(rawSteps) ? rawSteps : []).map((s, i) => ({ ...s, icon: stepIcons[i] })),
+    [rawSteps]
+  );
   const { ref, isVisible } = useScrollAnimation(0.2);
   return (
     <section className="py-28 bg-white overflow-hidden px-[5%]">
       <div className=" mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4">
-            كيف نعمل؟
+          <h2 className="font-bold text-[#1A1A1A] mb-4 text-[clamp(0.75rem,2vw,6rem)]">
+            {t('title')}
           </h2>
-          <p className="text-xl text-gray-500 font-medium">
-            منهجية دقيقة تضمن تحقيق الأهداف
+          <p className="text-gray-500 font-medium text-[clamp(0.75rem,2vw,1.5rem)]">
+            {t('subtitle')}
           </p>
         </div>
         <div
@@ -112,7 +97,7 @@ export function HowWeWork() {
 
                             <Icon className="w-6 h-6" />
                           </div>
-                          <h3 className="text-2xl font-bold text-[#1A1A1A]">
+                          <h3 className="font-bold text-[#1A1A1A] text-[clamp(0.75rem,1vw,2rem)]">
                             {step.title}
                           </h3>
                         </div>
@@ -127,7 +112,7 @@ export function HowWeWork() {
                           {step.progress}
                         </span>
                       </div>
-                      <p className="text-lg text-gray-600 leading-relaxed relative z-10 pr-14">
+                      <p className="text-gray-600 leading-relaxed relative z-10 pr-14 text-[clamp(0.75rem,1vw,2rem)]">
                         {step.desc}
                       </p>
                     </div>

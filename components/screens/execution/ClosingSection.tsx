@@ -22,10 +22,10 @@ export function ClosingSection() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-teal-800 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50"></div>
 
               <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-8 text-amber-400">
+                <h3 className="text-[clamp(0.75rem,2vw,6rem)] font-bold mb-8 text-amber-400">
                   {t('title')}
                 </h3>
-                <p className="text-teal-100 mb-10 text-lg">
+                <p className="text-teal-100 mb-10 text-[clamp(0.75rem,2vw,1.5rem)]">
                   {t('subtitle')}
                 </p>
 
@@ -77,7 +77,7 @@ export function ClosingSection() {
 
             {/* Contact Form */}
             <div className="p-10 md:p-16">
-              <h3 className="text-2xl font-bold text-slate-900 mb-8">
+              <h3 className="text-[clamp(0.75rem,2vw,2rem)] font-bold text-slate-900 mb-8">
                 {t('sendMessage')}
               </h3>
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
@@ -85,7 +85,7 @@ export function ClosingSection() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-slate-700 mb-2"
+                      className="block text-[clamp(0.75rem,2vw,1.5rem)] font-medium text-slate-700 mb-2"
                     >
                       {t('name')}
                     </label>
@@ -99,7 +99,7 @@ export function ClosingSection() {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium text-slate-700 mb-2"
+                      className="block text-[clamp(0.75rem,2vw,1.5rem)] font-medium text-slate-700 mb-2"
                     >
                       {t('phoneLabel')}
                     </label>
@@ -115,7 +115,7 @@ export function ClosingSection() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-slate-700 mb-2"
+                    className="block text-[clamp(0.75rem,2vw,1.5rem)] font-medium text-slate-700 mb-2"
                   >
                     {t('emailLabel')}
                   </label>
@@ -130,7 +130,7 @@ export function ClosingSection() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-slate-700 mb-2"
+                    className="block text-[clamp(0.75rem,2vw,1.5rem)] font-medium text-slate-700 mb-2"
                   >
                     {t('message')}
                   </label>

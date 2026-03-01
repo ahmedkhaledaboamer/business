@@ -26,14 +26,14 @@ export function QualitySection() {
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${iconWrap}`}>
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">{col.title}</h3>
+                  <h3 className="text-[clamp(0.75rem,2vw,2rem)] font-bold text-slate-900">{col.title}</h3>
                 </div>
-                <p className="text-slate-500 mb-6 text-sm">{col.subtitle}</p>
+                <p className="text-slate-500 mb-6 text-[clamp(0.75rem,2vw,1.5rem)]">{col.subtitle}</p>
                 <ul className="space-y-4">
                   {(col.items || []).map((item, i) => (
                     <li key={i} className="flex items-start">
                       <Icon className={`w-5 h-5 ml-3 shrink-0 mt-0.5 ${iconItem}`} />
-                      <span className="text-slate-700 font-medium">{item}</span>
+                      <span className="text-slate-700 font-medium text-[clamp(0.75rem,1vw,2rem)]">{item}</span>
                     </li>
                   ))}
                 </ul>

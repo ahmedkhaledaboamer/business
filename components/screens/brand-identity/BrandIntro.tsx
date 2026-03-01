@@ -67,7 +67,7 @@ export function BrandIntro() {
 
           {/* Main Quote Text - Red for visibility */}
           <h2
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1A1A1A] italic leading-relaxed mx-auto px-10 relative z-10"
+            className="font-bold text-[#1A1A1A] italic leading-relaxed mx-auto px-10 relative z-10 text-[clamp(0.75rem,2vw,6rem)]"
             style={{
               textShadow: '0 2px 12px rgba(201,168,76,0.08)'
             }}>

@@ -10,10 +10,22 @@ import { HowWeWork } from "@/components/screens/brand-identity/HowWeWork";
 import { BrandPromise } from "@/components/screens/brand-identity/BrandPromise";
 import { ServicesGrid } from "@/components/screens/brand-identity/ServicesGrid";
 import { WhoWeServe } from "@/components/screens/brand-identity/WhoWeServe";
+import { getLocale, getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 
-export default function BrandIdentityPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("brandIdentity.meta");
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
+
+export default async function BrandIdentityPage() {
+  const locale = await getLocale();
+  const isRTL = locale === "ar";
   return (
-    <main className="w-full overflow-x-hidden">
+    <main className="w-full overflow-x-hidden" dir={isRTL ? "rtl" : "ltr"}>
       <div id="hero">
         <HeroSection />
       </div>

@@ -71,7 +71,7 @@ export function JourneySection() {
             viewport={{
               once: true,
             }}
-            className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+            className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-slate-900 mb-6"
           >
             رحلة رجل الأعمال معنا
           </motion.h2>
@@ -90,7 +90,7 @@ export function JourneySection() {
             transition={{
               delay: 0.1,
             }}
-            className="text-xl text-slate-600 mx-auto"
+            className="text-[clamp(0.75rem,2vw,1.5rem)] text-slate-600 mx-auto"
           >
             رحلتك معنا ليست خدمة… هي منظومة انتقال من نقطة إلى نقطة أعلى
           </motion.p>
@@ -162,11 +162,11 @@ export function JourneySection() {
                         <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 shrink-0">
                           <Icon className="w-6 h-6" />
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900">
+                        <h3 className="text-[clamp(0.75rem,1vw,3rem)] font-bold text-slate-900">
                           {step.title}
                         </h3>
                       </div>
-                      <p className="text-slate-600 leading-relaxed">
+                      <p className="text-slate-600 text-[clamp(0.75rem,1vw,2rem)] leading-relaxed">
                         {step.desc}
                       </p>
                     </div>

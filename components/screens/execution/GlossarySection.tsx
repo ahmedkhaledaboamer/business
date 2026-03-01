@@ -83,7 +83,7 @@ export function GlossarySection() {
             viewport={{
               once: true,
             }}
-            className="text-3xl md:text-5xl font-bold text-slate-900 mb-6"
+            className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-slate-900 mb-6"
           >
             قاموس الكيان
           </motion.h2>
@@ -102,7 +102,7 @@ export function GlossarySection() {
             transition={{
               delay: 0.1,
             }}
-            className="text-lg text-teal-800 mx-auto"
+            className="text-[clamp(0.75rem,2vw,1.5rem)] text-teal-800 mx-auto"
           >
             مصطلحات خاصة لا تُستخدم إلا هنا. هذه مفاهيم تشغيلية ابتكرناها…
             ومستحيل تلاقيها في أي مكان.
@@ -150,10 +150,10 @@ export function GlossarySection() {
                 <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-500 group-hover:text-white transition-colors text-teal-600">
                   <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                <h3 className="text-[clamp(0.75rem,1vw,3rem)] font-bold text-slate-900 mb-3">
                   {term.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">{term.desc}</p>
+                <p className="text-slate-600 text-[clamp(0.75rem,1vw,2rem)] leading-relaxed">{term.desc}</p>
               </motion.div>
             )
           })}

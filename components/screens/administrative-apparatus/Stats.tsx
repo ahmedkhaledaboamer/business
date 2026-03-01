@@ -36,7 +36,7 @@ function CountUp({
   return (
     <span
       ref={ref}
-      className="text-5xl md:text-6xl font-bold block mb-2"
+      className="text-[clamp(1.5rem,4vw,4rem)] font-bold block mb-2"
       style={{
         background: "linear-gradient(135deg, #C9A84C, #E8C96A)",
         WebkitBackgroundClip: "text",
@@ -51,7 +51,7 @@ function CountUp({
 
 const statIcons = [Users, Target, Layers, AlertCircle];
 
-export function Stats() {
+export function Stats({ locale }: { locale: string }) {
   const t = useTranslations("administrativeApparatus.stats");
   const raw = t.raw("items") as Array<{ value: number; label: string; suffix?: string; icon: string }>;
   const stats = useMemo(
@@ -120,7 +120,7 @@ export function Stats() {
 
                   <CountUp end={stat.value} suffix={stat.suffix || ''} />
 
-                  <p className="font-['Tajawal',sans-serif] text-white/50 text-[clamp(1rem,1vw,3rem)] mt-1 group-hover:text-white/70 transition-colors duration-300">
+                  <p className="font-['Tajawal',sans-serif] text-white/50 text-[clamp(0.75rem,2vw,1.5rem)] mt-1 group-hover:text-white/70 transition-colors duration-300">
                     {stat.label}
                   </p>
                 </motion.div>

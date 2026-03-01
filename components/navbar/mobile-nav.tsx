@@ -5,6 +5,7 @@ import { Link, usePathname } from "@/i18n/routing";
 import { Menu, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { cn } from "@/utils/cn";
 import LocaleSwitcher from "../locale-switcher";
 import Logo from "../logo";
@@ -24,8 +25,11 @@ export default function MobileNavbar() {
   const isRTL = locale === "ar";
   const routesRaw = t.raw("routes");
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const openButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => setMounted(true), []);
 
   const routes = useMemo<Route[]>(() => {
     if (!Array.isArray(routesRaw)) return [];
@@ -97,90 +101,95 @@ export default function MobileNavbar() {
         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            id="mobile-nav-overlay"
-            role="dialog"
-            aria-modal="true"
-            aria-label={t("navMenu")}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={overlayTransition}
-            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
-            onClick={closeMenu}
-          >
-            <motion.div
-              id="mobile-nav-panel"
-              initial={{ x: slideFrom }}
-              animate={{ x: 0 }}
-              exit={{ x: slideFrom }}
-              transition={panelTransition}
-              className={cn(
-                "absolute top-0 bottom-0 w-80 max-w-[85vw] bg-navy-dark shadow-2xl flex flex-col",
-                panelSide
-              )}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="flex items-center justify-between px-4 py-4 border-b border-white/10 shrink-0">
-                <Logo className="w-24 h-auto" size={80} />
-                <button
-                  type="button"
-                  onClick={closeMenu}
-                  className="inline-flex items-center justify-center rounded-full p-2 text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-gold/50"
-                  aria-label={t("closeMenu")}
+      {mounted &&
+        createPortal(
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                id="mobile-nav-overlay"
+                role="dialog"
+                aria-modal="true"
+                aria-label={t("navMenu")}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={overlayTransition}
+                className="fixed inset-0 top-0 left-0 right-0 bottom-0 z-100 bg-black/60 backdrop-blur-sm"
+                style={{ isolation: "isolate" }}
+                onClick={closeMenu}
+              >
+                <motion.div
+                  id="mobile-nav-panel"
+                  initial={{ x: slideFrom }}
+                  animate={{ x: 0 }}
+                  exit={{ x: slideFrom }}
+                  transition={panelTransition}
+                  className={cn(
+                    "absolute top-0 bottom-0 w-80 max-w-[85vw] bg-navy-dark shadow-2xl flex flex-col",
+                    panelSide
+                  )}
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <nav className="flex-1 overflow-y-auto px-6 py-6" aria-label={t("navMenu")}>
-                <ul className="space-y-1">
-                  {routes.map((route, index) => (
-                    <motion.li
-                      key={route.href}
-                      initial={{ opacity: 0, x: isRTL ? 16 : -16 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{
-                        duration: 0.25,
-                        delay: index * itemStagger,
-                      }}
+                  <div className="flex items-center justify-between px-4 py-4 border-b border-white/10 shrink-0">
+                    <Logo className="w-24 h-auto" size={80} />
+                    <button
+                      type="button"
+                      onClick={closeMenu}
+                      className="inline-flex items-center justify-center rounded-full p-2 text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-gold/50"
+                      aria-label={t("closeMenu")}
                     >
-                      <Link
-                        href={route.href}
-                        onClick={closeMenu}
-                        className={cn(
-                          "block font-tajawal text-lg py-3 px-2 -mx-2 rounded-lg transition-colors",
-                          isActive(route.href)
-                            ? "text-gold font-semibold bg-gold/10"
-                            : "text-white/80 hover:text-gold hover:bg-white/5"
-                        )}
-                      >
-                        {route.label}
-                      </Link>
-                    </motion.li>
-                  ))}
-                </ul>
-                <div className="pt-6 flex justify-center">
-                  <LocaleSwitcher />
-                </div>
-              </nav>
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
 
-              <div className="px-6 py-4 border-t border-white/10 shrink-0">
-                <Link
-                  href="/execution"
-                  onClick={closeMenu}
-                  className="block bg-gold text-navy-dark font-cairo font-bold px-6 py-3 rounded-full text-center w-full hover:bg-gold-light transition-colors focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy-dark"
-                  aria-label={t("cta")}
-                >
-                  {t("cta")}
-                </Link>
-              </div>
-            </motion.div>
-          </motion.div>
+                  <nav className="flex-1 overflow-y-auto px-6 py-6" aria-label={t("navMenu")}>
+                    <ul className="space-y-1">
+                      {routes.map((route, index) => (
+                        <motion.li
+                          key={route.href}
+                          initial={{ opacity: 0, x: isRTL ? 16 : -16 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{
+                            duration: 0.25,
+                            delay: index * itemStagger,
+                          }}
+                        >
+                          <Link
+                            href={route.href}
+                            onClick={closeMenu}
+                            className={cn(
+                              "block font-tajawal text-lg py-3 px-2 -mx-2 rounded-lg transition-colors",
+                              isActive(route.href)
+                                ? "text-gold font-semibold bg-gold/10"
+                                : "text-white/80 hover:text-gold hover:bg-white/5"
+                            )}
+                          >
+                            {route.label}
+                          </Link>
+                        </motion.li>
+                      ))}
+                    </ul>
+                    <div className="pt-6 flex justify-center">
+                      <LocaleSwitcher />
+                    </div>
+                  </nav>
+
+                  <div className="px-6 py-4 border-t border-white/10 shrink-0">
+                    <Link
+                      href="/execution"
+                      onClick={closeMenu}
+                      className="block bg-gold text-navy-dark font-cairo font-bold px-6 py-3 rounded-full text-center w-full hover:bg-gold-light transition-colors focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy-dark"
+                      aria-label={t("cta")}
+                    >
+                      {t("cta")}
+                    </Link>
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body
         )}
-      </AnimatePresence>
     </div>
   );
 }

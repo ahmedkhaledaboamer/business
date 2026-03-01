@@ -2,38 +2,34 @@
 
 import { Shield, Target, Award } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useTranslations } from 'next-intl';
+import { useMemo } from 'react';
+
 const iconColors = ['#1A6B5C', '#7A2D4A', '#B87333'];
-const promises = [
-{
-  icon: Shield,
-  title: 'وضوح كامل',
-  desc: 'نؤمن بأن الشفافية أساس كل علاقة ناجحة',
-  img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=60'
-},
-{
-  icon: Target,
-  title: 'تنفيذ دقيق',
-  desc: 'كل خطوة محسوبة، كل قرار مدروس',
-  img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=60'
-},
-{
-  icon: Award,
-  title: 'نتيجة تُحترم',
-  desc: 'نقدم نتائج تتحدث عن نفسها',
-  img: 'https://images.unsplash.com/photo-1553729459-afe8f2e2ed65?w=400&q=60'
-}];
+const promiseIcons = [Shield, Target, Award];
+const promiseImages = [
+  'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=60',
+  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=60',
+  'https://images.unsplash.com/photo-1553729459-afe8f2e2ed65?w=400&q=60',
+];
 
 export function BrandPromise() {
+  const t = useTranslations('brandIdentity.promise');
+  const rawPromises = (t.raw('promises') as { title: string; desc: string }[] | undefined) ?? [];
+  const promises = useMemo(
+    () => (Array.isArray(rawPromises) ? rawPromises : []).map((p, i) => ({ ...p, icon: promiseIcons[i], img: promiseImages[i] })),
+    [rawPromises]
+  );
   const { ref, isVisible } = useScrollAnimation(0.2);
   return (
     <section className="py-28 bg-gradient-to-b from-[#FDF8F0] to-white relative overflow-hidden px-[5%]">
       <div className=" mx-auto px-6 relative z-10" ref={ref}>
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4">
-            وعد العلامة التجارية
+          <h2 className="font-bold text-[#1A1A1A] mb-4 text-[clamp(0.75rem,2vw,6rem)]">
+            {t('title')}
           </h2>
-          <p className="text-xl text-gray-500 font-medium">
-            التزامات لا تقبل المساومة
+          <p className="text-gray-500 font-medium text-[clamp(0.75rem,2vw,1.5rem)]">
+            {t('subtitle')}
           </p>
         </div>
 
@@ -110,14 +106,14 @@ export function BrandPromise() {
                   </div>
 
                   <h3
-                    className="text-2xl font-bold mb-4 relative z-10 transition-colors"
+                    className="font-bold mb-4 relative z-10 transition-colors text-[clamp(0.75rem,1vw,2rem)]"
                     style={{
                       color
                     }}>
 
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-lg leading-relaxed relative z-10 font-medium">
+                  <p className="text-gray-600 leading-relaxed relative z-10 font-medium text-[clamp(0.75rem,1vw,2rem)]">
                     {item.desc}
                   </p>
                 </div>);
@@ -129,8 +125,8 @@ export function BrandPromise() {
         <div
           className={`text-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 
-          <p className="text-2xl text-[#1A1A1A] italic font-bold px-4">
-            &quot;هذا الوعد هو معيارنا… وكل ما نقدمه يُقاس عليه&quot;
+          <p className="text-[#1A1A1A] italic font-bold px-4 text-[clamp(0.75rem,2vw,1.5rem)]">
+            &quot;{t('quote')}&quot;
           </p>
         </div>
       </div>
