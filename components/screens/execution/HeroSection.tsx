@@ -81,7 +81,7 @@ export function HeroSection() {
         className="absolute inset-0 z-0"
       >
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=90"
+          src="/imges/execution/01.webp"
           alt=""
           className="w-full h-full object-cover"
           style={{ filter: 'brightness(0.18) contrast(1.1) saturate(0.5)' }}

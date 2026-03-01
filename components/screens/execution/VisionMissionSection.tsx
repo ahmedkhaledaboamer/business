@@ -53,14 +53,7 @@ export function VisionMissionSection() {
           }}
           className="w-full mb-16 relative rounded-2xl overflow-hidden shadow-md"
         >
-          <Image
-            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80"
-            alt={t('imageAlt')}
-            loading="lazy"
-            className="w-full max-h-[600px] object-cover"
-            width={1000}
-            height={1000}
-          />
+          
           <div className="absolute inset-0 bg-gradient-to-t from-amber-900/40 to-transparent mix-blend-multiply"></div>
         </motion.div>
 

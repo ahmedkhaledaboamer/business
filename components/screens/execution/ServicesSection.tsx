@@ -72,14 +72,7 @@ export function ServicesSection() {
           }}
           className="w-full mb-16 relative rounded-2xl overflow-hidden shadow-md"
         >
-          <Image
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
-            alt={t('imageAlt')}
-            loading="lazy"
-            className="w-full md:h-[300px] lg:h-[600px] object-cover"
-            width={1000}
-            height={1000}
-          />
+          
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent flex items-end justify-center pb-8">
             <h3 className="text-white text-[clamp(0.75rem,2vw,3rem)] font-bold">
               {t('intro')}
