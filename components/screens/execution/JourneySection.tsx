@@ -1,57 +1,32 @@
 'use client'
 import { motion } from 'framer-motion'
 import { Search, Scan, Route, Play, CheckCircle, Expand } from 'lucide-react'
+import Image from 'next/image'
+import { useLocale, useTranslations } from 'next-intl'
+
+const stepIcons = [Search, Scan, Route, Play, CheckCircle, Expand]
+
 export function JourneySection() {
-  const steps = [
-    {
-      num: '1',
-      title: 'نقطة الفهم العميق',
-      desc: 'نبدأ من حيث أنت، لا من حيث نريد نحن. نقرأ احتياجاتك، أهدافك، مخاوفك، وطموحاتك.',
-      icon: Search,
-    },
-    {
-      num: '2',
-      title: 'مرحلة كشف الصورة الكاملة',
-      desc: 'نضع أمامك ما لا يراه غيرك: الفرص، المخاطر، المسارات، والنتائج المحتملة.',
-      icon: Scan,
-    },
-    {
-      num: '3',
-      title: 'بناء المسار التنفيذي',
-      desc: 'نصمّم لك طريقًا واضحًا، بخطوات محسوبة، ومراحل لا تعتمد على الحظ.',
-      icon: Route,
-    },
-    {
-      num: '4',
-      title: 'التشغيل الفعلي',
-      desc: 'هنا يبدأ العمل الحقيقي: تنفيذ، متابعة، ضبط، وتعديل لحظي.',
-      icon: Play,
-    },
-    {
-      num: '5',
-      title: 'نقطة الثبات',
-      desc: 'المرحلة التي يصبح فيها كل شيء تحت السيطرة… وتبدأ النتائج في الظهور.',
-      icon: CheckCircle,
-    },
-    {
-      num: '6',
-      title: 'التوسع الآمن',
-      desc: 'نفتح لك أبوابًا جديدة… بدون مخاطرة غير محسوبة.',
-      icon: Expand,
-    },
-  ]
+  const locale = useLocale()
+  const t = useTranslations('execution.journey')
+  const stepsRaw = t.raw('steps') as Array<{ num: string; title: string; desc: string }>
+  const steps = stepsRaw.map((s, i) => ({ ...s, icon: stepIcons[i] }))
+
   return (
     <section
       id="journey"
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
       className="py-24 bg-[#FAFAF8] relative overflow-hidden px-[5%]"
     >
       {/* Background Image */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-[0.04] pointer-events-none hidden lg:block">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1507679799987-c73b1a8e4b64?w=800&q=80"
-          alt="مسار رحلة"
+          alt={t('imageAlt')}
           loading="lazy"
           className="w-full h-full object-cover"
+          width={1000}
+          height={1000}
         />
         <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#FAFAF8]"></div>
       </div>
@@ -73,7 +48,7 @@ export function JourneySection() {
             }}
             className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-slate-900 mb-6"
           >
-            رحلة رجل الأعمال معنا
+            {t('title')}
           </motion.h2>
           <motion.p
             initial={{
@@ -92,7 +67,7 @@ export function JourneySection() {
             }}
             className="text-[clamp(0.75rem,2vw,1.5rem)] text-slate-600 mx-auto"
           >
-            رحلتك معنا ليست خدمة… هي منظومة انتقال من نقطة إلى نقطة أعلى
+            {t('subtitle')}
           </motion.p>
         </div>
 
@@ -114,11 +89,13 @@ export function JourneySection() {
           }}
           className="mx-auto mb-20 rounded-2xl overflow-hidden shadow-md border-4 border-white"
         >
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80"
-            alt="تخطيط استراتيجي"
+            alt={t('featuredImageAlt')}
             loading="lazy"
-            className="w-full h-48 object-cover"
+            className="w-full md:h-[300px] lg:h-[600px] object-cover"
+            width={1000}
+            height={1000}
           />
         </motion.div>
 

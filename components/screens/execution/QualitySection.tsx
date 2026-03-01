@@ -1,12 +1,14 @@
 'use client'
 import { motion } from 'framer-motion'
-import { CheckSquare, MessageSquare, Handshake, Heart } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { CheckSquare, MessageSquare, Handshake } from 'lucide-react'
+import { useLocale, useTranslations } from 'next-intl'
+
 export function QualitySection() {
+  const locale = useLocale()
   const t = useTranslations('execution.quality')
   const columns = (t.raw('columns') as Array<{ title: string; subtitle: string; items: string[] }>) || []
   return (
-    <section className="py-24 bg-[#FAFAF8] px-[5%]">
+    <section dir={locale === 'ar' ? 'rtl' : 'ltr'} className="py-24 bg-[#FAFAF8] px-[5%]">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {columns.map((col, colIdx) => {
@@ -31,8 +33,8 @@ export function QualitySection() {
                 <p className="text-slate-500 mb-6 text-[clamp(0.75rem,2vw,1.5rem)]">{col.subtitle}</p>
                 <ul className="space-y-4">
                   {(col.items || []).map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <Icon className={`w-5 h-5 ml-3 shrink-0 mt-0.5 ${iconItem}`} />
+                    <li key={i} className="flex items-start gap-2">
+                      <Icon className={`w-5 h-5 shrink-0 mt-0.5 ${iconItem}`} />
                       <span className="text-slate-700 font-medium text-[clamp(0.75rem,1vw,2rem)]">{item}</span>
                     </li>
                   ))}

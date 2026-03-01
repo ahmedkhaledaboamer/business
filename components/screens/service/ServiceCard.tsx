@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import Image from 'next/image'
 interface ServiceCardProps {
   title: string
   tagline: string
@@ -9,6 +10,7 @@ interface ServiceCardProps {
   color: string
   items: string[]
   image?: string
+  isRTL?: boolean
 }
 export function ServiceCard({
   title,
@@ -17,28 +19,28 @@ export function ServiceCard({
   color,
   items,
   image,
+  isRTL = false,
 }: ServiceCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
   return (
     <motion.div
       layout
-      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 border-e-[6px]"
       style={{
-        borderRightWidth: '6px',
-        borderRightColor: color,
+        borderInlineEndColor: color,
       }}
     >
       {/* Card Image */}
       {image && (
         <div className="relative h-[clamp(10rem,20vw,40rem)] overflow-hidden">
-          <img src={image} alt={title} className="w-full h-full object-cover" />
+          <Image src={image} alt={title} className="w-full h-full object-cover" width={1000} height={1000} />
           <div
             className="absolute inset-0"
             style={{
               background: `linear-gradient(to top, ${color}cc 0%, ${color}33 40%, transparent 100%)`,
             }}
           />
-          <div className="absolute bottom-3 right-4 flex items-center gap-2">
+          <div className="absolute bottom-3 right-4 rtl:left-4 flex items-center gap-2">
             <div
               className="p-2 rounded-lg backdrop-blur-sm"
               style={{
@@ -70,8 +72,8 @@ export function ServiceCard({
               </div>
             )}
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{tagline}</p>
+              <h3 className="text-[clamp(0.75rem,1.5vw,3rem)] font-bold text-gray-900 mb-2">{title}</h3>
+              <p className="text-gray-600 text-[clamp(0.75rem,1vw,1.5rem)] leading-relaxed">{tagline}</p>
             </div>
           </div>
           <motion.div
@@ -124,10 +126,10 @@ export function ServiceCard({
                     transition={{
                       delay: index * 0.05,
                     }}
-                    className="flex items-center text-sm text-gray-700"
+                    className="flex items-center text-[clamp(0.75rem,1vw,1.5rem)] text-gray-700"
                   >
                     <span
-                      className="w-1.5 h-1.5 rounded-full ml-2 shrink-0"
+                      className={`w-1.5 h-1.5 rounded-full shrink-0 mr-2`}
                       style={{
                         backgroundColor: color,
                       }}

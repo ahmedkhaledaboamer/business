@@ -31,7 +31,7 @@ export function HeroSection() {
     },
   }
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A1628] ">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A1628]">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 z-0"
@@ -47,39 +47,39 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 pt-[5%]">
         <motion.div
-          className=" mx-auto text-center"
+          className="mx-auto text-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.h1
-            className="text-[clamp(0.75rem,2vw,5rem)] font-bold text-[#D4A853] mb-4 leading-tight"
+            className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-[#D4A853] mb-4 leading-tight"
             variants={itemVariants}
           >
             {t('title')}
           </motion.h1>
 
           <motion.div
-            className="space-y-6 text-lg md:text-xl text-gray-200 leading-relaxed font-light"
+            className="space-y-6 text-[clamp(0.75rem,2vw,1.5rem)] text-gray-200 leading-relaxed font-light"
             variants={itemVariants}
           >
             {Array.isArray(paragraphs) && paragraphs.length >= 7 && (
               <>
-                <p className="text-[clamp(1rem,1vw,3rem)] text-white font-medium mt-4">
+                <p className="text-[clamp(0.75rem,2vw,3rem)] text-white font-medium mt-4">
                   {paragraphs[2]}
                 </p>
-                <p className="text-[clamp(1rem,1vw,3rem)]">
+                <p className="text-[clamp(0.75rem,2vw,3rem)]">
                   {paragraphs[3]}
                 </p>
                 <div className="py-8 my-4 border-y border-[#D4A853]/30">
-                  <p className="text-[clamp(1rem,1vw,3rem)] font-bold text-white">
+                  <p className="text-[clamp(0.75rem,2vw,3rem)] font-bold text-white">
                     {paragraphs[4]}
                   </p>
                 </div>
-                <p className="text-[clamp(1rem,1vw,3rem)] text-white font-medium mt-12">
+                <p className="text-[clamp(0.75rem,2vw,3rem)] text-white font-medium mt-12">
                   {paragraphs[5]}
                 </p>
-                <p className="text-xl text-[#D4A853]">
+                <p className="text-[clamp(1rem,1vw,3rem)] text-[#D4A853]">
                   {paragraphs[6]}
                 </p>
               </>
@@ -88,9 +88,10 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - centered with logical position */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-[#D4A853]"
+        className="absolute bottom-8 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 text-[#D4A853] "
+
         animate={{
           y: [0, 10, 0],
         }}
@@ -100,11 +101,17 @@ export function HeroSection() {
         }}
       >
         <svg
-          className="w-6 h-6"
+          className="w-6 h-6 cursor-pointer"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
+          onClick={() => {
+            window.scrollTo({
+              top: window.innerHeight,
+              behavior: 'smooth',
+            })
+          }}
         >
           <path
             strokeLinecap="round"

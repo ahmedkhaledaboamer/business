@@ -7,36 +7,18 @@ import {
   Infinity as InfinityIcon,
   Heart,
 } from 'lucide-react'
+import { useLocale, useTranslations } from 'next-intl'
+
+const valueIcons = [Clock, Award, Eye, InfinityIcon, Heart]
+
 export function ValuesSection() {
-  const values = [
-    {
-      name: 'الانضباط',
-      desc: 'كل خطوة محسوبة',
-      icon: Clock,
-    },
-    {
-      name: 'الاحتراف',
-      desc: 'كل ملف يُدار بمعايير ثابتة',
-      icon: Award,
-    },
-    {
-      name: 'الوضوح',
-      desc: 'لا نترك مساحة للغموض',
-      icon: Eye,
-    },
-    {
-      name: 'الاستمرارية',
-      desc: 'علاقة طويلة المدى',
-      icon: InfinityIcon,
-    },
-    {
-      name: 'الاحترام',
-      desc: 'احترام وقتك وثقتك وقرارك',
-      icon: Heart,
-    },
-  ]
+  const locale = useLocale()
+  const t = useTranslations('execution.values')
+  const itemsRaw = t.raw('items') as Array<{ name: string; desc: string }>
+  const values = itemsRaw.map((item, i) => ({ ...item, icon: valueIcons[i] }))
+
   return (
-    <section className="py-24 bg-white px-[5%]">
+    <section dir={locale === 'ar' ? 'rtl' : 'ltr'} className="py-24 bg-white px-[5%]">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2
@@ -53,7 +35,7 @@ export function ValuesSection() {
             }}
             className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-slate-900 mb-4"
           >
-            قيمنا
+            {t('title')}
           </motion.h2>
           <motion.p
             initial={{
@@ -72,7 +54,7 @@ export function ValuesSection() {
             }}
             className="text-[clamp(0.75rem,2vw,1.5rem)] text-amber-600 font-medium"
           >
-            قيمنا ليست شعارات… هي قواعد تشغيل
+            {t('subtitle')}
           </motion.p>
         </div>
 

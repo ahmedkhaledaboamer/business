@@ -1,17 +1,20 @@
 "use client"
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronLeft } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import { Menu, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useLocale, useTranslations } from 'next-intl'
 interface Category {
   id: string
   title: string
   color: string
+  serviceCount?: number
 }
 interface ServiceNavProps {
   categories: Category[]
 }
 export function ServiceNav({ categories }: ServiceNavProps) {
+  const locale = useLocale()
+  const isRTL = locale === 'ar'
   const t = useTranslations('servicesPage.nav')
   const [activeId, setActiveId] = useState<string>(categories[0]?.id || '')
   const [isMobileOpen, setIsMobileOpen] = useState(false)
@@ -66,7 +69,7 @@ export function ServiceNav({ categories }: ServiceNavProps) {
               duration: 0.3,
             }}
             onClick={() => scrollToSection(category.id)}
-            className={`group relative flex items-center gap-3 w-full text-right px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${isActive ? 'text-white shadow-lg' : 'text-gray-600 hover:bg-gray-100/80 hover:text-gray-900'}`}
+            className={`cursor-pointer group relative flex items-center gap-3 w-full text-start px-4 py-3 rounded-xl text-[clamp(0.75rem,1vw,1.25rem)] font-medium transition-all duration-300 ${isActive ? 'text-white shadow-lg' : 'text-gray-600 hover:bg-gray-100/80 hover:text-gray-900'}`}
             style={
               isActive
                 ? {
@@ -75,13 +78,6 @@ export function ServiceNav({ categories }: ServiceNavProps) {
                 : {}
             }
           >
-            {/* Active indicator bar */}
-            <span
-              className={`absolute right-0 top-1/2 -translate-y-1/2 w-1 rounded-full transition-all duration-300 ${isActive ? 'h-6 opacity-100' : 'h-0 opacity-0'}`}
-              style={{
-                backgroundColor: isActive ? '#fff' : category.color,
-              }}
-            />
 
             {/* Color dot */}
             <span
@@ -96,7 +92,11 @@ export function ServiceNav({ categories }: ServiceNavProps) {
 
             {/* Arrow for active */}
             {isActive && (
-              <ChevronLeft size={14} className="mr-auto shrink-0 opacity-70" />
+              !isRTL ? (
+                <ChevronRight size={14} className="ms-auto shrink-0 opacity-70" />
+              ) : (
+                <ChevronLeft size={14} className="ms-auto shrink-0 opacity-70" />
+              )
             )}
           </motion.button>
         )
@@ -115,8 +115,8 @@ export function ServiceNav({ categories }: ServiceNavProps) {
         >
           {/* Sidebar Header */}
           <div className="px-5 pt-5 pb-3 border-b border-gray-100">
-            <h3 className="text-base font-bold text-gray-800">{t('title')}</h3>
-            <p className="text-xs text-gray-400 mt-1">
+            <h3 className="text-[clamp(0.75rem,1.5vw,1.5rem)] font-bold text-gray-800">{t('title')}</h3>
+            <p className="text-[clamp(0.75rem,0.5vw,1rem)] text-gray-400 mt-1">
               {t('subtitle')}
             </p>
           </div>
@@ -128,10 +128,10 @@ export function ServiceNav({ categories }: ServiceNavProps) {
 
           {/* Sidebar Footer */}
           <div className="px-5 py-3 border-t border-gray-100 bg-gray-50/50">
-            <p className="text-xs text-gray-400 text-center">
+            <p className="text-[clamp(0.75rem,0.5vw,1rem)] text-gray-400 text-center">
               {categories.length} {t('count')} •{' '}
               {categories.reduce(
-                (acc, c) => acc + (c as any).serviceCount || 0,
+                (acc, c) => acc + (c.serviceCount ?? 0),
                 0,
               ) || '40+'}{' '}
               {t('service')}
@@ -143,7 +143,7 @@ export function ServiceNav({ categories }: ServiceNavProps) {
       {/* Mobile Toggle Button */}
       <button
         onClick={() => setIsMobileOpen(true)}
-        className="lg:hidden fixed bottom-6 left-6 z-50 bg-[#0A1628] text-white p-4 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+        className="lg:hidden fixed bottom-6 start-6 z-50 bg-[#0A1628] text-white p-4 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
         style={{
           boxShadow: '0 8px 32px rgba(10, 22, 40, 0.4)',
         }}
@@ -176,24 +176,24 @@ export function ServiceNav({ categories }: ServiceNavProps) {
             {/* Drawer */}
             <motion.div
               initial={{
-                x: '-100%',
+                x: isRTL ? '100%' : '-100%',
               }}
               animate={{
                 x: 0,
               }}
               exit={{
-                x: '-100%',
+                x: isRTL ? '100%' : '-100%',
               }}
               transition={{
                 type: 'spring',
                 damping: 30,
                 stiffness: 300,
               }}
-              className="lg:hidden fixed top-0 left-0 bottom-0 w-[300px] max-w-[85vw] bg-white z-[70] shadow-2xl overflow-hidden flex flex-col"
+              className="lg:hidden fixed top-0 start-0 bottom-0 w-[300px] max-w-[85vw] bg-white z-[70] shadow-2xl overflow-hidden flex flex-col rtl:start-auto rtl:end-0"
             >
               {/* Mobile Header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-                <h3 className="text-lg font-bold text-gray-800">
+                <h3 className="text-[clamp(0.75rem,1.5vw,1.5rem)] font-bold text-gray-800">
                   {t('title')}
                 </h3>
                 <button
@@ -211,7 +211,7 @@ export function ServiceNav({ categories }: ServiceNavProps) {
 
               {/* Mobile Footer */}
               <div className="px-5 py-3 border-t border-gray-100 bg-gray-50">
-                <p className="text-xs text-gray-400 text-center">
+                <p className="text-[clamp(0.75rem,0.5vw,1rem)] text-gray-400 text-center">
                   {categories.length} {t('count')} • 40+ {t('service')}
                 </p>
               </div>
