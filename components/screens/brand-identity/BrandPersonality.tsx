@@ -7,11 +7,11 @@ import { useTranslations } from 'next-intl';
 const accentColors = ['#C9A84C', '#1A6B5C', '#B87333', '#7A2D4A', '#D4A574'];
 const traitIcons = ['🎯', '👁', '⚡', '🧠', '🤝'];
 const traitImages = [
-  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=60',
-  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&q=60',
-  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&q=60',
-  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&q=60',
-  'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=300&q=60',
+  '/imges/brand-identity/27.webp',
+  '/imges/brand-identity/28.webp',
+  '/imges/brand-identity/29.webp',
+  '/imges/brand-identity/30.webp',
+  '/imges/brand-identity/31.webp',
 ];
 
 export function BrandPersonality() {

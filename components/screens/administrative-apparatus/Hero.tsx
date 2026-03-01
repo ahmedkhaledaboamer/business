@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 
 /** Deterministic "random" in [0,1) from index + seed. Pure, stable across renders. */
 function pseudoRandom(i: number, seed: number): number {
@@ -32,12 +33,16 @@ export function Hero({ locale }: { locale: string }) {
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-navy">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-          'url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80")'
-        }} />
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/imges/administrative-apparatus/1.webp"
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          priority
+        />
+      </div>
 
 
       {/* Gradient Overlay */}

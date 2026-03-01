@@ -3,6 +3,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Search, Map, Eye, FileText, CheckCircle2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useMemo } from 'react';
+import Image from 'next/image';
 
 const stepColors = ['#1A6B5C', '#C9A84C', '#B87333', '#7A2D4A'];
 const stepIcons = [Search, Map, Eye, FileText];
@@ -131,9 +132,11 @@ export function HowWeWork() {
                   'linear-gradient(135deg, rgba(201,168,76,0.2), rgba(26,107,92,0.1), transparent)'
                 }} />
 
-              <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
-                alt="فريق يخطط"
+              <Image
+                src="/imges/brand-identity/39.webp"
+                alt="Team planning"
+                width={800}
+                height={600}
                 className="relative w-full h-[600px] object-cover rounded-[24px] shadow-[0_24px_72px_rgba(0,0,0,0.15)] z-10" />
 
             </div>

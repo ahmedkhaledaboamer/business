@@ -26,12 +26,12 @@ const serviceColors = [
 ];
 
 const serviceImages = [
-  'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80',
-  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
-  'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&q=80',
-  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
-  'https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=600&q=80',
-  'https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&q=80',
+  '/imges/brand-identity/43.webp',
+  '/imges/brand-identity/44.webp',
+  '/imges/brand-identity/45.webp',
+  '/imges/brand-identity/46.webp',
+  '/imges/brand-identity/47.webp',
+  '/imges/brand-identity/48.webp',
 ];
 
 const serviceIcons = [Crown, Map, Users, Monitor, TrendingUp, Lock];

@@ -1,73 +1,34 @@
 'use client';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { useParallax } from '@/hooks/useParallax';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-const particleColors = [
-'#C9A84C',
-'#D4A574',
-'#B87333',
-'#C9A84C',
-'#D4A574',
-'#7A2D4A',
-'#C9A84C',
-'#B87333',
-'#D4A574',
-'#C9A84C',
-'#1A6B5C',
-'#D4A574',
-'#B87333',
-'#C9A84C',
-'#7A2D4A'];
-
-const emberStyles = particleColors.map(() => ({
-  w: Math.random() * 5 + 1,
-  h: Math.random() * 5 + 1,
-  left: Math.random() * 100,
-  duration: Math.random() * 5 + 4,
-  delay: Math.random() * 5
-}));
+import Image from 'next/image';
 
 export function ClosingManifesto() {
   const t = useTranslations('brandIdentity.closing');
   const { ref, isVisible } = useScrollAnimation(0.4);
-  const offsetY = useParallax(0.2);
   const words = t('words').split(' ');
   return (
     <>
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-            'url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=80")',
-            transform: `translateY(${offsetY}px) scale(1.1)`
-          }} />
-
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0F0A05] via-[#0F0A05]/80 to-[#0F0A05]/60" />
-
-        {/* Floating Embers with Color Variety */}
-        <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
-          {particleColors.map((color, i) => {
-            const s = emberStyles[i];
-            return (
-            <div
-              key={`ember-${i}`}
-              className="absolute rounded-full blur-[1px]"
-              style={{
-                backgroundColor: color,
-                opacity: 0.7,
-                width: `${s.w}px`,
-                height: `${s.h}px`,
-                bottom: '-10px',
-                left: `${s.left}%`,
-                animation: `particle-float ${s.duration}s linear infinite`,
-                animationDelay: `${s.delay}s`
-              }} />
-            );
-          })}
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/imges/brand-identity/53.webp"
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+            priority
+          />
         </div>
-
+        {/* Dark gradient overlay */}
+        <div
+          className="absolute inset-0 z-10"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(58,58,58,0.85) 0%, rgba(42,42,42,0.9) 50%, rgba(26,26,26,0.95) 100%)'
+          }}
+        />
         <div
           className="container relative z-20 mx-auto px-6 text-center"
           ref={ref}>

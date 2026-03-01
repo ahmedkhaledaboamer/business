@@ -1,3 +1,4 @@
+""
 import { HeroSection } from "@/components/screens/execution/HeroSection";
 import { VisionMissionSection } from "@/components/screens/execution/VisionMissionSection";
 import { GlossarySection } from "@/components/screens/execution/GlossarySection";
