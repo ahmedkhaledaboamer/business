@@ -55,7 +55,7 @@ import {
           icon: Building2,
           color: '#0A1628',
           image:
-            'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop',
+           '/imges/services/1.webp',
           items: [
             'تأسيس الشركات بجميع أنواعها',
             'تأسيس المناطق الحرة',
@@ -77,7 +77,7 @@ import {
           icon: Globe,
           color: '#0A1628',
           image:
-            '/imges/services/1.webp',
+            '/imges/services/2.webp',
           items: [
             'تأسيس المناطق الحرة',
             'تأسيس الأوفشور',
@@ -99,7 +99,7 @@ import {
           tagline:
             'نقدّم حلولاً متكاملة في التأسيس والتراخيص والامتثال لاحتياجات السوق',
           image:
-            '/imges/services/2.webp',
+            '/imges/services/3.webp',
           items: [
             'استكمال إجراءات التأسيس',
             'تجديد التراخيص',
@@ -115,7 +115,7 @@ import {
           tagline:
             'متابعة دورية لتراخيصك وملفات الامتثال لضمان استمرارية عملك بلا انقطاع',
           image:
-            '/imges/services/3.webp',
+            '/imges/services/4.webp',
           items: [
             'تجديد التراخيص في مواعيدها',
             'تحديث ملفات الامتثال',
@@ -139,7 +139,7 @@ import {
           icon: Scale,
           color: '#8B1A4A',
           image:
-            '/imges/services/4.webp',
+            '/imges/services/5.webp',
           items: [
             'عقود التأسيس',
             'اتفاقيات الشركاء',
@@ -161,7 +161,7 @@ import {
           icon: Shield,
           color: '#8B1A4A',
           image:
-            '/imges/services/5.webp',
+            '/imges/services/6.webp',
           items: [
             'سياسات الحوكمة',
             'أدلة السلوك',
@@ -182,7 +182,7 @@ import {
           icon: FileText,
           color: '#8B1A4A',
           image:
-            '/imges/services/6.webp',
+            '/imges/services/7.webp',
           items: [
             'العقود التجارية',
             'مراجعة العقود',
@@ -203,7 +203,7 @@ import {
           icon: Globe,
           color: '#8B1A4A',
           image:
-            '/imges/services/7.webp',
+            '/imges/services/8.webp',
           items: [
             'استشارات دولية',
             'عقود دولية',
@@ -224,7 +224,7 @@ import {
           icon: Crown,
           color: '#8B1A4A',
           image:
-            '/imges/services/8.webp',
+            '/imges/services/9.webp',
           items: [
             'تسجيل العلامات',
             'تسجيل البراءات',
@@ -245,7 +245,7 @@ import {
           icon: Gavel,
           color: '#8B1A4A',
           image:
-            '/imges/services/9.webp',
+            '/imges/services/10.webp',
           items: [
             'التحكيم التجاري',
             'الوساطة والتسوية',
@@ -267,7 +267,7 @@ import {
           tagline:
             'نغطي احتياجاتك القانونية والحوكمة بفريق متخصص وخدمات متممة',
           image:
-            '/imges/services/10.webp',
+            '/imges/services/11.webp',
           items: [
             'مراجعة العقود',
             'استشارات امتثال',
@@ -283,7 +283,7 @@ import {
           tagline:
             'مراجعة مستمرة للامتثال والهياكل لضمان حماية كيانك وتجنّب المخاطر',
           image:
-            '/imges/services/11.webp',
+            '/imges/services/12.webp',
           items: [
             'مراجعة دورية للعقود',
             'تحديث سياسات الامتثال',
@@ -540,7 +540,7 @@ import {
           icon: Handshake,
           color: '#D4A853',
           image:
-            '/imges/services/000.webp',
+            '/imges/services/23.webp',
           items: [
             'تحديد الشركاء المحتملين',
             'تقييم الشراكات',
@@ -552,40 +552,6 @@ import {
             'توسيع شبكة الشراكات',
             'ملفات الشركاء',
             'استراتيجيات التحالف',
-          ],
-        },
-      ],
-      placeholder: [
-        {
-          id: '17',
-          title: 'تطوير أعمال وتوسع',
-          tagline:
-            'خطط توسع وامتياز وشراكات استراتيجية لتعزيز حضورك في السوق',
-          image:
-            '/imges/services/000.webp',
-          items: [
-            'تحليل الفرص',
-            'خطط الدخول للسوق',
-            'إدارة الشراكات',
-            'تقييم الامتياز',
-            'استراتيجيات النمو',
-            'متابعة التوسع',
-          ],
-        },
-        {
-          id: '18',
-          title: 'دخول الأسواق والامتياز',
-          tagline:
-            'نساندك في دخول أسواق جديدة وبناء نموذج امتياز قوي وقابل للتكرار',
-          image:
-            '/imges/services/25.webp',
-          items: [
-            'دراسة الأسواق المستهدفة',
-            'هيكلة الامتياز والعمليات',
-            'اختيار الشركاء والوكلاء',
-            'خطط التسويق والتشغيل',
-            'التقييم الدوري للأداء',
-            'التوسع الإقليمي',
           ],
         },
       ],
@@ -602,7 +568,7 @@ import {
           icon: Landmark,
           color: '#4A1A8B',
           image:
-            '/imges/services/26.webp',
+            '/imges/services/24.webp',
           items: [
             'العلاقات الحكومية',
             'الخطابات الرسمية',
@@ -623,7 +589,7 @@ import {
           icon: Calendar,
           color: '#4A1A8B',
           image:
-            '/imges/services/23.webp',
+            '/imges/services/25.webp',
           items: [
             'المؤتمرات',
             'الاجتماعات',
@@ -645,7 +611,7 @@ import {
           icon: Megaphone,
           color: '#4A1A8B',
           image:
-            '/imges/services/28.webp',
+            '/imges/services/26.webp',
           items: [
             'السمعة الرقمية',
             'الأزمات الإعلامية',
@@ -666,7 +632,7 @@ import {
           icon: Presentation,
           color: '#4A1A8B',
           image:
-            '/imges/services/29.webp',
+          '/imges/services/27.webp',
           items: [
             'ملفات المستثمرين',
             'العروض',
@@ -688,7 +654,7 @@ import {
           tagline:
             'إدارة سمعة وعلاقات حكومية ومستثمرين وفعاليات بمعايير احترافية',
           image:
-            '/imges/services/30.webp',
+            '/imges/services/28.webp',
           items: [
             'العلاقات الحكومية',
             'إدارة السمعة',
@@ -704,7 +670,7 @@ import {
           tagline:
             'نبني لك حضوراً إعلامياً وعلاقات مستثمرين وفعاليات تعزز مكانتك',
           image:
-            '/imges/services/31.webp',
+            '/imges/services/29.webp',
           items: [
             'استراتيجيات السمعة الرقمية',
             'تنظيم المؤتمرات والفعاليات',
@@ -728,7 +694,7 @@ import {
           icon: Users,
           color: '#0E7490',
           image:
-            '/imges/services/32.webp',
+            '/imges/services/30.webp',
           items: [
             'التوظيف التنفيذي',
             'الهياكل التنظيمية',
@@ -749,7 +715,7 @@ import {
           icon: Building,
           color: '#0E7490',
           image:
-            '/imges/services/33.webp',
+            '/imges/services/31.webp',
           items: [
             'الهياكل',
             'السياسات',
@@ -770,7 +736,7 @@ import {
           icon: Settings,
           color: '#0E7490',
           image:
-            '/imges/services/34.webp',
+            '/imges/services/32.webp',
           items: [
             'العمليات اليومية',
             'خطط التشغيل',
@@ -792,7 +758,7 @@ import {
           icon: Briefcase,
           color: '#0E7490',
           image:
-            '/imges/services/35.webp',
+            '/imges/services/33.webp',
           items: [
             'إدارة المشاريع',
             'خطط التنفيذ',
@@ -814,7 +780,7 @@ import {
           tagline:
             'هياكل وسياسات وإدارة مشاريع وعمليات لرفع كفاءة مؤسستك',
           image:
-            '/imges/services/36.webp',
+            '/imges/services/34.webp',
           items: [
             'الهياكل التنظيمية',
             'سياسات الموارد البشرية',
@@ -830,7 +796,7 @@ import {
           tagline:
             'ضبط العمليات وإدارة المشاريع وإعداد السياسات الداخلية لمؤسستك',
           image:
-            '/imges/services/37.webp',
+            '/imges/services/35.webp',
           items: [
             'تحسين العمليات التشغيلية',
             'إدارة المشاريع والمتابعة',
@@ -854,7 +820,7 @@ import {
           icon: Languages,
           color: '#6B21A8',
           image:
-            '/imges/services/38.webp',
+            '/imges/services/34.webp',
           items: [
             'الترجمة القانونية',
             'الترجمة التجارية',
@@ -875,7 +841,7 @@ import {
           icon: Ship,
           color: '#B45309',
           image:
-            '/imges/services/39.webp',
+            '/imges/services/36.webp',
           items: [
             'الاستيراد',
             'التصدير',
@@ -896,7 +862,7 @@ import {
           icon: UserCheck,
           color: '#1E3A5F',
           image:
-            'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=400&fit=crop',
+            '/imges/services/37.webp',
           items: [
             'الملفات الخاصة',
             'العلاقات',
@@ -918,7 +884,7 @@ import {
           icon: Shield,
           color: '#7C2D12',
           image:
-            'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=400&fit=crop',
+            '/imges/services/38.webp',
           items: [
             'سياسات الحوكمة',
             'لجان الرقابة',
@@ -940,7 +906,7 @@ import {
           icon: AlertTriangle,
           color: '#991B1B',
           image:
-            'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop',
+            '/imges/services/39.webp',
           items: [
             'تحليل المخاطر',
             'مخاطر التشغيل',
@@ -962,7 +928,7 @@ import {
           icon: Monitor,
           color: '#0369A1',
           image:
-            'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
+            '/imges/services/40.webp',
           items: [
             'رقمنة العمليات',
             'أنظمة الإدارة',
@@ -984,7 +950,7 @@ import {
           icon: ClipboardList,
           color: '#4338CA',
           image:
-            'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop',
+            '/imges/services/41.webp',
           items: [
             'سياسات الموارد البشرية',
             'سياسات المالية',
@@ -1006,7 +972,7 @@ import {
           icon: Search,
           color: '#065F46',
           image:
-            'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+            '/imges/services/42.webp',
           items: [
             'حجم السوق',
             'المنافسين',
@@ -1028,7 +994,7 @@ import {
           icon: FolderOpen,
           color: '#78350F',
           image:
-            'https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=600&h=400&fit=crop',
+            '/imges/services/43.webp',
           items: [
             'الملف التعريفي',
             'الهيكل التنظيمي',
@@ -1050,7 +1016,7 @@ import {
           icon: Home,
           color: '#701A75',
           image:
-            'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop',
+            '/imges/services/44.webp',
           items: [
             'هياكل الشركات العائلية',
             'اتفاقيات الورثة',
@@ -1072,7 +1038,7 @@ import {
           icon: DollarSign,
           color: '#9A3412',
           image:
-            'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&h=400&fit=crop',
+            '/imges/services/45.webp',
           items: [
             'العرض التقديمي',
             'تحليل السوق',
@@ -1094,7 +1060,7 @@ import {
           icon: Globe,
           color: '#1E40AF',
           image:
-            'https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?w=600&h=400&fit=crop',
+              '/imges/services/46.webp',
           items: [
             'ملفات المستثمر',
             'الحسابات البنكية',
@@ -1115,7 +1081,7 @@ import {
           icon: Truck,
           color: '#92400E',
           image:
-            'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop',
+            '/imges/services/47.webp',
           items: [
             'الموردين',
             'العقود',
@@ -1136,7 +1102,7 @@ import {
           icon: FileCheck,
           color: '#3730A3',
           image:
-            'https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600&h=400&fit=crop',
+            '/imges/services/48.webp',
           items: [
             'ملفات المناقصات',
             'العروض الفنية',
@@ -1157,7 +1123,7 @@ import {
           icon: AlertTriangle,
           color: '#9F1239',
           image:
-            'https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=600&h=400&fit=crop',
+            '/imges/services/49.webp',
           items: [
             'تحليل الأزمة',
             'خطة الاستجابة',
@@ -1178,7 +1144,7 @@ import {
           icon: Palette,
           color: '#5B21B6',
           image:
-            'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
+            '/imges/services/50.webp',
           items: [
             'الهوية البصرية',
             'الهوية اللفظية',
@@ -1200,7 +1166,7 @@ import {
           tagline:
             'مجموعة واسعة من الخدمات المتخصصة تُقدّم وفق أعلى معايير الجودة',
           image:
-            'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
+            '/imges/services/51.webp',
           items: [
             'استشارات متخصصة',
             'تحليل وتخطيط',
@@ -1216,7 +1182,7 @@ import {
           tagline:
             'تحليل ميداني ومستندي واستشارات تلائم قطاعك واحتياجاتك الخاصة',
           image:
-            'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+            '/imges/services/52.webp',
           items: [
             'تحليل الأسواق والمنافسين',
             'مراجعة المستندات والعقود',
