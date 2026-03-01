@@ -19,7 +19,7 @@ export function OfferSection({ locale }: { locale: string }) {
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=80')`,
+          backgroundImage: `url('/imges/home/002.webp')`,
         }}
       >
         <div className="absolute inset-0 bg-navy-dark/90 backdrop-blur-sm" />

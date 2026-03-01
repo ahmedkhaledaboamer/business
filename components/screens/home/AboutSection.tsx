@@ -109,7 +109,7 @@ export function AboutSection({ locale }: { locale: string }) {
             {/* Main image */}
             <div className="absolute top-0 right-0 w-[82%] sm:w-[80%] h-[75%] sm:h-[78%] rounded-3xl overflow-hidden shadow-[0_32px_64px_rgba(15,25,35,0.18)] z-10 border-4 border-white">
               <Image
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+                src="/imges/home/1.webp"
                 alt={t("imageAlt1")}
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700"
@@ -120,7 +120,7 @@ export function AboutSection({ locale }: { locale: string }) {
             {/* Secondary image */}
             <div className="absolute bottom-0 left-0 w-[62%] sm:w-[58%] h-[52%] sm:h-[56%] rounded-3xl overflow-hidden shadow-[0_24px_48px_rgba(15,25,35,0.22)] z-20 border-4 border-white">
               <Image
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80"
+                src="/imges/home/222.webp"
                 alt={t("imageAlt2")}
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700"
