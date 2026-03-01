@@ -89,14 +89,7 @@ export function JourneySection() {
           }}
           className="mx-auto mb-20 rounded-2xl overflow-hidden shadow-md border-4 border-white"
         >
-          <Image
-            src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80"
-            alt={t('featuredImageAlt')}
-            loading="lazy"
-            className="w-full md:h-[300px] lg:h-[600px] object-cover"
-            width={1000}
-            height={1000}
-          />
+          
         </motion.div>
 
         <div className="relative">
