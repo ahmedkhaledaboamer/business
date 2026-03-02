@@ -173,7 +173,7 @@ export function AboutSection({ locale }: { locale: string }) {
             </div>
 
             {/* Pillars */}
-            <div className="flex flex-wrap justify-center md:grid md:grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+            <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {pillars.map(({ icon: Icon, titleKey, descKey }, i) => (
                 <motion.div
                   key={titleKey}
@@ -181,7 +181,7 @@ export function AboutSection({ locale }: { locale: string }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}
-                  className="group flex flex-col items-center text-center p-3 sm:p-4 rounded-2xl bg-white hover:bg-[#C9A84C]/5 border border-transparent hover:border-[#C9A84C]/20 transition-all duration-300 shadow-sm"
+                  className="group full-width flex flex-col items-center text-center p-3 sm:p-4 rounded-2xl bg-white hover:bg-[#C9A84C]/5 border border-transparent hover:border-[#C9A84C]/20 transition-all duration-300 shadow-sm"
                 >
                   <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#C9A84C]/10 flex items-center justify-center mb-3">
                     <Icon className="w-5 h-5 text-[#C9A84C]" />
