@@ -74,33 +74,27 @@ export function BrandStatement() {
               <div
                 className={`grid grid-cols-3 gap-6 pt-8 border-t border-gray-200 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 
-                <div>
+                <div className="flex flex-col items-center justify-center">
                   <div
-                    className="text-2xl sm:text-3xl font-extrabold text-[#C9A84C] mb-1"
-                    dir="ltr">
-
+                    className="text-2xl sm:text-3xl font-extrabold text-[#C9A84C] mb-1">
                     +{clients}
                   </div>
                   <div className="text-sm font-bold text-gray-500">
                     {statItems[0]?.label ?? 'Client'}
                   </div>
                 </div>
-                <div>
+                <div className="flex flex-col items-center justify-center">
                   <div
-                    className="text-2xl sm:text-3xl font-extrabold text-[#C9A84C] mb-1"
-                    dir="ltr">
-
+                    className="text-2xl sm:text-3xl font-extrabold text-[#C9A84C] mb-1">
                     %{satisfaction}
                   </div>
                   <div className="text-sm font-bold text-gray-500">
                     {statItems[1]?.label ?? 'Satisfaction rate'}
                   </div>
                 </div>
-                <div>
+                <div className="flex flex-col items-center justify-center">
                   <div
-                    className="text-2xl sm:text-3xl font-extrabold text-[#C9A84C] mb-1"
-                    dir="ltr">
-
+                    className="text-2xl sm:text-3xl font-extrabold text-[#C9A84C] mb-1">
                     +{years}
                   </div>
                   <div className="text-sm font-bold text-gray-500">

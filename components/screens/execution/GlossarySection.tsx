@@ -125,10 +125,10 @@ export function GlossarySection() {
                 <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-500 group-hover:text-white transition-colors text-teal-600">
                   <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-center md:text-right text-[clamp(0.75rem,1vw,3rem)] font-bold text-slate-900 mb-3">
+                  <h3 className={`text-center ${locale === 'ar' ? 'md:text-right' : 'md:text-left'} text-[clamp(0.75rem,1vw,3rem)] font-bold text-slate-900 mb-3`}>
                   {term.title}
                 </h3>
-                <p className="text-slate-600 text-center md:text-right text-[clamp(0.75rem,1vw,2rem)] leading-relaxed">{term.desc}</p>
+                <p className={`text-slate-600 text-center ${locale === 'ar' ? 'md:text-right' : 'md:text-left'} text-[clamp(0.75rem,1vw,2rem)] leading-relaxed`}>{term.desc}</p>
               </motion.div>
             )
           })}

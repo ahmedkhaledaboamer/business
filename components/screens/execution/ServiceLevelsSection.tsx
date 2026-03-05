@@ -83,7 +83,7 @@ export function ServiceLevelsSection() {
                   <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNGRkZGRkYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-30"></div>
                 )}
 
-                <div className="relative z-10 flex flex-col items-center justify-center md:items-start lg:justify-start">
+                <div className="relative z-10 flex flex-col items-center justify-center">
                   <div
                     className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${level.highlight ? 'bg-white/20 text-white backdrop-blur-sm' : 'bg-white text-slate-700 shadow-sm'}`}
                   >
@@ -97,13 +97,13 @@ export function ServiceLevelsSection() {
                   </div>
 
                   <h3
-                    className={`text-center md:text-right text-[clamp(0.75rem,2vw,2rem)] font-bold mb-4 ${level.highlight ? 'text-white' : 'text-slate-900'}`}
+                    className={`text-center  text-[clamp(0.75rem,2vw,2rem)] font-bold mb-4 ${level.highlight ? 'text-white' : 'text-slate-900'}`}
                   >
                     {level.name}
                   </h3>
 
                   <p
-                    className={`text-center md:text-right text-[clamp(0.75rem,1vw,2rem)] leading-relaxed ${level.highlight ? 'text-amber-50' : 'text-slate-600'}`}
+                    className={`text-center text-[clamp(0.75rem,1vw,2rem)] leading-relaxed ${level.highlight ? 'text-amber-50' : 'text-slate-600'}`}
                   >
                     {level.desc}
                   </p>

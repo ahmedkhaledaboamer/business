@@ -84,8 +84,8 @@ export default function MobileNavbar() {
     if (!isOpen) openButtonRef.current?.focus({ preventScroll: true });
   }, [isOpen]);
 
-  const panelSide = isRTL ? "left-0" : "right-0";
-  const slideFrom = isRTL ? "-100%" : "100%";
+  const panelSide = isRTL ? "right-0" : "left-0";
+  const slideFrom = isRTL ? "100%" : "-100%";
 
   return (
     <div className="md:hidden relative" dir={isRTL ? "rtl" : "ltr"}>
@@ -142,7 +142,13 @@ export default function MobileNavbar() {
                     </button>
                   </div>
 
-                  <nav className="flex-1 overflow-y-auto px-6 py-6" aria-label={t("navMenu")}>
+                  <nav
+                    className={cn(
+                      "flex-1 overflow-y-auto px-6 py-6",
+                      isRTL ? "text-right" : "text-left"
+                    )}
+                    aria-label={t("navMenu")}
+                  >
                     <ul className="space-y-1">
                       {routes.map((route, index) => (
                         <motion.li
