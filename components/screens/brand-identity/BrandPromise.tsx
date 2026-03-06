@@ -15,20 +15,19 @@ const promiseImages = [
 
 export function BrandPromise() {
   const t = useTranslations('brandIdentity.promise');
-  const rawPromises = (t.raw('promises') as { title: string; desc: string }[] | undefined) ?? [];
-  const promises = useMemo(
-    () => (Array.isArray(rawPromises) ? rawPromises : []).map((p, i) => ({ ...p, icon: promiseIcons[i], img: promiseImages[i] })),
-    [rawPromises]
-  );
+  const promises = useMemo(() => {
+    const rawPromises = (t.raw('promises') as { title: string; desc: string }[] | undefined) ?? [];
+    return (Array.isArray(rawPromises) ? rawPromises : []).map((p, i) => ({ ...p, icon: promiseIcons[i], img: promiseImages[i] }));
+  }, [t]);
   const { ref, isVisible } = useScrollAnimation(0.2);
   return (
     <section className="py-28 bg-gradient-to-b from-[#FDF8F0] to-white relative overflow-hidden px-[5%]">
       <div className=" mx-auto px-6 relative z-10" ref={ref}>
         <div className="text-center mb-20">
-          <h2 className="font-bold text-[#1A1A1A] mb-4 text-[clamp(0.75rem,2vw,6rem)]">
+          <h2 className="font-bold text-[#1A1A1A] mb-4 text-[clamp(2rem,2vw,6rem)]">
             {t('title')}
           </h2>
-          <p className="text-gray-500 font-medium text-[clamp(0.75rem,2vw,1.5rem)]">
+          <p className="text-gray-500 font-medium text-[clamp(1.2rem,2vw,1.5rem)]">
             {t('subtitle')}
           </p>
         </div>
@@ -106,14 +105,14 @@ export function BrandPromise() {
                   </div>
 
                   <h3
-                    className="font-bold mb-4 relative z-10 transition-colors text-[clamp(0.75rem,1vw,2rem)]"
+                    className="font-bold mb-4 relative z-10 transition-colors text-[clamp(1.2rem,1vw,2rem)]"
                     style={{
                       color
                     }}>
 
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed relative z-10 font-medium text-[clamp(0.75rem,1vw,2rem)]">
+                  <p className="text-gray-600 leading-relaxed relative z-10 font-medium text-[clamp(0.8rem,1vw,2rem)]">
                     {item.desc}
                   </p>
                 </div>);

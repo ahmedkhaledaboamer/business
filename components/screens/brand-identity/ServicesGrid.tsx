@@ -38,17 +38,15 @@ const serviceIcons = [Crown, Map, Users, Monitor, TrendingUp, Lock];
 
 export function ServicesGrid() {
   const t = useTranslations('brandIdentity.services');
-  const services = useMemo(
-    () =>
-      Array.from({ length: 6 }, (_, i) => ({
-        title: t(`items.${i}.title`),
-        desc: t(`items.${i}.desc`),
-        fullDesc: t(`items.${i}.detail`),
-        img: serviceImages[i],
-        icon: serviceIcons[i],
-      })),
-    [t]
-  );
+  const services = useMemo(() => {
+    return Array.from({ length: 6 }, (_, i) => ({
+      title: t(`items.${i}.title`),
+      desc: t(`items.${i}.desc`),
+      fullDesc: t(`items.${i}.detail`),
+      img: serviceImages[i],
+      icon: serviceIcons[i],
+    }));
+  }, [t]);
   const [activeService, setActiveService] = useState<
     (typeof services)[0] | null
   >(null);
@@ -67,10 +65,10 @@ export function ServicesGrid() {
 
       <div className=" mx-auto px-6 relative z-10" ref={ref}>
         <div className="text-center mb-20">
-          <h2 className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-[#1A1A1A] mb-4">
+          <h2 className="text-[clamp(2rem,2vw,6rem)] font-bold text-[#1A1A1A] mb-4">
             {t('sectionTitle')}
           </h2>
-          <p className="text-[clamp(0.75rem,2vw,1.5rem)] text-gray-500 font-medium">
+          <p className="text-[clamp(1.2rem,2vw,1.5rem)] text-gray-500 font-medium">
             {t('sectionSubtitle')}
           </p>
         </div>
@@ -129,7 +127,7 @@ export function ServicesGrid() {
 
                   </div>
                   <h3
-                    className="font-bold text-[#1A1A1A] mb-3 mt-4 hover-color-target transition-colors duration-300 text-[clamp(0.75rem,1vw,2rem)]"
+                    className="font-bold text-[#1A1A1A] mb-3 mt-4 hover-color-target transition-colors duration-300 text-[clamp(1.2rem,1vw,2rem)]"
                     style={
                     {
                       '--hover-color': color
@@ -138,7 +136,7 @@ export function ServicesGrid() {
 
                     {srv.title}
                   </h3>
-                  <p className="text-gray-600 text-[clamp(0.75rem,1vw,1.5rem)] leading-relaxed font-medium">
+                  <p className="text-gray-600 text-[clamp(0.8rem,1vw,1.5rem)] leading-relaxed font-medium">
                     {srv.desc}
                   </p>
                 </div>
@@ -200,7 +198,7 @@ export function ServicesGrid() {
                 })()}
 
               </div>
-              <h3 className="text-[clamp(0.75rem,2vw,3rem)] font-bold text-[#1A1A1A] mb-6">
+              <h3 className="text-[clamp(1.2rem,2vw,3rem)] font-bold text-[#1A1A1A] mb-6">
                 {activeService.title}
               </h3>
               <div
@@ -210,7 +208,7 @@ export function ServicesGrid() {
                 serviceColors[services.indexOf(activeService)]
               }} />
 
-              <p className="text-gray-600 mb-10 leading-relaxed font-medium text-[clamp(0.75rem,2vw,1.5rem)]">
+              <p className="text-gray-600 mb-10 leading-relaxed font-medium text-[clamp(0.8rem,2vw,1.5rem)]">
                 {activeService.fullDesc}
               </p>
             </div>

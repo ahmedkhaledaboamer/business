@@ -30,7 +30,7 @@ export function Pyramid({ locale }: { locale: string }) {
       <div className=" mx-auto px-4 relative z-10">
         <h2
           ref={ref}
-          className={`text-[clamp(0.75rem,2vw,6rem)] font-bold text-charcoal mb-20 text-center md:text-end transition-all duration-1000 ${isIntersecting ? 'translate-x-0 opacity-100' : (isRTL ? '-translate-x-20' : 'translate-x-20') + ' opacity-0'}`}>
+          className={`text-[clamp(1.2rem,2vw,6rem)] font-bold text-charcoal md:mb-20 text-center md:text-end transition-all duration-1000 ${isIntersecting ? 'translate-x-0 opacity-100' : (isRTL ? '-translate-x-20' : 'translate-x-20') + ' opacity-0'}`}>
           {t('title')}
         </h2>
 
@@ -260,7 +260,7 @@ export function Pyramid({ locale }: { locale: string }) {
 
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
-                  <p className="text-white text-[clamp(0.75rem,1vw,2rem)] font-bold italic leading-relaxed relative z-10">
+                  <p className="text-white text-[clamp(1.1rem,1vw,2rem)] font-bold italic leading-relaxed relative z-10">
                     &quot;{t('quote')} <br />
                     <span className="text-gold">{t('quoteHighlight')}</span>&quot;
                   </p>

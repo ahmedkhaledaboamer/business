@@ -76,11 +76,11 @@ export function AboutSection({ locale }: { locale: string }) {
           viewport={{ once: true, margin: "-80px" }}
           className="flex flex-col items-center mb-14 sm:mb-20"
         >
-          <span className="inline-flex items-center gap-2 rounded-full px-5 py-2 bg-[rgba(14,124,107,0.1)] border border-[rgba(14,124,107,0.2)] text-[#0E7C6B] text-[clamp(0.75rem,2vw,2rem)] mb-5">
+          <span className="inline-flex items-center gap-2 rounded-full px-5 py-2 bg-[rgba(14,124,107,0.1)] border border-[rgba(14,124,107,0.2)] text-[#0E7C6B] text-[clamp(1rem,2vw,2rem)] mb-5">
             {t("label")}
           </span>
 
-          <h2 className="font-bold text-[clamp(0.75rem,2vw,6rem)] text-[#0F1923] text-center leading-tight">
+          <h2 className="font-bold text-[clamp(1.2rem,2vw,6rem)] text-[#0F1923] text-center leading-tight">
             {t("title")}{" "}
             <span className="relative mx-2 sm:mx-3">
               <span className="relative z-10 text-[#C9A84C]">
@@ -102,7 +102,7 @@ export function AboutSection({ locale }: { locale: string }) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            className="relative order-2 lg:order-1 h-[380px] sm:h-[460px] lg:h-[520px] 2xl:h-[800px]"
+            className="relative order-2 lg:order-1 h-[380px] sm:h-[460px] lg:h-[520px] 2xl:h-[600px]"
           >
             <div className="absolute -top-5 -right-5 w-[85%] h-[85%] border border-[#C9A84C]/30 rounded-3xl z-0" />
 
@@ -140,10 +140,10 @@ export function AboutSection({ locale }: { locale: string }) {
                 <span className="text-[#C9A84C] font-bold text-sm">+500</span>
               </div>
               <div>
-                <p className="font-bold text-[#0F1923] text-[clamp(0.75rem,2vw,2rem)] leading-tight">
+                <p className="font-bold text-[#0F1923] text-[clamp(1rem,2vw,2rem)] leading-tight">
                   {t("badgeStat")}
                 </p>
-                <p className="text-[#0F1923]/50 text-[clamp(0.75rem,2vw,1.5rem)]">
+                <p className="text-[#0F1923]/50 text-[clamp(1rem,2vw,1.5rem)]">
                   {t("badgeStatSub")}
                 </p>
               </div>
@@ -158,7 +158,7 @@ export function AboutSection({ locale }: { locale: string }) {
             viewport={{ once: true, margin: "-80px" }}
             className="order-1 lg:order-2"
           >
-            <p className="text-[clamp(0.75rem,2vw,3rem)] text-[#000] leading-[1.9] sm:leading-[2] mb-6">
+            <p className="text-[clamp(.9rem,2vw,3rem)] text-[#000] leading-[1.9] sm:leading-[2] mb-6">
               {t("intro")}
             </p>
 
@@ -167,7 +167,7 @@ export function AboutSection({ locale }: { locale: string }) {
                 !isRTL ? "border-l-4" : "border-r-4"
               }`}
             >
-              <p className="text-[clamp(0.75rem,2vw,3rem)] text-[#000] leading-[1.9]">
+              <p className="text-[clamp(.9rem,2vw,3rem)] text-[#000] leading-[1.9]">
                 {t("quote")}
               </p>
             </div>
@@ -187,10 +187,10 @@ export function AboutSection({ locale }: { locale: string }) {
                     <Icon className="w-5 h-5 text-[#C9A84C]" />
                   </div>
 
-                  <p className="font-bold text-[#0F1923] text-[clamp(0.75rem,1vw,3rem)] mb-1">
+                  <p className="font-bold text-[#0F1923] text-[clamp(1rem,1vw,3rem)] mb-1">
                     {t(titleKey)}
                   </p>
-                  <p className="text-[#0F1923]/50 text-[clamp(0.75rem,1vw,2rem)] leading-snug">
+                  <p className="text-[#0F1923]/50 text-[clamp(1rem,1vw,2rem)] leading-snug">
                     {t(descKey)}
                   </p>
                 </motion.div>

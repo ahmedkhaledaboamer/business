@@ -57,7 +57,7 @@ export function VisionSection({ locale }: { locale: string }) {
           className="flex flex-col items-center mb-16"
         >
           <div className="w-10 h-[3px] rounded-full bg-[#C9A84C] mb-4" />
-          <p className="font-['Tajawal',sans-serif] text-[#0F1923]/40 text-[clamp(1rem,1vw,3rem)] tracking-widest uppercase">
+          <p className=" text-[#0F1923]/40 text-[clamp(1.3rem,1vw,3rem)] tracking-widest uppercase">
             {t("visionBadge")}
           </p>
         </motion.div>
@@ -78,7 +78,7 @@ export function VisionSection({ locale }: { locale: string }) {
             {/* Bg glow on hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#C9A84C]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
 
-            <span className="relative inline-block rounded-full px-5 py-2 bg-[#C9A84C]/10 border border-[#C9A84C]/25 text-[#B8922A] font-['Tajawal',sans-serif] text-sm mb-8">
+            <span className="relative inline-block rounded-full px-5 py-2 bg-[#C9A84C]/10 border border-[#C9A84C]/25 text-[#B8922A]  text-sm mb-8">
               {t("visionBadge")}
             </span>
 
@@ -94,7 +94,7 @@ export function VisionSection({ locale }: { locale: string }) {
               {t("visionTitle2")}
             </h3>
 
-            <p className="relative font-['Tajawal',sans-serif] text-[clamp(1rem,1vw,3rem)] text-[#0F1923]/60 leading-[1.9]">
+            <p className="relative  text-[clamp(1rem,1vw,3rem)] text-[#0F1923]/60 leading-[1.9]">
               {t("visionDesc")}
             </p>
           </motion.div>
@@ -143,7 +143,7 @@ export function VisionSection({ locale }: { locale: string }) {
 
             <div className="absolute inset-0 bg-gradient-to-br from-[#0E7C6B]/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
 
-            <span className="relative inline-block rounded-full px-5 py-2 bg-[#0E7C6B]/10 border border-[#0E7C6B]/25 text-[#0A6358] font-['Tajawal',sans-serif] text-sm mb-8">
+            <span className="relative inline-block rounded-full px-5 py-2 bg-[#0E7C6B]/10 border border-[#0E7C6B]/25 text-[#0A6358]  text-sm mb-8">
               {t("promiseBadge")}
             </span>
 
@@ -159,7 +159,7 @@ export function VisionSection({ locale }: { locale: string }) {
               {t("promiseTitle2")}
             </h3>
 
-            <p className="relative font-['Tajawal',sans-serif] text-base text-[#0F1923]/60 leading-[1.9]">
+            <p className="relative  text-base text-[#0F1923]/60 leading-[1.9]">
               {t("promiseDesc")}
             </p>
           </motion.div>

@@ -94,7 +94,7 @@ export function WhyUsSection({ locale }: { locale: string }) {
           }}
           className="text-center mb-16"
         >
-          <span className="inline-block rounded-full px-5 py-2 bg-teal/20 border border-teal/40 text-teal-light font-tajawal text-sm mb-6 shadow-[0_0_15px_rgba(14,124,107,0.3)]">
+          <span className="inline-block rounded-full px-5 py-2 bg-teal/20 border border-teal/40 text-teal-light  text-sm mb-6 shadow-[0_0_15px_rgba(14,124,107,0.3)]">
             {t('badge')}
           </span>
           <h2 className="font-cairo font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6 drop-shadow-lg">
@@ -103,7 +103,7 @@ export function WhyUsSection({ locale }: { locale: string }) {
               {t('titleHighlight')}
             </span>
           </h2>
-          <p className="font-tajawal text-lg text-white/70 mx-auto">
+          <p className=" text-lg text-white/70 mx-auto">
             {t('subtitle')}
           </p>
         </motion.div>

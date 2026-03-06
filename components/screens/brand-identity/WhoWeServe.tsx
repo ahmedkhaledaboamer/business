@@ -27,14 +27,14 @@ export function WhoWeServe() {
           ref={ref}>
 
           <div className="flex-1 relative">
-            <h2 className="text-center lg:text-left font-bold text-[#1A1A1A] mb-8 text-[clamp(0.75rem,2vw,6rem)]">
+            <h2 className="text-center lg:text-left font-bold text-[#1A1A1A] mb-8 text-[clamp(2rem,2vw,6rem)]">
               {t('title')}
             </h2>
-            <p className="text-gray-600 text-center lg:text-left mb-12 leading-relaxed font-medium text-[clamp(0.75rem,2vw,1.5rem)]">
+            <p className="text-gray-600 text-center lg:text-left mb-12 leading-relaxed font-medium text-[clamp(1.2rem,2vw,1.5rem)]">
               {t('subtitle')}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4 mb-16">
+            <div className="px-[5%] grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4 mb-16">
               {bullets.map((bullet, idx) =>
               <div
                 key={idx}
@@ -57,7 +57,7 @@ export function WhoWeServe() {
                     }} />
 
                   </div>
-                  <span className="text-[#1A1A1A] font-bold text-[clamp(0.75rem,1vw,2rem)]">
+                  <span className="text-[#1A1A1A] font-bold text-[clamp(1.2rem,1vw,2rem)]">
                     {bullet}
                   </span>
                 </div>

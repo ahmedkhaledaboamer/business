@@ -7,6 +7,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import LocaleSwitcher from "../locale-switcher";
 import Logo from "../logo";
 import MobileNavbar from "./mobile-nav";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 interface Route {
   label: string;
@@ -19,6 +20,8 @@ export default function Navbar() {
   const locale = useLocale();
   const isRTL = useMemo(() => locale === "ar", [locale]);
   const routesRaw = t.raw("routes");
+  const isLaptop = useMediaQuery("(max-width: 1536px)");
+
 
   // Memoize routes processing
   const routes = useMemo<Route[]>(() => {
@@ -79,7 +82,7 @@ export default function Navbar() {
       dir={isRTL ? "rtl" : "ltr"}
     >
       {/* Logo */}
-      <Logo className=" transition-transform duration-300 hover:scale-105 w-fit" size={80} />
+      <Logo className=" transition-transform duration-300 hover:scale-105 w-fit" size={isLaptop ? 70 : 100} />
 
       {/* Desktop Navigation Links */}
       <ul

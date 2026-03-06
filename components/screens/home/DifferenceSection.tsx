@@ -72,7 +72,7 @@ export function DifferenceSection() {
           }}
           className="text-center mb-16"
         >
-          <span className="inline-block rounded-full px-5 py-2 bg-gold/20 border border-gold/40 text-gold-dark font-tajawal text-sm mb-6">
+          <span className="inline-block rounded-full px-5 py-2 bg-gold/20 border border-gold/40 text-gold-dark  text-sm mb-6">
             ما يجعلنا مختلفين
           </span>
           <h2 className="font-cairo font-bold text-3xl sm:text-4xl lg:text-5xl text-navy-dark mb-4">

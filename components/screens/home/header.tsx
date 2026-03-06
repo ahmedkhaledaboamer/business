@@ -43,7 +43,7 @@ export default function Header() {
           className="inline-flex items-center gap-2 rounded-full px-4 sm:px-6 py-2 bg-[rgba(201,168,76,0.15)] border border-[rgba(201,168,76,0.3)] mb-6 sm:mb-8"
         >
           <SparklesIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#C9A84C]" />
-          <span className="text-[#C9A84C] text-sm sm:text-base font-medium">
+          <span className="text-[#C9A84C] text-[clamp(1rem,1vw,2rem)] font-medium">
             {t("badge")}
           </span>
         </motion.div>
@@ -52,7 +52,7 @@ export default function Header() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          className="font-bold text-[clamp(0.75rem,2vw,6rem)] text-white leading-[1.25] mb-2"
+          className="font-bold text-[clamp(1.2rem,2vw,6rem)] text-white leading-[1.25] mb-2"
         >
           {t("titleLine1")}
           <br />
@@ -65,7 +65,7 @@ export default function Header() {
         <motion.p
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-white/70 text-[clamp(0.75rem,2vw,1.5rem)] max-w-7xl mx-auto mb-8 sm:mb-10 leading-relaxed"
+          className="text-white/70 text-[clamp(1rem,2vw,1.5rem)] max-w-7xl mx-auto mb-8 sm:mb-10 leading-relaxed"
         >
           {t("description")}
         </motion.p>
@@ -82,7 +82,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
             onMouseEnter={() => setIsCta1Hovered(true)}
             onMouseLeave={() => setIsCta1Hovered(false)}
-            className="flex items-center justify-center gap-3 w-full sm:w-auto bg-[#C9A84C] text-[clamp(0.75rem,1vw,2rem)] hover:bg-[#D4B85A] text-[#0F1923] font-bold px-7 py-3.5 rounded-full transition"
+            className="flex items-center justify-center gap-3 w-full sm:w-auto bg-[#C9A84C] text-[clamp(1rem,1vw,2rem)] hover:bg-[#D4B85A] text-[#0F1923] font-bold px-7 py-3.5 rounded-full transition"
           >
             <span>{t("ctaPrimary")}</span>
             {isRTL ? (
@@ -101,12 +101,12 @@ export default function Header() {
           </motion.a>
 
           <motion.a
-            href="/services"
+            href={`/${locale}/services`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onMouseEnter={() => setIsCta2Hovered(true)}
             onMouseLeave={() => setIsCta2Hovered(false)}
-            className={`flex items-center justify-center gap-3 text-[clamp(0.75rem,1vw,2rem)] w-full sm:w-auto border-2 font-bold px-7 py-3.5 rounded-full transition ${
+            className={`flex items-center justify-center gap-3 text-[clamp(1rem,1vw,2rem)] w-full sm:w-auto border-2 font-bold px-7 py-3.5 rounded-full transition ${
               isCta2Hovered
                 ? "border-[#C9A84C] text-[#C9A84C]"
                 : "border-white/30 text-white"
@@ -126,7 +126,7 @@ export default function Header() {
             <div className="text-2xl sm:text-3xl font-bold text-[#C9A84C]">
               +50
             </div>
-            <div className="text-white/60 text-sm mt-1">
+            <div className="text-white/60 text-[clamp(1rem,1vw,2rem)] mt-1">
               {t("statsClients")}
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function Header() {
             <div className="text-2xl sm:text-3xl font-bold text-[#C9A84C]">
               15+
             </div>
-            <div className="text-white/60 text-sm mt-1">
+            <div className="text-white/60 text-[clamp(1rem,1vw,2rem)] mt-1">
               {t("statsExperience")}
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function Header() {
             <div className="text-2xl sm:text-3xl font-bold text-[#C9A84C]">
               100%
             </div>
-            <div className="text-white/60 text-sm mt-1">
+            <div className="text-white/60 text-[clamp(1rem,1vw,2rem)] mt-1">
               {t("statsConfidentiality")}
             </div>
           </div>

@@ -120,7 +120,7 @@ export function Stats({ locale }: { locale: string }) {
 
                   <CountUp end={stat.value} suffix={stat.suffix || ''} />
 
-                  <p className="font-['Tajawal',sans-serif] text-white/50 text-[clamp(0.75rem,2vw,1.5rem)] mt-1 group-hover:text-white/70 transition-colors duration-300">
+                  <p className=" text-white/50 text-[clamp(1.2rem,2vw,1.5rem)] mt-1 group-hover:text-white/70 transition-colors duration-300">
                     {stat.label}
                   </p>
                 </motion.div>

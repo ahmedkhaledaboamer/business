@@ -1,11 +1,12 @@
 'use client';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export function ClosingManifesto() {
   const t = useTranslations('brandIdentity.closing');
+  const locale = useLocale();
   const { ref, isVisible } = useScrollAnimation(0.4);
   const words = t('words').split(' ');
   return (
@@ -54,7 +55,7 @@ export function ClosingManifesto() {
 
           </div>
 
-          <h2 className="font-black text-white mb-12 flex flex-wrap justify-center gap-4 text-[clamp(0.75rem,2vw,6rem)]">
+          <h2 className="font-black text-white mb-12 flex flex-wrap justify-center gap-4 text-[clamp(1.5rem,2vw,6rem)]">
             {words.map((word, idx) =>
             <span
               key={idx}
@@ -72,7 +73,7 @@ export function ClosingManifesto() {
 
           <div className="space-y-6 mb-20">
             <p
-              className={`text-[#D4A574] italic font-medium transition-all duration-1000 delay-[1000ms] text-[clamp(0.75rem,2vw,1.5rem)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+              className={`text-[#D4A574] italic font-medium transition-all duration-1000 delay-[1000ms] text-[clamp(1.2rem,2vw,1.5rem)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
               style={{
                 textShadow: '0 2px 10px rgba(0,0,0,0.5)'
               }}>
@@ -80,7 +81,7 @@ export function ClosingManifesto() {
               {t('line1')}
             </p>
             <p
-              className={`text-[#B87333] italic font-medium transition-all duration-1000 delay-[1300ms] text-[clamp(0.75rem,2vw,1.5rem)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+              className={`text-[#B87333] italic font-medium transition-all duration-1000 delay-[1300ms] text-[clamp(1.2rem,2vw,1.5rem)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
               style={{
                 textShadow: '0 2px 10px rgba(0,0,0,0.5)'
               }}>
@@ -88,7 +89,7 @@ export function ClosingManifesto() {
               {t('line2')}
             </p>
             <p
-              className={`font-black text-[#C9A84C] transition-all duration-1000 delay-[1600ms] text-[clamp(0.75rem,2vw,3rem)] ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95'}`}
+              className={`font-black text-[#C9A84C] transition-all duration-1000 delay-[1600ms] text-[clamp(1.2rem,2vw,3rem)] ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95'}`}
               style={{
                 textShadow: '0 4px 20px rgba(0,0,0,0.7)'
               }}>
@@ -107,13 +108,13 @@ export function ClosingManifesto() {
               }} />
 
             <Link
-              href="/execution"
-              className="relative z-10 bg-gradient-to-r from-[#C9A84C] via-[#D4A574] to-[#B87333] text-white px-10 py-4 rounded-full font-bold hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] hover:-translate-y-1 transition-all duration-300 text-[clamp(0.75rem,1vw,2rem)]">
+              href={`/${locale}/execution`}
+              className="relative z-10 bg-gradient-to-r from-[#C9A84C] via-[#D4A574] to-[#B87333] text-white px-10 py-4 rounded-full font-bold hover:shadow-[0_0_30px_rgba(201,168,76,0.5)] hover:-translate-y-1 transition-all duration-300 text-[clamp(1.2rem,1vw,2rem)]">
               {t('cta')}
             </Link>
             <Link
-              className="relative z-10 bg-transparent text-white px-10 py-4 rounded-full font-bold transition-all duration-300 hover:bg-white/10 overflow-hidden group text-[clamp(0.75rem,1vw,2rem)]"
-              href="/">
+              className="relative z-10 bg-transparent text-white px-10 py-4 rounded-full font-bold transition-all duration-300 hover:bg-white/10 overflow-hidden group text-[clamp(1.2rem,1vw,2rem)]"
+              href={`/${locale}`}>
 
               <div className="absolute inset-0 rounded-full border-2 border-white/30" />
               <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-[#C9A84C] border-r-[#D4A574] group-hover:animate-[spin-slow_3s_linear_infinite]" />

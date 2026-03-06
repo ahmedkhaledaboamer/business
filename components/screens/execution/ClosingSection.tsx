@@ -1,6 +1,7 @@
 'use client'
 import { Phone, Mail, Send } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
+import Link from 'next/link'
 
 export function ClosingSection() {
   const locale = useLocale()
@@ -38,28 +39,28 @@ export function ClosingSection() {
                     <div className="w-12 h-12 bg-teal-800 rounded-full flex items-center justify-center text-amber-400 shrink-0">
                       <Phone className="w-5 h-5" />
                     </div>
-                    <div>
+                    <Link href={`tel:+971521068882`}>
                       <p className="text-sm text-teal-200 mb-1">
                         {t('phone')}
                       </p>
                       <p className="text-[clamp(0.75rem,1vw,3rem)] font-medium dir-ltr text-left">
-                        +966 50 000 0000
+                        +971521068882
                       </p>
-                    </div>
+                    </Link>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-teal-800 rounded-full flex items-center justify-center text-amber-400 shrink-0">
                       <Mail className="w-5 h-5" />
                     </div>
-                    <div>
+                    <Link href={`mailto:info@shazmlc.com`}>
                       <p className="text-[clamp(0.75rem,1vw,3rem)] text-teal-200 mb-1">
                         {t('email')}
                       </p>
                       <p className="text-[clamp(0.75rem,1vw,3rem)] font-medium">
-                        executive@masarak.com
+                        info@shazmlc.com
                       </p>
-                    </div>
+                    </Link>
                   </div>
 
                 </div>
@@ -135,7 +136,7 @@ export function ClosingSection() {
 
                 <button
                   type="submit"
-                  className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-8 rounded-xl transition-colors flex items-center justify-center gap-2 group"
+                  className="cursor-pointer w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-8 rounded-xl transition-colors flex items-center justify-center gap-2 group"
                 >
                   <span>{t('submit')}</span>
                   <Send className={`w-5 h-5 transition-transform ${isRtl ? 'rotate-0 group-hover:translate-x-1' : 'rotate-180 group-hover:-translate-x-1'}`} />

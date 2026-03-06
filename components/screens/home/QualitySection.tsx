@@ -20,7 +20,7 @@ const colorClasses = {
     iconBg: 'bg-gold/20',
     iconText: 'text-gold',
     border: 'hover:border-gold/50',
-    overlay: 'from-navy-dark to-gold/40',
+    overlay: 'from-navy-dark/10 to-gold/40',
   },
   teal: {
     badge: 'bg-teal/20 border-teal/30 text-teal-light',
@@ -28,7 +28,7 @@ const colorClasses = {
     iconBg: 'bg-teal/20',
     iconText: 'text-teal-light',
     border: 'hover:border-teal/50',
-    overlay: 'from-navy-dark to-teal/40',
+    overlay: 'from-navy-dark/10 to-teal/40',
   },
   burgundy: {
     badge: 'bg-burgundy/30 border-burgundy/40 text-burgundy-light',
@@ -36,7 +36,7 @@ const colorClasses = {
     iconBg: 'bg-burgundy/30',
     iconText: 'text-burgundy-light',
     border: 'hover:border-burgundy-light/50',
-    overlay: 'from-navy-dark to-burgundy/60',
+    overlay: 'from-navy-dark/10 to-burgundy/60',
   },
 }
 export function QualitySection({ locale }: { locale: string }) {
@@ -102,7 +102,7 @@ export function QualitySection({ locale }: { locale: string }) {
 
                   <div className="absolute bottom-4 left-6 right-6">
                     <span
-                      className={`inline-block rounded-full px-4 py-1.5 border backdrop-blur-md ${colors.badge} font-tajawal text-sm shadow-lg`}
+                      className={`inline-block rounded-full px-4 py-1.5 border backdrop-blur-md ${colors.badge}  text-sm shadow-lg`}
                     >
                       {title}
                     </span>
@@ -144,7 +144,7 @@ export function QualitySection({ locale }: { locale: string }) {
                         >
                           <CheckIcon className={`w-4 h-4 ${colors.iconText}`} />
                         </div>
-                        <span className="font-tajawal text-white/80 text-[clamp(1rem,1vw,3rem)] group-hover/item:text-white transition-colors">
+                        <span className=" text-white/80 text-[clamp(1rem,1vw,3rem)] group-hover/item:text-white transition-colors">
                           {t(`columns.${idx}.items.${index}`)}
                         </span>
                       </motion.li>

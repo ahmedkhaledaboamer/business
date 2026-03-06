@@ -40,7 +40,7 @@ export function BrandStatement() {
             <div
               className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
 
-              <h2 className="font-bold text-[#1A1A1A] mb-8 text-[clamp(0.75rem,2vw,6rem)]">
+              <h2 className="font-bold text-[#1A1A1A] mb-8 text-[clamp(2rem,2vw,6rem)]">
                 {t('title')}
               </h2>
               <p className="text-gray-600 mb-10 leading-relaxed font-medium text-[clamp(0.75rem,2vw,1.5rem)]">

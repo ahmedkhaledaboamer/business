@@ -78,7 +78,7 @@ export function ServicesGrid({ id, title, color, serviceContent = {} }: Services
           <div className="absolute inset-0 bg-gradient-to-l from-white/10 to-transparent rtl:bg-gradient-to-r rtl:from-white/10 rtl:to-transparent" />
           <div className="relative z-10 px-10 py-6 flex items-center gap-4 ">
             <span className="w-10 h-1 bg-white/60 rounded-full block shrink-0" />
-            <h2 className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-white ">
+            <h2 className="text-[clamp(1.2rem,2vw,6rem)] font-bold text-white ">
               {title}
             </h2>
           </div>

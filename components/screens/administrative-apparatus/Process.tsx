@@ -27,10 +27,10 @@ export function Process({ locale }: { locale: string }) {
           ref={ref}
           className={`text-center mb-24 transition-all duration-1000 ${isIntersecting ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
 
-          <h2 className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-charcoal mb-6">
+          <h2 className="text-[clamp(1.2rem,2vw,6rem)] font-bold text-charcoal mb-6">
             {t('title')}
           </h2>
-          <p className="text-[clamp(0.75rem,2vw,1.5rem)] text-gray-500 mx-auto">
+          <p className="text-[clamp(1.2rem,2vw,1.5rem)] text-gray-500 mx-auto">
             {t('subtitle')}
           </p>
         </div>
@@ -63,11 +63,11 @@ export function Process({ locale }: { locale: string }) {
                 </div>
 
                 <h3
-                  className={`text-[clamp(0.75rem,1.5vw,3rem)] font-bold text-charcoal text-center mb-4 ${step.hoverText} transition-colors`}>
+                  className={`text-[clamp(1rem,1.5vw,3rem)] font-bold text-charcoal text-center mb-4 ${step.hoverText} transition-colors`}>
 
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-center leading-relaxed text-[clamp(0.75rem,2vw,1.5rem)]">
+                <p className="text-gray-600 text-center leading-relaxed text-[clamp(.9rem,2vw,1.5rem)]">
                   {step.desc}
                 </p>
 

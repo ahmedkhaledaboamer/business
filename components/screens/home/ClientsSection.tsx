@@ -103,14 +103,14 @@ export function ClientsSection({ locale }: { locale: string }) {
           }}
           className="text-center mb-16"
         >
-          <span className="inline-block rounded-full px-5 py-2 bg-burgundy/10 border border-burgundy/20 text-burgundy font-tajawal text-sm mb-6 shadow-sm">
+          <span className="inline-block rounded-full px-5 py-2 bg-burgundy/10 border border-burgundy/20 text-burgundy  text-[clamp(1rem,2vw,2rem)] mb-6 shadow-sm">
             {t('badge')}
           </span>
-          <h2 className="font-cairo font-bold text-3xl sm:text-4xl lg:text-5xl  text-navy-dark mb-6">
+          <h2 className="font-cairo font-bold text-[clamp(1.2rem,2vw,6rem)]  text-navy-dark mb-6">
             {t('title')} <span className="gradient-text">{t('titleHighlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto mb-6" />
-          <p className="font-tajawal text-lg text-navy/60 mx-auto">
+          <p className=" text-[clamp(.8rem,2vw,2rem)] text-navy/60 mx-auto">
             {t('subtitle')}
           </p>
         </motion.div>
@@ -143,7 +143,7 @@ export function ClientsSection({ locale }: { locale: string }) {
                     >
                       {t(`items.${index}.title`)}
                     </h3>
-                    <p className="font-tajawal text-[clamp(1rem,1vw,2rem)] text-navy/60 leading-relaxed">
+                    <p className=" text-[clamp(1rem,1vw,2rem)] text-navy/60 leading-relaxed">
                       {t(`items.${index}.description`)}
                     </p>
                   </div>

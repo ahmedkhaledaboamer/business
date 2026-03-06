@@ -66,13 +66,13 @@ export function ServiceLevelsSection() {
           }}
           className="text-center mb-16"
         >
-          <span className="inline-block rounded-full px-5 py-2 bg-burgundy/15 border border-burgundy/30 text-burgundy font-tajawal text-sm mb-6">
+          <span className="inline-block rounded-full px-5 py-2 bg-burgundy/15 border border-burgundy/30 text-burgundy  text-sm mb-6">
             مستويات الخدمة
           </span>
           <h2 className="font-cairo font-bold text-3xl sm:text-4xl lg:text-5xl text-navy-dark mb-4">
             مستويات تشغيل <span className="text-gold">متدرجة</span>
           </h2>
-          <p className="font-tajawal text-lg text-navy/60 max-w-2xl mx-auto">
+          <p className=" text-lg text-navy/60 max-w-2xl mx-auto">
             نحن لا نقدّم خدمة واحدة… نحن نقدّم مستويات تشغيل
           </p>
         </motion.div>
@@ -123,7 +123,7 @@ export function ServiceLevelsSection() {
                   {level.name}
                 </h3>
                 <p
-                  className={`font-tajawal text-sm ${level.featured ? 'text-navy-dark/80' : 'text-navy/60'}`}
+                  className={` text-sm ${level.featured ? 'text-navy-dark/80' : 'text-navy/60'}`}
                 >
                   {level.description}
                 </p>

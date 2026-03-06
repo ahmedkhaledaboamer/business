@@ -9,7 +9,7 @@ type CTAProps = { locale: string };
 
 export function CTA({ locale }: CTAProps) {
   const t = useTranslations('administrativeApparatus.cta');
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, ] = useState(false);
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
@@ -58,15 +58,15 @@ export function CTA({ locale }: CTAProps) {
       </div>
 
       <div className="relative z-20 max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-white mb-6 leading-tight">
+        <h2 className="text-[clamp(1.2rem,2vw,6rem)] font-bold text-white mb-6 leading-tight">
           {t('title')} <span className="gradient-text">{t('titleHighlight')}</span>
         </h2>
-        <p className="text-[clamp(0.75rem,2vw,1.5rem)] text-gold-light italic mb-12 font-medium">
+        <p className="text-[clamp(1.2rem,2vw,1.5rem)] text-gold-light italic mb-12 font-medium">
           {t('subtitle')}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <Link href="/execution" className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-[clamp(0.75rem,1vw,2rem)] px-12 py-5 rounded-full transition-all hover:scale-105 shadow-glow w-full sm:w-auto font-bold">
+          <Link href={`/${locale}/execution`} className="w-fit bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-[clamp(1.2rem,1vw,2rem)] px-12 py-5 rounded-full transition-all hover:scale-105 shadow-glow font-bold">
             {t('cta')}
           </Link>
         </div>
@@ -75,15 +75,15 @@ export function CTA({ locale }: CTAProps) {
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 pt-8 border-t border-white/10">
           <div className="flex flex-col items-center gap-3">
             <ShieldCheck className="w-8 h-8 text-gold" />
-            <span className="text-gray-300 font-medium text-[clamp(0.75rem,2vw,1.5rem)]">{t('confidentiality')}</span>
+            <span className="text-gray-300 font-medium text-[clamp(1rem,2vw,1.5rem)]">{t('confidentiality')}</span>
           </div>
           <div className="flex flex-col items-center gap-3">
             <Globe className="w-8 h-8 text-gold" />
-            <span className="text-gray-300 font-medium text-[clamp(0.75rem,2vw,1.5rem)]">{t('experience')}</span>
+            <span className="text-gray-300 font-medium text-[clamp(1rem,2vw,1.5rem)]">{t('experience')}</span>
           </div>
           <div className="flex flex-col items-center gap-3">
             <Award className="w-8 h-8 text-gold" />
-            <span className="text-gray-300 font-medium text-[clamp(0.75rem,2vw,1.5rem)]">{t('guaranteed')}</span>
+            <span className="text-gray-300 font-medium text-[clamp(1rem,2vw,1.5rem)]">{t('guaranteed')}</span>
           </div>
         </div>
       </div>

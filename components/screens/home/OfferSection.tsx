@@ -78,7 +78,7 @@ export function OfferSection({ locale }: { locale: string }) {
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-gold/50 to-gold-light/20 rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-500" />
             <div className="relative glass-dark rounded-3xl p-8 sm:p-12 border-t-4 border-t-gold h-full">
-              <span className="inline-block rounded-full px-5 py-2 bg-gold/10 border border-gold/30 text-gold font-tajawal text-sm mb-8 shadow-[0_0_10px_rgba(201,168,76,0.2)]">
+              <span className="inline-block rounded-full px-5 py-2 bg-gold/10 border border-gold/30 text-gold  text-sm mb-8 shadow-[0_0_10px_rgba(201,168,76,0.2)]">
                 {t('whatWeOfferLabel')}
               </span>
 
@@ -112,7 +112,7 @@ export function OfferSection({ locale }: { locale: string }) {
                     <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center flex-shrink-0 group-hover/item:bg-gold/30 group-hover/item:scale-110 transition-all duration-300 shadow-inner">
                       <CheckCircleIcon className="w-5 h-5 text-gold" />
                     </div>
-                    <span className="font-tajawal text-[clamp(1rem,1vw,3rem)] text-white/90 group-hover/item:text-white transition-colors">
+                    <span className=" text-[clamp(1rem,1vw,3rem)] text-white/90 group-hover/item:text-white transition-colors">
                       {t(`offers.${index}`)}
                     </span>
                   </motion.li>
@@ -143,7 +143,7 @@ export function OfferSection({ locale }: { locale: string }) {
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-teal/50 to-teal-light/20 rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-500" />
             <div className="relative glass-dark rounded-3xl p-8 sm:p-12 border-t-4 border-t-teal h-full">
-              <span className="inline-block rounded-full px-5 py-2 bg-teal/10 border border-teal/30 text-teal-light font-tajawal text-sm mb-8 shadow-[0_0_10px_rgba(14,124,107,0.2)]">
+              <span className="inline-block rounded-full px-5 py-2 bg-teal/10 border border-teal/30 text-teal-light  text-sm mb-8 shadow-[0_0_10px_rgba(14,124,107,0.2)]">
                 {t('whatYouGetLabel')}
               </span>
 
@@ -177,7 +177,7 @@ export function OfferSection({ locale }: { locale: string }) {
                     <div className="w-10 h-10 rounded-full bg-teal/10 border border-teal/20 flex items-center justify-center flex-shrink-0 group-hover/item:bg-teal/30 group-hover/item:scale-110 transition-all duration-300 shadow-inner">
                       <StarIcon className="w-5 h-5 text-teal-light" />
                     </div>
-                    <span className="font-tajawal text-[clamp(1rem,1vw,3rem)] text-white/90 group-hover/item:text-white transition-colors">
+                    <span className=" text-[clamp(1rem,1vw,3rem)] text-white/90 group-hover/item:text-white transition-colors">
                       {t(`benefits.${index}`)}
                     </span>
                   </motion.li>

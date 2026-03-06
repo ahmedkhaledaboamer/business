@@ -165,7 +165,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.0 }}
           >
-            <p className="text-[#D4C5A0]/75 text-center lg:text-left text-[clamp(0.75rem,2vw,3rem)] leading-[1.9] font-light">
+            <p className="text-[#D4C5A0]/75 text-center  text-[clamp(0.75rem,2vw,3rem)] leading-[1.9] font-light">
               {t('intro')}
             </p>
           </motion.div>
@@ -176,7 +176,7 @@ export function HeroSection() {
             transition={{ duration: 0.9, delay: 1.15 }}
             className="space-y-6"
           >
-            <p className="text-[#D4C5A0]/75 text-center lg:text-left text-[clamp(0.75rem,2vw,3rem)] leading-[1.9] font-light">
+            <p className="text-[#D4C5A0]/75 text-center  text-[clamp(0.75rem,2vw,3rem)] leading-[1.9] font-light">
               {t('tagline')}
             </p>
             

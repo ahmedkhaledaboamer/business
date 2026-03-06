@@ -200,9 +200,6 @@ export default function Loading() {
           style={{
             width: 110,
             height: 110,
-            borderRadius: "24px",
-            background: "linear-gradient(145deg, #141b24 0%, #1a2332 100%)",
-            boxShadow: "0 0 0 1px rgba(253,153,8,0.2), 0 0 40px rgba(253,153,8,0.3), inset 0 1px 0 rgba(255,255,255,0.06)",
             overflow: "hidden",
           }}
         >

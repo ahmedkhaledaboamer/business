@@ -36,26 +36,24 @@ const termIcons = [Crown, Scale, ShieldCheck, Rocket, Lock, Handshake];
 
 export function BrandDictionary() {
   const t = useTranslations('brandIdentity.dictionary');
-  const rawTerms = (t.raw('terms') as { term: string; desc: string; quote: string }[] | undefined) ?? [];
-  const terms = useMemo(
-    () =>
-      (Array.isArray(rawTerms) ? rawTerms : []).map((item, i) => ({
-        ...item,
-        img: termImages[i] ?? '',
-        icon: termIcons[i],
-      })),
-    [rawTerms]
-  );
+  const terms = useMemo(() => {
+    const rawTerms = (t.raw('terms') as { term: string; desc: string; quote: string }[] | undefined) ?? [];
+    return (Array.isArray(rawTerms) ? rawTerms : []).map((item, i) => ({
+      ...item,
+      img: termImages[i] ?? '',
+      icon: termIcons[i],
+    }));
+  }, [t]);
   const [activeTerm, setActiveTerm] = useState<typeof terms[0] | null>(null);
   const { ref, isVisible } = useScrollAnimation(0.1);
   return (
     <section className="py-28 bg-[#F8F7F4] px-[5%]">
       <div className="mx-auto px-6" ref={ref}>
         <div className="text-center mb-16">
-          <h2 className="font-bold text-[#1A1A1A] mb-4 text-[clamp(0.75rem,2vw,6rem)]">
+          <h2 className="font-bold text-[#1A1A1A] mb-4 text-[clamp(2rem,2vw,6rem)]">
             {t('title')}
           </h2>
-          <p className="text-gray-500 text-[clamp(0.75rem,2vw,1.5rem)]">{t('subtitle')}</p>
+          <p className="text-gray-500 text-[clamp(1.2rem,2vw,1.5rem)]">{t('subtitle')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -105,7 +103,7 @@ export function BrandDictionary() {
 
                   </div>
                   <h3
-                    className="font-bold text-[#1A1A1A] hover-color-target transition-colors duration-300 text-[clamp(0.75rem,1vw,2rem)]"
+                    className="font-bold text-[#1A1A1A] hover-color-target transition-colors duration-300 text-[clamp(1.2rem,1vw,2rem)]"
                     style={
                     {
                       '--hover-color': accent
@@ -114,7 +112,7 @@ export function BrandDictionary() {
 
                     {item.term}
                   </h3>
-                  <p className="text-sm text-gray-500 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
+                  <p className="text-[clamp(.9rem,1vw,1.5rem)] text-gray-500 mt-3 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
                     {item.desc}
                   </p>
                 </div>

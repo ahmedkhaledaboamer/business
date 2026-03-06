@@ -77,7 +77,7 @@ export function ServiceLevelsSection() {
                   duration: 0.5,
                   delay: index * 0.1,
                 }}
-                className={` rounded-3xl p-8 relative overflow-hidden ${level.highlight ? 'bg-gradient-to-br from-amber-500 to-amber-700 text-white shadow-xl shadow-amber-900/20 md:col-span-2 lg:col-span-1 lg:scale-105 z-10' : 'bg-[#FAFAF8] border border-slate-100 text-slate-900 shadow-sm hover:shadow-md'}`}
+                className={`h-full rounded-3xl p-8 relative overflow-hidden ${level.highlight ? 'bg-gradient-to-br from-amber-500 to-amber-700 text-white shadow-xl shadow-amber-900/20 md:col-span-2 lg:col-span-1' : 'bg-[#FAFAF8] border border-slate-100 text-slate-900 shadow-sm hover:shadow-md'}`}
               >
                 {level.highlight && (
                   <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNGRkZGRkYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-30"></div>
@@ -97,7 +97,7 @@ export function ServiceLevelsSection() {
                   </div>
 
                   <h3
-                    className={`text-center  text-[clamp(0.75rem,2vw,2rem)] font-bold mb-4 ${level.highlight ? 'text-white' : 'text-slate-900'}`}
+                    className={`text-center  text-[clamp(0.75rem,2vw,1.6rem)] font-bold mb-4 ${level.highlight ? 'text-white' : 'text-slate-900'}`}
                   >
                     {level.name}
                   </h3>

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import Image from 'next/image'
+import useMediaQuery from '@/hooks/useMediaQuery'
 interface ServiceCardProps {
   title: string
   tagline: string
@@ -22,6 +23,8 @@ export function ServiceCard({
   isRTL = false,
 }: ServiceCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
+  const isLaptop = useMediaQuery("(max-width: 1536px)");
+
   return (
     <motion.div
       layout
@@ -72,8 +75,8 @@ export function ServiceCard({
               </div>
             )}
             <div>
-              <h3 className="text-[clamp(0.75rem,1.5vw,3rem)] font-bold text-gray-900 mb-2">{title}</h3>
-              <p className="text-gray-600 text-[clamp(0.75rem,1vw,1.5rem)] leading-relaxed">{tagline}</p>
+              <h3 className="text-[clamp(1rem,1.5vw,3rem)] font-bold text-gray-900 mb-2">{title}</h3>
+              <p className="text-gray-600 text-[clamp(0.9rem,1vw,1.5rem)] leading-relaxed">{tagline}</p>
             </div>
           </div>
           <motion.div
@@ -111,7 +114,7 @@ export function ServiceCard({
             }}
           >
             <div className="px-6 pb-6 pt-2 border-t border-gray-50 mx-6">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
+              <ul className={`grid grid-cols-1 ${isLaptop ? 'grid-cols-1' : 'xl:grid-cols-2'} gap-y-3 gap-x-6`}>
                 {items.map((item, index) => (
                   <motion.li
                     key={index}
@@ -126,10 +129,10 @@ export function ServiceCard({
                     transition={{
                       delay: index * 0.05,
                     }}
-                    className="flex items-center text-[clamp(0.75rem,1vw,1.5rem)] text-gray-700"
+                    className="flex items-center text-[clamp(.9rem,1vw,1.5rem)] text-gray-700"
                   >
                     <span
-                      className={`w-1.5 h-1.5 rounded-full shrink-0 mr-2`}
+                      className={`w-1.5 h-1.5 rounded-full shrink-0 mx-2`}
                       style={{
                         backgroundColor: color,
                       }}

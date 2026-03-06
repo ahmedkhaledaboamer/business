@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useTranslations } from 'next-intl';
 
@@ -22,6 +22,7 @@ export function BrandPersonality() {
     [rawTraits]
   );
   const { ref, isVisible } = useScrollAnimation(0.15);
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
   return (
     <section className="py-28 bg-gradient-to-b from-white via-[#FDF8F0]/50 to-white px-[5%]">
       <div className=" mx-auto px-6">
@@ -43,13 +44,23 @@ export function BrandPersonality() {
           {traits.map((trait, index) =>
           <div
             key={index}
-            className={`group w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] h-72 [perspective:1200px] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-90'}`}
+            role="button"
+            tabIndex={0}
+            onClick={() => setFlippedIndex((prev) => (prev === index ? null : index))}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setFlippedIndex((prev) => (prev === index ? null : index));
+              }
+            }}
+            className={`group w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] h-72 [perspective:1200px] transition-all duration-1000 cursor-pointer ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-90'}`}
             style={{
               transitionDelay: `${index * 150}ms`,
               transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
             }}>
 
-              <div className="relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)_scale(1.06)]">
+              <div
+                className={`relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] ${flippedIndex === index ? '[transform:rotateY(180deg)_scale(1.06)]' : ''} md:group-hover:[transform:rotateY(180deg)_scale(1.06)]`}>
                 {/* Particle Pings */}
                 <div className="absolute -inset-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0">
                   <div

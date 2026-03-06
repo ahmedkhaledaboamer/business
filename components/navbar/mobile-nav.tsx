@@ -164,7 +164,7 @@ export default function MobileNavbar() {
                             href={route.href}
                             onClick={closeMenu}
                             className={cn(
-                              "block font-tajawal text-lg py-3 px-2 -mx-2 rounded-lg transition-colors",
+                              "block  text-lg py-3 px-2 -mx-2 rounded-lg transition-colors",
                               isActive(route.href)
                                 ? "text-gold font-semibold bg-gold/10"
                                 : "text-white/80 hover:text-gold hover:bg-white/5"

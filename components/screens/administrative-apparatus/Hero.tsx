@@ -105,14 +105,14 @@ export function Hero({ locale }: { locale: string }) {
             transitionDelay: '200ms'
           }}>
 
-          <span className="mb-8 inline-flex items-center rounded-full bg-gradient-to-r from-gold to-gold-dark text-white px-6 py-2 text-[clamp(0.75rem,1.5vw,3rem)] font-bold shadow-lg animate-pulse-gold relative overflow-hidden group">
+          <span className="mb-8 inline-flex items-center rounded-full bg-gradient-to-r from-gold to-gold-dark text-white px-6 py-2 text-[clamp(1.2rem,1.5vw,3rem)] font-bold shadow-lg animate-pulse-gold relative overflow-hidden group">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-shimmer" />
             {t('badge')}
           </span>
         </div>
 
         <h1
-          className={`text-[clamp(0.75rem,2vw,6rem)] font-bold text-white mb-6 leading-tight transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+          className={`text-[clamp(1.2rem,2vw,6rem)] font-bold text-white mb-6 leading-tight transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
           style={{
             transitionDelay: '400ms'
           }}>
@@ -122,7 +122,7 @@ export function Hero({ locale }: { locale: string }) {
         </h1>
 
         <p
-          className={`text-[clamp(0.75rem,2vw,1.5rem)] text-gray-300 mb-12 mx-auto font-medium transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+          className={`text-[clamp(1.2rem,2vw,1.5rem)] text-gray-300 mb-12 mx-auto font-medium transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
           style={{
             transitionDelay: '600ms'
           }}>
@@ -136,10 +136,10 @@ export function Hero({ locale }: { locale: string }) {
             transitionDelay: '800ms'
           }}>
 
-          <Link href="/execution" className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-[clamp(0.75rem,1vw,2rem)] px-10 py-4 rounded-full transition-all hover:scale-105 font-bold shadow-gold animate-glow">
+          <Link href={`/${locale}/execution`} className="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-white text-[clamp(1.2rem,1vw,2rem)] px-10 py-4 rounded-full transition-all hover:scale-105 font-bold shadow-gold animate-glow">
             {t('cta')}
           </Link>
-          <Link href="/services" className="glass text-gold  bg-white hover:bg-white/20 text-[clamp(0.75rem,1vw,2rem)] px-10 py-4 rounded-full transition-all hover:scale-105 font-bold">
+          <Link href={`/${locale}/services`} className="glass text-gold  bg-white hover:bg-white/20 text-[clamp(1.2rem,1vw,2rem)] px-10 py-4 rounded-full transition-all hover:scale-105 font-bold">
           {t('services')}
           </Link>
         </div>

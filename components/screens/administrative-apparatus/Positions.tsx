@@ -84,11 +84,11 @@ export function Positions({ locale }: { locale: string }) {
           ref={ref}
           className={`text-center mb-16 transition-all duration-1000 ${isIntersecting ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
 
-          <h2 className="text-[clamp(0.75rem,2vw,6rem)] font-bold text-charcoal mb-4 inline-block relative">
+          <h2 className="text-[clamp(1.2rem,2vw,6rem)] font-bold text-charcoal mb-4 inline-block relative">
             {t('title')}
             <div className="absolute -bottom-4 left-0 right-0 h-1 bg-gold rounded-full w-1/2 mx-auto" />
           </h2>
-          <p className="text-[clamp(0.75rem,2vw,1.5rem)] text-gray-600 mt-8 mx-auto">
+          <p className="text-[clamp(1.2rem,2vw,1.5rem)] text-gray-600 mt-8 mx-auto">
             {t('subtitle')}
           </p>
         </div>
@@ -144,10 +144,10 @@ export function Positions({ locale }: { locale: string }) {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-[clamp(0.75rem,1.5vw,3rem)] font-bold text-charcoal mb-2">
+                  <h3 className="text-[clamp(1rem,1.5vw,3rem)] font-bold text-charcoal mb-2">
                     {pos.title}
                   </h3>
-                  <p className="text-gray-600 text-[clamp(0.75rem,1vw,1.5rem)] mb-6 h-10 line-clamp-2">
+                  <p className="text-gray-600 text-[clamp(0.9rem,1vw,1.5rem)] mb-6 h-10 line-clamp-2">
                     {pos.desc}
                   </p>
                   <button

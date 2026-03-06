@@ -65,7 +65,7 @@ export function ContactSection({ locale }: { locale: string }) {
             duration: 0.8,
           }}
         >
-          <span className="inline-block rounded-full px-5 py-2 bg-gold/20 border border-gold/30 text-gold font-tajawal text-sm mb-8">
+          <span className="inline-block rounded-full px-5 py-2 bg-gold/20 border border-gold/30 text-gold  text-sm mb-8">
             {t('badge')}
           </span>
 
@@ -75,13 +75,13 @@ export function ContactSection({ locale }: { locale: string }) {
             <span className="text-gold">{t('titleHighlight')}</span>
           </h2>
 
-          <p className="font-tajawal text-lg sm:text-xl text-white/70 mb-10 mx-auto">
+          <p className=" text-lg sm:text-xl text-white/70 mb-10 mx-auto">
             {t('subtitle')}
           </p>
 
           {/* CTA Button */}
           <motion.a
-            href="/execution"
+            href={`/${locale}/execution`}
             whileHover={{
               scale: 1.05,
             }}
@@ -119,7 +119,7 @@ export function ContactSection({ locale }: { locale: string }) {
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
                 <MailIcon className="w-5 h-5" />
               </div>
-              <span className="font-tajawal">{t('email')}</span>
+              <span className="">{t('email')}</span>
             </motion.a>
 
             <motion.a
@@ -145,7 +145,7 @@ export function ContactSection({ locale }: { locale: string }) {
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
                 <PhoneIcon className="w-5 h-5" />
               </div>
-              <span className="font-tajawal" dir="ltr">
+              <span className="" dir="ltr">
                 {t('phone')}
               </span>
             </motion.a>

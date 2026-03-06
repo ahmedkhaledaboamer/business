@@ -147,6 +147,7 @@ export function ServiceNav({ categories }: ServiceNavProps) {
         style={{
           boxShadow: '0 8px 32px rgba(10, 22, 40, 0.4)',
         }}
+        dir="ltr"
       >
         <Menu size={22} />
       </button>
