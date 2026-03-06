@@ -213,15 +213,6 @@ export function ServicesGrid() {
               <p className="text-gray-600 mb-10 leading-relaxed font-medium text-[clamp(0.75rem,2vw,1.5rem)]">
                 {activeService.fullDesc}
               </p>
-              <button
-              className="text-white px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-3 hover:-translate-y-1 transition-all self-start"
-              style={{
-                background: `linear-gradient(to right, ${serviceColors[services.indexOf(activeService)]}, #D4A574)`
-              }}>
-
-                {t('cta')}
-                <ArrowLeft className="w-5 h-5" />
-              </button>
             </div>
           </div>
         </div>

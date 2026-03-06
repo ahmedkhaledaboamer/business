@@ -1,0 +1,2016 @@
+{
+  "notFound": {
+    "title": "Pagina non trovata",
+    "description": "La pagina che stai cercando non esiste o potrebbe essere stata spostata. Prova a tornare alla homepage.",
+    "cta": "Torna alla homepage",
+    "badge": "Non Trovato"
+  },
+  "page": {
+    "title": "KIB Businessmen Services | Home",
+    "description": "KIB Businessmen Services è il tuo partner esecutivo nella costruzione di influenza e nella modellazione di decisioni strategiche. Scopri un sistema operativo integrato che offre chiarezza, esecuzione precisa, supporto confidenziale e percorsi di crescita sicuri a livello locale e internazionale—in modo da guidare dal fronte mentre noi gestiamo il resto."
+  },
+  "navbar": {
+    "cta": "Prenota il Tuo Servizio",
+    "openMenu": "Apri menu",
+    "closeMenu": "Chiudi menu",
+    "navMenu": "Menu principale",
+    "routes": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "Servizi",
+        "href": "/services"
+      },
+      {
+        "label": "Apparato Amministrativo",
+        "href": "/administrative-apparatus"
+      },
+      {
+        "label": "Identità del Brand",
+        "href": "/brand-identity"
+      },
+      {
+        "label": "Esecuzione",
+        "href": "/execution"
+      }
+    ]
+  },
+  "content": {
+    "title": "Il Mio Componente",
+    "description": "Descrizione del Mio Componente"
+  },
+  "header": {
+    "badge": "Il potere esecutivo di cui hai bisogno",
+    "titleLine1": "Il tuo partner esecutivo nella",
+    "titleHighlight": "costruzione di influenza",
+    "titleLine2": "e nella modellazione di decisioni",
+    "description": "In un ambiente aziendale in cui le dinamiche cambiano rapidamente e la pressione sui leader aziendali aumenta per prendere decisioni precise in poco tempo, i veri leader hanno bisogno di più di un fornitore di servizi — hanno bisogno di un partner esecutivo che dia loro potere sul campo e un chiaro percorso in avanti.",
+    "ctaPrimary": "Inizia il tuo viaggio ora",
+    "ctaSecondary": "Scopri i nostri servizi",
+    "statsClients": "Clienti soddisfatti",
+    "statsExperience": "Anni di esperienza",
+    "statsConfidentiality": "Confidenzialità totale"
+  },
+  "about": {
+    "label": "Chi siamo?",
+    "title": "Un'entità specializzata nel supporto",
+    "titleHighlight": "ai leader aziendali",
+    "intro": "Siamo un'entità specializzata nel supporto ai leader aziendali attraverso un sistema operativo integrato che combina analisi profonda, visione chiara e esecuzione precisa.",
+    "quote": "Forniamo valore esecutivo che fa sentire i leader aziendali come se stessero trattando con un partner che comprende la sensibilità del loro tempo.",
+    "pillars": [
+      {
+        "title": "Analisi profonda",
+        "desc": "Lettura accurata del mercato e delle opportunità"
+      },
+      {
+        "title": "Confidenzialità totale",
+        "desc": "Protezione completa dei tuoi file sensibili"
+      },
+      {
+        "title": "Esecuzione precisa",
+        "desc": "Vera partnership, non solo consulenza"
+      }
+    ],
+    "bannerText": "Potere Esecutivo",
+    "badgeStat": "Clienti soddisfatti",
+    "badgeStatSub": "15+ anni di esperienza",
+    "imageAlt1": "Ufficio professionale",
+    "imageAlt2": "Team strategico"
+  },
+  "services": {
+    "badge": "Informazioni sui nostri servizi",
+    "title": "Servizi eccezionali",
+    "titleHighlight": "per leader aziendali",
+    "subtitle": "Una suite integrata di servizi progettata per soddisfare le tue esigenze",
+    "items": [
+      {
+        "title": "Analisi e processo decisionale",
+        "description": "Insight che va oltre i dati."
+      },
+      {
+        "title": "Protezione di interessi altamente sensibili",
+        "description": "Fortificazione della tua azienda prima che i rischi si avvicinino."
+      },
+      {
+        "title": "Espansione strategica in patria e all'estero",
+        "description": "Apertura di percorsi di espansione calcolati."
+      },
+      {
+        "title": "Sviluppo della struttura operativa",
+        "description": "Aumento dell'efficienza operativa dall'interno."
+      },
+      {
+        "title": "Facilitazione di transazioni ufficiali",
+        "description": "Accelerazione di ciò che altri ritardano."
+      },
+      {
+        "title": "Rete di influenza parallela",
+        "description": "Relazioni che ti servono prima che tu ne abbia bisogno."
+      }
+    ]
+  },
+  "offer": {
+    "whatWeOfferLabel": "Cosa offriamo?",
+    "whatWeOfferTitle": "Un sistema di supporto",
+    "whatWeOfferHighlight": "integrato",
+    "offers": [
+      "Costruzione di un ambiente decisionale chiaro",
+      "Protezione dell'entità dai rischi",
+      "Apertura di percorsi di espansione e influenza",
+      "Sviluppo di strutture e processi",
+      "Facilitazione di transazioni governative",
+      "Fornitura di una rete che serve i tuoi obiettivi"
+    ],
+    "whatYouGetLabel": "Cosa ottieni con noi?",
+    "whatYouGetTitle": "Valore",
+    "whatYouGetHighlight": "tangibile reale",
+    "benefits": [
+      "Un partner che pensa per te e esegue per te",
+      "Protezione completa dei tuoi interessi",
+      "Accesso più rapido alle opportunità",
+      "Gestione professionale di questioni sensibili",
+      "Risultati tangibili senza il tuo coinvolgimento diretto",
+      "Riduzione dei rischi prima che si trasformino in crisi"
+    ]
+  },
+  "clients": {
+    "badge": "Chi serviamo?",
+    "title": "I nostri",
+    "titleHighlight": "clienti distinti",
+    "subtitle": "Siamo orgogliosi di servire un'élite di leader aziendali e istituzioni leader",
+    "items": [
+      {
+        "title": "Leader aziendali e pionieri degli investimenti",
+        "description": "Supporto completo per il processo decisionale strategico"
+      },
+      {
+        "title": "Aziende familiari",
+        "description": "Protezione dell'eredità e garanzia della continuità"
+      },
+      {
+        "title": "Investitori stranieri",
+        "description": "Facilitazione dell'ingresso nel mercato locale"
+      },
+      {
+        "title": "Entità in cerca di espansione o ristrutturazione",
+        "description": "Percorsi di crescita sicuri e studiati"
+      },
+      {
+        "title": "Istituzioni in cerca di sviluppo",
+        "description": "Miglioramento dei processi e costruzione dell'identità"
+      },
+      {
+        "title": "Startup e progetti promettenti",
+        "description": "Costruzione di basi legali e amministrative solide dal primo giorno"
+      }
+    ]
+  },
+  "quality": {
+    "columns": [
+      {
+        "title": "Standard di qualità interni",
+        "subtitle": "Standard che pochi conoscono",
+        "items": [
+          "Accuratezza operativa al 100%",
+          "Documentazione completa di ogni passo",
+          "Follow-up in tempo reale",
+          "Analisi continua",
+          "Controlli di qualità interni",
+          "Revisione dell'esecuzione prima e dopo",
+          "Sistema di monitoraggio dei rischi invisibile"
+        ]
+      },
+      {
+        "title": "Lingua dell'entità",
+        "subtitle": "Parliamo una lingua diversa",
+        "items": [
+          "Lingua chiara",
+          "Lingua senza rumore",
+          "Lingua che rispetta il tuo tempo",
+          "Lingua basata su informazioni non su impressioni",
+          "Lingua che rivela la verità non la nasconde"
+        ]
+      },
+      {
+        "title": "Principi di engagement",
+        "subtitle": "I nostri principi non cambiano",
+        "items": [
+          "Ci impegniamo prima di promettere",
+          "Mostriamo prima di parlare",
+          "Eseguiamo prima di promuovere",
+          "Rispettiamo prima di chiedere",
+          "Chiarifichiamo prima di interrogare"
+        ]
+      }
+    ]
+  },
+  "vision": {
+    "visionBadge": "La nostra visione futura",
+    "visionTitle": "Diventare il",
+    "visionHighlight": "primo partner",
+    "visionTitle2": "per i leader aziendali nella regione",
+    "visionDesc": "E il partner di riferimento per i principali investitori nella costruzione di influenza e crescita sostenibile.",
+    "promiseBadge": "La nostra promessa per te",
+    "promiseTitle": "Ci impegniamo a essere il",
+    "promiseHighlight": "partner",
+    "promiseTitle2": "che protegge i tuoi interessi",
+    "promiseDesc": "E rafforza la tua influenza, creando un percorso sicuro per la crescita e l'espansione.",
+    "imageAlt": "Visione strategica",
+    "visionChip": "Visione · Influenza · Esecuzione"
+  },
+  "whyUs": {
+    "badge": "Perché noi?",
+    "title": "Cosa ci distingue dagli",
+    "titleHighlight": "altri",
+    "subtitle": "Ti offriamo vantaggi eccezionali che ci rendono la scelta ideale per leader aziendali ambiziosi",
+    "features": [
+      "Una metodologia chiusa che garantisce il massimo livello di confidenzialità",
+      "Risposta rapida senza ritardi",
+      "Una rete di relazioni che apre porte chiuse",
+      "Competenza multidisciplinare",
+      "Impegno completo ai risultati",
+      "Esecuzione che si basa sull'azione non sulle parole"
+    ]
+  },
+  "contact": {
+    "badge": "Contattaci",
+    "title": "Inizia a costruire un percorso decisionale",
+    "titleHighlight": "che rafforza la tua entità",
+    "subtitle": "Siamo qui per metterti di fronte alle opportunità giuste e proteggerti dai rischi invisibili.",
+    "cta": "Contattaci ora",
+    "email": "contact@example.com",
+    "phone": "+966 50 000 0000"
+  },
+  "footer": {
+    "contact": {
+      "title": "Contattaci",
+      "phone": "+971 521068882",
+      "email": "info@shazmlc.com",
+      "location": "Emirati Arabi Uniti"
+    },
+    "quickLinks": {
+      "title": "Link Rapidi",
+      "links": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Servizi",
+          "href": "/services"
+        },
+        {
+          "label": "Apparato Amministrativo",
+          "href": "/administrative-apparatus"
+        },
+        {
+          "label": "Identità del Brand",
+          "href": "/brand-identity"
+        },
+        {
+          "label": "Esecuzione",
+          "href": "/execution"
+        }
+      ]
+    },
+    "description": "Il tuo partner esecutivo nella costruzione di influenza e nella modellazione di decisioni strategiche attraverso un sistema operativo integrato che offre chiarezza, esecuzione precisa e percorsi di crescita sicuri a livello locale e internazionale.",
+    "copyright": "© 2026 KIB for Executive Services for Business Leaders. Tutti i Diritti Riservati.",
+    "socialMedia": {
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    }
+  },
+  "execution": {
+    "hero": {
+      "words": [
+        "Il Tuo",
+        "Esecutivo"
+      ],
+      "intro": "In un mondo in cui le regole del gioco cambiano ogni giorno, e il rumore aumenta mentre l'azione diminuisce, abbiamo scelto di essere l'entità che non alza la voce… ma alza il livello del lavoro.",
+      "tagline": "L'entità che non insegue opportunità… ma le crea. Il partner che non offre un servizio… ma costruisce un percorso esecutivo degno di un leader aziendale che conosce il suo valore.",
+      "cta": "Scopri di più",
+      "stats": [
+        {
+          "num": "8+",
+          "label": "Anni di esperienza"
+        },
+        {
+          "num": "200+",
+          "label": "Clienti esecutivi"
+        },
+        {
+          "num": "100%",
+          "label": "Impegno"
+        }
+      ]
+    },
+    "closing": {
+      "title": "Contattaci",
+      "subtitle": "Siamo pronti a costruire il tuo percorso esecutivo. Contattaci per iniziare la partnership.",
+      "phone": "Telefono diretto",
+      "email": "Email",
+      "headquarters": "Sede centrale",
+      "location": "Riyadh, Regno dell'Arabia Saudita",
+      "sendMessage": "Invia un messaggio diretto",
+      "name": "Il tuo nome",
+      "namePlaceholder": "Inserisci il tuo nome",
+      "phoneLabel": "Numero di telefono",
+      "phonePlaceholder": "Inserisci il tuo numero",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Inserisci la tua email",
+      "message": "Il tuo messaggio",
+      "messagePlaceholder": "Come possiamo servirti?",
+      "submit": "Invia richiesta"
+    },
+    "services": {
+      "title": "I nostri servizi",
+      "intro": "Ti offriamo servizi esecutivi integrati",
+      "imageAlt": "Spazio ufficio moderno",
+      "items": [
+        {
+          "title": "Ingegneria dell'influenza personale",
+          "desc": "Creiamo una presenza impattante per te nei circoli che prendono decisioni."
+        },
+        {
+          "title": "Gestione di file altamente sensibili",
+          "desc": "Gestiamo i tuoi file che nessuno dovrebbe vedere… con precisione che non lascia spazio all'errore."
+        },
+        {
+          "title": "Analisi profonda degli scenari",
+          "desc": "Leggiamo il futuro della tua azienda prima che si muova."
+        },
+        {
+          "title": "Costruzione di una rete di influenza parallela",
+          "desc": "Organizziamo relazioni che ti servono prima che tu ne abbia bisogno."
+        },
+        {
+          "title": "Monitoraggio dei rischi nascosti",
+          "desc": "Rileviamo la minaccia prima che appaia."
+        },
+        {
+          "title": "Sviluppo dell'immagine professionale per leader aziendali",
+          "desc": "Creiamo una presenza elegante che riflette il tuo vero valore."
+        },
+        {
+          "title": "Gestione delle relazioni governative ad alto livello",
+          "desc": "Facilitiamo il tuo accesso alle entità ufficiali e superiamo le complessità."
+        },
+        {
+          "title": "Progettazione di percorsi di espansione sicuri",
+          "desc": "Apriamo nuove porte per te… senza rischi non calcolati."
+        }
+      ]
+    },
+    "quality": {
+      "columns": [
+        {
+          "title": "Standard di qualità interni",
+          "subtitle": "Operiamo secondo standard che pochi conoscono:",
+          "items": [
+            "Accuratezza operativa al 100%",
+            "Documentazione completa di ogni passo",
+            "Follow-up in tempo reale",
+            "Analisi continua",
+            "Controlli di qualità interni"
+          ]
+        },
+        {
+          "title": "Lingua dell'entità",
+          "subtitle": "Parliamo una lingua diversa:",
+          "items": [
+            "Lingua chiara",
+            "Lingua senza rumore",
+            "Lingua che rispetta il tuo tempo",
+            "Lingua basata su informazioni non su impressioni",
+            "Lingua che rivela la verità non la nasconde"
+          ]
+        },
+        {
+          "title": "Principi di engagement",
+          "subtitle": "I nostri principi non cambiano:",
+          "items": [
+            "Ci impegniamo prima di promettere",
+            "Mostriamo prima di parlare",
+            "Eseguiamo prima di promuovere",
+            "Rispettiamo prima di chiedere",
+            "Chiarifichiamo prima di interrogare"
+          ]
+        }
+      ]
+    },
+    "visionMission": {
+      "imageAlt": "Team esecutivo che pianifica per il futuro",
+      "visionTitle": "La nostra visione",
+      "visionText": "Diventare l'entità di riferimento per il leader aziendale quando vuole: una decisione che non vacilla, un'esecuzione che non si ferma e un percorso che non lascia spazio al caso.",
+      "visionHighlight": "Non aspiriamo a essere un'opzione… aspiriamo a essere il primo riferimento esecutivo.",
+      "missionTitle": "La nostra missione",
+      "missionText": "Fornire al leader aziendale un sistema operativo integrato che combina confidenzialità, precisione e consapevolezza—e gli dà un'esperienza che lo fa sentire come se ci fosse un'entità che lavora per lui come parte del suo team…",
+      "missionHighlight": "Ma con standard più alti, visione più ampia e maggiore responsabilità.",
+      "goalsTitle": "Il nostro obiettivo",
+      "goalsIntro": "Potenziare il leader aziendale per:",
+      "goalsList": [
+        "Prendere decisioni calcolate",
+        "Costruire influenza sostenibile",
+        "Gestire file sensibili con fiducia",
+        "Muoversi nel mercato con stabilità",
+        "Raggiungere risultati che non hanno bisogno di spiegazioni"
+      ],
+      "goalsHighlight": "Il nostro obiettivo non è servirli… il nostro obiettivo è elevare il livello della loro presenza e impatto."
+    },
+    "glossary": {
+      "title": "Glossario dell'entità",
+      "subtitle": "Termini usati solo qui. Questi sono concetti operativi che abbiamo creato… non li troverai da nessun'altra parte.",
+      "terms": [
+        {
+          "title": "Punto di ancoraggio esecutivo",
+          "desc": "La fase in cui la tua decisione è protetta dall'esitazione e supportata da un'analisi che non lascia lacune."
+        },
+        {
+          "title": "Linea di influenza graduata",
+          "desc": "Una metodologia che usiamo per costruire la tua presenza nel mercato passo dopo passo… senza rumore."
+        },
+        {
+          "title": "Cerchio di protezione silenzioso",
+          "desc": "Un sistema di monitoraggio e analisi che protegge i tuoi interessi senza che tu ne senta la presenza."
+        },
+        {
+          "title": "Percorso decisionale profondo",
+          "desc": "Un approccio di analisi che non si basa solo sui dati… ma sulla lettura oltre i dati."
+        },
+        {
+          "title": "Ingegneria delle relazioni influenti",
+          "desc": "Un modo in cui organizziamo le tue relazioni in modo che servano i tuoi obiettivi prima che tu ne abbia bisogno."
+        },
+        {
+          "title": "Punto di svolta sicuro",
+          "desc": "Il momento della decisione quando tutto è chiaro… e non c'è rischio non calcolato."
+        }
+      ]
+    },
+    "values": {
+      "title": "I nostri valori",
+      "subtitle": "I nostri valori non sono slogan… sono regole operative",
+      "items": [
+        {
+          "name": "Disciplina",
+          "desc": "Ogni passo è calcolato"
+        },
+        {
+          "name": "Professionalità",
+          "desc": "Ogni file è gestito secondo standard fissi"
+        },
+        {
+          "name": "Chiarezza",
+          "desc": "Non lasciamo spazio all'ambiguità"
+        },
+        {
+          "name": "Continuità",
+          "desc": "Una relazione a lungo termine"
+        },
+        {
+          "name": "Rispetto",
+          "desc": "Rispetto per il tuo tempo, fiducia e decisioni"
+        }
+      ]
+    },
+    "journey": {
+      "title": "Il viaggio del leader aziendale con noi",
+      "subtitle": "Il tuo viaggio con noi non è un servizio… è un sistema per passare da un punto a uno superiore",
+      "imageAlt": "Percorso del viaggio",
+      "featuredImageAlt": "Pianificazione strategica",
+      "steps": [
+        {
+          "num": "1",
+          "title": "Punto di comprensione profonda",
+          "desc": "Iniziamo da dove sei, non da dove vogliamo. Leggiamo i tuoi bisogni, obiettivi, preoccupazioni e ambizioni."
+        },
+        {
+          "num": "2",
+          "title": "Fase di scoperta dell'immagine completa",
+          "desc": "Ti mettiamo davanti ciò che gli altri non vedono: opportunità, rischi, percorsi e potenziali risultati."
+        },
+        {
+          "num": "3",
+          "title": "Costruzione del percorso esecutivo",
+          "desc": "Progettiamo un percorso chiaro per te, con passi calcolati e fasi che non dipendono dalla fortuna."
+        },
+        {
+          "num": "4",
+          "title": "Operazione reale",
+          "desc": "Qui inizia il vero lavoro: esecuzione, follow-up, regolazione e modifica in tempo reale."
+        },
+        {
+          "num": "5",
+          "title": "Punto di ancoraggio",
+          "desc": "La fase in cui tutto è sotto controllo… e i risultati iniziano a mostrarsi."
+        },
+        {
+          "num": "6",
+          "title": "Espansione sicura",
+          "desc": "Apriamo nuove porte per te… senza rischi non calcolati."
+        }
+      ]
+    },
+    "operatingSystem": {
+      "title": "Il sistema operativo esecutivo",
+      "subtitle": "Questo è il sistema che ci distingue da qualsiasi altra entità",
+      "layers": [
+        {
+          "name": "Livello di analisi profonda",
+          "desc": "Analisi che non si basa solo sui dati… ma sulla lettura oltre essi."
+        },
+        {
+          "name": "Livello di foresight strategico",
+          "desc": "Leggiamo il futuro per te prima che si muova."
+        },
+        {
+          "name": "Livello di esecuzione precisa",
+          "desc": "Esecuzione che non lascia spazio all'errore."
+        },
+        {
+          "name": "Livello di protezione silenziosa",
+          "desc": "Un sistema di monitoraggio che protegge i tuoi interessi senza che tu ne senta la presenza."
+        },
+        {
+          "name": "Livello di regolazione in tempo reale",
+          "desc": "Regoliamo il percorso istantaneamente… prima che il risultato sia influenzato."
+        }
+      ]
+    },
+    "serviceLevels": {
+      "title": "Livelli di servizio",
+      "subtitle": "Non offriamo un servizio… offriamo livelli di operazione",
+      "levelLabel": "Livello",
+      "levels": [
+        {
+          "num": "1",
+          "name": "Livello esecutivo base",
+          "desc": "Gestione professionale e costante dei tuoi file quotidiani."
+        },
+        {
+          "num": "2",
+          "name": "Livello strategico",
+          "desc": "Analisi, visione e pianificazione per percorsi a lungo termine."
+        },
+        {
+          "num": "3",
+          "name": "Livello ad alta sensibilità",
+          "desc": "Gestione di file che nessuno dovrebbe vedere."
+        },
+        {
+          "num": "4",
+          "name": "Livello del leader aziendale",
+          "desc": "Servizi progettati intorno alla tua personalità, obiettivi e modo di lavorare."
+        },
+        {
+          "num": "5",
+          "name": "Livello sovrano",
+          "desc": "Il livello più alto di operazione… pieno potere esecutivo dietro di te."
+        },
+        {
+          "num": "6",
+          "name": "Livello decisionale",
+          "desc": "Vera partnership nella modellazione di decisioni fatali e nella gestione della scena da dietro."
+        }
+      ]
+    },
+    "meta": {
+      "title": "KIB Businessmen Services | Esecuzione",
+      "description": "L'entità che non insegue opportunità—ma le crea. Scopri il nostro approccio all'esecuzione: servizi integrati, standard precisi e un percorso esecutivo costruito per leader aziendali che conoscono il loro valore."
+    }
+  },
+  "brandIdentity": {
+    "hero": {
+      "title": "La nostra identità",
+      "intro": "Non scriviamo una definizione per riempire spazio…",
+      "tagline": "Scriviamo la nostra identità dal modo in cui lavoriamo: con fiducia sentita prima che sia letta",
+      "cta": "Scopri la nostra identità"
+    },
+    "intro": {
+      "text": "Siamo un'entità progettata per essere la forza dietro il leader aziendale"
+    },
+    "closing": {
+      "words": "Questa entità non è solo un'azienda…",
+      "line1": "Siamo qui per fare la differenza..",
+      "line2": "Per costruire un'eredità che non può essere cancellata..",
+      "line3": "Sei qui… nel posto giusto.",
+      "cta": "Contattaci ora",
+      "backHome": "Torna alla home",
+      "success": "Inviato con successo",
+      "successMsg": "Ti contatteremo presto per iniziare il tuo viaggio di successo.",
+      "formTitle": "Inizia il tuo viaggio con noi",
+      "formSubtitle": "Iniziamo a costruire la tua prossima strategia.",
+      "fullName": "Nome completo",
+      "namePlaceholder": "Inserisci il tuo nome",
+      "company": "Azienda / Istituzione",
+      "companyPlaceholder": "Il nome della tua azienda",
+      "phone": "Numero di telefono",
+      "message": "Messaggio",
+      "messagePlaceholder": "Come possiamo aiutarti?",
+      "sending": "Invio in corso...",
+      "submit": "Invia richiesta"
+    },
+    "services": {
+      "sectionTitle": "Servizi che riflettono la nostra identità",
+      "sectionSubtitle": "Soluzioni strategiche progettate per l'élite",
+      "cta": "Richiedi consulenza",
+      "items": [
+        {
+          "title": "Gestione dell'influenza esecutiva",
+          "desc": "Potenziare l'influenza nelle sale del consiglio",
+          "detail": "Potenziamo i leader esecutivi per rafforzare la loro presenza e impatto all'interno dei consigli attraverso strategie di comunicazione avanzate e costruzione di alleanze forti."
+        },
+        {
+          "title": "Costruzione di percorsi strategici",
+          "desc": "Pianificazione a lungo termine per una crescita sostenibile",
+          "detail": "Progettiamo roadmap strategiche personalizzate che considerano variabili economiche e geopolitiche per una crescita sostenibile e un'espansione sicura."
+        },
+        {
+          "title": "Gestione delle relazioni ad alta sensibilità",
+          "desc": "Gestione di partner e clienti chiave",
+          "detail": "Gestiamo reti di relazioni complesse e sensibili con abilità diplomatica, agendo come mediatori fidati per risolvere conflitti e costruire ponti di fiducia."
+        },
+        {
+          "title": "Monitoraggio della reputazione digitale",
+          "desc": "Protezione dell'immagine mentale nello spazio digitale",
+          "detail": "Utilizziamo gli ultimi strumenti di monitoraggio e analisi per proteggere la tua immagine mentale 24 ore su 24, con piani di risposta rapida per le crisi."
+        },
+        {
+          "title": "Analisi dei rischi futuri",
+          "desc": "Previsione delle sfide e pianificazione proattiva",
+          "detail": "Forniamo letture accurate di foresight dei rischi potenziali e piani di contingenza proattivi per garantire la continuità aziendale."
+        },
+        {
+          "title": "Gestione di file altamente confidenziali",
+          "desc": "Protezione delle informazioni sensibili ai massimi standard",
+          "detail": "Forniamo un ambiente completamente sicuro e protocolli rigorosi per la gestione di documenti e informazioni altamente sensibili."
+        }
+      ]
+    },
+    "whoWeServe": {
+      "title": "Per chi scriviamo questa identità?",
+      "subtitle": "Non lavoriamo con tutti; scegliamo i nostri partner con cura. I nostri servizi sono progettati per l'élite che comprende il valore del tempo, della qualità e dell'impatto strategico.",
+      "labels": [
+        "Leader aziendale",
+        "Azienda familiare",
+        "Investitore",
+        "Ristrutturazione",
+        "Presidenti di consigli",
+        "Grandi aziende familiari",
+        "Investitori stranieri",
+        "Entità in ristrutturazione",
+        "Figure pubbliche e influenti",
+        "Istituzioni in cerca di espansione"
+      ],
+      "tags": [
+        "Chiarezza",
+        "Impegno",
+        "Qualità",
+        "Rispetto"
+      ]
+    },
+    "statement": {
+      "title": "Dichiarazione dell'entità",
+      "intro": "Crediamo che il successo non sia una coincidenza, ma il risultato di una pianificazione precisa, esecuzione professionale e visione chiara. Questa entità esiste per essere il partner strategico che protegge i tuoi interessi e guida la tua azienda al vertice.",
+      "points": [
+        "Ci impegniamo ai massimi standard di qualità e professionalità",
+        "Offriamo soluzioni innovative che corrispondono alle sfide del mercato",
+        "Costruiamo relazioni a lungo termine basate sulla fiducia reciproca"
+      ]
+    },
+    "stats": {
+      "items": [
+        {
+          "label": "Cliente"
+        },
+        {
+          "label": "Tasso di soddisfazione"
+        },
+        {
+          "label": "Anni di esperienza"
+        },
+        {
+          "label": "Progetto"
+        }
+      ]
+    },
+    "dictionary": {
+      "title": "Dizionario dell'entità",
+      "subtitle": "Termini che modellano la nostra lingua propria",
+      "terms": [
+        {
+          "term": "Influenza",
+          "desc": "La capacità di modellare il corso delle decisioni principali",
+          "quote": "L'influenza reale non si vede—si vedono i suoi risultati."
+        },
+        {
+          "term": "Decisione",
+          "desc": "Il momento che separa l'esitazione dal raggiungimento",
+          "quote": "La decisione giusta al momento sbagliato è la decisione sbagliata."
+        },
+        {
+          "term": "Protezione",
+          "desc": "Lo scudo che salvaguarda gli interessi prima che siano minacciati",
+          "quote": "La migliore protezione è quella che previene il pericolo prima che accada."
+        },
+        {
+          "term": "Esecuzione",
+          "desc": "Trasformare i piani in risultati tangibili con precisione",
+          "quote": "Un'idea senza esecuzione è solo un sogno."
+        },
+        {
+          "term": "Confidenzialità",
+          "desc": "Fiducia assoluta nella salvaguardia delle informazioni",
+          "quote": "La confidenzialità non è occultamento—è rispetto per la fiducia."
+        },
+        {
+          "term": "Partnership",
+          "desc": "Una relazione costruita sul rispetto e sull'interesse condiviso",
+          "quote": "Una partnership di successo è quella in cui 1+1 fa 3."
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "Come lavoriamo?",
+      "subtitle": "Una metodologia precisa che garantisce il raggiungimento degli obiettivi",
+      "steps": [
+        {
+          "title": "Analizziamo",
+          "desc": "Studiamo la situazione attuale in profondità e identifichiamo opportunità e rischi",
+          "progress": "25%"
+        },
+        {
+          "title": "Pianifichiamo",
+          "desc": "Disegniamo una roadmap chiara con fasi definite",
+          "progress": "50%"
+        },
+        {
+          "title": "Seguiamo",
+          "desc": "Monitoriamo l'esecuzione e garantiamo la conformità agli standard",
+          "progress": "75%"
+        },
+        {
+          "title": "Documentiamo",
+          "desc": "Registriamo ogni passo per garantire trasparenza e riferimento",
+          "progress": "100%"
+        }
+      ]
+    },
+    "promise": {
+      "title": "Promessa del brand",
+      "subtitle": "Impegni che non ammettono compromessi",
+      "quote": "Questa promessa è il nostro standard… e tutto ciò che forniamo è misurato contro di essa.",
+      "promises": [
+        {
+          "title": "Chiarezza completa",
+          "desc": "Crediamo che la trasparenza sia la base di ogni relazione di successo"
+        },
+        {
+          "title": "Esecuzione precisa",
+          "desc": "Ogni passo è calcolato, ogni decisione considerata"
+        },
+        {
+          "title": "Risultati che comandano rispetto",
+          "desc": "Forniamo risultati che parlano da soli"
+        }
+      ]
+    },
+    "personality": {
+      "title": "Personalità del brand",
+      "subtitle": "Tratti che formano il nucleo dei nostri rapporti e decisioni",
+      "traits": [
+        {
+          "name": "Risoluto",
+          "desc": "Ci muoviamo con fermezza e decidiamo con precisione"
+        },
+        {
+          "name": "Consapevole",
+          "desc": "Leggiamo il mercato prima che si muova"
+        },
+        {
+          "name": "Professionale",
+          "desc": "Operiamo secondo standard che non vacillano"
+        },
+        {
+          "name": "Capace",
+          "desc": "Sappiamo dove posizionare ogni passo e perché"
+        },
+        {
+          "name": "Leale",
+          "desc": "Consideriamo il successo del nostro cliente parte della nostra identità"
+        }
+      ]
+    },
+    "meta": {
+      "title": "KIB Businessmen Services | Identità del Brand",
+      "description": "Scopri la nostra identità: un'entità progettata per essere la forza dietro il leader aziendale. Dalla nostra dichiarazione del brand e personalità ai servizi che riflettono chi siamo—soluzioni strategiche per l'élite, costruite su chiarezza, impegno, qualità e rispetto."
+    }
+  },
+  "administrativeApparatus": {
+    "hero": {
+      "badge": "Sistema operativo esecutivo",
+      "title": "Apparato amministrativo",
+      "titleHighlight": "raffinato",
+      "suffix": "che lavora solo per te",
+      "intro": "Un sistema di esecuzione integrato progettato per servire il leader aziendale, gestire i suoi interessi e proteggere la sua influenza",
+      "cta": "Inizia ora",
+      "services": "Servizi"
+    },
+    "stats": {
+      "items": [
+        {
+          "value": 20,
+          "label": "Posizioni esecutive",
+          "icon": "Users"
+        },
+        {
+          "value": 100,
+          "label": "Accuratezza operativa",
+          "suffix": "%",
+          "icon": "Target"
+        },
+        {
+          "value": 5,
+          "label": "Livelli di servizio",
+          "icon": "Layers"
+        },
+        {
+          "value": 0,
+          "label": "Margine di errore",
+          "icon": "AlertCircle"
+        }
+      ]
+    },
+    "pyramid": {
+      "title": "Il tuo posto nel sistema",
+      "level1": "Tu",
+      "tooltip1": "Sede della decisione e della visione",
+      "level2": "Apparato amministrativo",
+      "tooltip2": "Esecuzione e protezione",
+      "level3": "File e operazioni",
+      "tooltip3": "Risultati quotidiani",
+      "quote": "Vedi solo il risultato…",
+      "quoteHighlight": "noi gestiamo il percorso verso di esso.",
+      "imageAlt": "Uomo d'affari potente"
+    },
+    "process": {
+      "title": "Come funziona l'apparato amministrativo?",
+      "subtitle": "Una metodologia rigorosa che garantisce il raggiungimento dei tuoi obiettivi con la massima efficienza",
+      "steps": [
+        {
+          "title": "Analisi dei bisogni",
+          "desc": "Uno studio preciso della tua situazione attuale e identificazione di lacune e rischi potenziali."
+        },
+        {
+          "title": "Costruzione dell'apparato",
+          "desc": "Formazione di un team d'élite e allocazione di risorse per proteggere i tuoi interessi."
+        },
+        {
+          "title": "Operazione e follow-up",
+          "desc": "Esecuzione silenziosa ed efficace con monitoraggio continuo per garantire che le operazioni procedano senza intoppi."
+        },
+        {
+          "title": "Consegna dei risultati",
+          "desc": "Consegna dei risultati desiderati con precisione senza occupare il tuo tempo."
+        }
+      ]
+    },
+    "positions": {
+      "all": "Tutti",
+      "categories": {
+        "management": "Gestione",
+        "protection": "Protezione",
+        "relations": "Relazioni",
+        "analysis": "Analisi",
+        "financial": "Finanziario",
+        "international": "Internazionale"
+      },
+      "title": "Posizioni esecutive",
+      "subtitle": "Ogni posizione gioca un ruolo specifico… mentre tu rimani solo nella sede decisionale",
+      "viewDetails": "Visualizza dettagli",
+      "tasks": "Compiti e responsabilità:",
+      "close": "Chiudi",
+      "items": [
+        {
+          "title": "Direttore della Gestione delle Crisi",
+          "category": "protection",
+          "desc": "Intervento immediato per risolvere qualsiasi crisi prima che arrivi alla tua scrivania.",
+          "details": [
+            "Monitoraggio precoce dei rischi",
+            "Intervento rapido ed efficace",
+            "Protezione della reputazione istituzionale"
+          ]
+        },
+        {
+          "title": "Direttore dell'Audit Interno",
+          "category": "analysis",
+          "desc": "Monitoraggio accurato di tutte le operazioni per garantire l'integrità.",
+          "details": [
+            "Revisione dei bilanci",
+            "Valutazione delle performance operative",
+            "Garanzia della conformità"
+          ]
+        },
+        {
+          "title": "Direttore delle Relazioni Esterne",
+          "category": "relations",
+          "desc": "Costruzione di ponti di comunicazione con entità governative e private.",
+          "details": [
+            "Gestione delle relazioni governative",
+            "Rappresentanza istituzionale",
+            "Espansione della rete di partner"
+          ]
+        },
+        {
+          "title": "Direttore della Protezione Strategica",
+          "category": "protection",
+          "desc": "Sicurezza degli interessi legali e operativi.",
+          "details": [
+            "Protezione legale",
+            "Sicurezza degli asset",
+            "Strategie di difesa"
+          ]
+        },
+        {
+          "title": "Direttore degli Studi e Analisi",
+          "category": "analysis",
+          "desc": "Fornitura di dati accurati per supportare le tue decisioni.",
+          "details": [
+            "Analisi di mercato",
+            "Studi di fattibilità",
+            "Foresight futuro"
+          ]
+        },
+        {
+          "title": "Direttore delle Operazioni Esecutive",
+          "category": "management",
+          "desc": "Supervisione dell'esecuzione dei progetti con precisione.",
+          "details": [
+            "Gestione dei progetti",
+            "Follow-up dell'esecuzione",
+            "Garanzia della qualità"
+          ]
+        },
+        {
+          "title": "Direttore dello Sviluppo Aziendale",
+          "category": "management",
+          "desc": "Cogliere opportunità e espandere l'ambito aziendale.",
+          "details": [
+            "Identificazione di nuove opportunità",
+            "Costruzione di partnership",
+            "Strategie di crescita"
+          ]
+        },
+        {
+          "title": "Direttore dell'Identità e Comunicazioni",
+          "category": "relations",
+          "desc": "Creazione di un'immagine mentale degna del tuo statuto.",
+          "details": [
+            "Gestione del brand",
+            "Relazioni pubbliche",
+            "Comunicazioni strategiche"
+          ]
+        },
+        {
+          "title": "Direttore della Gestione dei Rischi",
+          "category": "protection",
+          "desc": "Anticipazione dei rischi e pianificazione proattiva.",
+          "details": [
+            "Valutazione dei rischi",
+            "Piani di contingenza",
+            "Continuità aziendale"
+          ]
+        },
+        {
+          "title": "Direttore Finanziario",
+          "category": "financial",
+          "desc": "Gestione della ricchezza e guida degli investimenti.",
+          "details": [
+            "Pianificazione finanziaria",
+            "Gestione degli investimenti",
+            "Analisi finanziaria"
+          ]
+        },
+        {
+          "title": "Direttore dei Grandi Progetti",
+          "category": "management",
+          "desc": "Guida di iniziative massive e complesse.",
+          "details": [
+            "Pianificazione dei progetti",
+            "Gestione delle risorse",
+            "Consegna dei progetti"
+          ]
+        },
+        {
+          "title": "Direttore delle Operazioni Internazionali",
+          "category": "international",
+          "desc": "Gestione degli interessi oltre i confini.",
+          "details": [
+            "Espansione internazionale",
+            "Gestione delle filiali straniere",
+            "Conformità internazionale"
+          ]
+        },
+        {
+          "title": "Direttore della Conformità",
+          "category": "protection",
+          "desc": "Garanzia della conformità a leggi e regolamenti.",
+          "details": [
+            "Revisione legale",
+            "Implementazione delle regolazioni",
+            "Formazione sulla conformità"
+          ]
+        },
+        {
+          "title": "Direttore della Sicurezza delle Informazioni",
+          "category": "protection",
+          "desc": "Protezione dei dati e dei file confidenziali.",
+          "details": [
+            "Cybersecurity",
+            "Protezione dei dati",
+            "Gestione degli accessi"
+          ]
+        },
+        {
+          "title": "Direttore della Qualità",
+          "category": "analysis",
+          "desc": "Garanzia dei massimi standard di performance.",
+          "details": [
+            "Monitoraggio della qualità",
+            "Miglioramento dei processi",
+            "Applicazione degli standard"
+          ]
+        },
+        {
+          "title": "Direttore delle Relazioni VIP",
+          "category": "relations",
+          "desc": "Gestione di reti di relazioni private ed élite.",
+          "details": [
+            "Gestione delle relazioni private",
+            "Organizzazione di incontri",
+            "Protocollo"
+          ]
+        },
+        {
+          "title": "Direttore della Negoziazione Strategica",
+          "category": "management",
+          "desc": "Gestione di grandi accordi per garantire i migliori termini.",
+          "details": [
+            "Gestione delle negoziazioni",
+            "Chiusura degli accordi",
+            "Risoluzione dei conflitti"
+          ]
+        },
+        {
+          "title": "Direttore dei Privilegi Speciali",
+          "category": "relations",
+          "desc": "Fornitura di servizi esclusivi eccezionali.",
+          "details": [
+            "Servizi esclusivi",
+            "Gestione dei viaggi",
+            "Richieste speciali"
+          ]
+        },
+        {
+          "title": "Direttore dei File Confidenziali",
+          "category": "protection",
+          "desc": "Gestione di questioni sensibili con completa discrezione.",
+          "details": [
+            "Mantenimento del segreto",
+            "Gestione delle crisi sensibili",
+            "Indagini private"
+          ]
+        },
+        {
+          "title": "Direttore del Follow-up Esecutivo",
+          "category": "management",
+          "desc": "Monitoraggio dell'esecuzione delle tue direttive con precisione.",
+          "details": [
+            "Follow-up delle decisioni",
+            "Report sulle performance",
+            "Garanzia dell'esecuzione"
+          ]
+        },
+        {
+          "title": "Direttore della Pianificazione Strategica",
+          "category": "management",
+          "desc": "Allineamento della visione con roadmap eseguibili e obiettivi a lungo termine.",
+          "details": [
+            "Progettazione di roadmap strategiche",
+            "Pianificazione degli scenari",
+            "Allineamento degli obiettivi"
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Un apparato amministrativo completo che lavora",
+      "titleHighlight": "per te…",
+      "subtitle": "Perché il tuo tempo è troppo prezioso per sprecarlo sui dettagli.",
+      "cta": "Inizia ora",
+      "contact": "Parla con noi",
+      "confidentiality": "Confidenzialità totale",
+      "experience": "Esperienza globale",
+      "guaranteed": "Risultati garantiti",
+      "formTitle": "Contatta la gestione",
+      "formSubtitle": "Lascia i tuoi dettagli e uno dei nostri direttori esecutivi ti contatterà",
+      "formSubtitle2": "immediatamente.",
+      "name": "Il tuo nome",
+      "namePlaceholder": "Inserisci il tuo nome",
+      "phone": "Numero di telefono",
+      "phonePlaceholder": "Inserisci il tuo numero di telefono",
+      "message": "Il tuo messaggio (opzionale)",
+      "messagePlaceholder": "Come possiamo servirti?",
+      "submit": "Invia richiesta",
+      "success": "La tua richiesta è stata ricevuta con successo",
+      "successMsg": "Ti contatteremo il prima possibile."
+    },
+    "meta": {
+      "title": "KIB Businessmen Services | Apparato Amministrativo",
+      "description": "Costruisci un apparato amministrativo dedicato che lavora esclusivamente per te. Dalle posizioni esecutive e processi rigorosi all'accuratezza operativa completa e zero margine di errore—scopri come KIB progetta un sistema di esecuzione integrato per gestire i tuoi interessi, proteggere la tua influenza e consegnare risultati in modo da rimanere nella sede decisionale."
+    }
+  },
+  "servicesPage": {
+    "meta": {
+      "title": "KIB Businessmen Services | Servizi",
+      "description": "A KIB for Business Services non lavoriamo entro i confini del mercato—li disegniamo. Scopri la nostra gamma completa di servizi di costituzione, legali, finanziari, sviluppo aziendale, comunicazioni, risorse umane e servizi specializzati progettati per leader aziendali."
+    },
+    "hero": {
+      "title": "A KIB for Business Services, non lavoriamo entro i confini del mercato… li disegniamo.",
+      "paragraphs": [
+        "Non ci muoviamo con il flusso degli affari… impostiamo il ritmo al quale le aziende si muovono.",
+        "Siamo l'entità che non offre un servizio, ma costruisce un sistema, crea influenza e stabilisce una presenza che precede il nome del cliente prima che arrivino.",
+        "Non corriamo con una mentalità da ufficio…",
+        "Ma con una mentalità di un'istituzione intorno alla quale si costruiscono decisioni, si misurano standard e alla quale ci si riferisce nei dettagli che fanno la differenza tra un'azienda che opera… e un'azienda che è rispettata.",
+        "Partner nella decisione… partner nell'espansione… e partner nell'influenza.",
+        "Qui… inizia una nuova fase di engagement.",
+        "Una fase che non dipende da ciò che facciamo per te… ma da ciò che costruiamo con te."
+      ]
+    },
+    "nav": {
+      "title": "Sezioni dei servizi",
+      "subtitle": "Scegli una sezione per una navigazione rapida",
+      "count": "sezione",
+      "service": "servizio"
+    },
+    "categories": {
+      "group-1": {
+        "title": "Costituzione e licenze"
+      },
+      "group-2": {
+        "title": "Legale e governance"
+      },
+      "group-3": {
+        "title": "Finanziario e investimenti"
+      },
+      "group-4": {
+        "title": "Sviluppo aziendale e espansione"
+      },
+      "group-5": {
+        "title": "Relazioni e comunicazioni"
+      },
+      "group-6": {
+        "title": "Risorse umane e operazioni"
+      },
+      "group-7": {
+        "title": "Servizi specializzati"
+      }
+    },
+    "serviceContent": {
+      "group-1": {
+        "1": {
+          "title": "Formazione e Licenze Aziendali",
+          "tagline": "Stabiliamo la tua entità dal primo giorno… e apriamo il mercato per te con stabilità legale e operativa",
+          "items": [
+            "Formazione di aziende di tutti i tipi",
+            "Costituzione in zona franca",
+            "Formazione di aziende offshore",
+            "Costituzione di filiali straniere",
+            "Formazione di holding company",
+            "Emissione e rinnovo di licenze",
+            "Modifiche alle attività",
+            "Approvazioni governative",
+            "Servizi di agente locale",
+            "Apertura di conti bancari"
+          ]
+        },
+        "2": {
+          "title": "Servizi per Zone Franche e Offshore",
+          "tagline": "Accesso senza soluzione di continuità alle zone franche… e una presenza globale attraverso strutture offshore",
+          "items": [
+            "Costituzione in zona franca",
+            "Formazione di aziende offshore",
+            "Depositi di conformità",
+            "Conti bancari",
+            "Accordi di formazione",
+            "Registrazione delle attività",
+            "File degli investitori",
+            "Approvazioni governative",
+            "Depositi fiscali",
+            "Gestione dei rinnovi"
+          ]
+        },
+        "3": {
+          "title": "Licenze e Servizi di Formazione Aggiuntivi",
+          "tagline": "Soluzioni integrate nella formazione, licenze e conformità per le esigenze del mercato",
+          "items": [
+            "Completamento delle procedure di formazione",
+            "Rinnovo delle licenze",
+            "Modifiche al registro",
+            "Conformità continua",
+            "Approvazioni richieste",
+            "Apertura di conti aggiuntivi"
+          ]
+        },
+        "4": {
+          "title": "Conformità e Licenze Continue",
+          "tagline": "Follow-up continuo delle tue licenze e file di conformità in modo che la tua azienda funzioni senza interruzioni",
+          "items": [
+            "Rinnovo delle licenze in tempo",
+            "Aggiornamenti dei file di conformità",
+            "Approvazioni e modifiche",
+            "Agente locale e rappresentanza",
+            "Registri commerciali",
+            "Coordinamento con le autorità"
+          ]
+        }
+      },
+      "group-2": {
+        "3": {
+          "title": "Strutture Legali Aziendali",
+          "tagline": "Costruiamo una struttura legale che ti protegge… e supporta la tua espansione",
+          "items": [
+            "Accordi di formazione",
+            "Accordi tra azionisti",
+            "Modifiche alla struttura",
+            "Trasferimento di proprietà",
+            "Ristrutturazione",
+            "Statuti aziendali",
+            "Politiche di proprietà",
+            "Diritti di voto",
+            "Accordi di gestione",
+            "Revisione della struttura"
+          ]
+        },
+        "4": {
+          "title": "Conformità Legale e Governance",
+          "tagline": "Garantiamo che la tua azienda operi secondo i massimi standard di conformità… senza rischi o lacune",
+          "items": [
+            "Politiche di governance",
+            "Codici di condotta",
+            "Valutazione della conformità",
+            "Report di governance",
+            "Rischi di conformità",
+            "Politiche di disclosure",
+            "Politiche di oversight",
+            "Revisione dei contratti",
+            "Politiche di trasparenza",
+            "Valutazione della struttura"
+          ]
+        },
+        "5": {
+          "title": "Redazione di Contratti e Accordi",
+          "tagline": "Redigiamo contratti che ti proteggono… e chiudono ogni porta alle dispute",
+          "items": [
+            "Contratti commerciali",
+            "Revisione dei contratti",
+            "Accordi tra azionisti",
+            "Accordi di franchising",
+            "Accordi di fornitura",
+            "Accordi di servizio",
+            "Accordi di investimento",
+            "Accordi di agenzia",
+            "Accordi di partnership",
+            "Allegati ai contratti"
+          ]
+        },
+        "6": {
+          "title": "Consulenza Legale Transfrontaliera",
+          "tagline": "Ti supportiamo legalmente ovunque espandi… negli EAU e all'estero",
+          "items": [
+            "Consulenza internazionale",
+            "Contratti internazionali",
+            "Accordi di esportazione",
+            "Accordi di importazione",
+            "Dispute internazionali",
+            "Conformità internazionale",
+            "Leggi del paese target",
+            "Politiche di espansione",
+            "File degli investitori",
+            "Rischi di espansione internazionale"
+          ]
+        },
+        "7": {
+          "title": "Registrazione di Marchi e Proprietà Intellettuale",
+          "tagline": "Proteggiamo la tua idea… e assicuriamo la tua proprietà in tutto il mondo",
+          "items": [
+            "Registrazione di marchi",
+            "Registrazione di brevetti",
+            "Protezione IP",
+            "Monitoraggio delle violazioni",
+            "Gestione dei diritti",
+            "Rinnovo dei marchi",
+            "Trasferimento di proprietà",
+            "Depositi di protezione",
+            "Dispute IP",
+            "Protezione globale dei marchi"
+          ]
+        },
+        "8": {
+          "title": "Consulenza Legale e di Governance",
+          "tagline": "Bisogni legali e di governance coperti da un team dedicato e servizi complementari",
+          "items": [
+            "Revisione dei contratti",
+            "Consulenza sulla conformità",
+            "Aggiornamenti della struttura",
+            "Politiche di governance",
+            "Report legali",
+            "Gestione dei rischi legali"
+          ]
+        },
+        "9": {
+          "title": "Supporto Legale e Regolatorio",
+          "tagline": "Conformità continua e revisione della struttura per proteggere la tua entità e evitare rischi",
+          "items": [
+            "Revisione periodica dei contratti",
+            "Aggiornamenti delle politiche di conformità",
+            "Report di governance",
+            "Gestione delle dispute",
+            "Consulenza urgente",
+            "Oversight legale"
+          ]
+        },
+        "7b": {
+          "title": "Arbitrato e Risoluzione delle Dispute",
+          "tagline": "Risolviamo le dispute con expertise… e proteggiamo i tuoi interessi per il percorso più breve e gli argomenti più forti",
+          "items": [
+            "Arbitrato commerciale",
+            "Mediazione e settlement",
+            "Dispute commerciali",
+            "Dispute tra azionisti",
+            "Dispute contrattuali",
+            "Arbitrato internazionale",
+            "Esecuzione delle sentenze",
+            "File di arbitrato",
+            "Consulenza sulle dispute",
+            "Protezione dei diritti commerciali"
+          ]
+        }
+      },
+      "group-3": {
+        "8": {
+          "title": "Consulenza Finanziaria e Fiscale",
+          "tagline": "Insight finanziario chiaro… e decisioni informate",
+          "items": [
+            "Consulenza fiscale",
+            "Consulenza contabile",
+            "Strutture finanziarie",
+            "Bilanci",
+            "Studi di fattibilità",
+            "Rischi finanziari",
+            "Depositi fiscali",
+            "Report sulle performance",
+            "Valutazione aziendale",
+            "Flusso di cassa"
+          ]
+        },
+        "9": {
+          "title": "Studi di Fattibilità e Business Plan",
+          "tagline": "Trasformiamo la tua idea in un progetto… il tuo progetto in un piano… e il tuo piano in realtà",
+          "items": [
+            "Studio di mercato",
+            "Analisi dei concorrenti",
+            "Studio dei costi",
+            "Studio dei ricavi",
+            "Business plan",
+            "Piano di marketing",
+            "Piano operativo",
+            "Piano di espansione",
+            "Piano di finanziamento",
+            "Piano dei rischi"
+          ]
+        },
+        "10": {
+          "title": "Conformità Fiscale",
+          "tagline": "Salvaguardiamo l'eredità familiare e costruiamo una continuità degna del suo nome",
+          "items": [
+            "Registrazione fiscale",
+            "Dichiarazioni",
+            "Obblighi",
+            "File di conformità",
+            "Audit fiscale",
+            "Report",
+            "Revisione dei contratti",
+            "Politiche fiscali",
+            "Rischi fiscali",
+            "Consulenza avanzata"
+          ]
+        },
+        "11": {
+          "title": "Valutazione Aziendale",
+          "tagline": "Ti diamo una valutazione aziendale che rivela il vero valore—senza sovrastima o sottovalutazione",
+          "items": [
+            "Valutazione aziendale",
+            "Valutazione degli asset",
+            "Valutazione dei progetti",
+            "Valutazione dei marchi",
+            "Valutazione dei franchising",
+            "Valutazione dei rischi",
+            "Report di valutazione",
+            "Valore di mercato",
+            "Valutazione delle opportunità",
+            "Valutazione dei contratti"
+          ]
+        },
+        "12": {
+          "title": "Servizi Finanziari e di Investimento",
+          "tagline": "Consulenza finanziaria e fiscale, valutazione e business plan adattati alle tue aspirazioni",
+          "items": [
+            "Analisi finanziaria",
+            "Report fiscali",
+            "Valutazione degli asset",
+            "Piani di flusso di cassa",
+            "Revisione dei bilanci",
+            "Consulenza sugli investimenti"
+          ]
+        },
+        "13": {
+          "title": "Conformità Fiscale e Pianificazione Finanziaria",
+          "tagline": "Garantiamo la tua conformità fiscale e costruiamo piani finanziari chiari per la crescita e la stabilità",
+          "items": [
+            "Dichiarazioni e obblighi fiscali",
+            "Pianificazione fiscale strategica",
+            "Revisione dei bilanci finanziari",
+            "Valutazione delle opportunità di investimento",
+            "Report sulle performance finanziarie",
+            "Follow-up degli obblighi"
+          ]
+        }
+      },
+      "group-4": {
+        "12": {
+          "title": "Sviluppo Aziendale e Investimenti",
+          "tagline": "Portiamo il tuo progetto dall'idea… all'espansione… alla presenza globale",
+          "items": [
+            "Sviluppo di startup",
+            "Sviluppo di aziende esistenti",
+            "Piani di crescita",
+            "Modelli aziendali",
+            "Valutazione delle opportunità",
+            "Piani di espansione",
+            "Piani di trasformazione",
+            "Piani di investimento",
+            "Piani operativi",
+            "Piani di marketing"
+          ]
+        },
+        "13": {
+          "title": "Espansione Internazionale e Ingresso nel Mercato",
+          "tagline": "Apriamo nuovi mercati per te… con passi misurati",
+          "items": [
+            "Analisi di mercato",
+            "Piani di ingresso",
+            "Costituzione all'estero",
+            "File di conformità",
+            "File fiscali",
+            "Relazioni governative",
+            "Marketing internazionale",
+            "Operazioni internazionali",
+            "File degli investitori",
+            "Gestione dei partner"
+          ]
+        },
+        "14": {
+          "title": "Franchising",
+          "tagline": "Trasformiamo il tuo progetto in un brand che può scalare globalmente",
+          "items": [
+            "Manuale operativo",
+            "Manuale del brand",
+            "Accordi di franchising",
+            "Politiche di franchising",
+            "Piani di espansione",
+            "File degli investitori",
+            "Valutazione del mercato",
+            "Piani di marketing",
+            "Sistemi di franchising",
+            "Gestione del franchising"
+          ]
+        },
+        "15": {
+          "title": "Espansione Regionale",
+          "tagline": "Apriamo nuove porte per il tuo brand per espandersi con stabilità e stabilire la sua presenza",
+          "items": [
+            "Analisi GCC",
+            "Piani di espansione",
+            "Formazione aziendale",
+            "Relazioni governative",
+            "File di conformità",
+            "Contratti",
+            "Marketing",
+            "Partner locali",
+            "File degli investitori",
+            "Operazioni regionali"
+          ]
+        },
+        "16": {
+          "title": "Sviluppo del Franchising",
+          "tagline": "Non concediamo solo un franchising… costruiamo un modello che scala con fiducia e dimostra la forza del tuo brand",
+          "items": [
+            "Manuale operativo",
+            "Manuale del brand",
+            "Accordi di franchising",
+            "Politiche di franchising",
+            "Piani di espansione",
+            "File degli investitori",
+            "Valutazione del mercato",
+            "Piani di marketing",
+            "Sistemi di franchising",
+            "Gestione del franchising"
+          ]
+        },
+        "16b": {
+          "title": "Gestione delle Partnership Strategiche",
+          "tagline": "Costruiamo partnership che moltiplicano la tua forza… e aprono orizzonti che non puoi raggiungere da solo",
+          "items": [
+            "Identificazione di potenziali partner",
+            "Valutazione delle partnership",
+            "Accordi di partnership",
+            "Gestione delle relazioni",
+            "Piani di cooperazione congiunta",
+            "Report sulle performance",
+            "Risoluzione delle dispute con i partner",
+            "Espansione della rete di partnership",
+            "File dei partner",
+            "Strategie di alleanza"
+          ]
+        }
+      },
+      "group-5": {
+        "17": {
+          "title": "Relazioni Governative e Comunicazioni Aziendali",
+          "tagline": "Costruiamo una presenza ufficiale professionale… e una forte rete di relazioni",
+          "items": [
+            "Relazioni governative",
+            "Corrispondenza ufficiale",
+            "Profili aziendali",
+            "Comunicazioni aziendali",
+            "Comunicati stampa",
+            "Reputazione aziendale",
+            "Piani di comunicazioni",
+            "Relazioni con i media",
+            "Documenti di profilo",
+            "Incontri ufficiali"
+          ]
+        },
+        "18": {
+          "title": "Gestione di Conferenze ed Eventi",
+          "tagline": "Eventi gestiti con professionalità… che presentano la tua azienda nella migliore luce",
+          "items": [
+            "Conferenze",
+            "Incontri",
+            "Eventi",
+            "Esposizioni",
+            "Inviti",
+            "Registrazione",
+            "Gestione degli ospiti",
+            "Contenuti",
+            "Relazioni con i media",
+            "Report"
+          ]
+        },
+        "19": {
+          "title": "Gestione della Reputazione Aziendale",
+          "tagline": "Non proteggiamo solo la reputazione… costruiamo una presenza che comanda rispetto prima che il tuo nome sia pronunciato",
+          "items": [
+            "Reputazione digitale",
+            "Crisi mediatiche",
+            "Piani di reputazione",
+            "Contenuti aziendali",
+            "Comunicati stampa",
+            "Relazioni con i media",
+            "Percezione pubblica",
+            "Feedback negativi",
+            "Report sulla reputazione",
+            "Identità mediatica"
+          ]
+        },
+        "20": {
+          "title": "Gestione delle Relazioni con gli Investitori",
+          "tagline": "Un'interfaccia professionale con gli investitori",
+          "items": [
+            "File degli investitori",
+            "Presentazioni",
+            "Report",
+            "Incontri",
+            "Relazioni",
+            "Piani di investimento",
+            "File di conformità",
+            "File fiscali",
+            "File aziendali",
+            "Comunicazioni"
+          ]
+        },
+        "21": {
+          "title": "Relazioni e Comunicazioni Aziendali",
+          "tagline": "Reputazione, relazioni governative, investitori ed eventi gestiti secondo standard professionali",
+          "items": [
+            "Relazioni governative",
+            "Gestione della reputazione",
+            "Eventi e conferenze",
+            "Comunicazioni con gli investitori",
+            "Comunicati stampa",
+            "Corrispondenza ufficiale"
+          ]
+        },
+        "22": {
+          "title": "Reputazione, Eventi e Investitori",
+          "tagline": "Costruiamo la tua presenza mediatica, relazioni con gli investitori ed eventi che rafforzano la tua posizione",
+          "items": [
+            "Strategie di reputazione digitale",
+            "Organizzazione di conferenze ed eventi",
+            "Preparazione di presentazioni per investitori",
+            "Comunicazioni ufficiali e mediatiche",
+            "Gestione delle crisi mediatiche",
+            "Report sulla reputazione e performance"
+          ]
+        }
+      },
+      "group-6": {
+        "21": {
+          "title": "Risorse Umane e Reclutamento Esecutivo",
+          "tagline": "Forniamo il talento che costruisce la tua azienda… e guida la tua espansione",
+          "items": [
+            "Reclutamento esecutivo",
+            "Strutture organizzative",
+            "Politiche interne",
+            "Valutazione delle performance",
+            "Compensazione",
+            "File dei dipendenti",
+            "Manuali dei dipendenti",
+            "Formazione",
+            "Sviluppo della leadership",
+            "Gestione HR"
+          ]
+        },
+        "22": {
+          "title": "Strutture Organizzative e Politiche Interne",
+          "tagline": "Costruiamo un sistema di gestione coerente… che aumenta l'efficienza operativa",
+          "items": [
+            "Strutture",
+            "Politiche",
+            "Procedure",
+            "Manuali operativi",
+            "Politiche di qualità",
+            "Politiche HR",
+            "Politiche finanziarie",
+            "Politiche di sicurezza",
+            "Politiche di conformità",
+            "Politiche di gestione"
+          ]
+        },
+        "23": {
+          "title": "Gestione Operativa",
+          "tagline": "Ottimizziamo le operazioni per un'efficienza che migliora le performance e accelera la crescita",
+          "items": [
+            "Operazioni quotidiane",
+            "Piani operativi",
+            "Team di lavoro",
+            "Qualità",
+            "Rischi",
+            "Report operativi",
+            "Miglioramento dei processi",
+            "Fornitori",
+            "Contratti",
+            "Piani di sviluppo"
+          ]
+        },
+        "24": {
+          "title": "Gestione dei Progetti Aziendali",
+          "tagline": "Non gestiamo solo i tuoi progetti… garantiamo che ogni passo si trasformi in un raggiungimento misurabile che costruisce la forza della tua azienda",
+          "items": [
+            "Gestione dei progetti",
+            "Piani di implementazione",
+            "Team di lavoro",
+            "Timeline",
+            "Bilanci",
+            "Report sui progressi",
+            "Rischi operativi",
+            "Fornitori",
+            "Contratti",
+            "Consegna"
+          ]
+        },
+        "25": {
+          "title": "HR e Operazioni",
+          "tagline": "Strutture, politiche, gestione di progetti e operazioni per aumentare l'efficienza della tua organizzazione",
+          "items": [
+            "Strutture organizzative",
+            "Politiche HR",
+            "Gestione dei progetti",
+            "Miglioramento dei processi",
+            "Valutazione delle performance",
+            "Manuali operativi"
+          ]
+        },
+        "26": {
+          "title": "Operazioni, Progetti e Politiche",
+          "tagline": "Operazioni ottimizzate, gestione dei progetti e politiche interne per la tua organizzazione",
+          "items": [
+            "Miglioramento dei processi operativi",
+            "Gestione e follow-up dei progetti",
+            "Politiche e procedure",
+            "Valutazione delle performance e dell'efficienza",
+            "Manuali operativi e di qualità",
+            "Piani di sviluppo interni"
+          ]
+        }
+      },
+      "group-7": {
+        "25": {
+          "title": "Traduzione Legale e Commerciale",
+          "tagline": "Lingua precisa… non un singolo errore",
+          "items": [
+            "Traduzione legale",
+            "Traduzione commerciale",
+            "Traduzione di contratti",
+            "Traduzione di documenti",
+            "Traduzione bancaria",
+            "Traduzione governativa",
+            "Traduzione aziendale",
+            "Traduzione di proposte",
+            "Traduzione di accordi",
+            "Traduzione di documenti ufficiali"
+          ]
+        },
+        "26": {
+          "title": "Commercio Internazionale e Logistica",
+          "tagline": "Ti colleghiamo al mondo… e semplifichiamo ogni passo",
+          "items": [
+            "Importazione",
+            "Esportazione",
+            "Spedizione",
+            "Logistica",
+            "Fornitori",
+            "Contratti",
+            "Rischi",
+            "Accordi di fornitura",
+            "Tracciamento delle spedizioni",
+            "Catene di fornitura"
+          ]
+        },
+        "27": {
+          "title": "Servizi Aziendali Privati",
+          "tagline": "Servizi confidenziali, rapidi, professionali",
+          "items": [
+            "File confidenziali",
+            "Relazioni",
+            "Incontri",
+            "File",
+            "Contratti",
+            "Viaggi",
+            "Espansione",
+            "Corrispondenza",
+            "Progetti",
+            "Liaison governativa"
+          ]
+        },
+        "28": {
+          "title": "Governance Aziendale",
+          "tagline": "Le entità sono gestite da piani… ma le istituzioni rispettate sono gestite dalla governance",
+          "items": [
+            "Politiche di governance",
+            "Comitati di oversight",
+            "Codici di condotta",
+            "Conformità",
+            "Report di governance",
+            "Rischi di governance",
+            "Disclosure",
+            "Trasparenza",
+            "Controllo interno",
+            "Valutazione della governance"
+          ]
+        },
+        "29": {
+          "title": "Gestione dei Rischi Aziendali",
+          "tagline": "Non ci occupiamo solo del rischio… prendiamo il controllo di ciò che gli altri potrebbero non vedere",
+          "items": [
+            "Analisi dei rischi",
+            "Rischi operativi",
+            "Rischi finanziari",
+            "Rischi legali",
+            "Piani di contingenza",
+            "Continuità aziendale",
+            "Report sui rischi",
+            "Politiche di mitigazione dei rischi",
+            "Monitoraggio degli indicatori",
+            "Gestione delle crisi"
+          ]
+        },
+        "30": {
+          "title": "Trasformazione Digitale",
+          "tagline": "Non digitalizziamo solo la tua azienda… rimodelliamo il suo futuro per funzionare con una forza inarrestabile",
+          "items": [
+            "Digitalizzazione dei processi",
+            "Sistemi di gestione",
+            "Sistemi HR",
+            "CRM",
+            "Sistemi di progetti",
+            "Fatturazione elettronica",
+            "Dashboard",
+            "Tracciamento delle performance",
+            "Archiviazione digitale",
+            "Automazione dei processi"
+          ]
+        },
+        "31": {
+          "title": "Politiche e Procedure",
+          "tagline": "Non scriviamo solo politiche… costruiamo un quadro di disciplina che definisce come le aziende sono gestite e come la professionalità è misurata",
+          "items": [
+            "Politiche HR",
+            "Politiche finanziarie",
+            "Politiche di qualità",
+            "Politiche di sicurezza",
+            "Politiche di conformità",
+            "SOP",
+            "Manuali dei dipendenti",
+            "Politiche di presenza",
+            "Politiche di reclutamento",
+            "Politiche di gestione degli asset"
+          ]
+        },
+        "32": {
+          "title": "Analisi di Mercato e Concorrenti",
+          "tagline": "Non osserviamo solo il mercato… lo mappiamo e riveliamo ciò che i tuoi concorrenti non vedono prima che si muovano",
+          "items": [
+            "Dimensione del mercato",
+            "Concorrenti",
+            "Tendenze di mercato",
+            "Opportunità",
+            "Comportamento dei clienti",
+            "Report di mercato",
+            "Analisi dei prezzi",
+            "Rischi di mercato",
+            "Settori",
+            "Mappatura competitiva"
+          ]
+        },
+        "33": {
+          "title": "Preparazione del Profilo Aziendale",
+          "tagline": "Non prepariamo solo file aziendali… creiamo l'identità ufficiale che definisce l'entità e comanda rispetto dal primo momento",
+          "items": [
+            "Documento di profilo",
+            "Struttura organizzativa",
+            "Registro commerciale",
+            "Accordi di formazione",
+            "Dettagli dei partner",
+            "Lettere bancarie",
+            "File KYC",
+            "File di conformità",
+            "File degli investitori",
+            "File di proposte"
+          ]
+        },
+        "34": {
+          "title": "Servizi per Family Office",
+          "tagline": "Non gestiamo solo aziende familiari… salvaguardiamo la loro eredità e costruiamo una continuità degna di un nome che dura",
+          "items": [
+            "Strutture per aziende familiari",
+            "Accordi di successione",
+            "Transizione di proprietà",
+            "Governance familiare",
+            "Dispute familiari",
+            "Piani di continuità",
+            "Politiche di distribuzione",
+            "Consigli familiari",
+            "Oversight",
+            "Transizione istituzionale"
+          ]
+        },
+        "35": {
+          "title": "Preparazione di Proposte di Investimento",
+          "tagline": "Non prepariamo solo un pitch di investimento… creiamo il caso che fa scegliere te al capitale prima che tu lo cerchi",
+          "items": [
+            "Pitch deck",
+            "Analisi di mercato",
+            "Modello di ricavi",
+            "Piano di crescita",
+            "Analisi dei concorrenti",
+            "Piano di finanziamento",
+            "Piano di espansione",
+            "Piano operativo",
+            "Piano di marketing",
+            "Piano dei rischi"
+          ]
+        },
+        "36": {
+          "title": "Servizi per Investitori Stranieri",
+          "tagline": "Pavimentiamo la strada per l'investitore straniero per iniziare con fiducia e espandersi senza barriere",
+          "items": [
+            "File dell'investitore",
+            "Conti bancari",
+            "Piani di ingresso nel mercato",
+            "File di conformità",
+            "Approvazioni governative",
+            "Piani di espansione",
+            "Relazioni governative",
+            "File fiscali",
+            "File di investimento",
+            "Operazioni"
+          ]
+        },
+        "37": {
+          "title": "Gestione della Catena di Fornitura",
+          "tagline": "Ottimizziamo la catena di fornitura per efficienza ad ogni passo",
+          "items": [
+            "Fornitori",
+            "Contratti",
+            "Spedizione",
+            "Stoccaggio",
+            "Inventario",
+            "Rischi",
+            "Piani di fornitura",
+            "Analisi dei costi",
+            "Qualità",
+            "Report di fornitura"
+          ]
+        },
+        "38": {
+          "title": "Preparazione di Gare Governative",
+          "tagline": "Creiamo una proposta governativa che mette la tua azienda in una posizione degna di nota",
+          "items": [
+            "File di gara",
+            "Proposte tecniche",
+            "Proposte finanziarie",
+            "Garanzie bancarie",
+            "File di conformità",
+            "Piani di implementazione",
+            "Programmi di prezzi",
+            "File aziendali",
+            "Liaison governativa",
+            "Follow-up della gara"
+          ]
+        },
+        "39": {
+          "title": "Gestione delle Crisi",
+          "tagline": "Trasformiamo le crisi in decisioni che ripristinano l'equilibrio dell'azienda con stabilità",
+          "items": [
+            "Analisi delle crisi",
+            "Piano di risposta",
+            "Comunicazioni",
+            "Rischi",
+            "Piani di contingenza",
+            "Reputazione",
+            "Report sulle crisi",
+            "Relazioni governative",
+            "Task force",
+            "Recupero"
+          ]
+        },
+        "40": {
+          "title": "Identità Aziendale",
+          "tagline": "Creiamo un'identità aziendale che definisce l'entità e proietta la sua presenza con fiducia",
+          "items": [
+            "Identità visiva",
+            "Identità verbale",
+            "Linee guida del brand",
+            "File aziendali",
+            "Presentazioni",
+            "Contenuti aziendali",
+            "Messaggistica ufficiale",
+            "File del brand",
+            "Piani di comunicazioni",
+            "Documenti di profilo"
+          ]
+        },
+        "41": {
+          "title": "Servizi Specializzati Aggiuntivi",
+          "tagline": "Una vasta gamma di servizi specializzati consegnati ai massimi standard di qualità",
+          "items": [
+            "Consulenza specializzata",
+            "Analisi e pianificazione",
+            "Revisione dei documenti",
+            "Supporto alla conformità",
+            "Report personalizzati",
+            "Follow-up professionale"
+          ]
+        },
+        "42": {
+          "title": "Consulenza e Analisi Personalizzate",
+          "tagline": "Analisi di campo e documenti e consulenza adattata al tuo settore e bisogni specifici",
+          "items": [
+            "Analisi di mercato e concorrenti",
+            "Revisione di documenti e contratti",
+            "Consulenza personalizzata sulla conformità",
+            "Report e riassunti",
+            "Supporto alle decisioni",
+            "Follow-up e implementazione delle raccomandazioni"
+          ]
+        }
+      }
+    }
+  }
+}
