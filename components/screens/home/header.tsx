@@ -34,7 +34,7 @@ export default function Header() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 text-center pt-[clamp(1rem,8vw,10rem)]">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 text-center pt-[clamp(2rem,8vw,10rem)]">
         
         {/* Badge */}
         <motion.div
@@ -120,11 +120,11 @@ export default function Header() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-14 grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8 max-w-7xl mx-auto"
+          className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8 max-w-7xl mx-auto"
         >
           <div>
             <div className="text-2xl sm:text-3xl font-bold text-[#C9A84C]">
-              +500
+              +50
             </div>
             <div className="text-white/60 text-sm mt-1">
               {t("statsClients")}

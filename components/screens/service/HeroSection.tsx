@@ -45,7 +45,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/90 via-[#0A1628]/80 to-[#0A1628]"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 pt-[5%]">
+      <div className="container mx-auto       relative z-10 py-20 pt-[10%]">
         <motion.div
           className="mx-auto text-center"
           variants={containerVariants}
@@ -60,7 +60,7 @@ export function HeroSection() {
           </motion.h1>
 
           <motion.div
-            className="space-y-6 text-[clamp(0.75rem,2vw,1.5rem)] text-gray-200 leading-relaxed font-light"
+            className="space-y-2 text-[clamp(0.75rem,2vw,1.5rem)] text-gray-200 leading-relaxed font-light"
             variants={itemVariants}
           >
             {Array.isArray(paragraphs) && paragraphs.length >= 7 && (

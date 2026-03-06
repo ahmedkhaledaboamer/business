@@ -98,14 +98,14 @@ export function Hero({ locale }: { locale: string }) {
       </div>
 
       {/* Content */}
-      <div className="relative z-30 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
+      <div className="relative z-30 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-[10%]">
         <div
           className={`transition-all duration-1000 transform ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
           style={{
             transitionDelay: '200ms'
           }}>
 
-          <span className="mb-8 inline-flex items-center rounded-full bg-gradient-to-r from-gold to-gold-dark text-white px-6 py-2 text-[clamp(0.75rem,2vw,2rem)] font-bold shadow-lg animate-pulse-gold relative overflow-hidden group">
+          <span className="mb-8 inline-flex items-center rounded-full bg-gradient-to-r from-gold to-gold-dark text-white px-6 py-2 text-[clamp(0.75rem,1.5vw,3rem)] font-bold shadow-lg animate-pulse-gold relative overflow-hidden group">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-shimmer" />
             {t('badge')}
           </span>

@@ -19,7 +19,7 @@ export function HeroSection() {
       ref={containerRef}
       id="hero"
       dir={locale === 'ar' ? 'rtl' : 'ltr'}
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0A0905]  px-[5%] items-center pt-[5%]"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0A0905]  px-[5%] pb-[5%] items-center pt-[10%]"
     >
       <style>{`
         .grain-overlay::before {
@@ -125,7 +125,7 @@ export function HeroSection() {
          
 
         {/* Hero headline */}
-        <div className="mb-12 flex flex-row items-center justify-center md:gap-20">
+        <div className="mb-6 flex flex-row items-center justify-center md:gap-20">
           {words.map((word, i) => (
             <div key={i} className="split-line">
               <motion.div
@@ -155,7 +155,7 @@ export function HeroSection() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1.2, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="h-px w-full max-w-2xl gold-line mb-12 mx-auto"
+          className="h-px w-full max-w-2xl gold-line mb-6 mx-auto"
         />
 
         {/* Body text columns */}
@@ -188,7 +188,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.4 }}
-          className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8"
+          className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-8"
         >
           {/* Stats */}
           <div className="flex gap-10">
