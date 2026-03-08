@@ -20,8 +20,8 @@ export function WhoWeServe() {
   const tags = (t.raw('tags') as string[]) || [];
   const { ref, isVisible } = useScrollAnimation(0.2);
   return (
-    <section className="py-28 bg-white overflow-hidden px-[5%]">
-      <div className=" mx-auto px-6">
+    <section className="  bg-white overflow-hidden ">
+      <div className=" p-[5%]">
         <div
           className="flex flex-col lg:flex-row gap-20 items-center"
           ref={ref}>
@@ -74,7 +74,7 @@ export function WhoWeServe() {
               {tags.map((tag, idx) =>
               <span
                 key={idx}
-                className={`px-6 py-2.5 text-white rounded-full text-sm font-bold shadow-lg transition-all duration-500 hover:-translate-y-1 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}
+                className={`px-6 py-2.5 text-white rounded-full text-[clamp(0.5rem,1vw,2rem)] font-bold shadow-lg transition-all duration-500 hover:-translate-y-1 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}
                 style={{
                   background: `linear-gradient(135deg, ${tagColors[idx]}, ${tagColors[idx]}CC)`,
                   transitionDelay: `${idx * 100 + 800}ms`
